@@ -1,0 +1,21 @@
+# Filed issues (2026-10-14)
+
+- `pxc1.md` https://github.com/percona/percona-xtradb-cluster-operator/issues/2558
+- `pxc2.md` https://github.com/percona/percona-xtradb-cluster-operator/issues/2559
+- `pxc3.md` https://github.com/percona/percona-xtradb-cluster-operator/issues/2560
+- `ps1.md` https://github.com/percona/percona-server-mysql-operator/issues/1640
+- `ps2.md` https://github.com/percona/percona-server-mysql-operator/issues/1641
+- `ora1.md` https://github.com/mysql/mysql-operator/issues/63
+- `ora2.md` https://github.com/mysql/mysql-operator/issues/64
+- `mdb1.md` https://github.com/mariadb-operator/mariadb-operator/issues/1956
+- `mdb2.md` https://github.com/mariadb-operator/mariadb-operator/issues/1957
+- comment: https://github.com/mariadb-operator/mariadb-operator/issues/1946#issuecomment-6171212172` https://github.com/mariadb-operator/mariadb-operator/issues/1946#issuecomment-6171212172
+- `dpxc1.md` https://github.com/percona/k8spxc-docs/issues/344
+- `dpxc2.md` https://github.com/percona/k8spxc-docs/issues/345
+- `dpxc3.md` https://github.com/percona/k8spxc-docs/issues/346
+- `dpxc4.md` https://github.com/percona/k8spxc-docs/issues/347
+- `dpxc5.md` https://github.com/percona/k8spxc-docs/issues/348
+- `dps1.md` https://github.com/percona/k8sps-docs/issues/272
+- `dps2.md` https://github.com/percona/k8sps-docs/issues/273
+- `dps3.md` https://github.com/percona/k8sps-docs/issues/274
+- `dps4.md` https://github.com/percona/k8sps-docs/issues/275
