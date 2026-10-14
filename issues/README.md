@@ -9,7 +9,7 @@
 - `ora2.md` https://github.com/mysql/mysql-operator/issues/64
 - `mdb1.md` https://github.com/mariadb-operator/mariadb-operator/issues/1956
 - `mdb2.md` https://github.com/mariadb-operator/mariadb-operator/issues/1957
-- comment: https://github.com/mariadb-operator/mariadb-operator/issues/1946#issuecomment-6171212172` https://github.com/mariadb-operator/mariadb-operator/issues/1946#issuecomment-6171212172
+- MariaDB #1946 comment (nil-UUID reproduction on 26.10.1): https://github.com/mariadb-operator/mariadb-operator/issues/1946#issuecomment-6171212172
 - `dpxc1.md` https://github.com/percona/k8spxc-docs/issues/344
 - `dpxc2.md` https://github.com/percona/k8spxc-docs/issues/345
 - `dpxc3.md` https://github.com/percona/k8spxc-docs/issues/346
