@@ -1,0 +1,33 @@
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: Backup
+metadata: {name: logical1}
+spec:
+  mariaDbRef: {name: mariadb-galera}
+  storage:
+    s3:
+      bucket: mariadb
+      prefix: logical
+      endpoint: s3.s3.svc:9000
+      region: us-east-1
+      accessKeyIdSecretKeyRef: {name: s3-creds, key: access-key-id}
+      secretAccessKeySecretKeyRef: {name: s3-creds, key: secret-access-key}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: PhysicalBackup
+metadata: {name: physical1}
+spec:
+  mariaDbRef: {name: mariadb-galera}
+  target: Replica
+  compression: bzip2
+  storage:
+    s3:
+      bucket: mariadb
+      prefix: physical
+      endpoint: s3.s3.svc:9000
+      region: us-east-1
+      accessKeyIdSecretKeyRef: {name: s3-creds, key: access-key-id}
+      secretAccessKeySecretKeyRef: {name: s3-creds, key: secret-access-key}
+  stagingStorage:
+    persistentVolumeClaim:
+      resources: {requests: {storage: 5Gi}}
+      accessModes: [ReadWriteOnce]

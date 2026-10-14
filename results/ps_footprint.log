@@ -1,0 +1,12 @@
+NAME                                             CPU(cores)   MEMORY(bytes)   
+percona-server-mysql-operator-75dfcc9466-whhb6   56m          28Mi            
+ps-cluster1-binlog-server-0                      42m          133Mi           
+ps-cluster1-haproxy-0                            86m          15Mi            
+ps-cluster1-haproxy-1                            95m          14Mi            
+ps-cluster1-haproxy-2                            97m          14Mi            
+ps-cluster1-mysql-0                              89m          825Mi           
+ps-cluster1-mysql-1                              210m         851Mi           
+ps-cluster1-mysql-2                              94m          855Mi           
+ps-cluster1-binlog-server-0 binlog-server,
+ps-cluster1-haproxy-0 haproxy,mysql-monit,
+ps-cluster1-mysql-0 mysql,xtrabackup,

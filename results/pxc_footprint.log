@@ -1,0 +1,33 @@
+NAME                                               CPU(cores)   MEMORY(bytes)   
+cluster1-haproxy-0                                 93m          13Mi            
+cluster1-haproxy-1                                 92m          14Mi            
+cluster1-haproxy-2                                 102m         14Mi            
+cluster1-pitr-647596bfc4-b2q7z                     6m           1111Mi          
+cluster1-pxc-0                                     60m          513Mi           
+cluster1-pxc-1                                     45m          510Mi           
+cluster1-pxc-2                                     48m          516Mi           
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9   21m          33Mi            
+pitr-job-restore1-cluster1-tr9n6                   0m           37Mi            
+probe-pxc                                          179m         2Mi             
+cluster1-haproxy-0 containers=haproxy,pxc-monit,
+cluster1-haproxy-1 containers=haproxy,pxc-monit,
+cluster1-haproxy-2 containers=haproxy,pxc-monit,
+cluster1-pitr-647596bfc4-b2q7z containers=pitr,
+cluster1-pxc-0 containers=logs,logrotate,pxc,
+cluster1-pxc-1 containers=logs,logrotate,pxc,
+cluster1-pxc-2 containers=logs,logrotate,pxc,
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9 containers=percona-xtradb-cluster-operator,
+pitr-job-restore1-cluster1-tr9n6 containers=xtrabackup,
+pitr-job-restore2-cluster1-zsmkq containers=xtrabackup,
+pitr-job-restore3-cluster1-lbhxr containers=xtrabackup,
+prepare-job-restore1-cluster1-q8dl5 containers=mysqld,
+prepare-job-restore2-cluster1-pgz47 containers=mysqld,
+prepare-job-restore3-cluster1-97xgn containers=mysqld,
+restore-job-restore1-cluster1-x6xzb containers=xtrabackup,
+restore-job-restore2-cluster1-8sbvs containers=xtrabackup,
+restore-job-restore3-cluster1-st5cs containers=xtrabackup,
+sysb containers=sysb,
+xb-backup1-l5qrp containers=xtrabackup,
+xb-backup2-hnp5r containers=xtrabackup,
+xb-backup3-qvtcs containers=xtrabackup,
+3

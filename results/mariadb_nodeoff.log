@@ -1,0 +1,59 @@
+T=1791980795915
+writer=mariadb-galera-2 node=mk-w3 id=108113001
+POWEROFF 1791980797176
+NAME    STATUS     ROLES           AGE     VERSION
+mk-cp   Ready      control-plane   4h59m   v1.37.1+k3s1
+mk-w1   Ready      <none>          4h58m   v1.37.1+k3s1
+mk-w2   Ready      <none>          4h58m   v1.37.1+k3s1
+mk-w3   NotReady   <none>          4h58m   v1.37.1+k3s1
+NAME                  READY   STATUS        RESTARTS      AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running       2 (14m ago)   32m   10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running       1 (14m ago)   21m   10.42.3.61   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Terminating   1 (14m ago)   15m   10.42.2.56   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running       0             27m   10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Terminating   0             36m   10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running       0             36m   10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed     0             35m   10.42.0.14   mk-cp   <none>           <none>
+BOOT 1791981159696
+ALL_DB_READY_AFTER_BOOT 900s
+NAME                  READY   STATUS             RESTARTS       AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running            2 (29m ago)    47m   10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running            1 (29m ago)    36m   10.42.3.61   mk-w1   <none>           <none>
+mariadb-galera-2      1/2     CrashLoopBackOff   7 (3m1s ago)   14m   10.42.2.58   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running            0              42m   10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running            0              14m   10.42.2.57   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running            0              51m   10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed          0              50m   10.42.0.14   mk-cp   <none>           <none>
+main outage 11.1s starting +2.1s; 13 interval(s), total 43.4s; primary mariadb-galera-2 21619 -> mariadb-galera-0 33516
+   +2.1s .. +13.2s  (11.1s, 4 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +13.9s .. +16.3s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +16.8s .. +19.3s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +20.0s .. +22.4s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +23.8s .. +28.5s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +28.5s .. +30.9s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +30.9s .. +33.4s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +33.4s .. +35.9s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +36.6s .. +43.5s  (6.9s, 3 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +44.5s .. +47.0s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +47.0s .. +49.4s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +786.7s .. +787.3s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +804.1s .. +804.6s  (0.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +2.1s..+49.4s = 47.3s (17 fails); +786.7s..+787.3s = 0.6s (1 fails); +804.1s..+804.6s = 0.5s (1 fails)
+LOSTCHECK acked=5155 present=5155 lost=0 (max over members)
+== extra probe mariadbdirect
+main outage 4.5s starting +2.0s; 1 interval(s), total 4.5s; primary mariadb-galera-1 21617 -> mariadb-galera-1 21650
+   +2.0s .. +6.5s  (4.5s, 1 fails) top error: 
+DISRUPT +2.0s..+6.5s = 4.5s (1 fails)
+mariadb-galera-2      1/2     CrashLoopBackOff   7 (3m30s ago)   14m
+maxscale-galera-2     1/1     Running            0               52m
+persistentvolumeclaim "storage-mariadb-galera-2" deleted from mariadb namespace
+pod "mariadb-galera-2" deleted from mariadb namespace
+MANUAL_FIX_READY 903s
+NAME             READY   STATUS             PRIMARY            UPDATES                    AGE
+mariadb-galera   False   Galera not ready   mariadb-galera-1   ReplicasFirstPrimaryLast   69m
+mariadb-galera-0      1/2     CrashLoopBackOff   3 (29s ago)   3m19s
+mariadb-galera-1      1/2     CrashLoopBackOff   3 (21s ago)   3m19s
+mariadb-galera-2      1/2     CrashLoopBackOff   3 (16s ago)   3m19s
+maxscale-galera-0     1/1     Running            0             57m
+maxscale-galera-1     1/1     Running            0             29m
+maxscale-galera-2     1/1     Running            0             67m

@@ -1,0 +1,18 @@
+NAME                                CPU(cores)   MEMORY(bytes)   
+mycluster-0                         29m          955Mi           
+mycluster-1                         46m          880Mi           
+mycluster-2                         29m          1027Mi          
+mycluster-router-6d5dffdd6f-hnrzr   15m          13Mi            
+mycluster-router-6d5dffdd6f-k4rx5   11m          19Mi            
+mycluster-router-6d5dffdd6f-nkbnl   14m          15Mi            
+NAME                              CPU(cores)   MEMORY(bytes)   
+mysql-operator-86cb64fb94-sl6hb   6m           171Mi           
+innodbcluster.mysql.oracle.com "mycluster" deleted from oracle namespace
+namespace "oracle" deleted
+deployment.apps "mysql-operator" deleted from mysql-operator namespace
+NAME              STATUS   AGE
+default           Active   4h10m
+kube-node-lease   Active   4h10m
+kube-public       Active   4h10m
+kube-system       Active   4h10m
+s3                Active   4h7m

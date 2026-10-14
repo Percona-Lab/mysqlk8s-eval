@@ -1,0 +1,16 @@
+perconaxtradbclusterbackup.pxc.percona.com/backup2 created
+BACKUP backup2 Succeeded 53s
+ERROR 1146 (42S02) at line 1: Table 'probe.marker' doesn't exist
+command terminated with exit code 1
+ERROR 1146 (42S02) at line 1: Table 'probe.marker' doesn't exist
+command terminated with exit code 1
+TARGET 2026-10-14 08:53:38
+perconaxtradbclusterrestore.pxc.percona.com/restore2 created
+RESTORE Succeeded 365s
+Defaulted container "xtrabackup" out of: xtrabackup, pitr-init (init)
+2026/10/14 08:59:37 Stopping at binlog_1791968030_000021_4fba0af96764009b2693df30f32101e9 because it's after the recovery time (1791968030 > 1791968018)
+2026/10/14 08:59:37 Waiting for mysql to finish
+2026/10/14 08:59:38 Finished
+CLUSTER_READY_AFTER 1s
+ERROR 1146 (42S02) at line 1: Table 'probe.marker' doesn't exist
+command terminated with exit code 1

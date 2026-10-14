@@ -1,0 +1,6 @@
+MariaDB 12.3.3 / mariadb-operator 26.10.1 Galera: after full-crash test (kill -9 mariadbd on all 3 nodes at 12:17:5x UTC)
+- writes resumed in 15 s (MaxScale) / 25 s (direct primary svc), 0 lost writes
+- galera-1 log 12:18:07 "Found saved state: 0334b073-...:-1, safe_to_bootstrap: 0"; 12:18:19 "clear restored view"; "Bootstrapped primary 00000000-0000-0000-0000-000000000000 found: 3."
+- afterwards on all members: wsrep_local_state_uuid empty, wsrep_cluster_state_uuid 00000000-..., status Primary/Synced; grastate.dat uuid 0000..., seqno -1
+- MariaDB CR stayed Ready=True; no event/condition flagged it
+- latent impact: after hard node power-off (12:24) the rebooted member could never rejoin: mariabackup SST returns ':<seqno>' ("Failed to parse uuid:seqno pair"), then "IST started with wrong seqno: N, expected <= 0" -> restart -> CrashLoopBackOff; wiping the member PVC did not help (same failure) -> cluster stuck at 2/3 members

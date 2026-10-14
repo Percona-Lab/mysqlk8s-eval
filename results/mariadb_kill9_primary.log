@@ -1,0 +1,19 @@
+T=1791979715821
+operator-primary=mariadb-galera-0 node=mk-w2 maxscale-writer=mariadb-galera-1
+killed
+mariadb-galera-0      2/2     Running     1 (2m32s ago)   11m     replica
+mariadb-galera-1      2/2     Running     1 (8m35s ago)   16m     primary
+mariadb-galera-2      2/2     Running     0               16m     replica
+maxscale-galera-0     1/1     Running     0               5m45s   
+maxscale-galera-1     1/1     Running     0               15m     
+maxscale-galera-2     1/1     Running     0               15m     
+main outage 4.4s starting +2.9s; 2 interval(s), total 10.7s; primary mariadb-galera-1 6931 -> mariadb-galera-1 6985
+   +2.9s .. +7.3s  (4.4s, 1 fails) top error: 
+   +7.3s .. +13.6s  (6.3s, 1 fails) top error: 
+DISRUPT +2.9s..+13.6s = 10.7s (2 fails)
+LOSTCHECK acked=645 present=645 lost=0 (max over members)
+== extra probe mariadbdirect
+main outage 3.8s starting +2.8s; 2 interval(s), total 10.8s; primary mariadb-galera-0 6930 -> mariadb-galera-1 6988
+   +2.8s .. +6.7s  (3.8s, 7 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'mariadb-galera-primary
+   +6.7s .. +13.6s  (7.0s, 1 fails) top error: 
+DISRUPT +2.8s..+13.6s = 10.8s (8 fails)

@@ -1,0 +1,87 @@
+T=1791984653131
+writer=mariadb-galera-2 node=mk-w3
+PART_ON 1791984656552
+1791984656480 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1180 (HY000) at line 1: Error while appending streaming replication fragment(provider status: Not connected 
+1791984664627 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:05Z" leve
+1791984667023 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:07Z" leve
+1791984669393 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:09Z" leve
+1791984671763 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:12Z" leve
+1791984674126 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:14Z" leve
+1791984676477 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:16Z" leve
+1791984678792 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:19Z" leve
+1791984681164 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:21Z" leve
+1791984683538 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:23Z" leve
+1791984685980 cont=f70ebf32 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T13:31:26Z" leve
+1791984688356 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:28Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984690831 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:31Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984693133 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:33Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984695467 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:35Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984697789 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:38Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984700063 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:40Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984702356 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:42Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984704654 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:44Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984706975 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:47Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984709347 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:49Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984711687 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:51Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984713980 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:54Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984716268 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:56Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984718570 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:31:58Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984720872 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:01Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984723246 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:03Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984725530 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:05Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984727844 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:08Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984730136 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:10Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984732458 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:12Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984734799 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:15Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984737129 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:17Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984739447 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:19Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984741786 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:22Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984744079 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:24Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984746360 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:26Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+PART_OFF 1791984746767
+1791984748670 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:28Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984751010 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:31Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984753315 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:33Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984755587 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:35Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984757915 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:38Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984760240 cont=66424791 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:40Z" level=error msg="execing command in container 6642479148f7d48fd990180203fdc1d
+1791984762563 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:42Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984764936 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:45Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984767318 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:47Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984769640 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:49Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984771936 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:52Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984774213 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:54Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984776487 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:56Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984778835 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:32:59Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984781296 cont=933d9d79 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-14T13:33:02Z" level=error msg="execing command in container 933d9d79f024a8a6bdb77488eb8b2a5
+1791984784410 cont=933d9d79 WROTE 
+1791984786859 cont=933d9d79 WROTE 
+1791984789225 cont=933d9d79 WROTE 
+NAME                  READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running     0               6m10s   10.42.1.67   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running     0               5m6s    10.42.3.69   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Running     2 (2m31s ago)   6m57s   10.42.2.67   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running     0               89m     10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running     0               61m     10.42.2.57   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running     0               99m     10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed   0               97m     10.42.0.14   mk-cp   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 3
+main outage 10.4s starting +3.2s; 16 interval(s), total 50.6s; primary mariadb-galera-2 56047 -> mariadb-galera-1 56650
+   +3.2s .. +13.6s  (10.4s, 4 fails) top error: 
+   +13.6s .. +16.0s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +17.1s .. +21.9s  (4.8s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +22.9s .. +25.3s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +26.0s .. +28.5s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +29.6s .. +34.3s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +34.6s .. +37.0s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +37.0s .. +41.7s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +42.2s .. +46.9s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +47.1s .. +49.6s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +51.0s .. +53.5s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +53.9s .. +56.4s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +56.4s .. +58.8s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +94.0s .. +94.7s  (0.7s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +94.7s .. +95.2s  (0.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +112.1s .. +112.7s  (0.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +3.2s..+58.8s = 55.7s (20 fails); +94.0s..+95.2s = 1.2s (3 fails); +112.1s..+112.7s = 0.5s (1 fails)
+LOSTCHECK acked=958 present=958 lost=0 (max over members)

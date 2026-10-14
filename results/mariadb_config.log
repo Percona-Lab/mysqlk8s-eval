@@ -1,0 +1,12 @@
+T=1791985171629
+mariadb.k8s.mariadb.com/mariadb-galera patched
+ROLLED 93s
+333
+main outage 865.6s starting +34.4s; 1 interval(s), total 865.6s; primary mariadb-galera-1 60376 -> NOT RECOVERED
+   +34.4s .. +900.0s  (865.6s, 320 fails) top error: ERROR 1142 (42000) at line 1: INSERT command denied to user 'probe'@'1
+DISRUPT +34.4s..+900.0s = 865.6s (320 fails)
+LOSTCHECK acked=134 present=134 lost=0 (max over members)
+== extra probe mariadbdirect
+main outage 833.0s starting +67.0s; 1 interval(s), total 833.0s; primary mariadb-galera-0 60374 -> NOT RECOVERED
+   +67.0s .. +900.0s  (833.0s, 159 fails) top error: ERROR 1142 (42000) at line 1: INSERT command denied to user 'probe'@'1
+DISRUPT +67.0s..+900.0s = 833.0s (159 fails)

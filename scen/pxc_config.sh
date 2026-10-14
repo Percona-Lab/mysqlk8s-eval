@@ -1,0 +1,1 @@
+kubectl -n pxc patch pxc cluster1 --type=merge -p '{"spec":{"pxc":{"configuration":"[mysqld]\nmax_connections=333\n"}}}'; T2=$(date +%s); sleep 30; until [ "$(kubectl -n pxc get pxc cluster1 -o jsonpath={.status.state})" = ready ]; do sleep 5; done; echo ROLLED $(( $(date +%s)-T2 ))s; sql cluster1-pxc-1 pxc "select @@max_connections"

@@ -1,0 +1,16 @@
+T=1791975431611
+kill -9 mysqld on ALL workers at once
+NAME                                READY   STATUS      RESTARTS       AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     1 (8m1s ago)   20m   10.42.2.44   mk-w3   <none>           2/2
+mycluster-1                         2/2     Running     1 (8m1s ago)   18m   10.42.3.45   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     2 (8m2s ago)   32m   10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running     0              30m   10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running     0              23m   10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running     0              30m   10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed   0              30m   10.42.0.12   mk-cp   <none>           <none>
+main outage 16.6s starting +0.7s; 3 interval(s), total 25.6s; primary mycluster-2 4916 -> mycluster-1 6604
+   +0.7s .. +17.3s  (16.6s, 35 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +329.3s .. +333.8s  (4.5s, 1 fails) top error: 
+   +452.5s .. +457.0s  (4.5s, 1 fails) top error: 
+DISRUPT +0.7s..+17.3s = 16.6s (35 fails); +329.3s..+333.8s = 4.5s (1 fails); +452.5s..+457.0s = 4.5s (1 fails)
+LOSTCHECK acked=1804 present=1804 lost=0 (max over members)

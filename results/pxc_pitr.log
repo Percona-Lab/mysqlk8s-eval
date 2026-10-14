@@ -1,0 +1,9 @@
+TARGET 2026-10-14 08:37:33
+10820
+sbtest2
+sbtest3
+sbtest4
+2026/10/14 08:40:05 last uploaded binlog: binlog.000045
+2026/10/14 08:40:05 starting to process binlog with name binlog.000046
+2026/10/14 08:40:05 successfully wrote binlog file binlog.000046 to storage with name binlog_1791967143_000046_5b0e05503ef4b2fd12c7e3eee7e99fdd
+perconaxtradbclusterrestore.pxc.percona.com/restore1 created

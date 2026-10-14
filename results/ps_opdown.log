@@ -1,0 +1,29 @@
+T=1791970660715
+writer=ps-cluster1-mysql-0
+deployment.apps/percona-server-mysql-operator scaled
+pod "ps-cluster1-mysql-0" deleted from ps namespace
+NAME                          READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+ps-cluster1-binlog-server-0   1/1     Running     0               12m     10.42.2.30   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0         2/2     Running     0               2m57s   10.42.3.28   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1         2/2     Running     0               12m     10.42.1.29   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2         2/2     Running     0               11m     10.42.2.31   mk-w3   <none>           <none>
+ps-cluster1-mysql-0           2/2     Running     0               44s     10.42.1.31   mk-w2   <none>           <none>
+ps-cluster1-mysql-1           2/2     Running     1 (5m47s ago)   12m     10.42.2.29   mk-w3   <none>           <none>
+ps-cluster1-mysql-2           2/2     Running     0               11m     10.42.3.27   mk-w1   <none>           <none>
+sysb                          0/1     Completed   0               9m26s   10.42.0.10   mk-cp   <none>           <none>
+deployment.apps/percona-server-mysql-operator scaled
+NAME                                             READY   STATUS      RESTARTS        AGE
+percona-server-mysql-operator-75dfcc9466-hv9zd   1/1     Running     0               60s
+probe-ps                                         1/1     Running     0               10m
+ps-cluster1-binlog-server-0                      1/1     Running     0               13m
+ps-cluster1-haproxy-0                            2/2     Running     0               3m58s
+ps-cluster1-haproxy-1                            2/2     Running     0               13m
+ps-cluster1-haproxy-2                            2/2     Running     0               12m
+ps-cluster1-mysql-0                              2/2     Running     0               105s
+ps-cluster1-mysql-1                              2/2     Running     1 (6m48s ago)   13m
+ps-cluster1-mysql-2                              2/2     Running     0               12m
+sysb                                             0/1     Completed   0               10m
+main outage 2.5s starting +5.9s; 1 interval(s), total 2.5s; primary ps-cluster1-mysql-0 1693 -> ps-cluster1-mysql-1 1717
+   +5.9s .. +8.4s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+DISRUPT +5.9s..+8.4s = 2.5s (1 fails)
+LOSTCHECK acked=528 present=528 lost=0

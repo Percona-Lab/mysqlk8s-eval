@@ -1,0 +1,16 @@
+T=1791964953133
+writer=cluster1-pxc-0 node=mk-w3
+killed
+NAME                                               READY   STATUS    RESTARTS        AGE   IP          NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running   0               27m   10.42.3.2   mk-w1   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running   0               24m   10.42.2.4   mk-w3   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running   0               24m   10.42.1.6   mk-w2   <none>           <none>
+cluster1-pitr-647596bfc4-pm2xh                     1/1     Running   0               21m   10.42.2.5   mk-w3   <none>           <none>
+cluster1-pxc-0                                     3/3     Running   1 (2m31s ago)   12m   10.42.2.7   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running   0               25m   10.42.1.5   mk-w2   <none>           <none>
+cluster1-pxc-2                                     3/3     Running   0               23m   10.42.3.4   mk-w1   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9   1/1     Running   0               10m   10.42.1.7   mk-w2   <none>           <none>
+main outage 5.0s starting +1.9s; 1 interval(s), total 5.0s; primary cluster1-pxc-0 10975 -> cluster1-pxc-2 11001
+   +1.9s .. +6.8s  (5.0s, 3 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+DISRUPT +1.9s..+6.8s = 5.0s (3 fails)
+LOSTCHECK acked=629 present=629 lost=0

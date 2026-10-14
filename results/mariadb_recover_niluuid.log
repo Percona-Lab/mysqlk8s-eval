@@ -1,0 +1,28 @@
+T=1791982743624
+pod "mariadb-galera-0" deleted from mariadb namespace
+pod "mariadb-galera-1" deleted from mariadb namespace
+pod "mariadb-galera-2" deleted from mariadb namespace
+READY_AFTER 1211s
+NAME             READY   STATUS                                                                                                                                                                               PRIMARY            UPDATES                    AGE
+mariadb-galera   False   Error reconciling Galera: error restarting Pods: error enabling bootstrap in Pod 'mariadb-galera-2': error enabling bootstrap in Pod 'mariadb-galera-2': context deadline exceeded   mariadb-galera-1   ReplicasFirstPrimaryLast   85m
+mariadb-galera-0      1/2     CrashLoopBackOff   7 (3m58s ago)   19m
+mariadb-galera-1      1/2     CrashLoopBackOff   7 (3m40s ago)   19m
+mariadb-galera-2      1/2     CrashLoopBackOff   7 (3m44s ago)   19m
+maxscale-galera-0     1/1     Running            0               73m
+maxscale-galera-1     1/1     Running            0               45m
+maxscale-galera-2     1/1     Running            0               83m
+error: unable to upgrade connection: container not found ("mariadb")
+{"bootstrap":{"pod":"mariadb-galera-2","time":"2026-10-14T13:09:59Z"},"recovered":{"mariadb-galera-0":{"seqno":18819,"uuid":"00000000-0000-0000-0000-000000000000"},"mariadb-galera-1":{"seqno":18822,"uuid":"00000000-0000-0000-0000-000000000000"},"mariadb-galera-2":{"seqno":18486,"uuid":"00000000-0000
+mariadb.k8s.mariadb.com/mariadb-galera patched
+FORCED_READY_AFTER 400s
+NAME             READY   STATUS    PRIMARY            UPDATES                    AGE
+mariadb-galera   True    Running   mariadb-galera-1   ReplicasFirstPrimaryLast   91m
+mariadb-galera-0      2/2     Running     0             32s
+mariadb-galera-1      2/2     Running     0             5m50s
+mariadb-galera-2      2/2     Running     8 (10m ago)   26m
+maxscale-galera-0     1/1     Running     0             80m
+maxscale-galera-1     1/1     Running     0             52m
+maxscale-galera-2     1/1     Running     0             89m
+main outage 1270.3s starting +1.0s; 6 interval(s), total 1316.8s; primary mariadb-galera-1 50781 -> mariadb-galera-2 50871
+DISRUPT +1.0s..+1329.0s = 1328.0s (5751 fails)
+LOSTCHECK acked=8727 present=8727 lost=0 (max over members)

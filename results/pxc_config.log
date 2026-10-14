@@ -1,0 +1,9 @@
+T=1791969291228
+perconaxtradbcluster.pxc.percona.com/cluster1 patched
+ROLLED 187s
+333
+main outage 14.7s starting +133.1s; 2 interval(s), total 15.2s; primary cluster1-pxc-0 36465 -> cluster1-pxc-0 38131
+   +133.1s .. +147.9s  (14.7s, 7 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +182.9s .. +183.4s  (0.5s, 1 fails) top error: ERROR 2026 (HY000): SSL connection error: error:0A000126:SSL routines:
+DISRUPT +133.1s..+147.9s = 14.7s (7 fails); +182.9s..+183.4s = 0.5s (1 fails)
+LOSTCHECK acked=726 present=726 lost=0

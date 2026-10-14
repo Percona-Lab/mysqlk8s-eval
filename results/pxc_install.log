@@ -1,0 +1,22 @@
+namespace/pxc created
+serviceaccount/percona-xtradb-cluster-operator serverside-applied
+rolebinding.rbac.authorization.k8s.io/service-account-percona-xtradb-cluster-operator serverside-applied
+deployment.apps/percona-xtradb-cluster-operator serverside-applied
+Waiting for deployment "percona-xtradb-cluster-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-xtradb-cluster-operator" successfully rolled out
+OPERATOR_READY 13s
+secret/s3-creds created
+perconaxtradbcluster.pxc.percona.com/cluster1 created
+CLUSTER_READY 382s
+NAME                                            ENDPOINT               STATUS   PXC   PROXYSQL   HAPROXY   AGE
+perconaxtradbcluster.pxc.percona.com/cluster1   cluster1-haproxy.pxc   ready    3                3         6m22s
+
+NAME                                                   READY   STATUS     RESTARTS   AGE     IP          NODE    NOMINATED NODE   READINESS GATES
+pod/cluster1-haproxy-0                                 2/2     Running    0          6m18s   10.42.3.2   mk-w1   <none>           <none>
+pod/cluster1-haproxy-1                                 2/2     Running    0          3m58s   10.42.2.4   mk-w3   <none>           <none>
+pod/cluster1-haproxy-2                                 2/2     Running    0          3m22s   10.42.1.6   mk-w2   <none>           <none>
+pod/cluster1-pitr-647596bfc4-pm2xh                     0/1     Init:0/1   0          2s      10.42.2.5   mk-w3   <none>           <none>
+pod/cluster1-pxc-0                                     3/3     Running    0          6m18s   10.42.2.3   mk-w3   <none>           <none>
+pod/cluster1-pxc-1                                     3/3     Running    0          4m7s    10.42.1.5   mk-w2   <none>           <none>
+pod/cluster1-pxc-2                                     3/3     Running    0          2m7s    10.42.3.4   mk-w1   <none>           <none>
+pod/percona-xtradb-cluster-operator-5dfbf7b796-hdnnh   1/1     Running    0          6m33s   10.42.1.3   mk-w2   <none>           <none>

@@ -1,0 +1,9 @@
+T=1791970547459
+proxy=ps-cluster1-haproxy-0
+pod "ps-cluster1-haproxy-0" deleted from ps namespace
+NAME                    READY   STATUS    RESTARTS   AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+ps-cluster1-haproxy-0   2/2     Running   0          89s   10.42.3.28   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1   2/2     Running   0          10m   10.42.1.29   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2   2/2     Running   0          10m   10.42.2.31   mk-w3   <none>           <none>
+no failed writes; primary ps-cluster1-mysql-0 1271
+LOSTCHECK acked=403 present=403 lost=0

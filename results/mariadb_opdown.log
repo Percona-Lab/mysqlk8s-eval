@@ -1,0 +1,31 @@
+T=1791980073578
+writer=mariadb-galera-2
+deployment.apps/mariadb-operator scaled
+pod "mariadb-galera-2" deleted from mariadb namespace
+NAME                  READY   STATUS      RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running     1 (7m1s ago)   15m     10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running     0              4m9s    10.42.3.61   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Running     0              58s     10.42.2.53   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running     0              10m     10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running     0              19m     10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running     0              19m     10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed   0              18m     10.42.0.14   mk-cp   <none>           <none>
+deployment.apps/mariadb-operator scaled
+NAME                  READY   STATUS      RESTARTS       AGE
+mariadb-galera-0      2/2     Running     1 (8m2s ago)   16m
+mariadb-galera-1      2/2     Running     0              5m10s
+mariadb-galera-2      2/2     Running     0              119s
+maxscale-galera-0     1/1     Running     0              11m
+maxscale-galera-1     1/1     Running     0              20m
+maxscale-galera-2     1/1     Running     0              20m
+probe-mariadb         1/1     Running     0              17m
+probe-mariadbdirect   1/1     Running     0              8m30s
+sysb                  0/1     Completed   0              19m
+main outage 1.5s starting +5.6s; 3 interval(s), total 6.4s; primary mariadb-galera-2 12649 -> mariadb-galera-1 12772
+   +5.6s .. +7.1s  (1.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +7.1s .. +11.6s  (4.5s, 1 fails) top error: 
+   +12.1s .. +12.5s  (0.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +5.6s..+12.5s = 6.9s (3 fails)
+LOSTCHECK acked=576 present=576 lost=0 (max over members)
+== extra probe mariadbdirect
+no failed writes; primary mariadb-galera-0 12648

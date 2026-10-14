@@ -1,0 +1,15 @@
+T=1791965239663
+kill -9 mysqld on ALL workers at once
+NAME                                               READY   STATUS    RESTARTS        AGE     IP          NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running   0               36m     10.42.3.2   mk-w1   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running   0               34m     10.42.2.4   mk-w3   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running   0               33m     10.42.1.6   mk-w2   <none>           <none>
+cluster1-pitr-647596bfc4-pm2xh                     1/1     Running   1 (5m35s ago)   30m     10.42.2.5   mk-w3   <none>           <none>
+cluster1-pxc-0                                     3/3     Running   2 (7m3s ago)    21m     10.42.2.7   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running   2 (5m26s ago)   34m     10.42.1.5   mk-w2   <none>           <none>
+cluster1-pxc-2                                     3/3     Running   2 (5m26s ago)   8m41s   10.42.3.7   mk-w1   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9   1/1     Running   0               19m     10.42.1.7   mk-w2   <none>           <none>
+main outage 96.5s starting +0.8s; 1 interval(s), total 96.5s; primary cluster1-pxc-0 14036 -> cluster1-pxc-0 14049
+   +0.8s .. +97.4s  (96.5s, 108 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +0.8s..+97.4s = 96.5s (108 fails)
+LOSTCHECK acked=1318 present=1318 lost=0

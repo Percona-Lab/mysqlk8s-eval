@@ -1,0 +1,12 @@
+backup.k8s.mariadb.com/logical1 created
+physicalbackup.k8s.mariadb.com/physical1 created
+backup/logical1 complete +38s
+physicalbackup/physical1 complete +91s
+NAME                              COMPLETE   STATUS    MARIADB          AGE
+backup.k8s.mariadb.com/logical1   True       Success   mariadb-galera   91s
+
+NAME                                       COMPLETE   STATUS    MARIADB          LAST SCHEDULED   AGE
+physicalbackup.k8s.mariadb.com/physical1   True       Success   mariadb-galera   90s              91s
+NAME                             READY   STATUS      RESTARTS        AGE
+logical1-jn74z                   0/1     Completed   0               91s
+physical1-20261014133552-drtgc   0/1     Completed   0               90s

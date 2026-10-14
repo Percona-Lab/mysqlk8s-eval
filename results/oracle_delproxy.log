@@ -1,0 +1,9 @@
+T=1791974478861
+proxy=mycluster-router-6d5dffdd6f-4tj7m
+pod "mycluster-router-6d5dffdd6f-4tj7m" deleted from oracle namespace
+NAME                                READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running   0          8m17s   10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running   0          90s     10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running   0          8m17s   10.42.1.46   mk-w2   <none>           <none>
+no failed writes; primary mycluster-0 1319
+LOSTCHECK acked=416 present=416 lost=0

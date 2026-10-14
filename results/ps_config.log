@@ -1,0 +1,8 @@
+T=1791973600508
+perconaservermysql.ps.percona.com/ps-cluster1 patched
+ROLLED 199s
+333
+main outage 4.2s starting +128.1s; 1 interval(s), total 4.2s; primary ps-cluster1-mysql-0 10711 -> ps-cluster1-mysql-2 11181
+   +128.1s .. +132.3s  (4.2s, 7 fails) top error: ERROR 1290 (HY000) at line 1: The MySQL server is running with the --r
+DISRUPT +128.1s..+132.3s = 4.2s (7 fails)
+LOSTCHECK acked=782 present=782 lost=0

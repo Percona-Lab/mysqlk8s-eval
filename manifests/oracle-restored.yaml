@@ -1,0 +1,16 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata: {name: restored}
+spec:
+  secretName: mypwds
+  tlsUseSelfSigned: true
+  instances: 1
+  router: {instances: 1}
+  datadirVolumeClaimTemplate:
+    accessModes: [ReadWriteOnce]
+    resources: {requests: {storage: 10Gi}}
+  initDB:
+    dump:
+      name: dump1
+      storage:
+        s3: {bucketName: oracle, prefix: dumps/dump1-20261014-112411, config: s3-config, profile: default, endpoint: "http://s3.s3.svc:9000"}

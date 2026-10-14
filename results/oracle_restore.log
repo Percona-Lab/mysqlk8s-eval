@@ -1,0 +1,7 @@
+innodbcluster.mysql.oracle.com/restored created
+RESTORED_ONLINE 789s
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   65m
+restored    ONLINE   1        1           1         UNKNOWN   102s
+500000
+10695

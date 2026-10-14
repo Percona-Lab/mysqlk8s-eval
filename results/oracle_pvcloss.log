@@ -1,0 +1,18 @@
+T=1791974734733
+writer=mycluster-2 victim=mycluster-1 pvc=datadir-mycluster-1
+persistentvolumeclaim "datadir-mycluster-1" deleted from oracle namespace
+pod "mycluster-1" deleted from oracle namespace
+REBUILT_READY 21s
+NAME                                READY   STATUS        RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running       0               42s     10.42.2.44   mk-w3   <none>           2/2
+mycluster-1                         2/2     Terminating   0               13m     10.42.3.41   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       1 (7m26s ago)   13m     10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running       0               11m     10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running       0               4m37s   10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running       0               11m     10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed     0               10m     10.42.0.12   mk-cp   <none>           <none>
+main outage 8.7s starting +11.2s; 1 interval(s), total 8.7s; primary mycluster-2 2290 -> mycluster-2 2337
+   +11.2s .. +19.8s  (8.7s, 2 fails) top error: 
+DISRUPT +11.2s..+19.8s = 8.7s (2 fails)
+LOSTCHECK acked=110 present=110 lost=0
+PVC-loss start 10:45:34, new mycluster-1 Ready at 2026-10-14T10:47:47Z => 133s (includes 120s terminationGracePeriod; first REBUILT_READY 21s was a false positive on the old terminating pod)

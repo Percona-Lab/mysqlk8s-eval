@@ -1,0 +1,11 @@
+NAME                  CPU(cores)   MEMORY(bytes)   
+mariadb-galera-0      18m          153Mi           
+mariadb-galera-1      32m          157Mi           
+mariadb-galera-2      24m          157Mi           
+maxscale-galera-0     8m           10Mi            
+maxscale-galera-1     8m           31Mi            
+maxscale-galera-2     9m           13Mi            
+NAME                                                CPU(cores)   MEMORY(bytes)   
+mariadb-operator-5d6b8c4d9-m7qwd                    4m           44Mi            
+mariadb-operator-cert-controller-684d7dc58c-vsml2   1m           14Mi            
+mariadb-operator-webhook-67676984df-ftht4           1m           15Mi            

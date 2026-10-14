@@ -1,0 +1,15 @@
+T=1791979182294
+writer=mariadb-galera-0 node=mk-w2
+pod "mariadb-galera-0" deleted from mariadb namespace
+NAME                READY   STATUS      RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          2m29s   10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running     0          7m51s   10.42.3.58   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running     0          7m51s   10.42.2.50   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running     0          6m13s   10.42.1.56   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          6m13s   10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running     0          6m13s   10.42.3.60   mk-w1   <none>           <none>
+sysb                0/1     Completed   0          4m41s   10.42.0.14   mk-cp   <none>           <none>
+main outage 1.4s starting +1.3s; 1 interval(s), total 1.4s; primary mariadb-galera-0 379 -> mariadb-galera-1 399
+   +1.3s .. +2.7s  (1.4s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +1.3s..+2.7s = 1.4s (1 fails)
+LOSTCHECK acked=701 present=701 lost=0 (max over members)

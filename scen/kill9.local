@@ -1,0 +1,1 @@
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"; ssh -F ssh_config $N 'pkill -9 -x mysqld; pkill -9 -x mariadbd; echo killed'; sleep ${S:-150}; rx "kubectl -n $NS get pods -o wide | grep -v probe"

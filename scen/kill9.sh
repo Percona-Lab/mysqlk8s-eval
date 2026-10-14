@@ -1,0 +1,1 @@
+W=$(writer); echo "writer=$W"; kubectl -n $NS exec $W -c $DBCONT -- bash -c 'for p in /proc/[0-9]*; do c=$(cat $p/comm 2>/dev/null); case $c in mysqld|mariadbd) echo kill ${p#/proc/} $c; kill -9 ${p#/proc/};; esac; done'; sleep ${S:-150}; kubectl -n $NS get pods -o wide | grep -v probe

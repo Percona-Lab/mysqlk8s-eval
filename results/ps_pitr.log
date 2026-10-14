@@ -1,0 +1,37 @@
+primary=ps-cluster1-mysql-0
+perconaservermysqlbackup.ps.percona.com/backup1 created
+BACKUP backup1 Succeeded 27s
+NAME      TYPE   STORAGE   DESTINATION                                              STATE       COMPLETED   AGE
+backup1   full   s3        s3://psbk/backups/ps-cluster1-2026-10-14-10:18:18-full   Succeeded   3s          28s
+TARGET 2026-10-14T10:18:48Z
+perconaservermysqlrestore.ps.percona.com/restore1 created
+RESTORE Error 0s
+{"state":"Error","stateDescription":"reconcile pitr config: search binlogs: search binlogs: exec binlog_server search_by_timestamp: stdout: {\"version\":1,\"status\":\"error\",\"message\":\"Invalid timestamp format\"}\n stderr: : command terminated with exit code 1"}
+CLUSTER_READY_AFTER 0s
+ERROR 1146 (42S02) at line 1: Table 'sbtest.sbtest1' doesn't exist
+1	after-backup
+2	after-target
+command terminated with exit code 1
+percona-server-mysql-operator-75dfcc9466-whhb6   1/1     Running     2 (6m43s ago)   24m
+ps-cluster1-haproxy-0                            2/2     Running     0               45m
+ps-cluster1-haproxy-1                            2/2     Running     0               9m1s
+ps-cluster1-haproxy-2                            2/2     Running     0               53m
+ps-cluster1-mysql-0                              2/2     Running     0               9m1s
+ps-cluster1-mysql-1                              2/2     Running     0               36m
+ps-cluster1-mysql-2                              2/2     Running     1 (6m32s ago)   36m
+restore2 start 1791973309727
+RESTORE2 {"state":"Succeeded"} 263s
+CLUSTER_READY_AFTER 0s
+1	after-backup
+500000
+percona-server-mysql-operator-75dfcc9466-whhb6   1/1     Running     2 (12m ago)    30m
+pitr-restore-restore2-r5lxl                      0/1     Completed   0              3m45s
+ps-cluster1-haproxy-0                            2/2     Running     0              2m45s
+ps-cluster1-haproxy-1                            2/2     Running     0              2m25s
+ps-cluster1-haproxy-2                            2/2     Running     0              2m4s
+ps-cluster1-mysql-0                              2/2     Running     0              3m23s
+ps-cluster1-mysql-1                              2/2     Running     1 (2m2s ago)   2m48s
+ps-cluster1-mysql-2                              2/2     Running     1 (43s ago)    90s
+xb-restore-restore2-ndpcg                        0/1     Completed   0              4m7s
+main outage 131.8s starting +-12.4s; 1 interval(s), total 131.8s; primary ps-cluster1-mysql-0 10746 -> ps-cluster1-mysql-0 10111
+DISRUPT +-12.4s..+119.3s = 131.8s (119 fails)

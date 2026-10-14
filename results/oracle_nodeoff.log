@@ -1,0 +1,40 @@
+T=1791975936836
+writer=mycluster-1 node=mk-w1 id=108112995
+POWEROFF 1791975938692
+NAME    STATUS     ROLES           AGE     VERSION
+mk-cp   Ready      control-plane   3h38m   v1.37.1+k3s1
+mk-w1   NotReady   <none>          3h37m   v1.37.1+k3s1
+mk-w2   Ready      <none>          3h37m   v1.37.1+k3s1
+mk-w3   Ready      <none>          3h37m   v1.37.1+k3s1
+NAME                                READY   STATUS        RESTARTS      AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running       1 (14m ago)   26m   10.42.2.44   mk-w3   <none>           2/2
+mycluster-1                         2/2     Terminating   1 (14m ago)   25m   10.42.3.45   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       2 (14m ago)   39m   10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-crrwh   1/1     Terminating   0             37m   10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-hnrzr   1/1     Running       0             18s   10.42.2.45   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running       0             30m   10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running       0             37m   10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed     0             36m   10.42.0.12   mk-cp   <none>           <none>
+ALL_DB_READY_AFTER_BOOT 1791976544s
+BOOT 1791976544939
+NAME                                READY   STATUS        RESTARTS      AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running       1 (18m ago)   30m     10.42.2.44   mk-w3   <none>           2/2
+mycluster-1                         2/2     Terminating   1 (18m ago)   29m     10.42.3.45   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       2 (18m ago)   43m     10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-crrwh   1/1     Terminating   0             41m     10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-hnrzr   1/1     Running       0             4m23s   10.42.2.45   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running       0             34m     10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running       0             41m     10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed     0             40m     10.42.0.12   mk-cp   <none>           <none>
+main outage 27.9s starting +2.8s; 8 interval(s), total 46.7s; primary mycluster-1 6781 -> mycluster-2 7964
+   +2.8s .. +30.7s  (27.9s, 15 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +31.8s .. +34.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +34.2s .. +39.0s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +39.2s .. +46.1s  (6.9s, 3 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +148.8s .. +151.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +348.9s .. +349.9s  (1.0s, 3 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +351.5s .. +352.2s  (0.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +352.2s .. +352.7s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+DISRUPT +2.8s..+46.1s = 43.3s (21 fails); +148.8s..+151.2s = 2.5s (1 fails); +348.9s..+352.7s = 3.8s (6 fails)
+LOSTCHECK acked=2235 present=2235 lost=0 (max over members)
+ALL_DB_READY_AFTER_BOOT(corrected) 97s

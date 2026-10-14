@@ -1,0 +1,18 @@
+T=1791980285360
+kill -9 mysqld on ALL workers at once
+NAME                  READY   STATUS      RESTARTS       AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running     2 (8m3s ago)   26m    10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running     1 (8m3s ago)   14m    10.42.3.61   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Running     1 (8m3s ago)   9m8s   10.42.2.56   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running     0              20m    10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running     0              30m    10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running     0              30m    10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed   0              28m    10.42.0.14   mk-cp   <none>           <none>
+main outage 15.2s starting +0.9s; 1 interval(s), total 15.2s; primary mariadb-galera-2 15382 -> mariadb-galera-2 15397
+   +0.9s .. +16.2s  (15.2s, 66 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +0.9s..+16.2s = 15.2s (66 fails)
+LOSTCHECK acked=2035 present=2035 lost=0 (max over members)
+== extra probe mariadbdirect
+main outage 25.2s starting +0.9s; 1 interval(s), total 25.2s; primary mariadb-galera-0 15381 -> mariadb-galera-1 15539
+   +0.9s .. +26.2s  (25.2s, 36 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'mariadb-galera-primary
+DISRUPT +0.9s..+26.2s = 25.2s (36 fails)

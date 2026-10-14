@@ -1,0 +1,199 @@
+2026-10-14 12:58:03+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:12.3.3+maria~ubu2404 started.
+2026-10-14 12:58:04+00:00 [Note] [Entrypoint]: MariaDB upgrade information missing, assuming required
+2026-10-14 12:58:04+00:00 [Note] [Entrypoint]: MariaDB upgrade (mariadb-upgrade or creating healthcheck users) required, but skipped due to $MARIADB_AUTO_UPGRADE setting
+2026-10-14 12:58:04 0 [Warning] --temp-pool is deprecated and will be removed in a future release
+2026-10-14 12:58:04 0 [Note] slave_connections_needed_for_purge changed to 0 because of Galera. Change it to 1 or higher if this Galera node is also Master in a normal replication setup
+2026-10-14 12:58:04 0 [Note] Starting MariaDB 12.3.3-MariaDB-ubu2404 source revision 83e909fc2a0dbc394b4b683fb3fa2d7dcf26cc5e server_uid rYRFR/OWLNO58eCPcewOVbpUIbE= as process 1
+2026-10-14 12:58:04 0 [Note] WSREP: Loading provider /usr/lib/galera/libgalera_smm.so initial position: 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:04 0 [Note] WSREP: wsrep_load(): loading provider library '/usr/lib/galera/libgalera_smm.so'
+2026-10-14 12:58:04 0 [Note] WSREP: wsrep_load(): Galera 26.4.27(rf032a460) by Codership Oy <info@codership.com> loaded successfully.
+2026-10-14 12:58:04 0 [Note] WSREP: Initializing allowlist service v1
+2026-10-14 12:58:04 0 [Note] WSREP: Initializing event service v1
+2026-10-14 12:58:04 0 [Note] WSREP: Resolved symbol 'wsrep_node_isolation_mode_set_v1'
+2026-10-14 12:58:04 0 [Note] WSREP: Resolved symbol 'wsrep_certify_v1'
+2026-10-14 12:58:04 0 [Note] WSREP: CRC-32C: using 64-bit x86 acceleration.
+2026-10-14 12:58:04 0 [Note] WSREP: Found saved state: 00000000-0000-0000-0000-000000000000:-1, safe_to_bootstrap: 1
+2026-10-14 12:58:04 0 [Note] WSREP: GCache DEBUG: opened preamble:
+Version: 2
+UUID: 00000000-0000-0000-0000-000000000000
+Seqno: -1 - -1
+Offset: -1
+Synced: 0
+2026-10-14 12:58:04 0 [Note] WSREP: Skipped GCache ring buffer recovery: could not determine history UUID.
+2026-10-14 12:58:04 0 [Note] WSREP: Passing config to GCS: base_dir = /var/lib/mysql/; base_host = 10.42.2.61; base_port = 4567; cert.log_conflicts = no; cert.optimistic_pa = yes; debug = no; evs.auto_evict = 0; evs.causal_keepalive_period = PT1S; evs.debug_log_mask = 0x1; evs.delay_margin = PT1S; evs.delayed_keep_period = PT30S; evs.inactive_check_period = PT0.5S; evs.inactive_timeout = PT15S; evs.info_log_mask = 0; evs.join_retrans_period = PT1S; evs.keepalive_period = PT1S; evs.max_install_timeouts = 3; evs.send_window = 4; evs.stats_report_period = PT1M; evs.suspect_timeout = PT5S; evs.use_aggregate = true; evs.user_send_window = 2; evs.version = 1; evs.view_forget_timeout = PT24H; gcache.dir = /var/lib/mysql/; gcache.keep_pages_size = 0; gcache.keep_plaintext_size = 128M; gcache.mem_size = 0; gcache.name = galera.cache; gcache.page_size = 128M; gcache.recover = yes; gcache.size = 128M; gcomm.thread_prio = ; gcs.check_appl_proto = 1; gcs.fc_debug = 0; gcs.fc_factor = 1.0; gcs.fc_limit = 16; gcs.fc_master_slave = no; gcs.fc_single_pr
+2026-10-14 12:58:04 0 [Note] WSREP: Start replication
+2026-10-14 12:58:04 0 [Note] WSREP: Connecting with bootstrap option: 0
+2026-10-14 12:58:04 0 [Note] WSREP: Setting GCS initial position to 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:04 0 [Note] WSREP: protonet asio version 0
+2026-10-14 12:58:04 0 [Note] WSREP: Using CRC-32C for message checksums.
+2026-10-14 12:58:04 0 [Note] WSREP: backend: asio
+2026-10-14 12:58:04 0 [Note] WSREP: gcomm thread scheduling priority set to other:0 
+2026-10-14 12:58:04 0 [Note] WSREP: access file(/var/lib/mysql//gvwstate.dat) failed(No such file or directory)
+2026-10-14 12:58:04 0 [Note] WSREP: restore pc from disk failed
+2026-10-14 12:58:04 0 [Note] WSREP: GMCast version 0
+2026-10-14 12:58:04 0 [Note] WSREP: (e4ea71ed-8450, 'tcp://0.0.0.0:4567') listening at tcp://0.0.0.0:4567
+2026-10-14 12:58:04 0 [Note] WSREP: (e4ea71ed-8450, 'tcp://0.0.0.0:4567') multicast: , ttl: 1
+2026-10-14 12:58:04 0 [Note] WSREP: EVS version 1
+2026-10-14 12:58:04 0 [Note] WSREP: gcomm: connecting to group 'mariadb-operator', peer 'mariadb-galera-0.mariadb-galera-internal.mariadb.svc.cluster.local:,mariadb-galera-1.mariadb-galera-internal.mariadb.svc.cluster.local:,mariadb-galera-2.mariadb-galera-internal.mariadb.svc.cluster.local:'
+2026-10-14 12:58:05 0 [Note] WSREP: EVS version upgrade 0 -> 1
+2026-10-14 12:58:05 0 [Note] WSREP: PC protocol upgrade 0 -> 1
+2026-10-14 12:58:05 0 [Note] WSREP: No nodes coming from primary view, primary view is not possible
+2026-10-14 12:58:05 0 [Note] WSREP: view(view_id(NON_PRIM,e4ea71ed-8450,1) memb {
+	e4ea71ed-8450,0
+} joined {
+} left {
+} partitioned {
+})
+2026-10-14 12:58:05 0 [Note] WSREP: Failed to establish connection: wrong version number (SSL routines)
+2026-10-14 12:58:05 0 [Note] WSREP: (e4ea71ed-8450, 'tcp://0.0.0.0:4567') connection established to 64a58901-a2b8 tcp://10.42.3.61:4567
+2026-10-14 12:58:05 0 [Note] WSREP: (e4ea71ed-8450, 'tcp://0.0.0.0:4567') connection established to c0b2296e-b99b tcp://10.42.1.57:4567
+2026-10-14 12:58:06 0 [Note] WSREP: declaring 64a58901-a2b8 at tcp://10.42.3.61:4567 stable
+2026-10-14 12:58:06 0 [Note] WSREP: declaring c0b2296e-b99b at tcp://10.42.1.57:4567 stable
+2026-10-14 12:58:06 0 [Note] WSREP: Node 64a58901-a2b8 state prim
+2026-10-14 12:58:06 0 [Note] WSREP: view(view_id(PRIM,64a58901-a2b8,59) memb {
+	64a58901-a2b8,0
+	c0b2296e-b99b,0
+	e4ea71ed-8450,0
+} joined {
+} left {
+} partitioned {
+})
+2026-10-14 12:58:06 0 [Note] WSREP: save pc into disk
+2026-10-14 12:58:06 0 [Note] WSREP: discarding pending addr without UUID: tcp://10.42.2.61:4567
+2026-10-14 12:58:06 0 [Note] WSREP: gcomm: connected
+2026-10-14 12:58:06 0 [Note] WSREP: Changing maximum packet size to 64500, resulting msg size: 32636
+2026-10-14 12:58:06 0 [Note] WSREP: Shifting CLOSED -> OPEN (TO: 0)
+2026-10-14 12:58:06 0 [Note] WSREP: Opened channel 'mariadb-operator'
+2026-10-14 12:58:06 0 [Note] WSREP: New COMPONENT: primary = no, bootstrap = no, my_idx = 0, memb_num = 1
+2026-10-14 12:58:06 0 [Note] WSREP: Flow-control interval: [16, 16]
+2026-10-14 12:58:06 0 [Note] WSREP: Received NON-PRIMARY.
+2026-10-14 12:58:06 0 [Note] WSREP: New COMPONENT: primary = yes, bootstrap = no, my_idx = 2, memb_num = 3
+2026-10-14 12:58:06 0 [Note] WSREP: STATE EXCHANGE: Waiting for state UUID.
+2026-10-14 12:58:06 0 [Note] WSREP: Action message in non-primary configuration from member 0
+2026-10-14 12:58:06 0 [Note] WSREP: STATE EXCHANGE: sent state msg: e5f85773-c7ce-11f1-adf7-0f46b51d0e7f
+2026-10-14 12:58:06 0 [Note] WSREP: STATE EXCHANGE: got state msg: e5f85773-c7ce-11f1-adf7-0f46b51d0e7f from 0 (mariadb-galera-1)
+2026-10-14 12:58:06 0 [Note] WSREP: STATE EXCHANGE: got state msg: e5f85773-c7ce-11f1-adf7-0f46b51d0e7f from 1 (mariadb-galera-0)
+2026-10-14 12:58:06 0 [Note] WSREP: Initializing config service v1
+2026-10-14 12:58:06 2 [Note] WSREP: Starting applier thread 2
+2026-10-14 12:58:06 1 [Note] WSREP: Starting rollbacker thread 1
+2026-10-14 12:58:06 0 [Note] WSREP: Deinitializing config service v1
+2026-10-14 12:58:06 2 [Note] WSREP: ================================================
+View:
+  id: 00000000-0000-0000-0000-000000000000:-1
+  status: non-primary
+  protocol_version: -1
+  capabilities: 
+  final: no
+  own_index: 0
+  members(1):
+	0: e4ea71ed-c7ce-11f1-8450-3298c07152c6, mariadb-galera-2
+=================================================
+2026-10-14 12:58:06 2 [Note] WSREP: Non-primary view
+2026-10-14 12:58:06 2 [Note] WSREP: Server status change disconnected -> connected
+2026-10-14 12:58:06 2 [Note] WSREP: wsrep_notify_cmd is not defined, skipping notification.
+2026-10-14 12:58:06 0 [Note] WSREP: STATE EXCHANGE: got state msg: e5f85773-c7ce-11f1-adf7-0f46b51d0e7f from 2 (mariadb-galera-2)
+2026-10-14 12:58:06 0 [Note] WSREP: Quorum results:
+	version    = 6,
+	component  = PRIMARY,
+	conf_id    = 31,
+	members    = 2/3 (joined/total),
+	act_id     = 18355,
+	last_appl. = 18334,
+	protocols  = 6/11/4 (gcs/repl/appl),
+	vote policy= 0,
+	group UUID = 00000000-0000-0000-0000-000000000000
+2026-10-14 12:58:06 0 [Note] WSREP: Flow-control interval: [28, 28]
+2026-10-14 12:58:06 0 [Note] WSREP: Shifting OPEN -> PRIMARY (TO: 18356)
+2026-10-14 12:58:06 2 [Note] WSREP: ####### processing CC 18356, local, ordered
+2026-10-14 12:58:06 2 [Note] WSREP: Process first view: 00000000-0000-0000-0000-000000000000 my uuid: e4ea71ed-c7ce-11f1-8450-3298c07152c6
+2026-10-14 12:58:06 2 [Note] WSREP: Server mariadb-galera-2 connected to cluster at position 00000000-0000-0000-0000-000000000000:18356 with ID e4ea71ed-c7ce-11f1-8450-3298c07152c6
+2026-10-14 12:58:06 2 [Note] WSREP: Server status change connected -> connected
+2026-10-14 12:58:06 2 [Note] WSREP: ####### My UUID: e4ea71ed-c7ce-11f1-8450-3298c07152c6
+2026-10-14 12:58:06 2 [Note] WSREP: Cert index reset to 00000000-0000-0000-0000-000000000000:-1 (proto: 11), state transfer needed: yes
+2026-10-14 12:58:06 0 [Note] WSREP: Service thread queue flushed.
+2026-10-14 12:58:06 2 [Note] WSREP: ####### Assign initial position for certification: 00000000-0000-0000-0000-000000000000:-1, protocol version: -1
+2026-10-14 12:58:06 2 [Note] WSREP: State transfer required: 
+	Group state: 00000000-0000-0000-0000-000000000000:18356
+	Local state: 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:06 2 [Note] WSREP: Server status change connected -> joiner
+2026-10-14 12:58:06 0 [Note] WSREP: Joiner monitor thread started to monitor
+2026-10-14 12:58:06 0 [Note] WSREP: Running: 'wsrep_sst_mariabackup --role 'joiner' --address '10.42.2.61:4444' --datadir '/var/lib/mysql/' --parent 1 --progress 0'
+WSREP_SST: [INFO] mariabackup SST started on joiner (20261014 12:58:06.150)
+WSREP_SST: [INFO] SSL configuration: CA='', CAPATH='', CERT='', KEY='', MODE='DISABLED', encrypt='0' (20261014 12:58:06.205)
+WSREP_SST: [INFO] Progress reporting tool pv not found in path: /usr//bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin (20261014 12:58:06.365)
+WSREP_SST: [INFO] Disabling all progress/rate-limiting (20261014 12:58:06.367)
+WSREP_SST: [INFO] Streaming with mbstream (20261014 12:58:06.392)
+WSREP_SST: [INFO] Using socat as streamer (20261014 12:58:06.395)
+WSREP_SST: [INFO] Moving '/var/lib/mysql/mariabackup.prepare.log' to '/tmp/sst_log_archive/mariabackup.prepare.log.2026.10.14-12.58.06.404263244' (20261014 12:58:06.411)
+WSREP_SST: [INFO] Moving '/var/lib/mysql/mariabackup.move.log' to '/tmp/sst_log_archive/mariabackup.move.log.2026.10.14-12.58.06.404263244' (20261014 12:58:06.421)
+WSREP_SST: [INFO] 'ss' is selected as a socket information utility. (20261014 12:58:06.466)
+WSREP_SST: [INFO] Evaluating timeout -k 310 300 socat -u TCP-LISTEN:4444,reuseaddr stdio | '/usr//bin/mbstream' -x; RC=( ${PIPESTATUS[@]} ) (20261014 12:58:06.474)
+2026-10-14 12:58:06 0 [Warning] WSREP: last inactive check more than PT1.5S ago (PT2.25791S), skipping check
+2026-10-14 12:58:06 2 [Note] WSREP: ####### IST uuid:00000000-0000-0000-0000-000000000000 f: 0, l: 18356, STRv: 3
+2026-10-14 12:58:06 2 [Note] WSREP: IST receiver addr using tcp://10.42.2.61:4568
+2026-10-14 12:58:06 2 [Note] WSREP: Prepared IST receiver for 0-18356, listening at: tcp://10.42.2.61:4568, waiting for connection to: tcp://10.42.2.61:4568
+2026-10-14 12:58:06 0 [Note] WSREP: Member 2.0 (mariadb-galera-2) requested state transfer from '*any*'. Selected 0.0 (mariadb-galera-1)(SYNCED) as donor.
+2026-10-14 12:58:06 0 [Note] WSREP: Shifting PRIMARY -> JOINER (TO: 18362)
+2026-10-14 12:58:06 2 [Note] WSREP: Requesting state transfer: success, donor: 0
+WSREP_SST: [INFO] Evaluating socat -u TCP-LISTEN:4444,reuseaddr stdio | '/usr//bin/mbstream' -x; RC=( ${PIPESTATUS[@]} ) (20261014 12:58:07.647)
+WSREP_SST: [INFO] Proceeding with SST (20261014 12:58:07.647)
+WSREP_SST: [INFO] Cleaning the existing datadir and innodb-data/log directories (20261014 12:58:07.676)
+WSREP_SST: [INFO] Waiting for SST streaming to complete! (20261014 12:58:07.833)
+2026-10-14 12:58:09 0 [Note] WSREP: (e4ea71ed-8450, 'tcp://0.0.0.0:4567') turning message relay requesting off
+2026-10-14 12:58:23 0 [Note] WSREP: 0.0 (mariadb-galera-1): State transfer to 2.0 (mariadb-galera-2) complete.
+2026-10-14 12:58:23 0 [Note] WSREP: Member 0.0 (mariadb-galera-1) synced with group.
+WSREP_SST: [INFO] Preparing the backup at /var/lib/mysql/.sst (20261014 12:58:23.205)
+WSREP_SST: [INFO] Evaluating /usr//bin/mariadb-backup --prepare --no-version-check --target-dir='/var/lib/mysql/.sst' --datadir='/var/lib/mysql/.sst' > '/var/lib/mysql/mariabackup.prepare.log' 2>&1 (20261014 12:58:23.208)
+WSREP_SST: [INFO] Moving the backup to /var/lib/mysql (20261014 12:58:23.472)
+WSREP_SST: [INFO] Evaluating /usr//bin/mariadb-backup --move-back --no-version-check --galera-info --force-non-empty-directories --target-dir='/var/lib/mysql/.sst' --datadir='/var/lib/mysql' > '/var/lib/mysql/mariabackup.move.log' 2>&1 (20261014 12:58:23.476)
+WSREP_SST: [INFO] Move successful, removing /var/lib/mysql/.sst (20261014 12:58:23.511)
+WSREP_SST: [INFO] Galera co-ords from donor: :18488 0 (20261014 12:58:23.521)
+WSREP_SST: [INFO] Total time on joiner: 0 seconds (20261014 12:58:23.525)
+WSREP_SST: [INFO] mariabackup SST completed on joiner (20261014 12:58:23.529)
+WSREP_SST: [INFO] Removing the sst_in_progress file (20261014 12:58:23.535)
+WSREP_SST: [INFO] Cleaning up temporary directories (20261014 12:58:23.542)
+2026-10-14 12:58:23 0 [ERROR] WSREP: Failed to parse uuid:seqno pair: ':18488'
+2026-10-14 12:58:23 0 [Note] WSREP: SST received
+2026-10-14 12:58:23 0 [Note] WSREP: SST received: 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:23 0 [Note] WSREP: SST succeeded for position 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:23 2 [Note] WSREP: Installed new state from SST: 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:23 2 [Note] WSREP: Cert. index preload up to -1
+2026-10-14 12:58:23 0 [Note] WSREP: Joiner monitor thread ended with total time 17 sec
+2026-10-14 12:58:23 0 [Note] WSREP: ####### IST applying starts with 0
+2026-10-14 12:58:23 2 [ERROR] WSREP: Receiving IST failed, node restart required: IST receiver reported failure: 'IST started with wrong seqno: 18335, expected <= 0' (22)
+	 at ./galera/src/replicator_smm.hpp:pop_front():340. Null event.
+2026-10-14 12:58:23 2 [Note] WSREP: Closing send monitor...
+2026-10-14 12:58:23 2 [Note] WSREP: Closed send monitor.
+2026-10-14 12:58:23 2 [Note] WSREP: gcomm: terminating thread
+2026-10-14 12:58:23 2 [Note] WSREP: gcomm: joining thread
+2026-10-14 12:58:23 2 [Note] WSREP: gcomm: closing backend
+2026-10-14 12:58:23 2 [Note] WSREP: view(view_id(NON_PRIM,64a58901-a2b8,59) memb {
+	e4ea71ed-8450,0
+} joined {
+} left {
+} partitioned {
+	64a58901-a2b8,0
+	c0b2296e-b99b,0
+})
+2026-10-14 12:58:23 2 [Note] WSREP: PC protocol downgrade 1 -> 0
+2026-10-14 12:58:23 2 [Note] WSREP: view((empty))
+2026-10-14 12:58:23 2 [Note] WSREP: gcomm: closed
+2026-10-14 12:58:23 0 [Note] WSREP: New COMPONENT: primary = no, bootstrap = no, my_idx = 0, memb_num = 1
+2026-10-14 12:58:23 0 [Note] WSREP: Flow-control interval: [16, 16]
+2026-10-14 12:58:23 0 [Note] WSREP: Received NON-PRIMARY.
+2026-10-14 12:58:23 0 [Note] WSREP: Shifting JOINER -> OPEN (TO: 18492)
+2026-10-14 12:58:23 0 [Note] WSREP: New SELF-LEAVE.
+2026-10-14 12:58:23 0 [Note] WSREP: Flow-control interval: [0, 0]
+2026-10-14 12:58:23 0 [Note] WSREP: Received SELF-LEAVE. Closing connection.
+2026-10-14 12:58:23 0 [Note] WSREP: Shifting OPEN -> CLOSED (TO: 18492)
+2026-10-14 12:58:23 0 [Note] WSREP: RECV thread exiting 0: Success
+2026-10-14 12:58:23 2 [Note] WSREP: recv_thread() joined.
+2026-10-14 12:58:23 2 [Note] WSREP: Closing send queue.
+2026-10-14 12:58:23 2 [Note] WSREP: Closing receive queue.
+2026-10-14 12:58:23 2 [Note] WSREP: IST received: 00000000-0000-0000-0000-000000000000:-1
+2026-10-14 12:58:23 2 [ERROR] WSREP: ./gcs/src/gcs.cpp:s_join():999: Sending JOIN failed: -103 (Connection was closed).
+2026-10-14 12:58:23 2 [Warning] WSREP: Failed to JOIN the cluster after SST gcs_join(00000000-0000-0000-0000-000000000000:-1) failed
+	 at ./galera/src/galera_gcs.hpp:join():234
+2026-10-14 12:58:23 2 [Note] WSREP: Lowest cert index boundary for CC from sst: -1
+2026-10-14 12:58:23 2 [Note] WSREP: Min available from gcache for CC from sst: 18335
+2026-10-14 12:58:23 2 [Warning] WSREP: trx protocol version: 6 does not match certification protocol version: -1

@@ -1,0 +1,5 @@
+perconaxtradbclusterbackup.pxc.percona.com/backup1 created
+BACKUP Succeeded 66s
+NAME      CLUSTER    STORAGE   DESTINATION                                  STATUS      COMPLETED   AGE
+backup1   cluster1   s3        s3://pxc/cluster1-2026-10-14-08:36:14-full   Succeeded   3s          66s
+  pxc	size:989836032	logical:989813840	chunk:644

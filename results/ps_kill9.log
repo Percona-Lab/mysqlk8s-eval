@@ -1,0 +1,17 @@
+T=1791970376960
+writer=ps-cluster1-mysql-1 node=mk-w3
+killed
+NAME                                             READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-j8tgq   1/1     Running     0               10m     10.42.1.26   mk-w2   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               9m17s   10.42.2.30   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0               9m20s   10.42.3.25   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0               8m54s   10.42.1.29   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0               8m33s   10.42.2.31   mk-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0               4m13s   10.42.1.30   mk-w2   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     1 (2m31s ago)   9m21s   10.42.2.29   mk-w3   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0               7m54s   10.42.3.27   mk-w1   <none>           <none>
+sysb                                             0/1     Completed   0               6m10s   10.42.0.10   mk-cp   <none>           <none>
+main outage 28.1s starting +1.9s; 1 interval(s), total 28.1s; primary ps-cluster1-mysql-1 738 -> ps-cluster1-mysql-0 747
+   +1.9s .. +30.0s  (28.1s, 95 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +1.9s..+30.0s = 28.1s (95 fails)
+LOSTCHECK acked=529 present=529 lost=0

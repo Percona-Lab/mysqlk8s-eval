@@ -1,0 +1,20 @@
+T=1791970903911
+kill -9 mysqld on ALL workers at once
+NAME                                             READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-hv9zd   1/1     Running     0               10m     10.42.1.32   mk-w2   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               23m     10.42.2.30   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0               13m     10.42.3.28   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0               23m     10.42.1.29   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0               22m     10.42.2.31   mk-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     2 (6m54s ago)   11m     10.42.1.31   mk-w2   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0               5m50s   10.42.2.32   mk-w3   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0               5m14s   10.42.3.32   mk-w1   <none>           <none>
+sysb                                             0/1     Completed   0               20m     10.42.0.10   mk-cp   <none>           <none>
+main outage 112.1s starting +0.9s; 5 interval(s), total 118.6s; primary ps-cluster1-mysql-1 2586 -> ps-cluster1-mysql-0 2751
+   +0.9s .. +113.0s  (112.1s, 206 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+   +115.2s .. +115.6s  (0.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+   +115.6s .. +116.6s  (0.9s, 3 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+   +122.1s .. +122.6s  (0.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+   +159.6s .. +164.2s  (4.6s, 1 fails) top error: 
+DISRUPT +0.9s..+122.6s = 121.7s (211 fails); +159.6s..+164.2s = 4.6s (1 fails)
+LOSTCHECK acked=1398 present=1398 lost=0

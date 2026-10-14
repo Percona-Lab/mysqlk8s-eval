@@ -1,0 +1,1 @@
+echo "kill -9 mysqld in ALL db pods at once"; for p in $(kubectl -n $NS get pods -l $DBSEL -o name | cut -d/ -f2); do kubectl -n $NS exec $p -c $DBCONT -- bash -c 'for p in /proc/[0-9]*; do c=$(cat $p/comm 2>/dev/null); case $c in mysqld|mariadbd) kill -9 ${p#/proc/};; esac; done' & done; wait; sleep ${S:-480}; kubectl -n $NS get pods -o wide | grep -v probe

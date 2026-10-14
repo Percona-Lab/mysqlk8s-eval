@@ -1,0 +1,79 @@
+T=1791972776414
+ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement
+command terminated with exit code 1
+writer=ps-cluster1-mysql-2 node=mk-w1
+PART_ON 1791972779878
+1791972779808 cont=50d771c4 ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'. time="2026-10-14T10:13:10Z" level=error msg="execing command in container 50d771c493c238782cd5c4680eb532
+1791972792271 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:12Z" level=error msg="execing command in containe
+1791972794719 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:15Z" level=error msg="execing command in containe
+1791972797066 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:17Z" level=error msg="execing command in containe
+1791972799410 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:19Z" level=error msg="execing command in containe
+1791972801799 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:22Z" level=error msg="execing command in containe
+1791972804120 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:24Z" level=error msg="execing command in containe
+1791972806450 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:26Z" level=error msg="execing command in containe
+1791972808794 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:29Z" level=error msg="execing command in containe
+1791972811153 cont=50d771c4 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:13:31Z" level=error msg="execing command in containe
+1791972813503 cont=50d771c4 ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 104 time="2026-10-14T10:13:40Z" level=error msg="execing command in container 50d771c493c23
+1791972822477 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:42Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972824869 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:45Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972827247 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:47Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972829560 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:49Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972831896 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:52Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972834237 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:54Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972836585 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:56Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972838941 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:13:59Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972841251 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:01Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972843594 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:03Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972845886 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:06Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972848197 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:08Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972850570 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:10Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972852921 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:13Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972855270 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:15Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972857624 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:18Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972860020 cont=50d771c4 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:20Z" level=error msg="execing command in container 50d771c493c238782cd5c46
+1791972862358 cont=50d771c4 time="2026-10-14T10:14:22Z" level=error msg="execing command in container 50d771c493c238782cd5c4680eb532f2b5e603d1e5d623f674dc701098dfae70: Internal error occurred: error executing command in containe
+1791972864830 cont=be1f41db ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-14T10:14:25Z" level=error msg="execing command in container be1f41dba174569f02fd838
+1791972867179 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:27Z" level=error msg="execing command in containe
+1791972869520 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:29Z" level=error msg="execing command in containe
+PART_OFF 1791972870103
+1791972871876 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:32Z" level=error msg="execing command in containe
+1791972874241 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:34Z" level=error msg="execing command in containe
+1791972876649 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:37Z" level=error msg="execing command in containe
+1791972879059 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:39Z" level=error msg="execing command in containe
+1791972881439 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:41Z" level=error msg="execing command in containe
+1791972883832 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:44Z" level=error msg="execing command in containe
+1791972886293 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:46Z" level=error msg="execing command in containe
+1791972888688 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:49Z" level=error msg="execing command in containe
+1791972891197 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:51Z" level=error msg="execing command in containe
+1791972893616 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:53Z" level=error msg="execing command in containe
+1791972895978 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:56Z" level=error msg="execing command in containe
+1791972898364 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:14:58Z" level=error msg="execing command in containe
+1791972900717 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:01Z" level=error msg="execing command in containe
+1791972903097 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:03Z" level=error msg="execing command in containe
+1791972905501 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:05Z" level=error msg="execing command in containe
+1791972907881 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:08Z" level=error msg="execing command in containe
+1791972910274 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:10Z" level=error msg="execing command in containe
+1791972912635 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:13Z" level=error msg="execing command in containe
+1791972915054 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:15Z" level=error msg="execing command in containe
+1791972917419 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:17Z" level=error msg="execing command in containe
+1791972919833 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:20Z" level=error msg="execing command in containe
+1791972922214 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:22Z" level=error msg="execing command in containe
+1791972924638 cont=be1f41db ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time="2026-10-14T10:15:25Z" level=error msg="execing command in containe
+NAME                                             READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-whhb6   1/1     Running     2 (3m17s ago)   21m     10.42.3.33   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               51m     10.42.2.30   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0               41m     10.42.3.28   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0               5m35s   10.42.1.33   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0               50m     10.42.2.31   mk-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0               5m35s   10.42.1.34   mk-w2   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0               33m     10.42.2.32   mk-w3   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     1 (3m6s ago)    32m     10.42.3.32   mk-w1   <none>           <none>
+sysb                                             0/1     Completed   0               48m     10.42.0.10   mk-cp   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 0
+main outage 36.1s starting +3.2s; 4 interval(s), total 48.0s; primary ps-cluster1-mysql-2 8982 -> ps-cluster1-mysql-0 9000
+   +3.2s .. +39.3s  (36.1s, 16 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +39.9s .. +42.3s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +42.3s .. +44.8s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +44.8s .. +51.8s  (6.9s, 3 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+DISRUPT +3.2s..+51.8s = 48.5s (21 fails)
+LOSTCHECK acked=906 present=906 lost=0

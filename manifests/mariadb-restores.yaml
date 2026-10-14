@@ -1,0 +1,20 @@
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: Restore
+metadata: {name: restore-logical1}
+spec:
+  mariaDbRef: {name: mariadb-galera}
+  backupRef: {name: logical1}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata: {name: mdbrestored}
+spec:
+  rootPasswordSecretKeyRef: {name: mariadb-root, key: password}
+  storage: {size: 10Gi}
+  replicas: 1
+  bootstrapFrom:
+    backupRef: {name: physical1, kind: PhysicalBackup}
+    stagingStorage:
+      persistentVolumeClaim:
+        resources: {requests: {storage: 5Gi}}
+        accessModes: [ReadWriteOnce]

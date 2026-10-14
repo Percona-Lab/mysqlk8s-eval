@@ -1,0 +1,131 @@
+T=1791965689152
+writer=cluster1-pxc-0 node=mk-w3 id=108113001
+POWEROFF 1791965691175
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   47m   v1.37.1+k3s1
+mk-w1   Ready      <none>          46m   v1.37.1+k3s1
+mk-w2   Ready      <none>          46m   v1.37.1+k3s1
+mk-w3   NotReady   <none>          46m   v1.37.1+k3s1
+NAME                                               READY   STATUS            RESTARTS      AGE   IP          NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running           0             43m   10.42.3.2   mk-w1   <none>           <none>
+cluster1-haproxy-1                                 2/2     Terminating       0             40m   10.42.2.4   mk-w3   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running           0             40m   10.42.1.6   mk-w2   <none>           <none>
+cluster1-pitr-647596bfc4-pm2xh                     1/1     Terminating       1 (12m ago)   36m   10.42.2.5   mk-w3   <none>           <none>
+cluster1-pitr-647596bfc4-vmkhm                     0/1     PodInitializing   0             12s   10.42.3.8   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Terminating       2 (13m ago)   28m   10.42.2.7   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running           2 (11m ago)   40m   10.42.1.5   mk-w2   <none>           <none>
+cluster1-pxc-2                                     3/3     Running           2 (11m ago)   15m   10.42.3.7   mk-w1   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9   1/1     Running           0             25m   10.42.1.7   mk-w2   <none>           <none>
+BOOT 1791966054142
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+awk: cmd. line:1: {split($2,a,\"/\"); if(a[1]==a[2]) c++} END{print c+0}
+awk: cmd. line:1:             ^ backslash not last character on line
+main outage 38.1s starting +2.8s; 4 interval(s), total 50.0s; primary cluster1-pxc-0 17813 -> cluster1-pxc-2 17855
+   +2.8s .. +41.0s  (38.1s, 17 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +41.0s .. +47.9s  (6.9s, 3 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +47.9s .. +50.4s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +50.4s .. +52.8s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +2.8s..+52.8s = 50.0s (22 fails)
+LOSTCHECK acked=2364 present=2364 lost=0
+pxc-0 ready at 2026-10-14T08:23:07Z; boot at Wed Oct 14 08:20:54 AM UTC 2026

@@ -1,0 +1,16 @@
+innodbcluster.mysql.oracle.com "restored" deleted from oracle namespace
+persistentvolumeclaim "datadir-restored-0" deleted from oracle namespace
+-- recreate
+innodbcluster.mysql.oracle.com/restored created
+RESTORED_ONLINE 99s
+NAME       STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+restored   ONLINE   1        1           1         UNKNOWN   99s
+restored-0                          2/2     Running     0             99s
+restored-router-6c7c8f987-9lbv7     1/1     Running     0             3s
+16 chunks (2.01M rows, 387.51 MB) for 16 tables in 3 schemas were loaded in 24 sec (avg throughput 15.62 MB/s, 81.02K rows/s)
+Data load duration: 24 sec
+0 warnings were reported during the load.
+[2026-10-14 11:36:54,408] sidecar              [INFO    ] Load_dump finished
+500000
+10695
+cleaned

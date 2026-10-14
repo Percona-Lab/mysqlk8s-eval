@@ -1,0 +1,28 @@
+STATUS: deployed
+STATUS: deployed
+Waiting for deployment "mariadb-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "mariadb-operator" successfully rolled out
+Waiting for deployment "mariadb-operator-webhook" rollout to finish: 0 of 1 updated replicas are available...
+deployment "mariadb-operator-webhook" successfully rolled out
+OPERATOR_READY 31s
+NAME                                                READY   STATUS    RESTARTS   AGE
+mariadb-operator-5d6b8c4d9-vhfbf                    1/1     Running   0          27s
+mariadb-operator-cert-controller-684d7dc58c-vsml2   0/1     Running   0          27s
+mariadb-operator-webhook-67676984df-vcsw2           1/1     Running   0          27s
+secret/mariadb-root configured
+secret/s3-creds configured
+mariadb.k8s.mariadb.com/mariadb-galera created
+maxscale.k8s.mariadb.com/maxscale-galera created
+CLUSTER_READY 164s
+NAME                                     READY   STATUS    PRIMARY            UPDATES                    AGE
+mariadb.k8s.mariadb.com/mariadb-galera   True    Running   mariadb-galera-0   ReplicasFirstPrimaryLast   2m44s
+
+NAME                                       READY   STATUS    PRIMARY            AGE
+maxscale.k8s.mariadb.com/maxscale-galera   True    Running   mariadb-galera-0   2m44s
+NAME                READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running   0          2m25s   10.42.1.54   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running   0          2m25s   10.42.3.58   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running   0          2m25s   10.42.2.50   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running   0          47s     10.42.1.56   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running   0          47s     10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running   0          47s     10.42.3.60   mk-w1   <none>           <none>

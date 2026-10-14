@@ -1,0 +1,3 @@
+rx isoclean; W=$(rx writer); N=$(rx "nodeof $W"); RP=$(rx rp); echo "writer=$W node=$N"
+ssh -F ssh_config $N "bash partition.sh ${PART:-90} & bash sbwriter.sh $DBCONT ${CLI:-mysql} '$RP' $(( ${PART:-90}/2 + 10 )); wait"
+sleep ${S:-120}; rx "kubectl -n $NS get pods -o wide | grep -v probe; echo ISOLATED_ROWS_IN_CLUSTER \$(isocount)"

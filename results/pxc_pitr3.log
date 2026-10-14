@@ -1,0 +1,25 @@
+all3
+perconaxtradbclusterbackup.pxc.percona.com/backup3 created
+BACKUP backup3 Succeeded 58s
+TARGET 2026-10-14 09:03:34
+perconaxtradbclusterrestore.pxc.percona.com/restore3 created
+RESTORE Succeeded 365s
+Defaulted container "xtrabackup" out of: xtrabackup, pitr-init (init)
+2026/10/14 09:09:33 Stopping at binlog_1791968667_000029_4696cb38292ab58310d84f8460c81420 because it's after the recovery time (1791968667 > 1791968614)
+2026/10/14 09:09:33 Waiting for mysql to finish
+2026/10/14 09:09:33 Finished
+CLUSTER_READY_AFTER 5s
+1	after-backup
+500000
+sbtest1
+sbtest2
+sbtest3
+sbtest4
+cluster1-haproxy-0                                 2/2     Running     0          2m42s
+cluster1-haproxy-1                                 2/2     Running     0          2m14s
+cluster1-haproxy-2                                 2/2     Running     0          106s
+cluster1-pxc-0                                     3/3     Running     0          3m42s
+cluster1-pxc-1                                     3/3     Running     0          2m42s
+cluster1-pxc-2                                     3/3     Running     0          88s
+main outage 235.0s starting +39.9s; 1 interval(s), total 235.0s; primary cluster1-pxc-0 34801 -> cluster1-pxc-0 33479
+DISRUPT +39.9s..+274.8s = 235.0s (239 fails)

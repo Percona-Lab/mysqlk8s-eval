@@ -1,0 +1,1 @@
+W=$(writer); echo "writer=$W"; kubectl -n $OPNS scale deploy $OPDEP --replicas=0; sleep 5; T2=$(date +%s); kubectl -n $NS delete pod $W --wait=false; sleep ${S:-150}; kubectl -n $NS get pods -o wide | grep -v probe; kubectl -n $OPNS scale deploy $OPDEP --replicas=1; sleep 60; kubectl -n $NS get pods

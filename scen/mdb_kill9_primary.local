@@ -1,0 +1,1 @@
+W=$(rx "kubectl -n mariadb get pods -l k8s.mariadb.com/role=primary -o name | cut -d/ -f2"); N=$(rx "nodeof $W"); echo "operator-primary=$W node=$N maxscale-writer=$(rx writer)"; ssh -F ssh_config $N 'pkill -9 -x mariadbd; echo killed'; sleep ${S:-150}; rx "kubectl -n mariadb get pods -L k8s.mariadb.com/role | grep galera"

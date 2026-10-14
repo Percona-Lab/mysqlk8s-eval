@@ -1,0 +1,15 @@
+T=1791980219315
+writer=mariadb-galera-1 victim=mariadb-galera-2 pvc=storage-mariadb-galera-2
+persistentvolumeclaim "storage-mariadb-galera-2" deleted from mariadb namespace
+pod "mariadb-galera-2" deleted from mariadb namespace
+REBUILT_READY 40s
+NAME                  READY   STATUS      RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running     1 (9m2s ago)   17m     10.42.1.57   mk-w2   <none>           <none>
+mariadb-galera-1      2/2     Running     0              6m10s   10.42.3.61   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Running     0              39s     10.42.2.56   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running     0              12m     10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running     0              21m     10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running     0              21m     10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed   0              20m     10.42.0.14   mk-cp   <none>           <none>
+no failed writes; primary mariadb-galera-1 14440
+LOSTCHECK acked=231 present=231 lost=0 (max over members)

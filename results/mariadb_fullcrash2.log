@@ -1,0 +1,21 @@
+T=1791984383286
+kill -9 mysqld on ALL workers at once
+NAME                  READY   STATUS      RESTARTS   AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0      2/2     Running     0          82s    10.42.1.67   mk-w2   <none>           <none>
+mariadb-galera-1      1/2     Running     0          18s    10.42.3.69   mk-w1   <none>           <none>
+mariadb-galera-2      2/2     Running     0          2m9s   10.42.2.67   mk-w3   <none>           <none>
+maxscale-galera-0     1/1     Running     0          85m    10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1     1/1     Running     0          56m    10.42.2.57   mk-w3   <none>           <none>
+maxscale-galera-2     1/1     Running     0          94m    10.42.3.60   mk-w1   <none>           <none>
+sysb                  0/1     Completed   0          92m    10.42.0.14   mk-cp   <none>           <none>
+main outage 115.7s starting +0.9s; 3 interval(s), total 133.7s; primary mariadb-galera-2 53929 -> mariadb-galera-2 54463
+   +0.9s .. +116.6s  (115.7s, 507 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +164.8s .. +182.4s  (17.6s, 73 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +182.7s .. +183.1s  (0.5s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +0.9s..+116.6s = 115.7s (507 fails); +164.8s..+183.1s = 18.3s (74 fails)
+LOSTCHECK acked=523 present=523 lost=0 (max over members)
+mariadb-galera-0 wsrep_cluster_size 3 wsrep_cluster_state_uuid fc3599a0-c7d1-11f1-9b02-36cd07747518
+mariadb-galera-1 wsrep_cluster_size 3 wsrep_cluster_state_uuid fc3599a0-c7d1-11f1-9b02-36cd07747518
+mariadb-galera-2 wsrep_cluster_size 3 wsrep_cluster_state_uuid fc3599a0-c7d1-11f1-9b02-36cd07747518
+2026-10-14 13:29:04 0 [Note] WSREP: Found saved state: fc3599a0-c7d1-11f1-9b02-36cd07747518:-1, safe_to_bootstrap: 0
+2026-10-14 13:29:07 0 [Note] WSREP: clear restored view

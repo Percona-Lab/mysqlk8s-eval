@@ -1,0 +1,23 @@
+namespace/ps created
+rolebinding.rbac.authorization.k8s.io/percona-server-mysql-operator created
+rolebinding.rbac.authorization.k8s.io/percona-server-mysql-operator-leaderelection created
+configmap/percona-server-mysql-operator-config created
+deployment.apps/percona-server-mysql-operator created
+Waiting for deployment "percona-server-mysql-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-server-mysql-operator" successfully rolled out
+OPERATOR_READY 20s
+secret/s3-creds created
+perconaservermysql.ps.percona.com/ps-cluster1 created
+CLUSTER_READY 251s
+NAME                                            REPLICATION         ENDPOINT                 STATE   MYSQL   ORCHESTRATOR   HAPROXY   ROUTER   AGE
+perconaservermysql.ps.percona.com/ps-cluster1   group-replication   ps-cluster1-haproxy.ps   ready   3                      3                  4m11s
+
+NAME                                                 READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+pod/percona-server-mysql-operator-75dfcc9466-j8tgq   1/1     Running   0          4m30s   10.42.1.26   mk-w2   <none>           <none>
+pod/ps-cluster1-binlog-server-0                      1/1     Running   0          2m51s   10.42.2.30   mk-w3   <none>           <none>
+pod/ps-cluster1-haproxy-0                            2/2     Running   0          2m54s   10.42.3.25   mk-w1   <none>           <none>
+pod/ps-cluster1-haproxy-1                            2/2     Running   0          2m28s   10.42.1.29   mk-w2   <none>           <none>
+pod/ps-cluster1-haproxy-2                            2/2     Running   0          2m7s    10.42.2.31   mk-w3   <none>           <none>
+pod/ps-cluster1-mysql-0                              2/2     Running   0          4m10s   10.42.1.28   mk-w2   <none>           <none>
+pod/ps-cluster1-mysql-1                              2/2     Running   0          2m55s   10.42.2.29   mk-w3   <none>           <none>
+pod/ps-cluster1-mysql-2                              2/2     Running   0          88s     10.42.3.27   mk-w1   <none>           <none>

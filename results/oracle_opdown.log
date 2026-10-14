@@ -1,0 +1,27 @@
+T=1791974591150
+writer=mycluster-0
+deployment.apps/mysql-operator scaled
+pod "mycluster-0" deleted from oracle namespace
+NAME                                READY   STATUS        RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Terminating   0               7m33s   10.42.2.42   mk-w3   <none>           2/2
+mycluster-1                         2/2     Running       0               11m     10.42.3.41   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       1 (5m47s ago)   11m     10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running       0               9m45s   10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running       0               2m58s   10.42.2.43   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running       0               9m45s   10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed     0               9m16s   10.42.0.12   mk-cp   <none>           <none>
+deployment.apps/mysql-operator scaled
+NAME                                READY   STATUS      RESTARTS        AGE
+mycluster-0                         0/2     Init:1/3    0               3s
+mycluster-1                         2/2     Running     0               12m
+mycluster-2                         2/2     Running     1 (6m47s ago)   12m
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running     0               10m
+mycluster-router-6d5dffdd6f-k4rx5   1/1     Running     0               3m58s
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running     0               10m
+probe-oracle                        1/1     Running     0               10m
+sysb                                0/1     Completed   0               10m
+main outage 3.7s starting +65.5s; 1 interval(s), total 3.7s; primary mycluster-0 1755 -> mycluster-2 2010
+   +65.5s .. +69.2s  (3.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to MySQL server during q
+DISRUPT +65.5s..+69.2s = 3.7s (1 fails)
+LOSTCHECK acked=532 present=254 lost=278
+NOTE: lost=278 was a measurement artifact (checked a rejoining member); recheck: all 683 acked ids present on mycluster-0 and mycluster-2

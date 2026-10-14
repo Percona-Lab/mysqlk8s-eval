@@ -1,0 +1,9 @@
+T=1791969174326
+proxy=cluster1-haproxy-0
+pod "cluster1-haproxy-0" deleted from pxc namespace
+NAME                 READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0   2/2     Running   0          89s     10.42.3.22   mk-w1   <none>           <none>
+cluster1-haproxy-1   2/2     Running   0          4m20s   10.42.2.24   mk-w3   <none>           <none>
+cluster1-haproxy-2   2/2     Running   0          3m52s   10.42.1.23   mk-w2   <none>           <none>
+no failed writes; primary cluster1-pxc-0 35124
+LOSTCHECK acked=413 present=413 lost=0

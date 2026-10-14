@@ -1,0 +1,27 @@
+restore.k8s.mariadb.com/restore-logical1 created
+mariadb.k8s.mariadb.com/mdbrestored created
+logical restore complete +85s
+500000
+physical bootstrap new cluster ready +91s
+500000
+30895
+NAME                                       COMPLETE   STATUS    MARIADB          AGE
+restore.k8s.mariadb.com/restore-logical1   True       Success   mariadb-galera   92s
+
+NAME                                     READY   STATUS    PRIMARY            UPDATES                    AGE
+mariadb.k8s.mariadb.com/mariadb-galera   True    Running   mariadb-galera-0   ReplicasFirstPrimaryLast   105m
+mariadb.k8s.mariadb.com/mdbrestored      True    Running   mdbrestored-0      ReplicasFirstPrimaryLast   92s
+LOSTCHECK acked=2361 present=1919 lost=442 (max over members)
+NOTE: lost=442 here = rows written after logical1 backup, overwritten by the in-place logical restore (expected restore semantics; restore runs online with no fencing)
+FINDING: in-place logical Restore into Galera restored mysql.db (Aria) rows only on the node that ran the restore; DDL replicated, rows not ->
+ galera-0 db-rows=2, galera-1=0, galera-2=0. Latent until the next rolling restart (config change at ~13:41) -> app user 'probe' got ERROR 1142 INSERT denied on 2/3 nodes -> ~14 min app outage.
+ Grant CRs kept READY=True/Created and did not re-reconcile.
+grant.k8s.mariadb.com "probe" deleted from mariadb namespace
+grant.k8s.mariadb.com "sb" deleted from mariadb namespace
+DISRUPT +34.4s..+340.7s = 306.3s (1288 fails)
+NAME    READY   STATUS    DATABASE   TABLE   USERNAME   GRANTOPT   MARIADB          AGE
+probe   True    Created   probe      *       probe      false      mariadb-galera   15s
+sb      True    Created   sbtest     *       sb         false      mariadb-galera   15s
+fixed_after 344s
+1791985664746 OK mariadb-galera-2 62995
+1791985664997 OK mariadb-galera-2 62998

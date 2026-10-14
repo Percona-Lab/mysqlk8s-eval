@@ -1,0 +1,15 @@
+T=1791974308305
+writer=mycluster-2 node=mk-w2
+killed
+NAME                                READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     0               4m18s   10.42.2.42   mk-w3   <none>           2/2
+mycluster-1                         2/2     Running     0               8m36s   10.42.3.41   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     1 (2m32s ago)   8m36s   10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-4tj7m   1/1     Running     0               6m30s   10.42.2.41   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running     0               6m30s   10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running     0               6m30s   10.42.1.46   mk-w2   <none>           <none>
+sysb                                0/1     Completed   0               6m1s    10.42.0.12   mk-cp   <none>           <none>
+main outage 22.2s starting +2.3s; 1 interval(s), total 22.2s; primary mycluster-2 766 -> mycluster-0 776
+   +2.3s .. +24.5s  (22.2s, 78 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +2.3s..+24.5s = 22.2s (78 fails)
+LOSTCHECK acked=550 present=550 lost=0

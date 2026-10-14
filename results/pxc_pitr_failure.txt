@@ -1,0 +1,7 @@
+PXC 1.20.0 PITR failure (2026-10-14 08:43 UTC)
+backup1 taken while probe wrote ~5 tx/s. Restore with pitr type=date target 08:37:33.
+pitr job: mysqlbinlog --disable-log-bin --stop-datetime ... | mysql -> ERROR 1062 Duplicate entry '29292' for key 't.PRIMARY' (binlog 000044 GTIDs 11445-11697; backup gtid set 1-11498)
+restored node: gtid_executed=...:1-11498 but row 29292 (written by the trx after 11498) already present -> backup data is ahead of its recorded GTID set; replay re-applies it.
+pitr process did NOT exit: /opt/percona/pitr recover alive, mysql child <defunct>; Job active, restore state stuck "Point-in-time recovering"; cluster left with 1 PXC pod and no HAProxy (full outage) until manual intervention.
+after deleting stuck restore: spec.pxc.size=1, spec.haproxy.size unset -> manual patch needed
+teardown: namespace deletion hung on 3 restore1 jobs with finalizers after operator was deleted; removed manually

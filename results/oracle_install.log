@@ -1,0 +1,25 @@
+customresourcedefinition.apiextensions.k8s.io/innodbclusters.mysql.oracle.com created
+customresourcedefinition.apiextensions.k8s.io/mysqlbackups.mysql.oracle.com created
+customresourcedefinition.apiextensions.k8s.io/mysqlclustersetfailovers.mysql.oracle.com created
+customresourcedefinition.apiextensions.k8s.io/clusterkopfpeerings.zalando.org created
+customresourcedefinition.apiextensions.k8s.io/kopfpeerings.zalando.org created
+namespace/mysql-operator created
+serviceaccount/mysql-operator-sa created
+deployment.apps/mysql-operator created
+Waiting for deployment "mysql-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "mysql-operator" successfully rolled out
+OPERATOR_READY 28s
+namespace/oracle created
+secret/mypwds created
+secret/s3-config created
+innodbcluster.mysql.oracle.com/mycluster created
+CLUSTER_READY 139s
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   2m19s
+NAME                                READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running   0          2m18s   10.42.2.40   mk-w3   <none>           2/2
+mycluster-1                         2/2     Running   0          2m18s   10.42.3.41   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running   0          2m18s   10.42.1.45   mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-4tj7m   1/1     Running   0          12s     10.42.2.41   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-crrwh   1/1     Running   0          12s     10.42.3.42   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-nkbnl   1/1     Running   0          12s     10.42.1.46   mk-w2   <none>           <none>

@@ -1,0 +1,7 @@
+T=1791977948520
+innodbcluster.mysql.oracle.com/mycluster patched
+ROLLED 31s
+151
+no failed writes; primary mycluster-1 14133
+LOSTCHECK acked=182 present=182 lost=0 (max over members)
+mycnf change: no kopf field handler for spec.mycnf (operator_cluster.py handlers list); initconf ConfigMap not updated, no rollout; max_connections stayed 151

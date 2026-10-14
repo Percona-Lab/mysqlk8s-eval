@@ -1,0 +1,18 @@
+T=1791979888748
+operator-primary=mariadb-galera-1 maxscale-writer=mariadb-galera-1
+pod "mariadb-galera-1" deleted from mariadb namespace
+mariadb-galera-0      2/2     Running     1 (5m21s ago)   14m     primary
+mariadb-galera-1      2/2     Running     0               2m29s   replica
+mariadb-galera-2      2/2     Running     0               19m     replica
+maxscale-galera-0     1/1     Running     0               8m34s   
+maxscale-galera-1     1/1     Running     0               17m     
+maxscale-galera-2     1/1     Running     0               17m     
+main outage 6.8s starting +0.7s; 1 interval(s), total 6.8s; primary mariadb-galera-1 10417 -> mariadb-galera-2 10437
+   +0.7s .. +7.5s  (6.8s, 11 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +0.7s..+7.5s = 6.8s (11 fails)
+LOSTCHECK acked=672 present=672 lost=0 (max over members)
+== extra probe mariadbdirect
+main outage 7.2s starting +0.7s; 1 interval(s), total 7.2s; primary mariadb-galera-1 10414 -> mariadb-galera-0 10436
+   +0.7s .. +7.9s  (7.2s, 4 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'mariadb-galera-primary
+DISRUPT +0.7s..+7.9s = 7.2s (4 fails)
+direct-probe both runs: LOSTCHECK acked=1179 present=1179 lost=0 (max over members)

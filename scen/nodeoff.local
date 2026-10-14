@@ -1,0 +1,6 @@
+W=$(rx writer); N=$(rx "nodeof $W"); ID=$(python3 -c "import json;print([i['id'] for i in json.load(open('instances.json')) if i['label']=='$N'][0])"); echo "writer=$W node=$N id=$ID"
+ssh -F ssh_config $N 'echo 1 > /proc/sys/kernel/sysrq; nohup sh -c "sleep 1; echo o > /proc/sysrq-trigger" >/dev/null 2>&1 &' ; echo "POWEROFF $(date +%s%3N)"
+sleep ${DOWN:-360}; rx "kubectl get nodes; kubectl -n $NS get pods -o wide | grep -v probe"
+python3 -c "import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances/$ID/boot',{})"; B=$(date +%s); echo "BOOT $(date +%s%3N)"
+rx "kubectl -n $NS wait --for=condition=Ready pod -l $DBSEL --timeout=900s" >/dev/null 2>&1; echo "ALL_DB_READY_AFTER_BOOT $(( $(date +%s)-B ))s"
+rx "kubectl -n $NS get pods -o wide | grep -v probe"

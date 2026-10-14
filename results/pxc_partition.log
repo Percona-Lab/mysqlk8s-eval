@@ -1,0 +1,74 @@
+T=1791966630906
+writer=cluster1-pxc-0 node=mk-w3
+PART_ON 1791966633723
+1791966633638 cont=fe5c440e ERROR 1213 (40001) at line 1: Deadlock found when trying to get lock; try restarting transaction time="2026-10-14T08:30:39Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db09
+1791966641599 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:41Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966643970 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:44Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966646377 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:46Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966648761 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:49Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966651087 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:51Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966653386 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:53Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966655694 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:56Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966658059 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:30:58Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966660370 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:31:00Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966662642 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:31:03Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966665062 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:31:05Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966667611 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:31:07Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966669973 cont=fe5c440e ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-14T08:31:10Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bf
+1791966672334 cont=fe5c440e ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-14T08:31:12Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0
+1791966674623 cont=fe5c440e time="2026-10-14T08:31:15Z" level=error msg="execing command in container fe5c440e91a3f0d69de8e95a4db091dd0328d98a99bfa4bfa92e94a8acbbe308: Internal error occurred: error executing command in containe
+1791966677050 cont= E1014 08:31:17.322478   15013 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966679331 cont= E1014 08:31:19.626903   15045 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966681636 cont= E1014 08:31:21.919270   15103 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966683930 cont= E1014 08:31:24.207924   15137 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966686219 cont= E1014 08:31:26.463256   15201 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966688475 cont= E1014 08:31:28.785751   15234 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966690795 cont= E1014 08:31:31.098003   15289 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966693108 cont= E1014 08:31:33.353953   15348 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966695363 cont= E1014 08:31:35.601857   15407 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966697610 cont= E1014 08:31:37.856064   15440 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966699866 cont= E1014 08:31:40.176031   15473 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966702185 cont= E1014 08:31:42.465409   15531 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966704480 cont= E1014 08:31:44.736711   15563 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966706748 cont= E1014 08:31:47.036163   15622 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966709046 cont= E1014 08:31:49.299515   15654 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966711308 cont= E1014 08:31:51.559090   15712 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966713569 cont= E1014 08:31:53.850429   15746 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966715860 cont= E1014 08:31:56.151329   15804 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966718162 cont= E1014 08:31:58.436979   15838 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966720448 cont= E1014 08:32:00.694631   15896 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966722706 cont= E1014 08:32:02.950231   15953 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+PART_OFF 1791966723925
+1791966724961 cont= E1014 08:32:05.224254   16028 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966727233 cont= E1014 08:32:07.486324   16179 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966729496 cont= E1014 08:32:09.788577   16263 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966731799 cont= E1014 08:32:12.059910   16343 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966734069 cont= E1014 08:32:14.342381   16398 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966736353 cont= E1014 08:32:16.621606   16465 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966738635 cont= E1014 08:32:18.923283   16521 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966740933 cont= E1014 08:32:21.197216   16601 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966743209 cont= E1014 08:32:23.471684   16657 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966745482 cont= E1014 08:32:25.762216   16735 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966747781 cont= E1014 08:32:28.070684   16785 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966750080 cont= E1014 08:32:30.343249   16859 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966752355 cont= E1014 08:32:32.593939   16914 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966754605 cont= E1014 08:32:34.924789   16996 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966756936 cont= E1014 08:32:37.221408   17077 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966759231 cont= E1014 08:32:39.495509   17131 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to find container \"mysql\" in store: not found" containerID="
+1791966761505 cont=0e2d13eb ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-14T08:32:41Z" level=error msg="execing command in container 0e2d13eb95cbc8a6fd35779932682faf1
+1791966763821 cont=0e2d13eb ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-14T08:32:44Z" level=error msg="execing command in container 0e2d13eb95cbc8a6fd35779932682faf1
+NAME                                               READY   STATUS    RESTARTS        AGE   IP          NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running   0               57m   10.42.3.2   mk-w1   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running   0               12m   10.42.2.8   mk-w3   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running   0               54m   10.42.1.6   mk-w2   <none>           <none>
+cluster1-pitr-647596bfc4-vmkhm                     1/1     Running   1 (7m25s ago)   14m   10.42.3.8   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Running   1 (3m33s ago)   12m   10.42.2.9   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running   2 (25m ago)     54m   10.42.1.5   mk-w2   <none>           <none>
+cluster1-pxc-2                                     3/3     Running   2 (25m ago)     29m   10.42.3.7   mk-w1   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-5kjg9   1/1     Running   0               39m   10.42.1.7   mk-w2   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 0
+main outage 39.4s starting +2.5s; 2 interval(s), total 44.1s; primary cluster1-pxc-0 25655 -> cluster1-pxc-2 25695
+   +2.5s .. +41.9s  (39.4s, 17 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +42.2s .. +46.9s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +2.5s..+46.9s = 44.4s (19 fails)
+LOSTCHECK acked=886 present=886 lost=0

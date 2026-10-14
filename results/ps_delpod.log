@@ -1,0 +1,17 @@
+T=1791970207791
+writer=ps-cluster1-mysql-0 node=mk-w2
+pod "ps-cluster1-mysql-0" deleted from ps namespace
+NAME                                             READY   STATUS      RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-j8tgq   1/1     Running     0          8m5s    10.42.1.26   mk-w2   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0          6m26s   10.42.2.30   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0          6m29s   10.42.3.25   mk-w1   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0          6m3s    10.42.1.29   mk-w2   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0          5m42s   10.42.2.31   mk-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0          82s     10.42.1.30   mk-w2   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0          6m30s   10.42.2.29   mk-w3   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0          5m3s    10.42.3.27   mk-w1   <none>           <none>
+sysb                                             0/1     Completed   0          3m19s   10.42.0.10   mk-cp   <none>           <none>
+main outage 4.5s starting +0.9s; 1 interval(s), total 4.5s; primary ps-cluster1-mysql-0 149 -> ps-cluster1-mysql-1 154
+   +0.9s .. +5.4s  (4.5s, 1 fails) top error: 
+DISRUPT +0.9s..+5.4s = 4.5s (1 fails)
+LOSTCHECK acked=584 present=584 lost=0

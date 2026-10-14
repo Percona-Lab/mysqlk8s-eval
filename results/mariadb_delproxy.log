@@ -1,0 +1,9 @@
+T=1791979524251
+proxy=maxscale-galera-0
+pod "maxscale-galera-0" deleted from mariadb namespace
+NAME                READY   STATUS    RESTARTS   AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+maxscale-galera-0   1/1     Running   0          90s   10.42.1.58   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running   0          10m   10.42.2.52   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running   0          10m   10.42.3.60   mk-w1   <none>           <none>
+no failed writes; primary mariadb-galera-1 4513
+LOSTCHECK acked=452 present=452 lost=0 (max over members)

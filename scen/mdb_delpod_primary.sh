@@ -1,0 +1,1 @@
+W=$(kubectl -n mariadb get pods -l k8s.mariadb.com/role=primary -o name | cut -d/ -f2); echo "operator-primary=$W maxscale-writer=$(writer)"; kubectl -n mariadb delete pod $W --wait=false; sleep ${S:-150}; kubectl -n mariadb get pods -L k8s.mariadb.com/role | grep galera
