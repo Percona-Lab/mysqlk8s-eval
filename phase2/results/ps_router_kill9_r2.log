@@ -1,0 +1,20 @@
+T=1792072784855
+writer=ps-cluster1-mysql-0 node=mk-w1
+killed
+NAME                                             READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0               5h13m   <none>        mk-cp   <none>           <none>
+load                                             1/1     Running     0               9m25s   10.42.0.40    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     6 (53m ago)     59m     10.42.3.185   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               22m     10.42.1.201   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     1 (2m32s ago)   25m     10.42.3.187   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     1 (6m59s ago)   26m     10.42.1.199   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0               27m     10.42.2.185   mk-w3   <none>           <none>
+ps-cluster1-router-7d5c59677-7zbc6               1/1     Running     0               11m     10.42.3.188   mk-w1   <none>           <none>
+ps-cluster1-router-7d5c59677-njkzs               1/1     Running     0               11m     10.42.1.202   mk-w2   <none>           <none>
+ps-cluster1-router-7d5c59677-vmdh2               1/1     Running     0               11m     10.42.2.187   mk-w3   <none>           <none>
+sysb                                             0/1     Completed   0               5h45m   <none>        mk-cp   <none>           <none>
+main outage 21.4s starting +3.6s; 1 interval(s), total 21.4s; primary ps-cluster1-mysql-0 68630 -> ps-cluster1-mysql-1 68644
+   +3.6s .. +25.0s  (21.4s, 66 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-rout
+DISRUPT +3.6s..+25.0s = 21.4s (66 fails)
+LOSTCHECK acked=530 present=530 lost=0 (max over members)
+LOAD samples=18 median_tps=51.1 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

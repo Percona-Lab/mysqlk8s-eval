@@ -1,0 +1,17 @@
+pod/bigprep created
+4s 51Mi 858Mi 776Mi 986Mi 
+65s 51Mi 2513Mi 2168Mi 2360Mi 
+125s 50Mi 2822Mi 2674Mi 2697Mi 
+186s 41Mi 2945Mi 2878Mi 2931Mi 
+247s 39Mi 3038Mi 2948Mi 2895Mi 
+308s 43Mi 3038Mi 2951Mi 2946Mi 
+368s 43Mi 2999Mi 2960Mi 2998Mi 
+429s 42Mi 2977Mi 3006Mi 2983Mi 
+490s 41Mi 2952Mi 2969Mi 3002Mi 
+550s 43Mi 3023Mi 2974Mi 2985Mi 
+611s 39Mi 3023Mi 2983Mi 3003Mi 
+PHASE Succeeded
+0
+ps-cluster1-mysql-0 restarts=0
+ps-cluster1-mysql-1 restarts=1
+ps-cluster1-mysql-2 restarts=0

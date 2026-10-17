@@ -1,0 +1,23 @@
+T=1792064560180
+writer=ps-cluster1-mysql-2 node=mk-w3
+pod "ps-cluster1-mysql-2" deleted from ps namespace
+NAME                                             READY   STATUS      RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0                176m    10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running     0                4m4s    10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0                3h26m   10.42.2.168   mk-w3   <none>           <none>
+pitr-restore-bigpitr2-4q6dj                      0/1     Completed   0                137m    10.42.3.174   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       30 (5m32s ago)   133m    10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0                133m    10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0                132m    10.42.3.176   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0                132m    10.42.1.187   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0                18m     10.42.3.177   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0                19m     10.42.1.188   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0                2m20s   10.42.2.178   mk-w3   <none>           <none>
+sysb                                             0/1     Completed   0                3h28m   10.42.0.32    mk-cp   <none>           <none>
+xb-bigbk2-s3-52lrd                               0/1     Completed   0                146m    10.42.1.183   mk-w2   <none>           <none>
+xb-restore-bigpitr2-jgzrh                        0/1     Completed   0                138m    10.42.3.173   mk-w1   <none>           <none>
+main outage 2.3s starting +2.9s; 1 interval(s), total 2.3s; primary ps-cluster1-mysql-2 42576 -> ps-cluster1-mysql-1 42588
+   +2.9s .. +5.2s  (2.3s, 7 fails) top error: ERROR 3100 (HY000) at line 1: Error on observer while running replicat
+DISRUPT +2.9s..+5.2s = 2.3s (7 fails)
+LOSTCHECK acked=619 present=619 lost=0 (max over members)
+LOAD samples=17 median_tps=50.1 min_tps=46.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=148.3

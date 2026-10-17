@@ -1,0 +1,19 @@
+namespace/ps created
+Waiting for deployment "percona-server-mysql-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-server-mysql-operator" successfully rolled out
+perconaservermysql.ps.percona.com/ps-src created
+SRC_READY 154s innodb=pssrc
+perconaservermysql.ps.percona.com/ps-rep created
+NAME     REPLICATION         ENDPOINT            STATE          MYSQL   ORCHESTRATOR   HAPROXY   ROUTER   AGE
+ps-rep   group-replication   ps-rep-haproxy.ps   initializing                                             2m
+ps-src   group-replication   ps-src-haproxy.ps   ready          3                      3                  4m34s
+ps-rep-mysql-0                                   0/1     Running   0          2m1s
+REP innodb=psrep
+primary=ps-src-mysql-0
+perconaservermysqlclusterset.ps.percona.com/ps-dr created
+CLUSTERSET: replica ready after 83s
+{"clusters":{"psrep":{"clusterRole":"REPLICA","globalStatus":"OK","primary":""},"pssrc":{"clusterRole":"PRIMARY","globalStatus":"OK","primary":"ps-src-mysql-0.ps-src-mysql.ps:3306"}},"conditions":[{"lastTransitionTime":"2026-10-16T23:08:23Z","message":"","reason":"DeploymentReady","status":"True","type":"MySQLShellRunnerReady"},{"lastTransitionTime":"2026-10-16T23:08:25Z","message":"","reason":"ClusterSetBootstrapped","status":"True","type":"ClusterSetBootstrapped"},{"lastTransitionTime":"2026-10-16T23:08:27Z","message":"All Clusters available.","reason":"ClusterSetHealthy","status":"True","type":"Ready"}],"lastObservedAt":"2026-10-16T23:09:43Z","lastObservedGeneration":1,"primaryCluster":"p
+NAME     REPLICATION         ENDPOINT            STATE   MYSQL   ORCHESTRATOR   HAPROXY   ROUTER   AGE
+ps-rep   group-replication   ps-rep-haproxy.ps   ready   1                      1                  3m39s
+ps-src   group-replication   ps-src-haproxy.ps   ready   3                      3                  6m13s
+rows src=385 rep=386

@@ -1,0 +1,59 @@
+T=1792069020481
+== mk-w1 drain start 1792069020495 writer=ps-cluster1-mysql-0
+pod/ps-cluster1-haproxy-1 evicted
+pod/ps-cluster1-mysql-0 evicted
+node/mk-w1 drained
+drained in 62s
+node back 152s
+node/mk-w1 uncordoned
+== mk-w1 done 195s total
+NAME                                             READY   STATUS             RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running            0                4h41m   10.42.2.168   mk-w3   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     CrashLoopBackOff   44 (3m33s ago)   3h28m   10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running            3 (29m ago)      3h28m   10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running            0                3m14s   10.42.3.183   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running            0                6m5s    10.42.1.192   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running            0                2m14s   10.42.3.184   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running            0                6m5s    10.42.1.191   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running            0                26m     10.42.2.181   mk-w3   <none>           <none>
+== mk-w2 drain start 1792069216222 writer=ps-cluster1-mysql-1
+pod/ps-cluster1-haproxy-2 evicted
+pod/ps-cluster1-mysql-1 evicted
+node/mk-w2 drained
+drained in 10s
+node back 93s
+node/mk-w2 uncordoned
+== mk-w2 done 130s total
+NAME                                             READY   STATUS      RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0                4h43m   10.42.2.168   mk-w3   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       45 (5m43s ago)   3h30m   10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     3 (31m ago)      3h30m   10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0                5m24s   10.42.3.183   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0                2m8s    10.42.1.194   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0                4m24s   10.42.3.184   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0                2m      10.42.1.193   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0                28m     10.42.2.181   mk-w3   <none>           <none>
+== mk-w3 drain start 1792069346970 writer=ps-cluster1-mysql-0
+pod/ps-cluster1-haproxy-0 evicted
+pod/ps-cluster1-mysql-2 evicted
+node/mk-w3 drained
+drained in 11s
+node back 92s
+node/mk-w3 uncordoned
+== mk-w3 done 131s total
+NAME                                             READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     0             2m9s    10.42.3.185   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       4 (58s ago)   2m9s    10.42.1.195   mk-w2   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0             2m8s    10.42.2.183   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0             7m35s   10.42.3.183   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0             4m19s   10.42.1.194   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0             6m35s   10.42.3.184   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0             4m11s   10.42.1.193   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0             2m      10.42.2.182   mk-w3   <none>           <none>
+main outage 4.4s starting +1.8s; 3 interval(s), total 15.8s; primary ps-cluster1-mysql-0 55609 -> ps-cluster1-mysql-0 56332
+   +1.8s .. +6.1s  (4.4s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +197.5s .. +208.5s  (11.0s, 38 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+   +208.5s .. +209.0s  (0.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +1.8s..+6.1s = 4.4s (2 fails); +197.5s..+209.0s = 11.5s (39 fails)
+LOSTCHECK acked=1705 present=1705 lost=0 (max over members)
+LOAD samples=47 median_tps=49.6 min_tps=40.2 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=59.0

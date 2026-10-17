@@ -1,0 +1,44 @@
+T=1792161720835
+writer=cluster1-pxc-0 node=mk-w3 id=108113001
+POWEROFF 1792161723735
+NAME    STATUS     ROLES           AGE    VERSION
+mk-cp   Ready      control-plane   2d7h   v1.37.1+k3s1
+mk-w1   Ready      <none>          2d7h   v1.37.1+k3s1
+mk-w2   Ready      <none>          2d7h   v1.37.1+k3s1
+mk-w3   NotReady   <none>          2d7h   v1.37.1+k3s1
+NAME                                               READY   STATUS        RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed     0               4h13m   10.42.0.56    mk-cp   <none>           <none>
+cluster1-haproxy-0                                 2/2     Running       4 (23m ago)     80m     10.42.1.241   mk-w2   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running       4 (22m ago)     80m     10.42.3.239   mk-w1   <none>           <none>
+cluster1-haproxy-2                                 2/2     Terminating   0               9m10s   10.42.2.228   mk-w3   <none>           <none>
+cluster1-pitr-f95dcd-kmz6z                         1/1     Running       8 (4m15s ago)   74m     10.42.3.240   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Terminating   0               9m10s   10.42.2.227   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running       6 (22m ago)     80m     10.42.3.238   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running       6 (22m ago)     77m     10.42.1.243   mk-w2   <none>           <none>
+load                                               1/1     Running       0               73m     10.42.0.58    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-85dzq   1/1     Running       0               10m     10.42.1.244   mk-w2   <none>           <none>
+pitr-job-bigpitr3-cluster1-7flpj                   0/1     Completed     0               81m     10.42.3.236   mk-w1   <none>           <none>
+sysb                                               0/1     Completed     0               4h23m   10.42.0.54    mk-cp   <none>           <none>
+xb-bigbk3-g7p8p                                    0/1     Completed     0               91m     10.42.3.234   mk-w1   <none>           <none>
+BOOT 1792162085730
+ALL_DB_READY_AFTER_BOOT 132s
+NAME                                               READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed   0               4h15m   10.42.0.56    mk-cp   <none>           <none>
+cluster1-haproxy-0                                 2/2     Running     4 (25m ago)     82m     10.42.1.241   mk-w2   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     4 (24m ago)     82m     10.42.3.239   mk-w1   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0               80s     10.42.2.230   mk-w3   <none>           <none>
+cluster1-pitr-f95dcd-kmz6z                         1/1     Running     8 (6m28s ago)   76m     10.42.3.240   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0               80s     10.42.2.229   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     6 (24m ago)     82m     10.42.3.238   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     6 (24m ago)     79m     10.42.1.243   mk-w2   <none>           <none>
+load                                               1/1     Running     0               75m     10.42.0.58    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-85dzq   1/1     Running     0               12m     10.42.1.244   mk-w2   <none>           <none>
+pitr-job-bigpitr3-cluster1-7flpj                   0/1     Completed   0               83m     10.42.3.236   mk-w1   <none>           <none>
+sysb                                               0/1     Completed   0               4h25m   10.42.0.54    mk-cp   <none>           <none>
+xb-bigbk3-g7p8p                                    0/1     Completed   0               94m     10.42.3.234   mk-w1   <none>           <none>
+main outage 42.6s starting +3.6s; 2 interval(s), total 47.3s; primary cluster1-pxc-0 152616 -> cluster1-pxc-2 152666
+   +3.6s .. +46.2s  (42.6s, 19 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +46.8s .. +51.5s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +3.6s..+51.5s = 47.8s (21 fails)
+LOSTCHECK acked=1757 present=1757 lost=0 (max over members)
+LOAD samples=52 median_tps=49.7 min_tps=0.0 intervals_below_50pct=17 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

@@ -1,0 +1,13 @@
+secret/mypwds patched
+ROOT_NEW_WORKS_AFTER 601s (600=never)
+old root still works
+reverted
+innodbcluster.mysql.oracle.com/mycluster patched
+RR_READY 41s
+mycluster-0                         2/2     Running     0             49m
+mycluster-1                         2/2     Running     1 (37m ago)   54m
+mycluster-2                         2/2     Running     0             43m
+mycluster-rr-0                      2/2     Running     0             41s
+28
+RR caught up (probe.t within 50 rows) after 1341s more: rr=64811 primary=64812
+5000000

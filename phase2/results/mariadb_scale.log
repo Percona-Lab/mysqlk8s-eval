@@ -1,0 +1,37 @@
+T=1792023258746
+Error from server (Forbidden): admission webhook "vmariadb-v1alpha1.kb.io" denied the request: spec.replicas: Invalid value: 1: Multiple replicas must be specified when 'spec.replication' or 'spec.galera' are configured
+SCALED_DOWN 903s
+mariadb-galera-0    2/2     Running     0          27m
+mariadb-galera-1    2/2     Running     0          26m
+mariadb-galera-2    2/2     Running     0          27m
+maxscale-galera-0   1/1     Running     0          4h23m
+maxscale-galera-1   1/1     Running     0          4h21m
+maxscale-galera-2   1/1     Running     0          4h25m
+mariadb.k8s.mariadb.com/mariadb-galera patched (no change)
+SCALED_UP 61s
+mariadb-galera-0    2/2     Running     0          29m
+mariadb-galera-1    2/2     Running     0          29m
+mariadb-galera-2    2/2     Running     0          29m
+maxscale-galera-0   1/1     Running     0          4h25m
+maxscale-galera-1   1/1     Running     0          4h23m
+maxscale-galera-2   1/1     Running     0          4h27m
+9b93ee4c-c802-11f1-bdce-535cd2dfea14 9b93ee4c-c802-11f1-bdce-535cd2dfea14 9b93ee4c-c802-11f1-bdce-535cd2dfea14 
+main outage 0.7s starting +0.7s; 14 interval(s), total 6.9s; primary mariadb-galera-2 271756 -> mariadb-galera-2 271951
+   +0.7s .. +1.4s  (0.7s, 2 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +4.9s .. +5.4s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +7.2s .. +7.7s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +7.7s .. +8.2s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +8.4s .. +8.9s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +8.9s .. +9.3s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +9.8s .. +10.3s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +12.9s .. +13.4s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +13.4s .. +13.8s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +13.8s .. +14.3s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +14.5s .. +15.0s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +17.1s .. +17.5s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +17.5s .. +18.0s  (0.5s, 1 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+   +18.0s .. +18.7s  (0.7s, 2 fails) top error: ERROR 1129 (HY000): Host '10.42.0.17' is temporarily blocked due to to
+DISRUPT +0.7s..+18.7s = 17.9s (16 fails)
+LOSTCHECK acked=4341 present=4341 lost=0 (max over members)
+LOAD samples=104 median_tps=49.9 min_tps=44.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+scale: webhook rejects replicas=1 for Galera ('Multiple replicas must be specified'); no scale test run

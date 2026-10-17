@@ -1,0 +1,36 @@
+namespace/ps created
+deployment.apps/percona-server-mysql-operator serverside-applied
+Waiting for deployment "percona-server-mysql-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-server-mysql-operator" successfully rolled out
+secret/s3-creds created
+perconaservermysql.ps.percona.com/ps-cluster1 created
+READY 1400s
+NAME          REPLICATION         ENDPOINT                 STATE   MYSQL   ORCHESTRATOR   HAPROXY   ROUTER   AGE
+ps-cluster1   group-replication   ps-cluster1-haproxy.ps   ready   3                      3                  23m
+NAME                                            READY   STATUS    RESTARTS   AGE
+percona-server-mysql-operator-8864d7795-njfxp   1/1     Running   0          23m
+ps-cluster1-binlog-server-0                     1/1     Running   0          22m
+ps-cluster1-haproxy-0                           2/2     Running   0          2m15s
+ps-cluster1-haproxy-1                           2/2     Running   0          2m59s
+ps-cluster1-haproxy-2                           2/2     Running   0          2m41s
+ps-cluster1-mysql-0                             2/2     Running   0          54s
+ps-cluster1-mysql-1                             2/2     Running   0          105s
+ps-cluster1-mysql-2                             2/2     Running   0          2m59s
+ 2/2     Running   0          2m10s   10.42.2.164   m
+ps-cluster1-haproxy-1                           2/2     Running   0          2m54s   10.42.3.163   m
+ps-cluster1-haproxy-2                           2/2     Running   0          2m36s   10.42.1.165   m
+ps-cluster1-mysql-0                             2/2     Running   0          49s     10.42.3.164   m
+ps-cluster1-mysql-1                             2/2     Running   0          100s    10.42.1.166   m
+ps-cluster1-mysql-2                             2/2     Running   0          2m54s   10.42.2.163   m
+READY 798s
+NAME          REPLICATION         ENDPOINT                 STATE   MYSQL   ORCHESTRATOR   HAPROXY   ROUTER   AGE
+ps-cluster1   group-replication   ps-cluster1-haproxy.ps   ready   3                      3                  23m
+NAME                                            READY   STATUS    RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-8864d7795-njfxp   1/1     Running   0          23m     10.42.3.160   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                     1/1     Running   0          22m     10.42.1.164   mk-w2   <none>           <none>
+ps-cluster1-haproxy-0                           2/2     Running   0          2m15s   10.42.2.164   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                           2/2     Running   0          2m59s   10.42.3.163   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                           2/2     Running   0          2m41s   10.42.1.165   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                             2/2     Running   0          54s     10.42.3.164   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                             2/2     Running   0          105s    10.42.1.166   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                             2/2     Running   0          2m59s   10.42.2.163   mk-w3   <none>           <none>

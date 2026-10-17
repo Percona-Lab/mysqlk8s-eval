@@ -1,0 +1,33 @@
+T=1792003475491
+writer=mariadb-galera-0 node=mk-w2 id=108112998
+POWEROFF 1792003478446
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   11h   v1.37.1+k3s1
+mk-w1   Ready      <none>          11h   v1.37.1+k3s1
+mk-w2   NotReady   <none>          11h   v1.37.1+k3s1
+mk-w3   Ready      <none>          11h   v1.37.1+k3s1
+NAME                READY   STATUS             RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep             0/1     Completed          0             3h16m   10.42.0.21    mk-cp   <none>           <none>
+load                1/1     Running            0             134m    10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0    2/2     Terminating        1 (52m ago)   60m     10.42.1.102   mk-w2   <none>           <none>
+mariadb-galera-1    1/2     CrashLoopBackOff   6 (99s ago)   57m     10.42.3.99    mk-w1   <none>           <none>
+mariadb-galera-2    1/2     CrashLoopBackOff   13 (8s ago)   36m     10.42.2.101   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Terminating        0             3h18m   10.42.1.82    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running            0             36m     10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running            0             3h19m   10.42.3.86    mk-w1   <none>           <none>
+sysb                0/1     Completed          0             3h28m   10.42.0.18    mk-cp   <none>           <none>
+BOOT 1792003840165
+ALL_DB_READY_AFTER_BOOT 900s
+NAME                READY   STATUS        RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep             0/1     Completed     0          3h31m   10.42.0.21    mk-cp   <none>           <none>
+load                1/1     Running       0          149m    10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-1    1/2     Terminating   0          6s      10.42.3.126   mk-w1   <none>           <none>
+maxscale-galera-0   1/1     Running       0          13m     10.42.1.104   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running       0          51m     10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running       0          3h34m   10.42.3.86    mk-w1   <none>           <none>
+sysb                0/1     Completed     0          3h43m   10.42.0.18    mk-cp   <none>           <none>
+main outage 1496.2s starting +3.8s; 1 interval(s), total 1496.2s; primary mariadb-galera-0 110071 -> NOT RECOVERED
+   +3.8s .. +1500.0s  (1496.2s, 4618 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +3.8s..+1500.0s = 1496.2s (4618 fails)
+LOSTCHECK acked=16 present=0 lost=16 (max over members)
+LOAD samples=129 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

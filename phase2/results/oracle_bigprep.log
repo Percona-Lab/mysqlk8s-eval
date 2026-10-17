@@ -1,0 +1,15 @@
+pod/bigprep created
+PHASE Succeeded after 544s
+0
+mycluster-0                         2/2     Running     0             11m
+mycluster-1                         2/2     Running     0             13m
+mycluster-2                         2/2     Running     0             15m
+mycluster-router-6d5dffdd6f-hhlxw   1/1     Running     0             16m
+mycluster-router-6d5dffdd6f-w4c8j   1/1     Running     5 (14m ago)   16m
+mycluster-router-6d5dffdd6f-xnwxb   1/1     Running     0             16m
+mycluster-0                         1022m        3146Mi          
+mycluster-1                         41m          3209Mi          
+mycluster-2                         1079m        3190Mi          
+mycluster-router-6d5dffdd6f-hhlxw   12m          14Mi            
+mycluster-router-6d5dffdd6f-w4c8j   11m          17Mi            
+mycluster-router-6d5dffdd6f-xnwxb   15m          22Mi            

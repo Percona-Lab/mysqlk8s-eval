@@ -1,0 +1,59 @@
+### ps_delpod_r1
+writer=ps-cluster1-mysql-2 node=mk-w3
+DISRUPT +2.9s..+5.2s = 2.3s (7 fails)
+LOSTCHECK acked=619 present=619 lost=0 (max over members)
+LOAD samples=17 median_tps=50.1 min_tps=46.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=148.3
+### ps_delpod_r2
+writer=ps-cluster1-mysql-1 node=mk-w2
+DISRUPT +2.8s..+13.4s = 10.6s (36 fails)
+LOSTCHECK acked=587 present=587 lost=0 (max over members)
+LOAD samples=17 median_tps=50.6 min_tps=38.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=118.8
+### ps_delpod_r3
+writer=ps-cluster1-mysql-0 node=mk-w1
+DISRUPT +2.1s..+4.7s = 2.5s (1 fails)
+LOSTCHECK acked=627 present=627 lost=0 (max over members)
+LOAD samples=18 median_tps=51.0 min_tps=44.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ps_kill9_r1
+writer=ps-cluster1-mysql-1 node=mk-w2
+DISRUPT +2.7s..+28.0s = 25.3s (73 fails)
+LOSTCHECK acked=542 present=542 lost=0 (max over members)
+LOAD samples=17 median_tps=49.2 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=176.3
+### ps_kill9_r2
+writer=ps-cluster1-mysql-0 node=mk-w1
+DISRUPT +3.1s..+30.0s = 26.9s (79 fails)
+LOSTCHECK acked=513 present=513 lost=0 (max over members)
+LOAD samples=17 median_tps=49.9 min_tps=0.0 intervals_below_50pct=3 sysbench_restarts=0 report_gaps=0s max_err/s=319.0
+### ps_kill9_r3
+writer=ps-cluster1-mysql-1 node=mk-w2
+DISRUPT +3.0s..+24.9s = 21.9s (76 fails)
+LOSTCHECK acked=549 present=549 lost=0 (max over members)
+LOAD samples=18 median_tps=49.1 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ps_fullcrash_r1
+DISRUPT +0.9s..+139.6s = 138.7s (277 fails); +153.3s..+155.2s = 1.9s (7 fails)
+LOSTCHECK acked=1065 present=1065 lost=0 (max over members)
+LOAD samples=44 median_tps=49.7 min_tps=0.0 intervals_below_50pct=13 sysbench_restarts=0 report_gaps=0s max_err/s=439.7
+GR after fullcrash 1: ps-cluster1-mysql-1.ps-cluster1-mysql.ps ONLINE PRIMARY;ps-cluster1-mysql-0.ps-cluster1-mysql.ps ONLINE SECONDARY;ps-cluster1-mysql-2.ps-cluster1-mysql.ps ONLINE SECONDARY;
+### ps_fullcrash_r1
+DISRUPT +0.7s..+209.5s = 208.8s (364 fails); +241.4s..+245.9s = 4.5s (1 fails)
+LOSTCHECK acked=806 present=806 lost=0 (max over members)
+LOAD samples=44 median_tps=47.9 min_tps=0.0 intervals_below_50pct=21 sysbench_restarts=0 report_gaps=0s max_err/s=306.9
+GR after fullcrash 2: ps-cluster1-mysql-1.ps-cluster1-mysql.ps ONLINE PRIMARY;ps-cluster1-mysql-0.ps-cluster1-mysql.ps ONLINE SECONDARY;ps-cluster1-mysql-2.ps-cluster1-mysql.ps ONLINE SECONDARY;
+### ps_fullcrash_r1
+DISRUPT +0.9s..+362.5s = 361.6s (515 fails); +403.5s..+408.0s = 4.5s (1 fails)
+LOSTCHECK acked=242 present=242 lost=0 (max over members)
+LOAD samples=45 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=436.9
+GR after fullcrash 3: ps-cluster1-mysql-1.ps-cluster1-mysql.ps ONLINE SECONDARY;ps-cluster1-mysql-0.ps-cluster1-mysql.ps ONLINE PRIMARY;
+### ps_nodeoff_r1
+writer=ps-cluster1-mysql-0 node=mk-w1 id=108112995
+ALL_DB_READY_AFTER_BOOT 114s
+DISRUPT +4.8s..+53.7s = 49.0s (20 fails)
+LOSTCHECK acked=1661 present=1661 lost=0 (max over members)
+LOAD samples=50 median_tps=49.8 min_tps=0.0 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ps_nodeoff_r2
+writer=ps-cluster1-mysql-1 node=mk-w2 id=108112998
+ALL_DB_READY_AFTER_BOOT 89s
+DISRUPT +4.3s..+58.5s = 54.1s (22 fails)
+LOSTCHECK acked=1585 present=1585 lost=0 (max over members)
+LOAD samples=47 median_tps=50.5 min_tps=0.0 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+GR at end: ps-cluster1-mysql-1.ps-cluster1-mysql.ps ONLINE SECONDARY;ps-cluster1-mysql-0.ps-cluster1-mysql.ps ONLINE PRIMARY;ps-cluster1-mysql-2.ps-cluster1-mysql.ps ONLINE SECONDARY;
+REPEATS_DONE

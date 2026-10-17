@@ -1,0 +1,22 @@
+T=1792158040924
+writer=cluster1-pxc-0 node=mk-w3
+pod "cluster1-pxc-0" deleted from pxc namespace
+NAME                                               READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed   0          3h8m    10.42.0.56    mk-cp   <none>           <none>
+cluster1-haproxy-0                                 2/2     Running     0          15m     10.42.1.241   mk-w2   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0          15m     10.42.3.239   mk-w1   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0          14m     10.42.2.223   mk-w3   <none>           <none>
+cluster1-pitr-f95dcd-kmz6z                         1/1     Running     0          9m47s   10.42.3.240   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0          2m17s   10.42.2.225   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0          15m     10.42.3.238   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0          12m     10.42.1.243   mk-w2   <none>           <none>
+load                                               1/1     Running     0          8m30s   10.42.0.58    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-nctm6   1/1     Running     0          3h17m   10.42.2.217   mk-w3   <none>           <none>
+pitr-job-bigpitr3-cluster1-7flpj                   0/1     Completed   0          16m     10.42.3.236   mk-w1   <none>           <none>
+prepare-job-bigpitr3-cluster1-5mbdh                0/1     Completed   0          18m     10.42.2.221   mk-w3   <none>           <none>
+restore-job-bigpitr3-cluster1-2snhd                0/1     Completed   0          20m     10.42.2.220   mk-w3   <none>           <none>
+sysb                                               0/1     Completed   0          3h18m   10.42.0.54    mk-cp   <none>           <none>
+xb-bigbk3-g7p8p                                    0/1     Completed   0          26m     10.42.3.234   mk-w1   <none>           <none>
+no failed writes; primary cluster1-pxc-0 123290
+LOSTCHECK acked=631 present=631 lost=0 (max over members)
+LOAD samples=17 median_tps=50.1 min_tps=46.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=596.8

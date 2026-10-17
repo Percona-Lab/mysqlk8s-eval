@@ -1,0 +1,15 @@
+T=1791992796191
+physicalbackup.k8s.mariadb.com/bigphys created
+BACKUP_START 1791992796834
+BACKUP_DONE 1614s 1791994410296
+NAME      COMPLETE   STATUS    MARIADB          LAST SCHEDULED   AGE
+bigphys   True       Success   mariadb-galera   26m              26m
+  mariadb	size:4951645640	logical:4951645640	chunk:1233
+mariadb.k8s.mariadb.com/bigrestored created
+RESTORE_NEW_CLUSTER_READY 598s
+5000000
+mariadb.k8s.mariadb.com "bigrestored" deleted from mariadb namespace
+persistentvolumeclaim "storage-bigrestored-0" deleted from mariadb namespace
+no failed writes; primary mariadb-galera-2 12253
+LOSTCHECK acked=9199 present=9199 lost=0 (max over members)
+LOAD samples=223 median_tps=49.7 min_tps=43.7 intervals_below_50pct=0 (~0s) max_err/s=0.0 reconn_total~0

@@ -1,0 +1,18 @@
+T=1792055925989
+perconaservermysqlbackup.ps.percona.com/bigbk2 created
+BACKUP_START 1792055927325
+BACKUP Succeeded 232s 1792056159084
+TARGET 2026-10-15 09:22:43
+perconaservermysqlrestore.ps.percona.com/bigpitr2 created
+RESTORE_START 1792056347554
+perconaservermysql.ps.percona.com/ps-cluster1 patched
+after config fix: restore=Succeeded cluster=ready 1220s
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0               3h20m
+ps-cluster1-binlog-server-0                      1/1     Running     29 (5m5s ago)   127m
+ps-cluster1-mysql-0                              2/2     Running     0               12m
+ps-cluster1-mysql-1                              2/2     Running     0               13m
+ps-cluster1-mysql-2                              2/2     Running     1 (14m ago)     15m
+1	after-backup
+2	after-target
+5000000
+PITR verification: probe rows between target 09:22:43 and restore 09:31 = 0 on all members; sbtest7 restored 5,000,000 rows. marker row 2 present but ambiguous (leftover from failed first attempt in base backup). Restore core (restore+pitr jobs) ~6 min for 9.3 GB.

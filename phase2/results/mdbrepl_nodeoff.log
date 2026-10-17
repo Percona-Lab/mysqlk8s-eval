@@ -1,0 +1,41 @@
+T=1792025229646
+writer=mariadb-repl-1 node=mk-w3 id=108113001
+POWEROFF 1792025232370
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   17h   v1.37.1+k3s1
+mk-w1   Ready      <none>          17h   v1.37.1+k3s1
+mk-w2   Ready      <none>          17h   v1.37.1+k3s1
+mk-w3   NotReady   <none>          17h   v1.37.1+k3s1
+NAME                READY   STATUS        RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep             0/1     Completed     0               9h      <none>        mk-cp   <none>           <none>
+load                1/1     Running       0               8h      10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0    2/2     Running       0               51m     10.42.1.149   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running       1 (8m56s ago)   50m     10.42.3.143   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Terminating   0               51m     10.42.2.142   mk-w3   <none>           <none>
+mariadb-repl-0      1/2     Running       4 (6m42s ago)   21m     10.42.3.145   mk-w1   <none>           <none>
+mariadb-repl-1      2/2     Terminating   0               21m     10.42.2.144   mk-w3   <none>           <none>
+mariadb-repl-2      1/2     Running       0               21m     10.42.1.151   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running       0               4h47m   10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Terminating   0               4h44m   10.42.2.135   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running       0               4h49m   10.42.3.136   mk-w1   <none>           <none>
+sysb                0/1     Completed     0               9h      <none>        mk-cp   <none>           <none>
+BOOT 1792025594305
+ALL_DB_READY_AFTER_BOOT 900s
+NAME                READY   STATUS             RESTARTS      AGE    IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep             0/1     Completed          0             9h     <none>        mk-cp   <none>           <none>
+load                1/1     Running            0             8h     10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0    2/2     Running            0             66m    10.42.1.149   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running            1 (23m ago)   65m    10.42.3.143   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running            0             14m    10.42.2.150   mk-w3   <none>           <none>
+mariadb-repl-0      1/2     CrashLoopBackOff   8 (83s ago)   36m    10.42.3.145   mk-w1   <none>           <none>
+mariadb-repl-1      2/2     Running            0             14m    10.42.2.152   mk-w3   <none>           <none>
+mariadb-repl-2      2/2     Running            1 (13m ago)   36m    10.42.1.151   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running            0             5h2m   10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running            0             14m    10.42.2.151   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running            0             5h4m   10.42.3.136   mk-w1   <none>           <none>
+sysb                0/1     Completed          0             9h     <none>        mk-cp   <none>           <none>
+main outage 434.3s starting +3.6s; 1 interval(s), total 434.3s; primary mariadb-repl-1 661 -> mariadb-repl-1 675
+   +3.6s .. +438.0s  (434.3s, 415 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'mariadb-repl-primary.m
+DISRUPT +3.6s..+438.0s = 434.3s (415 fails)
+LOSTCHECK acked=2983 present=0 lost=2983 (max over members)
+LOAD samples=128 median_tps=50.2 min_tps=29.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.1

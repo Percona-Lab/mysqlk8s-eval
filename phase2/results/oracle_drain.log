@@ -1,0 +1,53 @@
+T=1792116622337
+== mk-w1 drain start 1792116622353 writer=mycluster-2
+evicting pod oracle/mycluster-1
+pod/mycluster-1 evicted
+node/mk-w1 drained
+drained in 67s
+node back 149s
+node/mk-w1 uncordoned
+== mk-w1 done 302s total
+NAME                                READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     0             17m     10.42.1.223   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     0             3m57s   10.42.3.220   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     4 (33m ago)   67m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-gb2zz   1/1     Running     0             18m     10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-jg8v9   1/1     Running     0             8m55s   10.42.1.225   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   1/1     Running     0             18m     10.42.2.204   mk-w3   <none>           <none>
+== mk-w2 drain start 1792116925547 writer=mycluster-2
+pod/mysql-operator-86cb64fb94-m9mtd evicted
+pod/mycluster-0 evicted
+node/mk-w2 drained
+drained in 66s
+node back 147s
+node/mk-w2 uncordoned
+== mk-w2 done 324s total
+NAME                                READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     0             4m21s   10.42.1.226   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     0             9m23s   10.42.3.220   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     4 (38m ago)   73m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-gb2zz   1/1     Running     0             23m     10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-xcjqp   1/1     Running     0             5m25s   10.42.3.221   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   1/1     Running     0             23m     10.42.2.204   mk-w3   <none>           <none>
+== mk-w3 drain start 1792117251187 writer=mycluster-2
+pod/mycluster-router-6d5dffdd6f-gb2zz evicted
+pod/mycluster-2 evicted
+node/mk-w3 drained
+drained in 65s
+node back 155s
+node/mk-w3 uncordoned
+== mk-w3 done 297s total
+NAME                                READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     0          9m20s   10.42.1.226   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     0          14m     10.42.3.220   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     0          3m55s   10.42.2.206   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-l49kp   1/1     Running     0          4m58s   10.42.1.228   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-tv874   1/1     Running     0          4m58s   10.42.1.227   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-xcjqp   1/1     Running     0          10m     10.42.3.221   mk-w1   <none>           <none>
+main outage 0.6s starting +304.1s; 3 interval(s), total 4.4s; primary mycluster-2 47254 -> mycluster-1 49593
+   +304.1s .. +304.6s  (0.6s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +630.1s .. +632.8s  (2.7s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +643.0s .. +644.2s  (1.1s, 3 fails) top error: ERROR 3100 (HY000) at line 1: Error on observer while running replicat
+DISRUPT +304.1s..+304.6s = 0.6s (1 fails); +630.1s..+632.8s = 2.7s (1 fails); +643.0s..+644.2s = 1.1s (3 fails)
+LOSTCHECK acked=3444 present=3444 lost=0 (max over members)
+LOAD samples=95 median_tps=48.3 min_tps=22.4 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=16.0

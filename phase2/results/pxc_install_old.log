@@ -1,0 +1,170 @@
+namespace/pxc created
+deployment.apps/percona-xtradb-cluster-operator serverside-applied
+Waiting for deployment "percona-xtradb-cluster-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-xtradb-cluster-operator" successfully rolled out
+secret/s3-creds created
+Error from server (BadRequest): error when creating "pxc-cr-1.19.1.yaml": PerconaXtraDBCluster in version "v1" cannot be handled as a PerconaXtraDBCluster: strict decoding error: unknown field "spec.backup.storages.s3.s3.forcePathStyle", unknown field "spec.backup.storages.s3.s3.prefix"
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+Error from server (NotFound): perconaxtradbclusters.pxc.percona.com "cluster1" not found
+READY 1502s
+No resources found in pxc namespace.
+NAME                                               READY   STATUS    RESTARTS   AGE
+percona-xtradb-cluster-operator-7dbfbf944f-dn9xg   1/1     Running   0          25m
+perconaxtradbcluster.pxc.percona.com/cluster1 created
+READY 287s
+NAME       ENDPOINT               STATUS   PXC   PROXYSQL   HAPROXY   AGE
+cluster1   cluster1-haproxy.pxc   ready    3                3         4m47s
+NAME                                               READY   STATUS            RESTARTS   AGE
+cluster1-haproxy-0                                 2/2     Running           0          4m45s
+cluster1-haproxy-1                                 2/2     Running           0          3m5s
+cluster1-haproxy-2                                 2/2     Running           0          2m38s
+cluster1-pitr-6f4bb6cf87-k6bfd                     0/1     PodInitializing   0          8s
+cluster1-pxc-0                                     3/3     Running           0          4m45s
+cluster1-pxc-1                                     3/3     Running           0          3m12s
+cluster1-pxc-2                                     3/3     Running           0          102s
+percona-xtradb-cluster-operator-7dbfbf944f-dn9xg   1/1     Running           0          30m

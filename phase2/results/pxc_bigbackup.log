@@ -1,0 +1,17 @@
+T=1792156326565
+perconaxtradbclusterbackup.pxc.percona.com/bigbk2 created
+BACKUP_START 1792156327157
+BACKUP Failed 21s 1792156348080
+TARGET 2026-10-16 13:12:31
+perconaxtradbclusterrestore.pxc.percona.com/bigpitr2 created
+RESTORE_START 1792156535567
+RESTORE {"comments":"backup bigbk2 didn't finished yet, current state: Failed","state":"Failed","unsafeFlags":{}} 1s
+CLUSTER_READY_AFTER_RESTORE 0s 1792156536236
+1	after-backup
+2	after-target
+ERROR 1146 (42S02) at line 1: Table 'sbbig.sbtest7' doesn't exist
+command terminated with exit code 1
+probe rows between target and restore start (expect 0): 693
+no failed writes; primary cluster1-pxc-0 110809
+LOSTCHECK acked=823 present=823 lost=0 (max over members)
+LOAD samples=22 median_tps=50.0 min_tps=45.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

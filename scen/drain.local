@@ -1,0 +1,10 @@
+# rolling maintenance: drain + reboot + uncordon each worker in turn
+for N in mk-w1 mk-w2 mk-w3; do
+  t0=$(date +%s); echo "== $N drain start $(date +%s%3N) writer=$(rx writer)"
+  rx "kubectl drain $N --ignore-daemonsets --delete-emptydir-data --timeout=900s 2>&1 | tail -3"; echo "drained in $(( $(date +%s)-t0 ))s"
+  ID=$(python3 -c "import json;print([i['id'] for i in json.load(open('instances.json')) if i['label']=='$N'][0])"); python3 -c "import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances/$ID/reboot',{})"; sleep 30
+  until [ "$(timeout 10 ssh -n -F ssh_config $N 'cut -d. -f1 /proc/uptime' 2>/dev/null)" != "" ] && [ "$(timeout 10 ssh -n -F ssh_config $N 'cut -d. -f1 /proc/uptime' 2>/dev/null)" -lt 600 ]; do sleep 5; done; sleep 20
+  until rx "kubectl get node $N --no-headers" 2>/dev/null | grep -q " Ready"; do sleep 5; done; echo "node back $(( $(date +%s)-t0 ))s"
+  rx "kubectl uncordon $N"; rx "kubectl -n $NS wait --for=condition=Ready pod -l $DBSEL --timeout=900s" >/dev/null 2>&1
+  echo "== $N done $(( $(date +%s)-t0 ))s total"; rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'"
+done

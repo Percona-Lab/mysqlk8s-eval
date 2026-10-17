@@ -1,0 +1,22 @@
+T=1792096008481
+writer=ps-async-mysql-1 node=mk-w1
+killed
+NAME                                             READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0               11h     <none>        mk-cp   <none>           <none>
+load                                             1/1     Running     0               9m16s   10.42.0.45    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     6 (7h20m ago)   7h26m   10.42.3.185   mk-w1   <none>           <none>
+ps-async-haproxy-0                               2/2     Running     0               13m     10.42.2.191   mk-w3   <none>           <none>
+ps-async-haproxy-1                               2/2     Running     0               12m     10.42.1.210   mk-w2   <none>           <none>
+ps-async-haproxy-2                               2/2     Running     0               12m     10.42.3.200   mk-w1   <none>           <none>
+ps-async-mysql-0                                 2/2     Running     2 (6m24s ago)   14m     10.42.1.208   mk-w2   <none>           <none>
+ps-async-mysql-1                                 2/2     Running     3 (2m3s ago)    13m     10.42.3.199   mk-w1   <none>           <none>
+ps-async-mysql-2                                 2/2     Running     1 (12m ago)     12m     10.42.2.193   mk-w3   <none>           <none>
+ps-async-orc-0                                   2/2     Running     0               14m     10.42.2.190   mk-w3   <none>           <none>
+ps-async-orc-1                                   2/2     Running     0               13m     10.42.3.197   mk-w1   <none>           <none>
+ps-async-orc-2                                   2/2     Running     0               13m     10.42.1.209   mk-w2   <none>           <none>
+sysb                                             0/1     Completed   0               10m     10.42.0.44    mk-cp   <none>           <none>
+main outage 7.3s starting +2.8s; 1 interval(s), total 7.3s; primary ps-async-mysql-1 1722 -> ps-async-mysql-2 1734
+   +2.8s .. +10.1s  (7.3s, 4 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+DISRUPT +2.8s..+10.1s = 7.3s (4 fails)
+LOSTCHECK acked=620 present=620 lost=0 (max over members)
+LOAD samples=17 median_tps=49.8 min_tps=0.7 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=428.2

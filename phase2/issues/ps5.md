@@ -1,0 +1,5 @@
+**Environment:** percona-server-mysql-operator 1.2.0 (upgraded from 1.1.0), Percona Server 8.4.10-10.1, group replication, 3 members + HAProxy/Router, binlog server 0.3.1 (PITR), k3s v1.37.1, 3 workers (2 vCPU / 4 GB), local-path, ~9.3 GB sysbench dataset, 50 tps load. Hands-on evaluation 2026-10-15.
+
+## Summary (minor)
+1. When switching `proxy.haproxy.enabled: false` / `router.enabled: true` with a router `resources.requests.memory: 256Mi`, the operator merges its default limit `256M`. 256Mi > 256M, so the Deployment is rejected, but the CR endpoint already points at `ps-cluster1-router`, which doesn't exist (state `error`). The operator should validate requests against default limits, or not switch endpoints until the new proxy is ready.
+2. Full-cluster crash recovery time grew across three runs under load: 139 s, 209 s, 362 s (kill -9 of all mysqld). After the third run the group had 2 of 3 members for a while. Single-member `kill -9` failover is 22-29 s with both HAProxy and Router, versus ~5 s for PXC on the same hardware.

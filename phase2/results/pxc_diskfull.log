@@ -1,0 +1,29 @@
+T=1792163360560
+writer=cluster1-pxc-0 node=mk-w3
+/dev/sda         79G   74G  300M 100% /
+FULL 1792163363340
+True
+True
+True
+True
+/dev/sda         79G   14G   61G  19% /
+FREED 1792163612713
+NAME                                               READY   STATUS      RESTARTS      AGE     IP            NODE     NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0             21m     10.42.1.245   mk-w2    <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0             24m     10.42.3.241   mk-w1    <none>           <none>
+cluster1-haproxy-2                                 0/2     Pending     0             7m55s   <none>        <none>   <none>           <none>
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0             19m     10.42.1.247   mk-w2    <none>           <none>
+cluster1-pxc-0                                     0/3     Pending     0             7m51s   <none>        <none>   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0             24m     10.42.3.242   mk-w1    <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0             21m     10.42.1.246   mk-w2    <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (12m ago)   21m     10.42.3.243   mk-w1    <none>           <none>
+38m         Normal    TaintManagerEviction       pod/cluster1-pxc-0                                      Cancelling deletion of Pod pxc/cluster1-pxc-0
+29m         Normal    TaintManagerEviction       pod/cluster1-haproxy-2                                  Marking for deletion Pod pxc/cluster1-haproxy-2
+29m         Normal    TaintManagerEviction       pod/cluster1-pxc-0                                      Marking for deletion Pod pxc/cluster1-pxc-0
+7m55s       Warning   Evicted                    pod/cluster1-haproxy-2                                  The node was low on resource: ephemeral-storage. Threshold quantity: 4196064113, available: 306672Ki. Container haproxy was using 836Ki, request is 0, has larger consumption of ephemeral-storage. Container pxc-monit was using 52Ki, request is 0, has larger consumption of ephemeral-storage.
+7m53s       Warning   Evicted                    pod/cluster1-pxc-0                                      The node was low on resource: ephemeral-storage. Threshold quantity: 4196064113, available: 7600088Ki. Container pxc was using 124Ki, request is 0, has larger consumption of ephemeral-storage. Container logs was using 1868Ki, request is 0, has larger consumption of ephemeral-storage. Container logrotate was using 52Ki, request is 0, has larger consumption of ephemeral-storage.
+main outage 2.8s starting +22.3s; 1 interval(s), total 2.8s; primary cluster1-pxc-0 167242 -> cluster1-pxc-2 167481
+   +22.3s .. +25.1s  (2.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +22.3s..+25.1s = 2.8s (2 fails)
+LOSTCHECK acked=1889 present=1889 lost=0 (max over members)
+LOAD samples=52 median_tps=50.1 min_tps=0.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

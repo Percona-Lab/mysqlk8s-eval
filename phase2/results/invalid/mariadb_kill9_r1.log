@@ -1,0 +1,43 @@
+T=1791995943120
+writer=mariadb-galera-2 node=mk-w3
+killed
+NAME                           READY   STATUS      RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed   0          54m     10.42.1.84   mk-w2   <none>           <none>
+bigprep                        0/1     Completed   0          67m     10.42.0.21   mk-cp   <none>           <none>
+load                           1/1     Running     0          5m34s   10.42.0.24   mk-cp   <none>           <none>
+mariadb-galera-0               1/2     Running     0          8s      10.42.1.96   mk-w2   <none>           <none>
+mariadb-galera-1               0/2     Running     0          8s      10.42.3.89   mk-w1   <none>           <none>
+mariadb-galera-2               0/2     Running     0          8s      10.42.2.92   mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running     0          69m     10.42.1.82   mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running     0          70m     10.42.2.89   mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running     0          70m     10.42.3.86   mk-w1   <none>           <none>
+sysb                           0/1     Completed   0          78m     10.42.0.18   mk-cp   <none>           <none>
+NAME                           READY   STATUS        RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed     0          55m     10.42.1.84   mk-w2   <none>           <none>
+bigprep                        0/1     Completed     0          67m     10.42.0.21   mk-cp   <none>           <none>
+load                           1/1     Running       0          5m51s   10.42.0.24   mk-cp   <none>           <none>
+mariadb-galera-0               1/2     Running       0          25s     10.42.1.96   mk-w2   <none>           <none>
+mariadb-galera-1               1/2     Terminating   0          25s     10.42.3.89   mk-w1   <none>           <none>
+mariadb-galera-2               1/2     Running       0          25s     10.42.2.92   mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running       0          69m     10.42.1.82   mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running       0          70m     10.42.2.89   mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running       0          70m     10.42.3.86   mk-w1   <none>           <none>
+sysb                           0/1     Completed     0          79m     10.42.0.18   mk-cp   <none>           <none>
+main outage 1.6s starting +3.2s; 7 interval(s), total 281.7s; primary mariadb-galera-0 50758 -> NOT RECOVERED
+   +3.2s .. +4.7s  (1.6s, 5 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +4.7s .. +15.7s  (11.0s, 6 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +15.7s .. +16.4s  (0.7s, 2 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +16.4s .. +17.1s  (0.7s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +19.8s .. +24.3s  (4.5s, 1 fails) top error: 
+   +30.5s .. +34.9s  (4.4s, 1 fails) top error: 
+   +41.1s .. +300.0s  (258.9s, 469 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +3.2s..+300.0s = 296.8s (485 fails)
+LOSTCHECK acked=63 present=0 lost=63 (max over members)
+LOAD samples=18 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=856.4
+main outage 4.5s starting +2.8s; 3 interval(s), total 154.9s; primary mariadb-galera-2 50813 -> mariadb-galera-1 50889
+   +2.8s .. +7.3s  (4.5s, 1 fails) top error: 
+   +13.5s .. +18.0s  (4.4s, 1 fails) top error: 
+   +24.2s .. +170.2s  (146.0s, 517 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +2.8s..+170.2s = 167.3s (519 fails)
+LOSTCHECK acked=51 present=51 lost=0 (max over members)
+LOAD samples=18 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=856.4

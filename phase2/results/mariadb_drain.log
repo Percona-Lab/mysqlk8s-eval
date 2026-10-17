@@ -1,0 +1,52 @@
+T=1792008236237
+== mk-w1 drain start 1792008236250 writer=mariadb-galera-0
+pod/maxscale-galera-2 evicted
+pod/mariadb-galera-1 evicted
+node/mk-w1 drained
+drained in 5s
+node back 102s
+node/mk-w1 uncordoned
+== mk-w1 done 133s total
+NAME                READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          8m15s   10.42.1.140   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running     0          2m10s   10.42.3.137   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running     0          9m      10.42.2.133   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running     0          10m     10.42.1.136   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          112m    10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running     0          2m11s   10.42.3.136   mk-w1   <none>           <none>
+== mk-w2 drain start 1792008370773 writer=mariadb-galera-0
+pod/maxscale-galera-0 evicted
+pod/mariadb-galera-0 evicted
+node/mk-w2 drained
+drained in 3s
+node back 92s
+node/mk-w2 uncordoned
+== mk-w2 done 124s total
+NAME                READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          2m2s    10.42.1.142   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running     0          4m14s   10.42.3.137   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running     0          11m     10.42.2.133   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running     0          2m2s    10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          114m    10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running     0          4m15s   10.42.3.136   mk-w1   <none>           <none>
+== mk-w3 drain start 1792008494950 writer=mariadb-galera-2
+pod/maxscale-galera-1 evicted
+pod/mariadb-galera-2 evicted
+node/mk-w3 drained
+drained in 4s
+node back 103s
+node/mk-w3 uncordoned
+== mk-w3 done 135s total
+NAME                READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          4m18s   10.42.1.142   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running     0          6m30s   10.42.3.137   mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running     0          2m13s   10.42.2.134   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running     0          4m18s   10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          2m13s   10.42.2.135   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running     0          6m31s   10.42.3.136   mk-w1   <none>           <none>
+main outage 1.5s starting +134.8s; 2 interval(s), total 6.2s; primary mariadb-galera-0 133162 -> mariadb-galera-1 135497
+   +134.8s .. +136.2s  (1.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +260.0s .. +264.6s  (4.7s, 4 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +134.8s..+136.2s = 1.5s (1 fails); +260.0s..+264.6s = 4.7s (4 fails)
+LOSTCHECK acked=1657 present=1657 lost=0 (max over members)
+LOAD samples=42 median_tps=50.2 min_tps=39.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=9.6

@@ -1,0 +1,47 @@
+SOAK_START 1792121492618 hours=6 interval=30m
+## event 1 04:00:13 scen/cpu.local
+no failed writes; primary mycluster-2 71728
+LOSTCHECK acked=949 present=949 lost=0 (max over members)
+## event 2 04:35:55 scen/delpod.sh
+DISRUPT +4.9s..+6.2s = 1.3s (4 fails)
+LOSTCHECK acked=263 present=263 lost=0 (max over members)
+## event 3 05:06:03 scen/delproxy.sh
+no failed writes; primary mycluster-1 86605
+LOSTCHECK acked=269 present=269 lost=0 (max over members)
+## event 4 05:38:31 scen/delproxy.sh
+no failed writes; primary mycluster-1 93933
+LOSTCHECK acked=266 present=266 lost=0 (max over members)
+## event 5 06:10:09 scen/delpod.sh
+DISRUPT +3.6s..+4.3s = 0.8s (2 fails)
+LOSTCHECK acked=251 present=251 lost=0 (max over members)
+## event 6 06:43:12 scen/delpod.sh
+DISRUPT +4.8s..+6.4s = 1.6s (5 fails)
+LOSTCHECK acked=252 present=252 lost=0 (max over members)
+## event 7 07:14:46 scen/kill9.local
+DISRUPT +3.2s..+25.3s = 22.1s (67 fails)
+LOSTCHECK acked=181 present=181 lost=0 (max over members)
+## event 8 07:47:15 scen/kill9.local
+DISRUPT +3.6s..+25.7s = 22.1s (57 fails)
+LOSTCHECK acked=185 present=185 lost=0 (max over members)
+## event 9 08:19:25 scen/delpod.sh
+DISRUPT +4.8s..+6.2s = 1.4s (4 fails)
+LOSTCHECK acked=254 present=254 lost=0 (max over members)
+## event 10 08:49:16 scen/delproxy.sh
+DISRUPT +1.6s..+2.1s = 0.5s (1 fails)
+LOSTCHECK acked=258 present=258 lost=0 (max over members)
+## event 11 09:21:02 scen/delproxy.sh
+no failed writes; primary mycluster-2 143869
+LOSTCHECK acked=256 present=256 lost=0 (max over members)
+SOAK probe attempts=49908 ok=49772 fail=136 availability=99.727%
+member mycluster-0 missing=0
+member mycluster-1 missing=0
+member mycluster-2 missing=0
+SOAK LOSTCHECK acked=49772 (missing per member above; 0 on any member = no loss)
+NAME                                READY   STATUS      RESTARTS       AGE
+mycluster-0                         2/2     Running     0              7h35m
+mycluster-1                         2/2     Running     0              91m
+mycluster-2                         2/2     Running     1 (124m ago)   3h7m
+mycluster-router-6d5dffdd6f-s4nnv   1/1     Running     0              30m
+mycluster-router-6d5dffdd6f-wtpsj   1/1     Running     0              4h45m
+mycluster-router-6d5dffdd6f-xcjqp   1/1     Running     0              7h36m
+SOAK_DONE

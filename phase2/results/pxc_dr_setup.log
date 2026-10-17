@@ -1,0 +1,319 @@
+/root/pxc-cr.yaml
++ kubectl -n pxc patch pxc cluster1 --type=merge -p '{"spec":{"pxc":{"expose":{"enabled":true,"type":"ClusterIP"},"replicationChannels":[{"name":"pxc1_to_pxc2","isSource":true}]}}}'
+perconaxtradbcluster.pxc.percona.com/cluster1 patched
++ sleep 120
++ kubectl -n pxc get svc
++ grep -E 'cluster1-pxc-[0-9]'
+cluster1-pxc-0                    ClusterIP   10.43.202.250   <none>        3306/TCP                       119s
+cluster1-pxc-1                    ClusterIP   10.43.77.214    <none>        3306/TCP                       119s
+cluster1-pxc-2                    ClusterIP   10.43.183.98    <none>        3306/TCP                       119s
++ kubectl -n pxc apply -f -
++ cat
+perconaxtradbclusterbackup.pxc.percona.com/drbk created
+++ date +%s
++ T0=1792190453
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ '' =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Starting =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Starting =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Starting =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Running =~ Succeeded|Failed ]]
++ sleep 10
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
++ [[ Succeeded =~ Succeeded|Failed ]]
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.state}'
+++ date +%s
+DR_BACKUP Succeeded 219s
++ echo 'DR_BACKUP Succeeded 219s'
+++ kubectl -n pxc get pxc-backup drbk -o 'jsonpath={.status.destination}'
+DEST=s3://pxc/p2/cluster1-2026-10-16-22:40:53-full
++ DEST=s3://pxc/p2/cluster1-2026-10-16-22:40:53-full
++ echo DEST=s3://pxc/p2/cluster1-2026-10-16-22:40:53-full
++ kubectl create ns pxc2
+namespace/pxc2 created
++ python3 -c 'import json,sys; d=json.load(sys.stdin); d['\''metadata'\'']={'\''name'\'':'\''cluster2-secrets'\''}; print(json.dumps(d))'
++ kubectl -n pxc get secret cluster1-secrets -o json
++ kubectl -n pxc2 apply -f -
+secret/cluster2-secrets created
++ kubectl -n pxc get secret s3-creds -o json
++ python3 -c 'import json,sys; d=json.load(sys.stdin); d['\''metadata'\'']={'\''name'\'':'\''s3-creds'\''}; print(json.dumps(d))'
++ kubectl -n pxc2 apply -f -
+secret/s3-creds created
++ kubectl -n pxc2 apply --server-side -f https://raw.githubusercontent.com/percona/percona-xtradb-cluster-operator/v1.20.0/deploy/bundle.yaml
++ kubectl -n pxc2 rollout status deploy/percona-xtradb-cluster-operator --timeout=300s
+Waiting for deployment "percona-xtradb-cluster-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "percona-xtradb-cluster-operator" successfully rolled out
++ python3 -
++ kubectl -n pxc2 apply -f /root/pxc-cr2.yaml
+perconaxtradbcluster.pxc.percona.com/cluster2 created
+++ date +%s
++ T1=1792190677
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' '' = ready ']'
++ sleep 10
+++ date +%s
++ '[' 11 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 21 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 31 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 42 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 52 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 62 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 73 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 83 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' initializing = ready ']'
++ sleep 10
+++ date +%s
++ '[' 94 -gt 1200 ']'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' ready = ready ']'
+++ date +%s
+CLUSTER2_READY 94s
++ echo 'CLUSTER2_READY 94s'
++ cat
++ kubectl -n pxc2 apply -f -
+perconaxtradbclusterrestore.pxc.percona.com/drrestore created
+++ date +%s
++ T2=1792190771
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ '' =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 10 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Stopping Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 21 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 31 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 41 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 52 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 62 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 73 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 83 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 94 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 104 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 114 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 125 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Restoring =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 135 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 146 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 156 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 166 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 177 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 187 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 197 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Preparing Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 208 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Starting Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 218 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Starting Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 228 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Starting Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 239 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Starting Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 249 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Starting Cluster =~ Succeeded|Failed ]]
++ sleep 10
+++ date +%s
++ '[' 259 -gt 3600 ']'
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
++ [[ Succeeded =~ Succeeded|Failed ]]
+++ kubectl -n pxc2 get pxc-restore drrestore -o 'jsonpath={.status.state}'
+++ date +%s
+DR_RESTORE Succeeded 260s
++ echo 'DR_RESTORE Succeeded 260s'
+++ kubectl -n pxc2 get pxc cluster2 -o 'jsonpath={.status.state}'
++ '[' ready = ready ']'
++ kubectl -n pxc2 patch pxc cluster2 --type=merge -p '{"spec":{"pxc":{"replicationChannels":[{"name":"pxc1_to_pxc2","isSource":false,"sourcesList":[{"host":"cluster1-pxc-0.pxc.svc.cluster.local","weight":100},{"host":"cluster1-pxc-1.pxc.svc.cluster.local","weight":100},{"host":"cluster1-pxc-2.pxc.svc.cluster.local","weight":100}]}]}}}'
+perconaxtradbcluster.pxc.percona.com/cluster2 patched
+++ date +%s
++ T3=1792191031
++ sleep 60
+++ base64 -d
+++ kubectl -n pxc get secret cluster1-secrets -o 'jsonpath={.data.root}'
++ RP=CHANGE_ME_ROTATED
+++ seq 1 30
++ for i in $(seq 1 30)
+++ kubectl -n pxc2 exec cluster2-pxc-0 -c pxc -- mysql -uroot -pCHANGE_ME_ROTATED -e 'show replica status\G'
+++ grep -E 'Replica_IO_Running:|Replica_SQL_Running:|Seconds_Behind_Source:|Last_IO_Error:|Last_SQL_Error:'
+++ tr -s ' '
+++ tr '\n' ' '
++ s=' Replica_IO_Running: Yes  Replica_SQL_Running: Yes  Seconds_Behind_Source: 0  Last_IO_Error:   Last_SQL_Error:  '
+++ date +%s
++61s  Replica_IO_Running: Yes  Replica_SQL_Running: Yes  Seconds_Behind_Source: 0  Last_IO_Error:   Last_SQL_Error:  
++ echo '+61s  Replica_IO_Running: Yes  Replica_SQL_Running: Yes  Seconds_Behind_Source: 0  Last_IO_Error:   Last_SQL_Error:  '
++ echo ' Replica_IO_Running: Yes  Replica_SQL_Running: Yes  Seconds_Behind_Source: 0  Last_IO_Error:   Last_SQL_Error:  '
++ grep -q 'Seconds_Behind_Source: 0'
++ break
+++ kubectl -n pxc exec cluster1-pxc-0 -c pxc -- mysql -uroot -pCHANGE_ME_ROTATED -NBe 'select count(*) from probe.t'
+++ kubectl -n pxc2 exec cluster2-pxc-0 -c pxc -- mysql -uroot -pCHANGE_ME_ROTATED -NBe 'select count(*) from probe.t'
+rows src=154542 dst=154544
++ echo 'rows src=154542 dst=154544'

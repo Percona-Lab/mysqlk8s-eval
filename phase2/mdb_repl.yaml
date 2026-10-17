@@ -1,0 +1,32 @@
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: PhysicalBackup
+metadata: {name: repl-base}
+spec:
+  mariaDbRef: {name: mariadb-repl}
+  schedule: {cron: "0 0 * * *", immediate: true}
+  compression: gzip
+  maxRetention: 720h
+  storage:
+    s3: {bucket: mariadb, prefix: replbase, endpoint: "s3.s3.svc:9000", region: us-east-1, accessKeyIdSecretKeyRef: {name: s3-creds, key: access-key-id}, secretAccessKeySecretKeyRef: {name: s3-creds, key: secret-access-key}}
+  stagingStorage: {persistentVolumeClaim: {resources: {requests: {storage: 5Gi}}, accessModes: [ReadWriteOnce]}}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: PointInTimeRecovery
+metadata: {name: pitr}
+spec:
+  physicalBackupRef: {name: repl-base}
+  storage:
+    s3: {bucket: mariadb, prefix: binlogs, endpoint: "s3.s3.svc:9000", region: us-east-1, accessKeyIdSecretKeyRef: {name: s3-creds, key: access-key-id}, secretAccessKeySecretKeyRef: {name: s3-creds, key: secret-access-key}}
+  compression: gzip
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata: {name: mariadb-repl}
+spec:
+  rootPasswordSecretKeyRef: {name: mariadb-root, key: password}
+  image: mariadb:12.3.3
+  storage: {size: 10Gi}
+  replicas: 3
+  replication: {enabled: true}
+  pointInTimeRecoveryRef: {name: pitr}
+  resources: {requests: {cpu: 300m, memory: 512Mi}}

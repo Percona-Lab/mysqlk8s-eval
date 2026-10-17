@@ -1,0 +1,42 @@
+T=1792115463748
+writer=mycluster-0 node=mk-w2 id=108112998
+POWEROFF 1792115466579
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   42h   v1.37.1+k3s1
+mk-w1   Ready      <none>          42h   v1.37.1+k3s1
+mk-w2   NotReady   <none>          42h   v1.37.1+k3s1
+mk-w3   Ready      <none>          42h   v1.37.1+k3s1
+NAME                                READY   STATUS        RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed     0             4h56m   10.42.0.49    mk-cp   <none>           <none>
+load                                1/1     Running       0             56m     10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Terminating   3 (14m ago)   57m     10.42.1.222   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running       5 (14m ago)   54m     10.42.3.218   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       4 (15m ago)   49m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-2rnjf   1/1     Terminating   0             4h38m   10.42.1.220   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-gb2zz   0/1     Running       0             9s      10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-hhlxw   1/1     Terminating   0             5h3m    10.42.1.218   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-nzq4d   1/1     Running       0             178m    10.42.3.216   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   0/1     Running       0             9s      10.42.2.204   mk-w3   <none>           <none>
+sysb                                0/1     Completed     0             5h8m    10.42.0.47    mk-cp   <none>           <none>
+BOOT 1792115828707
+ALL_DB_READY_AFTER_BOOT 100s
+NAME                                READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed   0             4h58m   10.42.0.49    mk-cp   <none>           <none>
+load                                1/1     Running     0             58m     10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Running     0             56s     10.42.1.223   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     5 (16m ago)   55m     10.42.3.218   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     4 (16m ago)   51m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-gb2zz   1/1     Running     0             111s    10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-nzq4d   1/1     Running     0             3h      10.42.3.216   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   1/1     Running     0             111s    10.42.2.204   mk-w3   <none>           <none>
+sysb                                0/1     Completed   0             5h9m    10.42.0.47    mk-cp   <none>           <none>
+main outage 52.6s starting +3.7s; 6 interval(s), total 55.6s; primary mycluster-0 43265 -> mycluster-1 44454
+   +3.7s .. +56.3s  (52.6s, 28 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +369.6s .. +370.2s  (0.6s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +370.2s .. +370.7s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +370.9s .. +371.5s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +371.7s .. +372.3s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +372.3s .. +373.1s  (0.8s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+DISRUPT +3.7s..+56.3s = 52.6s (28 fails); +369.6s..+373.1s = 3.5s (6 fails)
+LOSTCHECK acked=1589 present=1589 lost=0 (max over members)
+LOAD samples=48 median_tps=48.8 min_tps=0.0 intervals_below_50pct=15 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

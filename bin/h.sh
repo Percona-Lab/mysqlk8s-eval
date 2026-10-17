@@ -1,6 +1,6 @@
 # helpers sourced on mk-cp; NS set by caller
 OP=${OP:-pxc}
-rp(){ case $OP in pxc) kubectl -n $NS get secret cluster1-secrets -o jsonpath={.data.root}|base64 -d;; ps) kubectl -n $NS get secret ps-cluster1-secrets -o jsonpath={.data.root}|base64 -d;; oracle) echo "$(cat /root/oracle_root)";; mariadb) kubectl -n $NS get secret mariadb-root -o jsonpath={.data.password}|base64 -d;; esac; }
+rp(){ case $OP in pxc) kubectl -n $NS get secret cluster1-secrets -o jsonpath={.data.root}|base64 -d;; psasync|psdr) kubectl -n $NS get secret ps-dr-secrets -o jsonpath={.data.root}|base64 -d;; mdbmc) kubectl -n $NS get secret mariadb -o jsonpath={.data.root}|base64 -d;; ps) kubectl -n $NS get secret ps-cluster1-secrets -o jsonpath={.data.root}|base64 -d;; oracle) echo "$(cat /root/oracle_root)";; mariadb) kubectl -n $NS get secret mariadb-root -o jsonpath={.data.password}|base64 -d;; esac; }
 # sql <pod> <container> "<sql>"
 sql(){ kubectl -n $NS exec $1 -c $2 -- ${CLI:-mysql} -uroot -p"$(rp)" -NBe "$3" 2>&1 | grep -v 'Using a password'; }
 # writer host from last probe OK line

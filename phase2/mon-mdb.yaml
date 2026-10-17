@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata: {name: mariadb-root}
+stringData: {password: "CHANGE_ME_SECRET"}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata: {name: monmdb}
+spec:
+  rootPasswordSecretKeyRef: {name: mariadb-root, key: password}
+  storage: {size: 3Gi}
+  replicas: 1
+  metrics: {enabled: true}

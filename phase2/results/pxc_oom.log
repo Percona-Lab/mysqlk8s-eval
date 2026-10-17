@@ -1,0 +1,14 @@
+T=1792164111992
+writer=cluster1-pxc-0 node=mk-w3
+NAME                                               READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0             30m     10.42.1.245   mk-w2   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0             33m     10.42.3.241   mk-w1   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0             16m     10.42.2.235   mk-w3   <none>           <none>
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0             27m     10.42.1.247   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0             16m     10.42.2.234   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0             33m     10.42.3.242   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0             29m     10.42.1.246   mk-w2   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (20m ago)   30m     10.42.3.243   mk-w1   <none>           <none>
+no failed writes; primary cluster1-pxc-0 173386
+LOSTCHECK acked=967 present=967 lost=0 (max over members)
+LOAD samples=27 median_tps=49.8 min_tps=46.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

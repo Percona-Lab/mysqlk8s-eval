@@ -1,0 +1,29 @@
+T=1792070001962
+writer=ps-cluster1-mysql-1 node=mk-w2
+/dev/sda         79G   74G  300M 100% /
+FULL 1792070004987
+True
+True
+True
+True
+/dev/sda         79G   14G   61G  19% /
+FREED 1792070253129
+NAME                                             READY   STATUS             RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running            6 (12m ago)   19m     10.42.3.185   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     CrashLoopBackOff   6 (91s ago)   7m52s   10.42.2.184   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running            0             19m     10.42.2.183   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running            0             24m     10.42.3.183   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running            0             7m51s   10.42.1.197   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running            1 (14m ago)   23m     10.42.3.184   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running            0             7m46s   10.42.1.196   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running            0             18m     10.42.2.182   mk-w3   <none>           <none>
+27m         Normal    TaintManagerEviction        pod/ps-cluster1-haproxy-2                             Cancelling deletion of Pod ps/ps-cluster1-haproxy-2
+27m         Normal    TaintManagerEviction        pod/ps-cluster1-mysql-1                               Cancelling deletion of Pod ps/ps-cluster1-mysql-1
+7m53s       Warning   Evicted                     pod/ps-cluster1-binlog-server-0                       The node was low on resource: ephemeral-storage. Threshold quantity: 4196064113, available: 307168Ki.
+7m51s       Warning   Evicted                     pod/ps-cluster1-haproxy-2                             The node was low on resource: ephemeral-storage. Threshold quantity: 4196064113, available: 7427808Ki. Container haproxy was using 848Ki, request is 0, has larger consumption of ephemeral-storage. Container mysql-monit was using 80Ki, request is 0, has larger consumption of ephemeral-storage.
+7m49s       Warning   Evicted                     pod/ps-cluster1-mysql-1                               The node was low on resource: ephemeral-storage. Threshold quantity: 4196064113, available: 7745980Ki. Container mysql was using 236Ki, request is 0, has larger consumption of ephemeral-storage. Container xtrabackup was using 80Ki, request is 0, has larger consumption of ephemeral-storage.
+main outage 5.0s starting +23.7s; 1 interval(s), total 5.0s; primary ps-cluster1-mysql-1 58968 -> ps-cluster1-mysql-0 59047
+   +23.7s .. +28.8s  (5.0s, 3 fails) top error: ERROR 3100 (HY000) at line 1: Error on observer while running replicat
+DISRUPT +23.7s..+28.8s = 5.0s (3 fails)
+LOSTCHECK acked=1837 present=1837 lost=0 (max over members)
+LOAD samples=51 median_tps=50.3 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=401.1

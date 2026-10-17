@@ -1,0 +1,23 @@
+T=1792064824455
+writer=ps-cluster1-mysql-1 node=mk-w2
+pod "ps-cluster1-mysql-1" deleted from ps namespace
+NAME                                             READY   STATUS             RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed          0                3h1m    10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running            0                8m29s   10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running            0                3h30m   10.42.2.168   mk-w3   <none>           <none>
+pitr-restore-bigpitr2-4q6dj                      0/1     Completed          0                141m    10.42.3.174   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     CrashLoopBackOff   30 (4m46s ago)   137m    10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running            0                137m    10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running            0                137m    10.42.3.176   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running            0                136m    10.42.1.187   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running            0                22m     10.42.3.177   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running            0                2m18s   10.42.1.189   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running            0                6m45s   10.42.2.178   mk-w3   <none>           <none>
+sysb                                             0/1     Completed          0                3h32m   10.42.0.32    mk-cp   <none>           <none>
+xb-bigbk2-s3-52lrd                               0/1     Completed          0                150m    10.42.1.183   mk-w2   <none>           <none>
+xb-restore-bigpitr2-jgzrh                        0/1     Completed          0                143m    10.42.3.173   mk-w1   <none>           <none>
+main outage 10.6s starting +2.8s; 1 interval(s), total 10.6s; primary ps-cluster1-mysql-1 43550 -> ps-cluster1-mysql-0 43561
+   +2.8s .. +13.4s  (10.6s, 36 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +2.8s..+13.4s = 10.6s (36 fails)
+LOSTCHECK acked=587 present=587 lost=0 (max over members)
+LOAD samples=17 median_tps=50.6 min_tps=38.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=118.8

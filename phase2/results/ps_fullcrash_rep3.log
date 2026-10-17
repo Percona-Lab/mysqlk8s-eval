@@ -1,0 +1,23 @@
+T=1792067227129
+kill -9 mysqld on ALL workers at once
+NAME                                             READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0               3h45m   10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running     0               53m     10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0               4h15m   10.42.2.168   mk-w3   <none>           <none>
+pitr-restore-bigpitr2-4q6dj                      0/1     Completed   0               3h6m    10.42.3.174   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       38 (12m ago)    3h1m    10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     3 (3m ago)      3h2m    10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     3 (90s ago)     3h1m    10.42.3.176   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     6 (109s ago)    3h1m    10.42.1.187   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     2 (5m55s ago)   12m     10.42.3.180   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0               48s     10.42.1.190   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              0/2     Pending     0               0s      <none>        mk-w3   <none>           <none>
+sysb                                             0/1     Completed   0               4h17m   10.42.0.32    mk-cp   <none>           <none>
+xb-bigbk2-s3-52lrd                               0/1     Completed   0               3h15m   10.42.1.183   mk-w2   <none>           <none>
+xb-restore-bigpitr2-jgzrh                        0/1     Completed   0               3h7m    10.42.3.173   mk-w1   <none>           <none>
+main outage 361.6s starting +0.9s; 2 interval(s), total 366.1s; primary ps-cluster1-mysql-1 50714 -> ps-cluster1-mysql-0 50854
+   +0.9s .. +362.5s  (361.6s, 515 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +403.5s .. +408.0s  (4.5s, 1 fails) top error: 
+DISRUPT +0.9s..+362.5s = 361.6s (515 fails); +403.5s..+408.0s = 4.5s (1 fails)
+LOSTCHECK acked=242 present=242 lost=0 (max over members)
+LOAD samples=45 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=436.9

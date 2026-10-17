@@ -1,0 +1,32 @@
+T=1792098611349
+mysqlbackup.mysql.oracle.com/bigdump created
+BACKUP_START 1792098611914
+BACKUP Completed 157s 1792098768386
+output=bigdump-20261015-211011 elapsed=00:02:28
+innodbcluster.mysql.oracle.com/bigrestored created
+RESTORE_NEW_CLUSTER_ONLINE 5918s
+160 chunks (42.00M rows, 8.21 GB) for 24 tables in 4 schemas were loaded in 16 min 44 sec (avg throughput 8.18 MB/s, 41.83K rows/s)
+Data load duration: 16 min 44 sec
+5000000
+innodbcluster.mysql.oracle.com "bigrestored" deleted from oracle namespace
+persistentvolumeclaim "datadir-bigrestored-0" deleted from oracle namespace
+main outage 45.9s starting +178.6s; 16 interval(s), total 472.8s; primary mycluster-1 4454 -> mycluster-2 5562
+   +178.6s .. +224.4s  (45.9s, 10 fails) top error: 
+   +231.5s .. +239.5s  (7.9s, 1 fails) top error: 
+   +239.5s .. +323.8s  (84.3s, 19 fails) top error: 
+   +331.3s .. +432.1s  (100.8s, 24 fails) top error: 
+   +432.1s .. +436.7s  (4.6s, 1 fails) top error: 
+   +436.7s .. +441.2s  (4.5s, 1 fails) top error: 
+   +442.8s .. +447.3s  (4.5s, 1 fails) top error: 
+   +448.2s .. +456.9s  (8.8s, 2 fails) top error: 
+   +458.3s .. +467.0s  (8.7s, 2 fails) top error: 
+   +467.6s .. +480.6s  (13.0s, 3 fails) top error: 
+   +484.2s .. +497.2s  (13.0s, 3 fails) top error: 
+   +497.5s .. +514.7s  (17.1s, 4 fails) top error: 
+   +514.7s .. +520.6s  (6.0s, 1 fails) top error: 
+   +525.9s .. +526.7s  (0.9s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +526.7s .. +527.5s  (0.8s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +657.8s .. +809.9s  (152.2s, 36 fails) top error: 
+DISRUPT +178.6s..+527.5s = 348.9s (76 fails); +657.8s..+809.9s = 152.2s (36 fails)
+LOSTCHECK acked=20480 present=20480 lost=0 (max over members)
+LOAD samples=610 median_tps=49.7 min_tps=0.0 intervals_below_50pct=41 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

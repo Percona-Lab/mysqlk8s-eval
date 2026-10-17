@@ -1,0 +1,15 @@
+T=1792091033142
+writer=ps-cluster1-mysql-0 node=mk-w1
+done
+NAME                                             READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     6 (5h58m ago)   6h5m    10.42.3.185   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               5h27m   10.42.1.201   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     1 (5h8m ago)    5h31m   10.42.3.187   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0               5h5m    10.42.1.203   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0               5h32m   10.42.2.185   mk-w3   <none>           <none>
+ps-cluster1-router-7d5c59677-4dbtk               1/1     Running     0               36m     10.42.3.193   mk-w1   <none>           <none>
+ps-cluster1-router-7d5c59677-njkzs               1/1     Running     0               5h16m   10.42.1.202   mk-w2   <none>           <none>
+ps-cluster1-router-7d5c59677-vmdh2               1/1     Running     0               5h16m   10.42.2.187   mk-w3   <none>           <none>
+no failed writes; primary ps-cluster1-mysql-0 135585
+LOSTCHECK acked=909 present=909 lost=0 (max over members)
+LOAD samples=26 median_tps=49.8 min_tps=47.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

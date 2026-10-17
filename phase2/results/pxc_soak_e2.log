@@ -1,0 +1,21 @@
+T=1792171082869
+writer=cluster1-pxc-2 node=mk-w2
+killed
+NAME                                               READY   STATUS      RESTARTS       AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed   0              6h44m   <none>        mk-cp   <none>           <none>
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0              140m    10.42.1.247   mk-w2   <none>           <none>
+cluster1-proxysql-0                                3/3     Running     2 (28m ago)    64m     10.42.3.248   mk-w1   <none>           <none>
+cluster1-proxysql-1                                3/3     Running     2 (65m ago)    78m     10.42.2.239   mk-w3   <none>           <none>
+cluster1-proxysql-2                                3/3     Running     1 (77m ago)    78m     10.42.1.252   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0              102m    10.42.2.236   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0              103m    10.42.3.244   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     2 (62s ago)    66m     10.42.1.253   mk-w2   <none>           <none>
+load                                               1/1     Running     0              93m     10.42.0.60    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (133m ago)   143m    10.42.3.243   mk-w1   <none>           <none>
+sysb                                               0/1     Completed   0              6h54m   <none>        mk-cp   <none>           <none>
+main outage 4.5s starting +3.4s; 2 interval(s), total 9.1s; primary cluster1-pxc-2 237273 -> cluster1-pxc-1 237475
+   +3.4s .. +7.9s  (4.5s, 1 fails) top error: 
+   +30.6s .. +35.2s  (4.5s, 1 fails) top error: 
+DISRUPT +3.4s..+7.9s = 4.5s (1 fails); +30.6s..+35.2s = 4.5s (1 fails)
+LOSTCHECK acked=207 present=207 lost=0 (max over members)
+LOAD samples=8 median_tps=51.9 min_tps=46.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=1686.2

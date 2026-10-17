@@ -1,0 +1,43 @@
+T=1792068430790
+writer=ps-cluster1-mysql-1 node=mk-w2 id=108112998
+POWEROFF 1792068434308
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   29h   v1.37.1+k3s1
+mk-w1   Ready      <none>          29h   v1.37.1+k3s1
+mk-w2   NotReady   <none>          29h   v1.37.1+k3s1
+mk-w3   Ready      <none>          29h   v1.37.1+k3s1
+NAME                                             READY   STATUS        RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed     0                4h4m    10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running       0                72m     10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running       0                4h34m   10.42.2.168   mk-w3   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running       43 (7m22s ago)   3h21m   10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running       3 (22m ago)      3h21m   10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running       0                8m55s   10.42.3.181   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Terminating   6 (20m ago)      3h20m   10.42.1.187   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running       0                8m55s   10.42.3.182   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Terminating   0                19m     10.42.1.190   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running       0                19m     10.42.2.181   mk-w3   <none>           <none>
+sysb                                             0/1     Completed     0                4h36m   10.42.0.32    mk-cp   <none>           <none>
+BOOT 1792068796209
+ALL_DB_READY_AFTER_BOOT 89s
+NAME                                             READY   STATUS      RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0                4h6m    10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running     0                73m     10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0                4h35m   10.42.2.168   mk-w3   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       43 (8m53s ago)   3h22m   10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     3 (23m ago)      3h22m   10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0                10m     10.42.3.181   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0                35s     10.42.1.192   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     0                10m     10.42.3.182   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0                35s     10.42.1.191   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0                20m     10.42.2.181   mk-w3   <none>           <none>
+sysb                                             0/1     Completed   0                4h37m   10.42.0.32    mk-cp   <none>           <none>
+main outage 40.4s starting +4.3s; 5 interval(s), total 50.3s; primary ps-cluster1-mysql-1 53591 -> ps-cluster1-mysql-0 53627
+   +4.3s .. +44.7s  (40.4s, 18 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +45.5s .. +47.9s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +50.0s .. +52.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +52.5s .. +54.9s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +56.0s .. +58.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+DISRUPT +4.3s..+58.5s = 54.1s (22 fails)
+LOSTCHECK acked=1585 present=1585 lost=0 (max over members)
+LOAD samples=47 median_tps=50.5 min_tps=0.0 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

@@ -1,0 +1,12 @@
+== planned switchover to psrep 1792192240828
+perconaservermysqlclusterset.ps.percona.com/ps-dr patched
+SWITCHOVER: psrep writable after 9s; ps-src-mysql-0 super_read_only=1
+{"psrep":{"clusterRole":"PRIMARY","globalStatus":"OK","primary":"ps-rep-mysql-0.ps-rep-mysql.ps:3306"},"pssrc":{"clusterRole":"REPLICA","globalStatus":"OK","primary":""}}
+== forced failover: stop psrep site, promote pssrc 1792192311377
+perconaservermysql.ps.percona.com/ps-rep patched
+PSREP_STOPPED 1792192332728
+perconaservermysqlclusterset.ps.percona.com/ps-dr patched
+FORCED_FAILOVER: pssrc writable after 903s
+{"psrep":{"clusterRole":"PRIMARY","globalStatus":"UNKNOWN","primary":"ps-rep-mysql-0.ps-rep-mysql.ps:3306"},"pssrc":{"clusterRole":"REPLICA","globalStatus":"UNKNOWN","primary":""}}
+1792193265552 FAIL ERROR 1290 (HY000) at line 1: The MySQL server is running with the --read-only option so it cannot execute this statement
+PS DR: acked via ps-src=4222 missing now on pssrc=0

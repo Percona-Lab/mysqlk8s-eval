@@ -1,0 +1,59 @@
+### pxc_delpod_r1
+writer=cluster1-pxc-0 node=mk-w3
+no failed writes; primary cluster1-pxc-0 120394
+LOSTCHECK acked=636 present=636 lost=0 (max over members)
+LOAD samples=18 median_tps=49.0 min_tps=45.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=938.4
+### pxc_delpod_r2
+writer=cluster1-pxc-0 node=mk-w3
+no failed writes; primary cluster1-pxc-0 123290
+LOSTCHECK acked=631 present=631 lost=0 (max over members)
+LOAD samples=17 median_tps=50.1 min_tps=46.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=596.8
+### pxc_delpod_r3
+writer=cluster1-pxc-0 node=mk-w3
+no failed writes; primary cluster1-pxc-0 126163
+LOSTCHECK acked=636 present=636 lost=0 (max over members)
+LOAD samples=17 median_tps=49.2 min_tps=45.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=996.9
+### pxc_kill9_r1
+writer=cluster1-pxc-0 node=mk-w3
+DISRUPT +3.2s..+7.9s = 4.7s (2 fails)
+LOSTCHECK acked=623 present=623 lost=0 (max over members)
+LOAD samples=18 median_tps=49.1 min_tps=29.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### pxc_kill9_r2
+writer=cluster1-pxc-0 node=mk-w3
+DISRUPT +2.8s..+9.5s = 6.7s (2 fails)
+LOSTCHECK acked=619 present=619 lost=0 (max over members)
+LOAD samples=17 median_tps=50.0 min_tps=25.2 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### pxc_kill9_r3
+writer=cluster1-pxc-0 node=mk-w3
+DISRUPT +2.8s..+5.5s = 2.7s (2 fails)
+LOSTCHECK acked=612 present=612 lost=0 (max over members)
+LOAD samples=18 median_tps=50.4 min_tps=8.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### pxc_fullcrash_r1
+DISRUPT +0.5s..+126.5s = 126.0s (136 fails)
+LOSTCHECK acked=1168 present=1168 lost=0 (max over members)
+LOAD samples=44 median_tps=49.5 min_tps=0.0 intervals_below_50pct=13 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+GR after fullcrash 1: wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; 
+### pxc_fullcrash_r1
+DISRUPT +0.3s..+163.5s = 163.2s (208 fails)
+LOSTCHECK acked=1027 present=1027 lost=0 (max over members)
+LOAD samples=44 median_tps=49.0 min_tps=0.0 intervals_below_50pct=16 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+GR after fullcrash 2: wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; 
+### pxc_fullcrash_r1
+DISRUPT +0.5s..+296.4s = 295.8s (314 fails)
+LOSTCHECK acked=513 present=513 lost=0 (max over members)
+LOAD samples=45 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+GR after fullcrash 3: wsrep_cluster_size 1 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; error: unable to upgrade connection: container not found ("pxc")  ; error: unable to upgrade connection: container not found ("pxc")  ; 
+### pxc_nodeoff_r1
+writer=cluster1-pxc-0 node=mk-w3 id=108113001
+ALL_DB_READY_AFTER_BOOT 133s
+DISRUPT +3.8s..+55.7s = 51.9s (23 fails)
+LOSTCHECK acked=1746 present=1746 lost=0 (max over members)
+LOAD samples=52 median_tps=48.6 min_tps=0.0 intervals_below_50pct=17 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### pxc_nodeoff_r2
+writer=cluster1-pxc-0 node=mk-w3 id=108113001
+ALL_DB_READY_AFTER_BOOT 132s
+DISRUPT +3.6s..+51.5s = 47.8s (21 fails)
+LOSTCHECK acked=1757 present=1757 lost=0 (max over members)
+LOAD samples=52 median_tps=49.7 min_tps=0.0 intervals_below_50pct=17 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+GR at end: wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; wsrep_cluster_size 3 wsrep_cluster_state_uuid 2e7e6731-c965-11f1-a669-7fb1697fc7d9  ; 
+REPEATS_DONE

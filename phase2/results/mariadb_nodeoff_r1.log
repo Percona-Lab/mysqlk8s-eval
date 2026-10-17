@@ -1,0 +1,61 @@
+T=1792001197266
+writer=mariadb-galera-2 node=mk-w3 id=108113001
+POWEROFF 1792001200255
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   10h   v1.37.1+k3s1
+mk-w1   Ready      <none>          10h   v1.37.1+k3s1
+mk-w2   Ready      <none>          10h   v1.37.1+k3s1
+mk-w3   NotReady   <none>          10h   v1.37.1+k3s1
+NAME                           READY   STATUS        RESTARTS      AGE    IP            NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed     0             146m   10.42.1.84    mk-w2   <none>           <none>
+bigprep                        0/1     Completed     0             158m   10.42.0.21    mk-cp   <none>           <none>
+load                           1/1     Running       0             96m    10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0               2/2     Running       1 (14m ago)   22m    10.42.1.102   mk-w2   <none>           <none>
+mariadb-galera-1               2/2     Running       1 (14m ago)   19m    10.42.3.99    mk-w1   <none>           <none>
+mariadb-galera-2               2/2     Terminating   1 (14m ago)   22m    10.42.2.99    mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running       0             160m   10.42.1.82    mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Terminating   0             161m   10.42.2.89    mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running       0             161m   10.42.3.86    mk-w1   <none>           <none>
+sysb                           0/1     Completed     0             170m   10.42.0.18    mk-cp   <none>           <none>
+BOOT 1792001562365
+ALL_DB_READY_AFTER_BOOT 900s
+NAME                           READY   STATUS             RESTARTS      AGE    IP            NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed          0             161m   10.42.1.84    mk-w2   <none>           <none>
+bigprep                        0/1     Completed          0             173m   10.42.0.21    mk-cp   <none>           <none>
+load                           1/1     Running            0             111m   10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0               2/2     Running            1 (30m ago)   37m    10.42.1.102   mk-w2   <none>           <none>
+mariadb-galera-1               2/2     Running            1 (30m ago)   34m    10.42.3.99    mk-w1   <none>           <none>
+mariadb-galera-2               1/2     CrashLoopBackOff   7 (43s ago)   13m    10.42.2.101   mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running            0             175m   10.42.1.82    mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running            0             13m    10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running            0             176m   10.42.3.86    mk-w1   <none>           <none>
+sysb                           0/1     Completed          0             3h5m   10.42.0.18    mk-cp   <none>           <none>
+main outage 10.8s starting +4.0s; 25 interval(s), total 99.1s; primary mariadb-galera-2 89332 -> mariadb-galera-1 100617
+   +4.0s .. +14.8s  (10.8s, 3 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +15.7s .. +18.3s  (2.6s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +18.6s .. +21.0s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +21.7s .. +26.4s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +26.4s .. +28.9s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +28.9s .. +31.3s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +31.8s .. +34.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +34.5s .. +36.9s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +36.9s .. +41.6s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +42.1s .. +44.6s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +44.8s .. +47.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +47.2s .. +49.7s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +154.9s .. +157.4s  (2.4s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +504.4s .. +508.8s  (4.4s, 1 fails) top error: 
+   +584.2s .. +588.7s  (4.5s, 1 fails) top error: 
+   +596.0s .. +600.5s  (4.5s, 1 fails) top error: 
+   +664.4s .. +668.8s  (4.4s, 1 fails) top error: 
+   +744.4s .. +748.9s  (4.5s, 1 fails) top error: 
+   +753.7s .. +758.2s  (4.5s, 1 fails) top error: 
+   +824.4s .. +828.9s  (4.4s, 1 fails) top error: 
+   +832.9s .. +838.0s  (5.1s, 1 fails) top error: 
+   +904.4s .. +908.8s  (4.5s, 1 fails) top error: 
+   +913.8s .. +918.3s  (4.5s, 1 fails) top error: 
+   +984.3s .. +988.8s  (4.5s, 1 fails) top error: 
+   +1224.4s .. +1228.9s  (4.5s, 1 fails) top error: 
+DISRUPT +4.0s..+49.7s = 45.7s (16 fails); +154.9s..+157.4s = 2.4s (1 fails); +504.4s..+508.8s = 4.4s (1 fails); +584.2s..+600.5s = 16.3s (2 fails); +664.4s..+668.8s = 4.4s (1 fails); +744.4s..+758.2s = 13.7s (2 fails); +824.4s..+838.0s = 13.6s (2 fails); +904.4s..+918.3s = 13.9s (2 fails); +984.3s..+988.8s = 4.5s (1 fails); +1224.4s..+1228.9s = 4.5s (1 fails)
+LOSTCHECK acked=4743 present=4743 lost=0 (max over members)
+LOAD samples=129 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.1

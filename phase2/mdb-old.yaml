@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Secret
+metadata: {name: mariadb-root}
+stringData: {password: "CHANGE_ME_SECRET"}
+---
+apiVersion: v1
+kind: Secret
+metadata: {name: s3-creds}
+stringData: {access-key-id: admin, secret-access-key: "CHANGE_ME_SECRET"}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata: {name: mariadb-galera}
+spec:
+  rootPasswordSecretKeyRef: {name: mariadb-root, key: password}
+  storage: {size: 10Gi}
+  replicas: 3
+  galera: {enabled: true}
+  metrics: {enabled: false}
+  tls: {enabled: true}
+  resources:
+    requests: {cpu: 600m, memory: 1Gi}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MaxScale
+metadata: {name: maxscale-galera}
+spec:
+  replicas: 3
+  mariaDbRef: {name: mariadb-galera}
+  services:
+  - name: rw-router
+    router: readwritesplit
+    listener: {port: 3306}
+  monitor:
+    interval: 2s
+    cooperativeMonitoring: majority_of_all
+  admin: {port: 8989, guiEnabled: true}
+  auth: {generate: true}

@@ -1,0 +1,11 @@
+SITE1_DOWN 1792191106190
+perconaxtradbcluster.pxc.percona.com/cluster1 patched
+SITE1_STOPPED 1792191159494
+           Retrieved_Gtid_Set: 2e7e6731-c965-11f1-a669-7fb1697fc7d9:1777720-1802055
+            Executed_Gtid_Set: 2b71cf3c-c94b-11f1-b57a-33a2a0841b5e:1-546827,
+2e7e6731-c965-11f1-a669-7fb1697fc7d9:1-1802055
+perconaxtradbcluster.pxc.percona.com/cluster2 patched
+CLUSTER2_WRITABLE after promote 5s 1792191165562
+1792191196285 OK cluster2-pxc-0 453679
+1792191196557 OK cluster2-pxc-0 453680
+DR RPO check: acked on site1=89795 missing on site2=0

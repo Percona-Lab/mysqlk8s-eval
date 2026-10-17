@@ -1,0 +1,57 @@
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata:
+  name: mariadb-eu-central
+spec:
+  rootPasswordSecretKeyRef:
+    name: mariadb
+    key: password
+  storage:
+    size: 5Gi
+  replicas: 2
+  bootstrapFrom:
+    s3:
+      bucket: mdbmc
+      prefix: eu-south
+      endpoint: s3.s3.svc:9000
+      region: us-east-1
+      accessKeyIdSecretKeyRef:
+        name: s3-creds
+        key: access-key-id
+      secretAccessKeySecretKeyRef:
+        name: s3-creds
+        key: secret-access-key
+    backupContentType: Physical
+  replication:
+    enabled: true
+    gtidDomainId: 1
+    serverIdStartIndex: 20
+    semiSyncEnabled: false
+    replica:
+      replPasswordSecretKeyRef:
+        name: mariadb
+        key: password
+  primaryService:
+    type: ClusterIP
+  tls:
+    enabled: true
+    required: true
+    serverCASecretRef:
+      name: mariadb-server-ca
+    clientCASecretRef:
+      name: mariadb-server-ca
+  multiCluster:
+    enabled: true
+    primary: mariadb-eu-south
+    members:
+    - name: mariadb-eu-south
+      externalMariaDbRef:
+        name: mariadb-eu-south
+    - name: mariadb-eu-central
+      externalMariaDbRef:
+        name: mariadb-eu-central
+  image: mariadb:12.3.3
+  resources:
+    requests:
+      cpu: 200m
+      memory: 384Mi

@@ -1,0 +1,14 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata: {name: oc2}
+spec:
+  instances: 1
+  router: {instances: 1}
+  secretName: ocpwds
+  tlsUseSelfSigned: true
+  baseServerId: 2000
+  datadirVolumeClaimTemplate: {accessModes: [ReadWriteOnce], resources: {requests: {storage: 5Gi}}}
+  initDB:
+    clusterSet:
+      targetUrl: oc1-0.oc1-instances.oracle.svc.cluster.local
+      secretKeyRef: {name: ocpwds}

@@ -1,0 +1,20 @@
+T=1791991754144
+mariadb.k8s.mariadb.com/mariadb-galera patched
+DB_UPGRADED 99s
+galera-0 12.3.3-MariaDB-ubu2404
+galera-1 12.3.3-MariaDB-ubu2404
+galera-2 12.3.3-MariaDB-ubu2404
+maxscale.k8s.mariadb.com/maxscale-galera patched
+MAXSCALE_UPGRADED 78s
+mariadb-galera-0    2/2     Running     0          114s
+mariadb-galera-1    2/2     Running     0          2m25s
+mariadb-galera-2    2/2     Running     0          2m57s
+maxscale-galera-0   1/1     Running     0          24s
+maxscale-galera-1   1/1     Running     0          55s
+maxscale-galera-2   1/1     Running     0          77s
+main outage 2.9s starting +122.9s; 2 interval(s), total 5.4s; primary mariadb-galera-0 4708 -> mariadb-galera-2 6505
+   +122.9s .. +125.8s  (2.9s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +155.2s .. +157.7s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+DISRUPT +122.9s..+125.8s = 2.9s (2 fails); +155.2s..+157.7s = 2.5s (1 fails)
+LOSTCHECK acked=778 present=778 lost=0 (max over members)
+LOAD samples=19 median_tps=49.5 min_tps=39.8 intervals_below_50pct=0 (~0s) max_err/s=0.0 reconn_total~26

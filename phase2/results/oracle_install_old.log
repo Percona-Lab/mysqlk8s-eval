@@ -1,0 +1,19 @@
+cp: 'oracle_root' and '/root/oracle_root' are the same file
+3
+customresourcedefinition.apiextensions.k8s.io/kopfpeerings.zalando.org unchanged
+deployment.apps/mysql-operator created
+Waiting for deployment "mysql-operator" rollout to finish: 0 of 1 updated replicas are available...
+deployment "mysql-operator" successfully rolled out
+namespace/oracle created
+secret/mypwds created
+secret/s3-config created
+innodbcluster.mysql.oracle.com/mycluster created
+READY 103s
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   103s
+mycluster-0                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-1                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-2                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-router-6759b55b5b-2cmkv   container-registry.oracle.com/mysql/community-router:9.7.0
+mycluster-router-6759b55b5b-p627n   container-registry.oracle.com/mysql/community-router:9.7.0
+mycluster-router-6759b55b5b-r57xp   container-registry.oracle.com/mysql/community-router:9.7.0

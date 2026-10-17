@@ -1,0 +1,26 @@
+### oracle_delpod_r1
+writer=mycluster-1 node=mk-w1
+DISRUPT +61.9s..+98.5s = 36.7s (36 fails)
+LOSTCHECK acked=500 present=500 lost=0 (max over members)
+LOAD samples=17 median_tps=50.0 min_tps=10.8 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oracle_delpod_r2
+writer=mycluster-0 node=mk-w2
+DISRUPT +62.1s..+300.0s = 237.9s (351 fails)
+LOSTCHECK acked=234 present=0 lost=234 (max over members)
+LOAD samples=16 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oracle_delpod_r3
+writer= node=
+DISRUPT +-1102.5s..+300.0s = 1402.5s (593 fails)
+LOAD samples=16 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oracle_kill9_r1
+writer= node=
+DISRUPT +-2264.6s..+300.0s = 2564.6s (598 fails)
+LOAD samples=16 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oracle_kill9_r2
+writer= node=
+DISRUPT +-3428.4s..+300.0s = 3728.4s (744 fails)
+LOAD no samples in window
+### oracle_kill9_r3
+writer= node=
+DISRUPT +-4592.9s..+300.0s = 4892.9s (740 fails)
+LOAD no samples in window

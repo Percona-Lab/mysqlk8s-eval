@@ -1,0 +1,51 @@
+### drain
+evicting pod oracle/mycluster-1
+pod/mycluster-1 evicted
+node/mk-w1 drained
+drained in 67s
+node back 149s
+node/mk-w1 uncordoned
+== mk-w1 done 302s total
+pod/mysql-operator-86cb64fb94-m9mtd evicted
+pod/mycluster-0 evicted
+node/mk-w2 drained
+drained in 66s
+node back 147s
+node/mk-w2 uncordoned
+== mk-w2 done 324s total
+pod/mycluster-router-6d5dffdd6f-gb2zz evicted
+pod/mycluster-2 evicted
+node/mk-w3 drained
+drained in 65s
+node back 155s
+node/mk-w3 uncordoned
+== mk-w3 done 297s total
+DISRUPT +304.1s..+304.6s = 0.6s (1 fails); +630.1s..+632.8s = 2.7s (1 fails); +643.0s..+644.2s = 1.1s (3 fails)
+LOSTCHECK acked=3444 present=3444 lost=0 (max over members)
+LOAD samples=95 median_tps=48.3 min_tps=22.4 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=16.0
+### cpdown
+K3S_STOPPED 1792117639402
+K3S_STARTED 1792117952426
+DISRUPT +38.1s..+60.7s = 22.6s (84 fails)
+LOSTCHECK acked=1277 present=1277 lost=0 (max over members)
+LOAD samples=38 median_tps=49.4 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=4.6
+### diskfull
+FULL 1792118069862
+True
+True
+True
+True
+FREED 1792118320167
+no failed writes; primary mycluster-2 52456
+LOSTCHECK acked=1924 present=1924 lost=0 (max over members)
+LOAD samples=51 median_tps=50.7 min_tps=45.2 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oom
+no failed writes; primary mycluster-2 54620
+LOSTCHECK acked=973 present=973 lost=0 (max over members)
+LOAD samples=26 median_tps=50.1 min_tps=44.8 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### cpu
+done
+no failed writes; primary mycluster-2 55833
+LOSTCHECK acked=979 present=979 lost=0 (max over members)
+LOAD samples=26 median_tps=49.3 min_tps=44.9 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+BATCH2_DONE

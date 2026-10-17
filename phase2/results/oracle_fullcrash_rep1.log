@@ -1,0 +1,17 @@
+T=1792113854136
+kill -9 mysqld on ALL workers at once
+NAME                                READY   STATUS      RESTARTS       AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed   0              4h30m   10.42.0.49    mk-cp   <none>           <none>
+load                                1/1     Running     0              30m     10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Running     1 (7m1s ago)   31m     10.42.1.222   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     3 (7m1s ago)   28m     10.42.3.218   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     2 (7m1s ago)   23m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-2rnjf   1/1     Running     0              4h12m   10.42.1.220   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-hhlxw   1/1     Running     0              4h38m   10.42.1.218   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-nzq4d   1/1     Running     0              152m    10.42.3.216   mk-w1   <none>           <none>
+sysb                                0/1     Completed   0              4h42m   10.42.0.47    mk-cp   <none>           <none>
+main outage 36.8s starting +0.8s; 1 interval(s), total 36.8s; primary mycluster-2 37996 -> mycluster-1 38038
+   +0.8s .. +37.6s  (36.8s, 124 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+DISRUPT +0.8s..+37.6s = 36.8s (124 fails)
+LOSTCHECK acked=1480 present=1480 lost=0 (max over members)
+LOAD samples=44 median_tps=50.5 min_tps=0.0 intervals_below_50pct=4 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

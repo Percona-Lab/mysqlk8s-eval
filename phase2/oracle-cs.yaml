@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata: {name: ocpwds}
+stringData: {rootUser: root, rootHost: "%", rootPassword: "CHANGE_ME_SECRET"}
+---
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata: {name: oc1}
+spec:
+  instances: 1
+  router: {instances: 1}
+  secretName: ocpwds
+  tlsUseSelfSigned: true
+  baseServerId: 1000
+  datadirVolumeClaimTemplate: {accessModes: [ReadWriteOnce], resources: {requests: {storage: 5Gi}}}

@@ -1,0 +1,33 @@
+T=1792008713244
+writer=mariadb-galera-2 node=mk-w3
+K3S_STOPPED 1792008718637
+killed
+KILLED 1792008750895
+K3S_STARTED 1792009031332
+DB ready 1792009662683
+NAME                READY   STATUS      RESTARTS     AGE
+mariadb-galera-0    2/2     Running     0            21m
+mariadb-galera-1    1/2     Running     0            23m
+mariadb-galera-2    1/2     Running     8 (4s ago)   19m
+maxscale-galera-0   1/1     Running     0            21m
+maxscale-galera-1   1/1     Running     0            19m
+maxscale-galera-2   1/1     Running     0            23m
+main outage 4.7s starting +36.8s; 15 interval(s), total 59.6s; primary mariadb-galera-2 137668 -> mariadb-galera-0 145968
+   +36.8s .. +41.5s  (4.7s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +41.5s .. +47.3s  (5.8s, 1 fails) top error: 
+   +116.0s .. +120.5s  (4.4s, 1 fails) top error: 
+   +120.5s .. +126.9s  (6.4s, 1 fails) top error: 
+   +185.9s .. +190.3s  (4.5s, 1 fails) top error: 
+   +190.3s .. +196.8s  (6.5s, 1 fails) top error: 
+   +255.9s .. +260.4s  (4.5s, 1 fails) top error: 
+   +263.6s .. +265.2s  (1.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +265.2s .. +269.7s  (4.5s, 1 fails) top error: 
+   +326.0s .. +330.4s  (4.4s, 1 fails) top error: 
+   +495.9s .. +500.4s  (4.5s, 1 fails) top error: 
+   +504.0s .. +506.0s  (2.0s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +566.1s .. +570.5s  (4.5s, 1 fails) top error: 
+   +573.0s .. +573.5s  (0.5s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +879.8s .. +880.6s  (0.8s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +36.8s..+47.3s = 10.5s (3 fails); +116.0s..+126.9s = 10.9s (2 fails); +185.9s..+196.8s = 11.0s (2 fails); +255.9s..+269.7s = 13.7s (3 fails); +326.0s..+330.4s = 4.4s (1 fails); +495.9s..+506.0s = 10.1s (2 fails); +566.1s..+573.5s = 7.4s (2 fails); +879.8s..+880.6s = 0.8s (1 fails)
+LOSTCHECK acked=3635 present=3635 lost=0 (max over members)
+LOAD samples=90 median_tps=49.8 min_tps=7.1 intervals_below_50pct=3 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

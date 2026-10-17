@@ -1,0 +1,22 @@
+== switchover to oc2 1792194900654
+mysqlclustersetfailover.mysql.oracle.com/to-oc2 created
+SWITCHOVER oc2 writable after 5s; oc1 super_read_only=1
+NAME   STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+oc1    ONLINE   1        1           1         UNKNOWN   2m5s
+oc2    ONLINE   1        1           1         REPLICA   82s
+== isolate oc2 (NetworkPolicy deny all ingress/egress) 1792194936320
+networkpolicy.networking.k8s.io/isolate-oc2 created
+mysqlclustersetfailover.mysql.oracle.com/force-oc1 created
+FORCED_FAILOVER oc1 writable after 14s
+NAME   STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+oc1    ONLINE   1        1           1         UNKNOWN   3m9s
+oc2    ONLINE   1        1           1         UNKNOWN   2m26s
+NAME        CLUSTER   STATUS   AGE
+force-oc1   oc1                14s
+to-oc2      oc2                70s
+8s          Normal    FailOverObjectCreated   innodbcluster/oc1                     Failing over to oracle/oc1 from oc2
+3m9s        Normal    Created                 innodbcluster/oc1                     Created switchover RoleBinding oracle/oc1-switchover-rb for cluster oracle/oc1
+2m30s       Warning   Unhealthy               pod/oc1-router-f8f8f9444-l86cz        Readiness probe failed: cat: /tmp/mysqlrouter/mysqlrouter.conf: No such file or directory
+2m1s        Warning   Unhealthy               pod/oc2-0                             Startup probe failed: mysqladmin: connect to server at 'localhost' failed...
+112s        Warning   Unhealthy               pod/oc2-router-65575b46fc-l97w5       Readiness probe failed: cat: /tmp/mysqlrouter/mysqlrouter.conf: No such file or directory
+Oracle DR: acked via oc1 router=477 missing on oc1 now=0

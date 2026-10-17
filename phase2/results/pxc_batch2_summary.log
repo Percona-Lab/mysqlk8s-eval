@@ -1,0 +1,51 @@
+### drain
+pod/cluster1-haproxy-1 evicted
+pod/cluster1-pxc-1 evicted
+node/mk-w1 drained
+drained in 16s
+node back 110s
+node/mk-w1 uncordoned
+== mk-w1 done 198s total
+pod/percona-xtradb-cluster-operator-74447d7f58-85dzq evicted
+pod/cluster1-pxc-2 evicted
+node/mk-w2 drained
+drained in 15s
+node back 98s
+node/mk-w2 uncordoned
+== mk-w2 done 140s total
+pod/cluster1-haproxy-2 evicted
+pod/cluster1-pxc-0 evicted
+node/mk-w3 drained
+drained in 17s
+node back 110s
+node/mk-w3 uncordoned
+== mk-w3 done 151s total
+DISRUPT +199.4s..+199.9s = 0.6s (1 fails); +340.1s..+340.7s = 0.5s (1 fails); +494.1s..+494.7s = 0.6s (1 fails)
+LOSTCHECK acked=1853 present=1853 lost=0 (max over members)
+LOAD samples=51 median_tps=49.5 min_tps=44.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=349.7
+### cpdown
+K3S_STOPPED 1792162933473
+K3S_STARTED 1792163244469
+DISRUPT +36.0s..+52.2s = 16.2s (8 fails)
+LOSTCHECK acked=1306 present=1306 lost=0 (max over members)
+LOAD samples=37 median_tps=49.4 min_tps=0.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### diskfull
+FULL 1792163363340
+True
+True
+True
+True
+FREED 1792163612713
+DISRUPT +22.3s..+25.1s = 2.8s (2 fails)
+LOSTCHECK acked=1889 present=1889 lost=0 (max over members)
+LOAD samples=52 median_tps=50.1 min_tps=0.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oom
+no failed writes; primary cluster1-pxc-0 173386
+LOSTCHECK acked=967 present=967 lost=0 (max over members)
+LOAD samples=27 median_tps=49.8 min_tps=46.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### cpu
+done
+no failed writes; primary cluster1-pxc-0 177013
+LOSTCHECK acked=968 present=968 lost=0 (max over members)
+LOAD samples=27 median_tps=49.9 min_tps=46.8 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+BATCH2_DONE

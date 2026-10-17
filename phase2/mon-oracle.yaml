@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata: {name: monpwds}
+stringData: {rootUser: root, rootHost: "%", rootPassword: "CHANGE_ME_SECRET"}
+---
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata: {name: monora}
+spec:
+  instances: 1
+  router: {instances: 1}
+  secretName: monpwds
+  tlsUseSelfSigned: true
+  datadirVolumeClaimTemplate: {accessModes: [ReadWriteOnce], resources: {requests: {storage: 3Gi}}}
+  metrics: {enable: true, image: "prom/mysqld-exporter:v0.17.2", monitor: false}

@@ -3,3 +3,4 @@ ssh_config
 known_hosts
 instances.json
 __pycache__/
+phase2/mdbmc/secrets.yaml

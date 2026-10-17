@@ -1,0 +1,41 @@
+T=1792022279404
+== password rotation via User CRD secret
+command terminated with exit code 1
+secret/rot-user patched
+NEW_PASSWORD_WORKS_AFTER 0s
+command terminated with exit code 1
+== server cert re-issue (delete secret)
+before 2026-10-14T22:07:16Z
+secret "mariadb-galera-server-cert" deleted from mariadb namespace
+SERVER_CERT_REISSUED 60s 2026-10-14T22:58:25Z
+mariadb-galera-0    2/2     Running     0          2m13s
+mariadb-galera-1    2/2     Running     0          2m38s
+mariadb-galera-2    2/2     Running     0          3m
+maxscale-galera-0   1/1     Running     0          3h55m
+maxscale-galera-1   1/1     Running     0          3h53m
+maxscale-galera-2   1/1     Running     0          3h57m
+== CA rotation (delete CA secret)
+secret "mariadb-galera-ca" deleted from mariadb namespace
+CA_ROTATED_READY 92s
+{"caBundle":[{"issuer":"CN=mariadb-galera-ca","notAfter":"2029-10-13T15:19:21Z","notBefore":"2026-10-14T14:19:21Z","subject":"CN=mariadb-galera-ca"},{"issuer":"CN=mariadb-galera-ca","notAfter":"2029-10-13T22:50:57Z","notBefore":"2026-10-14T21:50:57Z","subject":"CN=mariadb-galera-ca"},{"issuer":"CN=mariadb-galera-ca","notAfter":"2029-10-14T00:01:26Z","notBefore":"2026-10-14T23:01:26Z","subject":"CN=mariadb-galera-ca"}],"clientCert":{"issuer":"CN=mariadb-galera-ca","notAfter":"2027-01-12T15:19:21Z","notBefore":"2026-10-14T14:19:21Z","subject":"CN=mariadb-galera-client"},"serverCert":{"issuer":"CN=mariadb-galera-ca","notAfter":"2027-01-12T23:58:25Z","notBefore":"2026-10-14T22:58:25Z","subject":"CN=mariadb-galera.mariadb.svc.cluster.local"}}
+mariadb-galera-0    2/2     Running     0          57s
+mariadb-galera-1    2/2     Running     0          35s
+mariadb-galera-2    2/2     Running     0          89s
+maxscale-galera-0   1/1     Running     0          3h56m
+maxscale-galera-1   1/1     Running     0          3h54m
+maxscale-galera-2   1/1     Running     0          3h58m
+main outage 3.8s starting +26.3s; 5 interval(s), total 16.5s; primary mariadb-galera-2 261241 -> mariadb-galera-1 264255
+   +26.3s .. +30.1s  (3.8s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +208.0s .. +209.3s  (1.4s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +209.3s .. +212.9s  (3.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +262.9s .. +270.1s  (7.2s, 4 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +270.1s .. +270.6s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+DISRUPT +26.3s..+30.1s = 3.8s (2 fails); +208.0s..+212.9s = 4.9s (2 fails); +262.9s..+270.6s = 7.7s (5 fails)
+LOSTCHECK acked=1226 present=1226 lost=0 (max over members)
+LOAD samples=32 median_tps=49.1 min_tps=43.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=8.0
+old-ok
+WITH_WATCH_LABEL new password works after 7s
+command terminated with exit code 1
+Password rotation: unlabelled Secret change ignored (>10 min); with k8s.mariadb.com/watch label applied in ~Ns (see above)
+NEW_PASSWORD_WORKS_AFTER 602s
+command terminated with exit code 1

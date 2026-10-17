@@ -1,0 +1,18 @@
+T=1791999590287
+kill -9 mysqld on ALL workers at once
+NAME                           READY   STATUS      RESTARTS       AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed   0              120m   10.42.1.84   mk-w2   <none>           <none>
+bigprep                        0/1     Completed   0              133m   10.42.0.21   mk-cp   <none>           <none>
+load                           1/1     Running     0              71m    10.42.0.24   mk-cp   <none>           <none>
+mariadb-galera-0               2/2     Running     1 (7m2s ago)   23m    10.42.1.99   mk-w2   <none>           <none>
+mariadb-galera-1               2/2     Running     2 (7m2s ago)   22m    10.42.3.96   mk-w1   <none>           <none>
+mariadb-galera-2               2/2     Running     2 (7m2s ago)   13m    10.42.2.96   mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running     0              135m   10.42.1.82   mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running     0              135m   10.42.2.89   mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running     0              135m   10.42.3.86   mk-w1   <none>           <none>
+sysb                           0/1     Completed   0              144m   10.42.0.18   mk-cp   <none>           <none>
+main outage 16.6s starting +1.3s; 1 interval(s), total 16.6s; primary mariadb-galera-2 76512 -> mariadb-galera-2 76519
+   +1.3s .. +17.9s  (16.6s, 58 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +1.3s..+17.9s = 16.6s (58 fails)
+LOSTCHECK acked=1793 present=1793 lost=0 (max over members)
+LOAD samples=44 median_tps=50.9 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

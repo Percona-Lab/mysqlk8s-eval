@@ -1,0 +1,17 @@
+T=1792156577301
+perconaxtradbclusterbackup.pxc.percona.com/bigbk3 created
+BACKUP_START 1792156577948
+BACKUP Succeeded 167s 1792156744595
+TARGET 2026-10-16 13:19:08
+perconaxtradbclusterrestore.pxc.percona.com/bigpitr3 created
+RESTORE_START 1792156932442
+RESTORE {"clusterSize":3,"haproxySize":3,"proxysqlSize":3,"state":"Succeeded","unsafeFlags":{}} 678s
+CLUSTER_READY_AFTER_RESTORE 11s 1792157621330
+1	after-backup
+5000000
+probe rows between target and restore start (expect 0): 0
+main outage 315.9s starting +387.3s; 1 interval(s), total 315.9s; primary cluster1-pxc-0 113647 -> cluster1-pxc-0 115682
+   +387.3s .. +703.2s  (315.9s, 323 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +387.3s..+703.2s = 315.9s (323 fails)
+LOSTCHECK acked=2615 present=1797 lost=818 (max over members)
+LOAD samples=106 median_tps=48.7 min_tps=0.0 intervals_below_50pct=32 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

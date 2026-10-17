@@ -1,0 +1,5 @@
+kubectl -n mariadb patch mariadb mariadb-galera --type=merge -p '{"spec":{"replicas":1}}'; T0=$(date +%s); sleep 30
+until [ "$(kubectl -n mariadb get sts mariadb-galera -o jsonpath={.status.replicas})" = 1 ] && [ "$(kubectl -n mariadb get mariadb mariadb-galera -o jsonpath="{.status.conditions[?(@.type==\"Ready\")].status}")" = True ]; do sleep 10; [ $(( $(date +%s)-T0 )) -gt 900 ] && break; done; echo "SCALED_DOWN $(( $(date +%s)-T0 ))s"; kubectl -n mariadb get pods | grep galera
+sleep 60; kubectl -n mariadb patch mariadb mariadb-galera --type=merge -p '{"spec":{"replicas":3}}'; T1=$(date +%s); sleep 60
+until [ "$(kubectl -n mariadb get sts mariadb-galera -o jsonpath={.status.readyReplicas})" = 3 ] && [ "$(kubectl -n mariadb get mariadb mariadb-galera -o jsonpath="{.status.conditions[?(@.type==\"Ready\")].status}")" = True ]; do sleep 15; [ $(( $(date +%s)-T1 )) -gt 3600 ] && break; done; echo "SCALED_UP $(( $(date +%s)-T1 ))s"; kubectl -n mariadb get pods | grep galera
+for p in 0 1 2; do echo -n "$(sql mariadb-galera-$p mariadb "show status like 'wsrep_cluster_state_uuid'" | cut -f2) "; done; echo

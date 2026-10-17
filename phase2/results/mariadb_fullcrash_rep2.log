@@ -1,0 +1,24 @@
+T=1792000126286
+kill -9 mysqld on ALL workers at once
+NAME                           READY   STATUS      RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed   0          129m    10.42.1.84    mk-w2   <none>           <none>
+bigprep                        0/1     Completed   0          141m    10.42.0.21    mk-cp   <none>           <none>
+load                           1/1     Running     0          80m     10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0               2/2     Running     0          5m12s   10.42.1.102   mk-w2   <none>           <none>
+mariadb-galera-1               2/2     Running     0          2m43s   10.42.3.99    mk-w1   <none>           <none>
+mariadb-galera-2               2/2     Running     0          5m46s   10.42.2.99    mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running     0          143m    10.42.1.82    mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running     0          144m    10.42.2.89    mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running     0          144m    10.42.3.86    mk-w1   <none>           <none>
+sysb                           0/1     Completed   0          153m    10.42.0.18    mk-cp   <none>           <none>
+main outage 27.8s starting +0.9s; 7 interval(s), total 185.2s; primary mariadb-galera-2 78715 -> mariadb-galera-0 79364
+   +0.9s .. +28.7s  (27.8s, 95 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +29.0s .. +29.4s  (0.5s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +32.4s .. +81.9s  (49.5s, 159 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +116.4s .. +116.8s  (0.5s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +116.8s .. +218.3s  (101.5s, 376 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +218.3s .. +219.3s  (0.9s, 3 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +258.1s .. +262.5s  (4.4s, 1 fails) top error: 
+DISRUPT +0.9s..+81.9s = 81.1s (255 fails); +116.4s..+219.3s = 102.9s (380 fails); +258.1s..+262.5s = 4.4s (1 fails)
+LOSTCHECK acked=1031 present=1031 lost=0 (max over members)
+LOAD samples=45 median_tps=47.9 min_tps=0.0 intervals_below_50pct=16 sysbench_restarts=0 report_gaps=0s max_err/s=12.7

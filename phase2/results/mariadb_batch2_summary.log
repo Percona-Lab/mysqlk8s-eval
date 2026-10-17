@@ -1,0 +1,52 @@
+### drain
+pod/maxscale-galera-2 evicted
+pod/mariadb-galera-1 evicted
+node/mk-w1 drained
+drained in 5s
+node back 102s
+node/mk-w1 uncordoned
+== mk-w1 done 133s total
+pod/maxscale-galera-0 evicted
+pod/mariadb-galera-0 evicted
+node/mk-w2 drained
+drained in 3s
+node back 92s
+node/mk-w2 uncordoned
+== mk-w2 done 124s total
+pod/maxscale-galera-1 evicted
+pod/mariadb-galera-2 evicted
+node/mk-w3 drained
+drained in 4s
+node back 103s
+node/mk-w3 uncordoned
+== mk-w3 done 135s total
+DISRUPT +134.8s..+136.2s = 1.5s (1 fails); +260.0s..+264.6s = 4.7s (4 fails)
+LOSTCHECK acked=1657 present=1657 lost=0 (max over members)
+LOAD samples=42 median_tps=50.2 min_tps=39.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=9.6
+### cpdown
+K3S_STOPPED 1792008718637
+K3S_STARTED 1792009031332
+DISRUPT +36.8s..+47.3s = 10.5s (3 fails); +116.0s..+126.9s = 10.9s (2 fails); +185.9s..+196.8s = 11.0s (2 fails); +255.9s..+269.7s = 13.7s (3 fails); +326.0s..+330.4s = 4.4s (1 fails); +495.9s..+506.0
+LOSTCHECK acked=3635 present=3635 lost=0 (max over members)
+LOAD samples=90 median_tps=49.8 min_tps=7.1 intervals_below_50pct=3 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### diskfull
+FULL 1792010649671
+True
+True
+True
+True
+FREED 1792010896959
+DISRUPT +13.8s..+18.2s = 4.5s (1 fails); +393.7s..+398.2s = 4.5s (1 fails); +414.8s..+415.6s = 0.8s (1 fails); +463.7s..+468.2s = 4.5s (1 fails)
+LOSTCHECK acked=2019 present=2019 lost=0 (max over members)
+LOAD samples=52 median_tps=50.3 min_tps=46.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oom
+DISRUPT +235.2s..+236.1s = 0.9s (1 fails)
+LOSTCHECK acked=1069 present=1069 lost=0 (max over members)
+LOAD samples=26 median_tps=50.9 min_tps=46.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### cpu
+done
+DISRUPT +1.7s..+13.7s = 12.0s (2 fails); +71.4s..+76.0s = 4.5s (1 fails)
+LOSTCHECK acked=1015 present=1015 lost=0 (max over members)
+LOAD samples=27 median_tps=49.6 min_tps=8.2 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+UUID: 9b93ee4c-c802-11f1-bdce-535cd2dfea14 9b93ee4c-c802-11f1-bdce-535cd2dfea14 error: unable to upgrade connection: container not found ("mariadb") 
+BATCH2_DONE

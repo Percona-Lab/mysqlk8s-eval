@@ -1,0 +1,4 @@
+# memory exhaustion on writer node via stress-ng (kernel OOM killer chooses victim)
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"
+ssh -n -F ssh_config $N 'dmesg -C; timeout 150 stress-ng --vm 2 --vm-bytes 98% --vm-keep --timeout 120s >/dev/null 2>&1; dmesg | grep -iE "killed process|oom-kill" | tail -5 | cut -c1-200'; sleep 120
+rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'"

@@ -1,0 +1,4 @@
+# CPU starvation on writer node for 3 min
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"
+ssh -n -F ssh_config $N 'timeout 200 stress-ng --cpu 16 --timeout 180s >/dev/null 2>&1; echo done'; sleep 60
+rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'"

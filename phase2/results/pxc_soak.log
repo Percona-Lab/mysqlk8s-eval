@@ -1,0 +1,49 @@
+SOAK_START 1792167425268 hours=6 interval=30m
+## event 1 16:47:48 scen/kill9.local
+DISRUPT +6.0s..+10.5s = 4.5s (1 fails)
+LOSTCHECK acked=205 present=205 lost=0 (max over members)
+## event 2 17:18:02 scen/kill9.local
+DISRUPT +3.4s..+7.9s = 4.5s (1 fails); +30.6s..+35.2s = 4.5s (1 fails)
+LOSTCHECK acked=207 present=207 lost=0 (max over members)
+## event 3 17:47:34 scen/kill9.local
+DISRUPT +4.8s..+9.3s = 4.5s (1 fails); +27.9s..+32.4s = 4.5s (1 fails)
+LOSTCHECK acked=208 present=208 lost=0 (max over members)
+## event 4 18:19:45 scen/kill9.local
+DISRUPT +3.5s..+8.0s = 4.5s (1 fails); +28.7s..+33.2s = 4.5s (1 fails)
+LOSTCHECK acked=214 present=214 lost=0 (max over members)
+## event 5 18:50:57 scen/cpu.local
+no failed writes; primary cluster1-pxc-2 295728
+LOSTCHECK acked=889 present=889 lost=0 (max over members)
+## event 6 19:25:22 scen/cpu.local
+no failed writes; primary cluster1-pxc-2 317565
+LOSTCHECK acked=879 present=879 lost=0 (max over members)
+## event 7 19:57:56 scen/delproxy.sh
+DISRUPT +18.0s..+18.6s = 0.5s (1 fails)
+LOSTCHECK acked=251 present=251 lost=0 (max over members)
+## event 8 20:29:59 scen/kill9.local
+DISRUPT +2.4s..+6.9s = 4.5s (1 fails); +26.4s..+30.9s = 4.5s (1 fails)
+LOSTCHECK acked=198 present=198 lost=0 (max over members)
+## event 9 21:00:51 scen/delproxy.sh
+DISRUPT +18.0s..+18.5s = 0.5s (1 fails)
+LOSTCHECK acked=261 present=261 lost=0 (max over members)
+## event 10 21:33:26 scen/delpod.sh
+no failed writes; primary cluster1-pxc-2 401802
+LOSTCHECK acked=261 present=261 lost=0 (max over members)
+## event 11 22:05:29 scen/delproxy.sh
+no failed writes; primary cluster1-pxc-2 423341
+LOSTCHECK acked=264 present=264 lost=0 (max over members)
+SOAK probe attempts=82391 ok=82380 fail=11 availability=99.987%
+member cluster1-pxc-0 missing=0
+member cluster1-pxc-1 missing=0
+member cluster1-pxc-2 missing=0
+SOAK LOSTCHECK acked=82380 (missing per member above; 0 on any member = no loss)
+NAME                                               READY   STATUS      RESTARTS        AGE
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0               7h40m
+cluster1-proxysql-0                                3/3     Running     0               32m
+cluster1-proxysql-1                                3/3     Running     2 (6h24m ago)   6h37m
+cluster1-proxysql-2                                3/3     Running     1 (6h37m ago)   6h37m
+cluster1-pxc-0                                     3/3     Running     0               7h1m
+cluster1-pxc-1                                     3/3     Running     0               7h2m
+cluster1-pxc-2                                     3/3     Running     0               64m
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (7h33m ago)   7h42m
+SOAK_DONE

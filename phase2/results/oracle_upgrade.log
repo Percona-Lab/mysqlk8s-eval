@@ -1,0 +1,38 @@
+T=1792097401290
+OP_UPGRADE_START 1792097402230
+customresourcedefinition.apiextensions.k8s.io/clusterkopfpeerings.zalando.org unchanged
+customresourcedefinition.apiextensions.k8s.io/kopfpeerings.zalando.org unchanged
+serviceaccount/mysql-operator-sa unchanged
+deployment.apps/mysql-operator configured
+Waiting for deployment "mysql-operator" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "mysql-operator" rollout to finish: 1 old replicas are pending termination...
+deployment "mysql-operator" successfully rolled out
+OP_UPGRADED 1792097413019
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   6m11s
+mycluster-0                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-1                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-2                         container-registry.oracle.com/mysql/community-operator:9.7.0-2.2.8,container-registry.oracle.com/mysql/community-server:9.7.0
+mycluster-router-6759b55b5b-2cmkv   container-registry.oracle.com/mysql/community-router:9.7.0
+mycluster-router-6759b55b5b-p627n   container-registry.oracle.com/mysql/community-router:9.7.0
+mycluster-router-6759b55b5b-r57xp   container-registry.oracle.com/mysql/community-router:9.7.0
+DB_UPGRADE_START 1792097593615
+innodbcluster.mysql.oracle.com/mycluster patched
+DB_UPGRADED 423s
+mycluster-0 26.7.0
+mycluster-1 26.7.0
+mycluster-2 26.7.0
+mycluster-0                         container-registry.oracle.com/mysql/community-operator:26.7.0-2.3.0,container-registry.oracle.com/mysql/community-server:26.7.0
+mycluster-1                         container-registry.oracle.com/mysql/community-operator:26.7.0-2.3.0,container-registry.oracle.com/mysql/community-server:26.7.0
+mycluster-2                         container-registry.oracle.com/mysql/community-operator:26.7.0-2.3.0,container-registry.oracle.com/mysql/community-server:26.7.0
+mycluster-router-6d5dffdd6f-hhlxw   container-registry.oracle.com/mysql/community-router:26.7.0
+mycluster-router-6d5dffdd6f-w4c8j   container-registry.oracle.com/mysql/community-router:26.7.0
+mycluster-router-6d5dffdd6f-xnwxb   container-registry.oracle.com/mysql/community-router:26.7.0
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   13m
+main outage 2.5s starting +388.2s; 2 interval(s), total 3.8s; primary mycluster-0 250 -> mycluster-1 1856
+   +388.2s .. +390.7s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +438.3s .. +439.6s  (1.4s, 4 fails) top error: ERROR 3100 (HY000) at line 1: Error on observer while running replicat
+DISRUPT +388.2s..+390.7s = 2.5s (1 fails); +438.3s..+439.6s = 1.4s (4 fails)
+LOSTCHECK acked=2316 present=2316 lost=0 (max over members)
+LOAD samples=63 median_tps=50.0 min_tps=33.3 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=18.2

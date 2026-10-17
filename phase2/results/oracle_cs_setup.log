@@ -1,0 +1,17 @@
+ps     Terminating   49m
+namespace/oracle created
+secret/ocpwds created
+innodbcluster.mysql.oracle.com/oc1 created
+OC1 ONLINE 41s
+innodbcluster.mysql.oracle.com/oc2 created
+OC2 ONLINE 41s
+NAME   STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+oc1    ONLINE   1        1           1         UNKNOWN   84s
+oc2    ONLINE   1        1           1         REPLICA   41s
+NAME                          READY   STATUS    RESTARTS      AGE
+oc1-0                         2/2     Running   0             83s
+oc1-router-f8f8f9444-l86cz    1/1     Running   0             50s
+oc2-0                         2/2     Running   1 (15s ago)   41s
+oc2-router-65575b46fc-l97w5   1/1     Running   0             7s
+probe-oc                      1/1     Running   0             42s
+rows oc1=232 oc2=233

@@ -1,0 +1,18 @@
+T=1792186406415
+writer=cluster1-pxc-2 node=mk-w2
+pod "cluster1-pxc-2" deleted from pxc namespace
+NAME                                               READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed   0               10h     <none>        mk-cp   <none>           <none>
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0               6h36m   10.42.1.247   mk-w2   <none>           <none>
+cluster1-proxysql-0                                3/3     Running     0               33m     10.42.3.250   mk-w1   <none>           <none>
+cluster1-proxysql-1                                3/3     Running     2 (5h20m ago)   5h34m   10.42.2.239   mk-w3   <none>           <none>
+cluster1-proxysql-2                                3/3     Running     1 (5h33m ago)   5h33m   10.42.1.252   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0               5h58m   10.42.2.236   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0               5h59m   10.42.3.244   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0               45s     10.42.1.254   mk-w2   <none>           <none>
+load                                               1/1     Running     0               5h49m   10.42.0.60    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (6h29m ago)   6h38m   10.42.3.243   mk-w1   <none>           <none>
+sysb                                               0/1     Completed   0               11h     <none>        mk-cp   <none>           <none>
+no failed writes; primary cluster1-pxc-2 401802
+LOSTCHECK acked=261 present=261 lost=0 (max over members)
+LOAD samples=8 median_tps=49.7 min_tps=47.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

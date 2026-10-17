@@ -1,0 +1,18 @@
+T=1792138765350
+writer=mycluster-1 node=mk-w1
+pod "mycluster-1" deleted from oracle namespace
+NAME                                READY   STATUS        RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed     0             11h     <none>        mk-cp   <none>           <none>
+load                                1/1     Running       0             7h19m   10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Running       0             6h3m    10.42.1.226   mk-w2   <none>           2/2
+mycluster-1                         2/2     Terminating   1 (65m ago)   129m    10.42.3.223   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       1 (33m ago)   96m     10.42.2.211   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-4lgrr   1/1     Running       0             161m    10.42.1.229   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-wtpsj   1/1     Running       0             3h14m   10.42.2.210   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-xcjqp   1/1     Running       0             6h5m    10.42.3.221   mk-w1   <none>           <none>
+sysb                                0/1     Completed     0             11h     <none>        mk-cp   <none>           <none>
+main outage 1.4s starting +4.8s; 1 interval(s), total 1.4s; primary mycluster-1 130011 -> mycluster-2 130030
+   +4.8s .. +6.2s  (1.4s, 4 fails) top error: ERROR 3100 (HY000) at line 1: Error on observer while running replicat
+DISRUPT +4.8s..+6.2s = 1.4s (4 fails)
+LOSTCHECK acked=254 present=254 lost=0 (max over members)
+LOAD samples=7 median_tps=50.3 min_tps=45.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=19.8

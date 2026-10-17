@@ -1,0 +1,20 @@
+T=1791996521349
+writer=mariadb-galera-1 node=mk-w1
+pod "mariadb-galera-1" deleted from mariadb namespace
+NAME                           READY   STATUS      RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+bigphys-20261014154636-85cc9   0/1     Completed   0          64m     10.42.1.84   mk-w2   <none>           <none>
+bigprep                        0/1     Completed   0          77m     10.42.0.21   mk-cp   <none>           <none>
+load                           1/1     Running     0          15m     10.42.0.24   mk-cp   <none>           <none>
+mariadb-galera-0               2/2     Running     0          8m39s   10.42.1.97   mk-w2   <none>           <none>
+mariadb-galera-1               2/2     Running     0          2m29s   10.42.3.91   mk-w1   <none>           <none>
+mariadb-galera-2               2/2     Running     0          10m     10.42.2.92   mk-w3   <none>           <none>
+maxscale-galera-0              1/1     Running     0          79m     10.42.1.82   mk-w2   <none>           <none>
+maxscale-galera-1              1/1     Running     0          79m     10.42.2.89   mk-w3   <none>           <none>
+maxscale-galera-2              1/1     Running     0          80m     10.42.3.86   mk-w1   <none>           <none>
+sysb                           0/1     Completed   0          88m     10.42.0.18   mk-cp   <none>           <none>
+main outage 0.8s starting +1.7s; 2 interval(s), total 6.0s; primary mariadb-galera-1 54262 -> mariadb-galera-0 54293
+   +1.7s .. +2.5s  (0.8s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3.1s .. +8.2s  (5.2s, 4 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+DISRUPT +1.7s..+8.2s = 6.5s (6 fails)
+LOSTCHECK acked=675 present=675 lost=0 (max over members)
+LOAD samples=17 median_tps=50.1 min_tps=45.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=9.4

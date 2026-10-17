@@ -1,0 +1,12 @@
+T=1792140556236
+proxy=mycluster-router-6d5dffdd6f-4lgrr
+pod "mycluster-router-6d5dffdd6f-4lgrr" deleted from oracle namespace
+NAME                                READY   STATUS    RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-router-6d5dffdd6f-pbb4r   1/1     Running   0          60s     10.42.1.230   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-wtpsj   1/1     Running   0          3h44m   10.42.2.210   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-xcjqp   1/1     Running   0          6h34m   10.42.3.221   mk-w1   <none>           <none>
+main outage 0.5s starting +1.6s; 1 interval(s), total 0.5s; primary mycluster-2 136735 -> mycluster-2 136742
+   +1.6s .. +2.1s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +1.6s..+2.1s = 0.5s (1 fails)
+LOSTCHECK acked=258 present=258 lost=0 (max over members)
+LOAD samples=7 median_tps=49.8 min_tps=48.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

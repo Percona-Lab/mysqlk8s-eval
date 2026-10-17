@@ -1,0 +1,46 @@
+SOAK_START 1792073252700 hours=6 interval=30m
+## event 1 14:37:20 scen/delproxy.sh
+no failed writes; primary ps-cluster1-mysql-0 76817
+LOSTCHECK acked=257 present=257 lost=0 (max over members)
+## event 2 15:07:46 scen/cpu.local
+no failed writes; primary ps-cluster1-mysql-0 83546
+LOSTCHECK acked=888 present=888 lost=0 (max over members)
+## event 3 15:43:59 scen/delproxy.sh
+no failed writes; primary ps-cluster1-mysql-0 91476
+LOSTCHECK acked=246 present=246 lost=0 (max over members)
+## event 4 16:15:28 scen/delproxy.sh
+no failed writes; primary ps-cluster1-mysql-0 98412
+LOSTCHECK acked=256 present=256 lost=0 (max over members)
+## event 5 16:48:10 scen/cpu.local
+no failed writes; primary ps-cluster1-mysql-0 105627
+LOSTCHECK acked=907 present=907 lost=0 (max over members)
+## event 6 17:22:14 scen/cpu.local
+no failed writes; primary ps-cluster1-mysql-0 113146
+LOSTCHECK acked=915 present=915 lost=0 (max over members)
+## event 7 17:57:11 scen/cpu.local
+no failed writes; primary ps-cluster1-mysql-0 120867
+LOSTCHECK acked=910 present=910 lost=0 (max over members)
+## event 8 18:31:30 scen/delproxy.sh
+no failed writes; primary ps-cluster1-mysql-0 128449
+LOSTCHECK acked=259 present=259 lost=0 (max over members)
+## event 9 19:03:53 scen/cpu.local
+no failed writes; primary ps-cluster1-mysql-0 135585
+LOSTCHECK acked=909 present=909 lost=0 (max over members)
+## event 10 19:39:55 scen/kill9.local
+DISRUPT +2.4s..+36.6s = 34.2s (78 fails)
+LOSTCHECK acked=134 present=134 lost=0 (max over members)
+SOAK probe attempts=79460 ok=78978 fail=482 availability=99.393%
+member ps-cluster1-mysql-0 missing=0
+member ps-cluster1-mysql-1 missing=0
+member ps-cluster1-mysql-2 missing=0
+SOAK LOSTCHECK acked=78978 (missing per member above; 0 on any member = no loss)
+NAME                                             READY   STATUS      RESTARTS       AGE
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     6 (7h3m ago)   7h10m
+ps-cluster1-binlog-server-0                      1/1     Running     0              6h32m
+ps-cluster1-mysql-0                              2/2     Running     0              25m
+ps-cluster1-mysql-1                              2/2     Running     0              24m
+ps-cluster1-mysql-2                              2/2     Running     1 (28m ago)    29m
+ps-cluster1-router-7d5c59677-4dbtk               1/1     Running     0              100m
+ps-cluster1-router-7d5c59677-njkzs               1/1     Running     0              6h21m
+ps-cluster1-router-7d5c59677-vmdh2               1/1     Running     0              6h21m
+SOAK_DONE

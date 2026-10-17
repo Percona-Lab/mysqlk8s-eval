@@ -1,0 +1,49 @@
+T=1792096354673
+writer=ps-async-mysql-0 node=mk-w2 id=108112998
+POWEROFF 1792096355795
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   37h   v1.37.1+k3s1
+mk-w1   Ready      <none>          37h   v1.37.1+k3s1
+mk-w2   NotReady   <none>          37h   v1.37.1+k3s1
+mk-w3   Ready      <none>          37h   v1.37.1+k3s1
+NAME                                             READY   STATUS        RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed     0               11h     <none>        mk-cp   <none>           <none>
+load                                             1/1     Running       0               18m     10.42.0.45    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running       6 (7h29m ago)   7h36m   10.42.3.185   mk-w1   <none>           <none>
+ps-async-haproxy-0                               2/2     Running       0               22m     10.42.2.191   mk-w3   <none>           <none>
+ps-async-haproxy-1                               2/2     Terminating   0               21m     10.42.1.210   mk-w2   <none>           <none>
+ps-async-haproxy-2                               2/2     Running       0               21m     10.42.3.200   mk-w1   <none>           <none>
+ps-async-mysql-0                                 2/2     Terminating   2 (15m ago)     23m     10.42.1.208   mk-w2   <none>           <none>
+ps-async-mysql-1                                 2/2     Running       3 (11m ago)     23m     10.42.3.199   mk-w1   <none>           <none>
+ps-async-mysql-2                                 2/2     Running       2 (8m6s ago)    8m33s   10.42.2.194   mk-w3   <none>           <none>
+ps-async-orc-0                                   2/2     Running       0               23m     10.42.2.190   mk-w3   <none>           <none>
+ps-async-orc-1                                   2/2     Running       0               23m     10.42.3.197   mk-w1   <none>           <none>
+ps-async-orc-2                                   2/2     Terminating   0               22m     10.42.1.209   mk-w2   <none>           <none>
+sysb                                             0/1     Completed     0               19m     10.42.0.44    mk-cp   <none>           <none>
+BOOT 1792096717855
+ALL_DB_READY_AFTER_BOOT 122s
+NAME                                             READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0               11h     <none>        mk-cp   <none>           <none>
+load                                             1/1     Running     0               20m     10.42.0.45    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-qzm6s   1/1     Running     6 (7h31m ago)   7h38m   10.42.3.185   mk-w1   <none>           <none>
+ps-async-haproxy-0                               2/2     Running     0               24m     10.42.2.191   mk-w3   <none>           <none>
+ps-async-haproxy-1                               2/2     Running     0               64s     10.42.1.212   mk-w2   <none>           <none>
+ps-async-haproxy-2                               2/2     Running     0               23m     10.42.3.200   mk-w1   <none>           <none>
+ps-async-mysql-0                                 2/2     Running     2 (34s ago)     65s     10.42.1.211   mk-w2   <none>           <none>
+ps-async-mysql-1                                 2/2     Running     3 (13m ago)     25m     10.42.3.199   mk-w1   <none>           <none>
+ps-async-mysql-2                                 2/2     Running     2 (10m ago)     10m     10.42.2.194   mk-w3   <none>           <none>
+ps-async-orc-0                                   2/2     Running     0               25m     10.42.2.190   mk-w3   <none>           <none>
+ps-async-orc-1                                   2/2     Running     0               25m     10.42.3.197   mk-w1   <none>           <none>
+ps-async-orc-2                                   2/2     Running     0               64s     10.42.1.213   mk-w2   <none>           <none>
+sysb                                             0/1     Completed   0               21m     10.42.0.44    mk-cp   <none>           <none>
+main outage 33.7s starting +2.0s; 7 interval(s), total 53.1s; primary ps-async-mysql-0 2949 -> ps-async-mysql-2 2969
+   +2.0s .. +35.7s  (33.7s, 15 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +36.0s .. +38.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+   +38.7s .. +41.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+   +41.2s .. +45.9s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+   +45.9s .. +48.4s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+   +49.0s .. +53.8s  (4.8s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+   +54.0s .. +56.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-async-haproxy
+DISRUPT +2.0s..+56.5s = 54.5s (23 fails)
+LOSTCHECK acked=1714 present=1714 lost=0 (max over members)
+LOAD samples=51 median_tps=49.3 min_tps=0.0 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

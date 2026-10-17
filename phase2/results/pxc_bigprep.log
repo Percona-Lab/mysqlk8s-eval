@@ -1,0 +1,11 @@
+pod/bigprep created
+1s 729Mi 717Mi 767Mi 
+122s 882Mi 793Mi 825Mi 
+242s 890Mi 808Mi 835Mi 
+363s 898Mi 824Mi 854Mi 
+483s 902Mi 827Mi 861Mi 
+PHASE Succeeded after 604s
+0
+cluster1-pxc-0 restarts=0 
+cluster1-pxc-1 restarts=0 
+cluster1-pxc-2 restarts=0 

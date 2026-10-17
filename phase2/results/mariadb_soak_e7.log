@@ -1,0 +1,20 @@
+T=1792039653782
+writer=mariadb-galera-2 node=mk-w3
+killed
+NAME                READY   STATUS      RESTARTS       AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep             0/1     Completed   0              13h     <none>        mk-cp   <none>           <none>
+load                1/1     Running     0              12h     10.42.0.24    mk-cp   <none>           <none>
+mariadb-galera-0    1/2     Running     0              4h46m   10.42.1.149   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running     1 (4h4m ago)   4h46m   10.42.3.143   mk-w1   <none>           <none>
+mariadb-galera-2    1/2     Running     3 (62s ago)    124m    10.42.2.155   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running     0              34m     10.42.1.156   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0              3h54m   10.42.2.151   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running     0              8h      10.42.3.136   mk-w1   <none>           <none>
+sysb                0/1     Completed   0              13h     <none>        mk-cp   <none>           <none>
+main outage 5.7s starting +2.8s; 3 interval(s), total 10.9s; primary mariadb-galera-2 473596 -> mariadb-galera-1 473685
+   +2.8s .. +8.5s  (5.7s, 6 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +14.1s .. +18.6s  (4.5s, 1 fails) top error: 
+   +22.0s .. +22.8s  (0.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +2.8s..+22.8s = 19.9s (8 fails)
+LOSTCHECK acked=233 present=233 lost=0 (max over members)
+LOAD samples=8 median_tps=49.7 min_tps=43.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

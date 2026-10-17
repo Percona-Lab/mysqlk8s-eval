@@ -1,0 +1,32 @@
+T=1792164777625
+== root password rotation via cluster1-secrets
+NEW_ROOT_WORKS_AFTER 6s
+command terminated with exit code 1
+NAME       ENDPOINT               STATUS   PXC   PROXYSQL   HAPROXY   AGE
+cluster1   cluster1-haproxy.pxc   ready    3                3         5h14m
+cluster1-haproxy-0                                 2/2     Running     0             38m
+cluster1-haproxy-1                                 2/2     Running     0             41m
+cluster1-haproxy-2                                 2/2     Running     0             24m
+cluster1-pxc-0                                     3/3     Running     0             24m
+cluster1-pxc-1                                     3/3     Running     0             41m
+cluster1-pxc-2                                     3/3     Running     0             37m
+== TLS: delete cluster1-ssl secret
+secret "cluster1-ssl" deleted from pxc namespace
+SSL_SECRET_RECREATED 30s
+NAME       ENDPOINT               STATUS   PXC   PROXYSQL   HAPROXY   AGE
+cluster1   cluster1-haproxy.pxc   ready    3                3         5h19m
+cluster1-haproxy-0                                 2/2     Running     0             42m
+cluster1-haproxy-1                                 2/2     Running     0             45m
+cluster1-haproxy-2                                 2/2     Running     0             28m
+cluster1-pxc-0                                     3/3     Running     0             2m8s
+cluster1-pxc-1                                     3/3     Running     0             3m10s
+cluster1-pxc-2                                     3/3     Running     0             4m11s
+notBefore=Oct 16 15:34:08 2026 GMT
+notBefore=Oct 16 15:34:08 2026 GMT
+notBefore=Oct 16 15:34:08 2026 GMT
+server cert presented: Ssl_server_not_before	Oct 16 10:19:33 2026 GMT
+main outage 17.8s starting +205.4s; 1 interval(s), total 17.8s; primary cluster1-pxc-0 180730 -> cluster1-pxc-2 182831
+   +205.4s .. +223.2s  (17.8s, 15 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+DISRUPT +205.4s..+223.2s = 17.8s (15 fails)
+LOSTCHECK acked=1260 present=1260 lost=0 (max over members)
+LOAD samples=36 median_tps=49.9 min_tps=0.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=1082.2

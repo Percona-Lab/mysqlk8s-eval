@@ -1,0 +1,51 @@
+### drain
+pod/ps-cluster1-haproxy-1 evicted
+pod/ps-cluster1-mysql-0 evicted
+node/mk-w1 drained
+drained in 62s
+node back 152s
+node/mk-w1 uncordoned
+== mk-w1 done 195s total
+pod/ps-cluster1-haproxy-2 evicted
+pod/ps-cluster1-mysql-1 evicted
+node/mk-w2 drained
+drained in 10s
+node back 93s
+node/mk-w2 uncordoned
+== mk-w2 done 130s total
+pod/ps-cluster1-haproxy-0 evicted
+pod/ps-cluster1-mysql-2 evicted
+node/mk-w3 drained
+drained in 11s
+node back 92s
+node/mk-w3 uncordoned
+== mk-w3 done 131s total
+DISRUPT +1.8s..+6.1s = 4.4s (2 fails); +197.5s..+209.0s = 11.5s (39 fails)
+LOSTCHECK acked=1705 present=1705 lost=0 (max over members)
+LOAD samples=47 median_tps=49.6 min_tps=40.2 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=59.0
+### cpdown
+K3S_STOPPED 1792069565727
+K3S_STARTED 1792069883657
+DISRUPT +36.2s..+62.1s = 25.9s (77 fails)
+LOSTCHECK acked=1184 present=1184 lost=0 (max over members)
+LOAD samples=37 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=464.1
+### diskfull
+FULL 1792070004987
+True
+True
+True
+True
+FREED 1792070253129
+DISRUPT +23.7s..+28.8s = 5.0s (3 fails)
+LOSTCHECK acked=1837 present=1837 lost=0 (max over members)
+LOAD samples=51 median_tps=50.3 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=401.1
+### oom
+no failed writes; primary ps-cluster1-mysql-0 61046
+LOSTCHECK acked=913 present=913 lost=0 (max over members)
+LOAD samples=27 median_tps=49.5 min_tps=18.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### cpu
+done
+no failed writes; primary ps-cluster1-mysql-0 62201
+LOSTCHECK acked=925 present=925 lost=0 (max over members)
+LOAD samples=27 median_tps=50.7 min_tps=46.8 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+BATCH2_DONE

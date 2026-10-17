@@ -1,0 +1,44 @@
+T=1792116042237
+writer=mycluster-1 node=mk-w1 id=108112995
+POWEROFF 1792116044924
+NAME    STATUS     ROLES           AGE   VERSION
+mk-cp   Ready      control-plane   42h   v1.37.1+k3s1
+mk-w1   NotReady   <none>          42h   v1.37.1+k3s1
+mk-w2   Ready      <none>          42h   v1.37.1+k3s1
+mk-w3   Ready      <none>          42h   v1.37.1+k3s1
+NAME                                READY   STATUS        RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed     0             5h5m    10.42.0.49    mk-cp   <none>           <none>
+load                                1/1     Running       0             66m     10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Running       0             8m53s   10.42.1.223   mk-w2   <none>           2/2
+mycluster-1                         2/2     Terminating   5 (24m ago)   63m     10.42.3.218   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running       4 (24m ago)   59m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-gb2zz   1/1     Running       0             9m48s   10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-jg8v9   1/1     Running       0             17s     10.42.1.225   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-nzq4d   1/1     Terminating   0             3h8m    10.42.3.216   mk-w1   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   1/1     Running       0             9m48s   10.42.2.204   mk-w3   <none>           <none>
+sysb                                0/1     Completed     0             5h17m   10.42.0.47    mk-cp   <none>           <none>
+BOOT 1792116408253
+ALL_DB_READY_AFTER_BOOT 114s
+NAME                                READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                             0/1     Completed   0             5h7m    10.42.0.49    mk-cp   <none>           <none>
+load                                1/1     Running     0             68m     10.42.0.52    mk-cp   <none>           <none>
+mycluster-0                         2/2     Running     0             10m     10.42.1.223   mk-w2   <none>           2/2
+mycluster-1                         2/2     Running     0             48s     10.42.3.219   mk-w1   <none>           2/2
+mycluster-2                         2/2     Running     4 (26m ago)   61m     10.42.2.203   mk-w3   <none>           2/2
+mycluster-router-6d5dffdd6f-gb2zz   1/1     Running     0             11m     10.42.2.205   mk-w3   <none>           <none>
+mycluster-router-6d5dffdd6f-jg8v9   1/1     Running     0             2m13s   10.42.1.225   mk-w2   <none>           <none>
+mycluster-router-6d5dffdd6f-zrd6s   1/1     Running     0             11m     10.42.2.204   mk-w3   <none>           <none>
+sysb                                0/1     Completed   0             5h19m   10.42.0.47    mk-cp   <none>           <none>
+main outage 30.0s starting +3.2s; 9 interval(s), total 45.0s; primary mycluster-1 45208 -> mycluster-2 46448
+   +3.2s .. +33.2s  (30.0s, 16 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +34.0s .. +36.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +36.5s .. +39.0s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +41.0s .. +45.7s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +45.7s .. +48.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +361.3s .. +361.8s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +362.4s .. +363.3s  (0.9s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +363.3s .. +363.9s  (0.6s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+   +363.9s .. +364.6s  (0.7s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to remote MySQL server
+DISRUPT +3.2s..+48.2s = 45.0s (21 fails); +361.3s..+364.6s = 3.4s (5 fails)
+LOSTCHECK acked=1742 present=1742 lost=0 (max over members)
+LOAD samples=51 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

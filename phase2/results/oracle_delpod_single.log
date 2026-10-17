@@ -1,0 +1,14 @@
+pod "mycluster-0" deleted from oracle namespace
++15s 636cb454-fff5-4add-8895-2045a4f515f7|2026-10-16T01:00:31Z|Running
++30s 636cb454-fff5-4add-8895-2045a4f515f7|2026-10-16T01:00:31Z|Running
++46s 636cb454-fff5-4add-8895-2045a4f515f7|2026-10-16T01:00:31Z|Running
++61s 636cb454-fff5-4add-8895-2045a4f515f7|2026-10-16T01:00:31Z|Running
++77s b41e450b-003f-499f-a07a-bed5f37034ad||Running
+NAME        STATUS           ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE_PARTIAL   2        3           3         UNKNOWN   4h12m
+mycluster-0                         1/2     Running     0          14s
+mycluster-1                         2/2     Running     0          6m
+mycluster-2                         2/2     Running     0          6m
+mycluster-router-6d5dffdd6f-2rnjf   1/1     Running     0          3h40m
+mycluster-router-6d5dffdd6f-hhlxw   1/1     Running     0          4h6m
+mycluster-router-6d5dffdd6f-nzq4d   1/1     Running     0          121m

@@ -1,0 +1,24 @@
+T=1791991474952
+op upgrade start 1791991476063
+STATUS: deployed
+STATUS: deployed
+operator rolled 1791991482783
+NAME                                     READY   STATUS    PRIMARY            UPDATES                    AGE
+mariadb.k8s.mariadb.com/mariadb-galera   True    Running   mariadb-galera-0   ReplicasFirstPrimaryLast   9m22s
+
+NAME                                       READY   STATUS    PRIMARY            AGE
+maxscale.k8s.mariadb.com/maxscale-galera   True    Running   mariadb-galera-0   9m22s
+mariadb-galera-0    mariadb:11.8.8               2026-10-14T15:19:38Z
+mariadb-galera-1    mariadb:11.8.8               2026-10-14T15:19:38Z
+mariadb-galera-2    mariadb:11.8.8               2026-10-14T15:19:38Z
+maxscale-galera-0   mariadb/maxscale:23.08.5     2026-10-14T15:25:39Z
+maxscale-galera-1   mariadb/maxscale:23.08.5     2026-10-14T15:25:16Z
+maxscale-galera-2   mariadb/maxscale:23.08.5     2026-10-14T15:24:44Z
+main outage 0.5s starting +40.3s; 4 interval(s), total 6.2s; primary mariadb-galera-0 1324 -> mariadb-galera-0 2083
+   +40.3s .. +40.8s  (0.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +40.8s .. +43.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +63.5s .. +64.2s  (0.7s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +64.2s .. +66.7s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+DISRUPT +40.3s..+43.2s = 2.9s (2 fails); +63.5s..+66.7s = 3.2s (2 fails)
+LOSTCHECK acked=1071 present=1071 lost=0 (max over members)
+LOAD samples=26 median_tps=50.3 min_tps=46.1 intervals_below_50pct=0 (~0s) max_err/s=0.0 reconn_total~12

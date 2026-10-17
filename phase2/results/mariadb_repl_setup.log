@@ -1,0 +1,13 @@
+physicalbackup.k8s.mariadb.com/repl-base created
+pointintimerecovery.k8s.mariadb.com/pitr created
+mariadb.k8s.mariadb.com/mariadb-repl created
+REPL_READY 82s
+NAME           READY   STATUS    PRIMARY          UPDATES                    AGE
+mariadb-repl   True    Running   mariadb-repl-0   ReplicasFirstPrimaryLast   82s
+mariadb-repl-0      2/2     Running     0          82s
+mariadb-repl-1      2/2     Running     0          82s
+mariadb-repl-2      2/2     Running     0          82s
+NAME        COMPLETE   STATUS      MARIADB        LAST SCHEDULED   AGE
+repl-base   False      Scheduled   mariadb-repl                    83s
+NAME   PHYSICAL BACKUP   LAST RECOVERABLE TIME   STRICT MODE   AGE
+pitr   repl-base                                               83s

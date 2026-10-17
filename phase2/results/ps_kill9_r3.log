@@ -1,0 +1,23 @@
+T=1792065887245
+writer=ps-cluster1-mysql-1 node=mk-w2
+killed
+NAME                                             READY   STATUS      RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                          0/1     Completed   0                3h18m   10.42.0.36    mk-cp   <none>           <none>
+load                                             1/1     Running     0                26m     10.42.0.38    mk-cp   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-dbddm   1/1     Running     0                3h48m   10.42.2.168   mk-w3   <none>           <none>
+pitr-restore-bigpitr2-4q6dj                      0/1     Completed   0                159m    10.42.3.174   mk-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      0/1     Error       34 (6m12s ago)   155m    10.42.2.175   mk-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     0                155m    10.42.2.174   mk-w3   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     0                154m    10.42.3.176   mk-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     0                154m    10.42.1.187   mk-w2   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     1 (6m57s ago)    14m     10.42.3.178   mk-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     2 (2m31s ago)    20m     10.42.1.189   mk-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     0                24m     10.42.2.178   mk-w3   <none>           <none>
+sysb                                             0/1     Completed   0                3h50m   10.42.0.32    mk-cp   <none>           <none>
+xb-bigbk2-s3-52lrd                               0/1     Completed   0                168m    10.42.1.183   mk-w2   <none>           <none>
+xb-restore-bigpitr2-jgzrh                        0/1     Completed   0                160m    10.42.3.173   mk-w1   <none>           <none>
+main outage 21.9s starting +3.0s; 1 interval(s), total 21.9s; primary ps-cluster1-mysql-1 47219 -> ps-cluster1-mysql-0 47231
+   +3.0s .. +24.9s  (21.9s, 76 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +3.0s..+24.9s = 21.9s (76 fails)
+LOSTCHECK acked=549 present=549 lost=0 (max over members)
+LOAD samples=18 median_tps=49.1 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

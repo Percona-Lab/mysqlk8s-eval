@@ -1,0 +1,17 @@
+T=1792013347565
+writer=mariadb-galera-0 node=mk-w2
+done
+NAME                READY   STATUS             RESTARTS         AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running            0                87m     10.42.1.142   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running            0                89m     10.42.3.137   mk-w1   <none>           <none>
+mariadb-galera-2    1/2     CrashLoopBackOff   24 (2m54s ago)   84m     10.42.2.134   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running            0                87m     10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running            0                84m     10.42.2.135   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running            0                89m     10.42.3.136   mk-w1   <none>           <none>
+main outage 4.5s starting +1.7s; 3 interval(s), total 16.5s; primary mariadb-galera-0 180405 -> mariadb-galera-0 181134
+   +1.7s .. +6.2s  (4.5s, 1 fails) top error: 
+   +6.2s .. +13.7s  (7.5s, 1 fails) top error: 
+   +71.4s .. +76.0s  (4.5s, 1 fails) top error: 
+DISRUPT +1.7s..+13.7s = 12.0s (2 fails); +71.4s..+76.0s = 4.5s (1 fails)
+LOSTCHECK acked=1015 present=1015 lost=0 (max over members)
+LOAD samples=27 median_tps=49.6 min_tps=8.2 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

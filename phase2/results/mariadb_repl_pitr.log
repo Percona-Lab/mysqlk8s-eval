@@ -1,0 +1,24 @@
+BASE_BACKUP_DONE +0s
+TARGET 2026-10-15T00:35:07Z
+NAME   PHYSICAL BACKUP   LAST RECOVERABLE TIME   STRICT MODE   AGE
+pitr   repl-base                                               5m7s
+{"level":"info","ts":1792024334.316701,"logger":"api","msg":"Server listening","addr":":5555","tls":true}
+{"level":"info","ts":1792024334.3168647,"logger":"probe","msg":"Server listening","addr":":5566","tls":false}
+{"level":"info","ts":1792024334.318158,"logger":"binlog-archival","msg":"Starting binary log archiver"}
+mariadb.k8s.mariadb.com/repl-pitr created
+PITR_CLUSTER_READY 52s
+NAME        READY   STATUS                                                                                                                                                               PRIMARY       UPDATES                    AGE
+repl-pitr   False   Error reconciling PITR: error getting start GTID: error getting agent client: error getting agent base URL: error getting agent: high availability must be enabled   repl-pitr-0   ReplicasFirstPrimaryLast   52s
+--------------
+select note from pt.t where note not like 'pre-%' order by id
+--------------
+
+ERROR 1146 (42S02) at line 1: Table 'pt.t' doesn't exist
+command terminated with exit code 1
+mariadb.k8s.mariadb.com/repl-pitr created
+PITR_CLUSTER_READY 73s
+NAME        READY   STATUS    PRIMARY       UPDATES                    AGE
+repl-pitr   True    Running   repl-pitr-0   ReplicasFirstPrimaryLast   73s
+before-backup
+after-backup
+32

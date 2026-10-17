@@ -1,0 +1,16 @@
+apiVersion: ps.percona.com/v1
+kind: PerconaServerMySQLClusterSet
+metadata:
+  name: ps-dr
+  finalizers: [percona.com/clusterset-dissolve]
+spec:
+  primaryCluster: pssrc
+  credentialsSecret: {name: ps-dr-secrets, key: clusterset}
+  sslMode: AUTO
+  createReplicaClusterOptions: {recoveryMethod: clone}
+  clusters:
+  - innodbClusterName: pssrc
+    endpoints: [{host: ps-src-mysql-primary.ps.svc.cluster.local}]
+  - innodbClusterName: psrep
+    endpoints: [{host: ps-rep-mysql-0.ps-rep-mysql.ps.svc.cluster.local}]
+  mysqlshellRunner: {image: "percona/percona-server:8.4.10-10.1"}

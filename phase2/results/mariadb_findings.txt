@@ -1,0 +1,30 @@
+FINDING: MariaDB User CRD default maxUserConnections=10; with MaxScale readwritesplit each client session holds a connection per backend -> 8 load + 8 prepare threads hit ERROR 1226 'exceeded max_user_connections (10)', MaxScale closes sessions (sysbench 'Lost connection'). Fixed by spec.maxUserConnections: 200.
+FINDING (kill9_r2, 2026-10-14 ~17:01Z): single mariadbd kill -9 on mariadb-galera-0 under 50 tps load + 8.9GB data. 75 s later operator logged "Galera cluster is not healthy" -> galera.recovery "Recovering cluster" -> "Downscaling cluster" -> restart all pods -> full write outage 154.7 s (ERROR 1815 Session creation failed via MaxScale). Defaults: clusterHealthyTimeout 30s, minClusterSize 1. kill9_r1 (same conditions) only 15 s + two 11-14 s stalls. Operator log: phase2/results/mariadb_operator_kill9.log
+FINDING (repeats 2026-10-14 17:0x-18:2x Z): full crash (kill -9 all mariadbd) under load, 3 runs: outage 16.6 s / 81+103 s / 8.3 s. Nil Galera UUID afterwards in runs 1 (2 of 3 members) and 3 (all 3) -> reproduces mariadb-operator#1946 in 2 of 3 runs.
+Following node power-off repeats: rebooted member never rejoined within 900 s (both runs); second run ended in total outage (~25 min) with operator looping "error getting bootstrap source: bootstrap source not found" (all recovered UUIDs nil). Manual forceClusterBootstrapInPod -> Ready in 353 s, new UUID, 0 of 14027 acked writes lost.
+FINDING (2026-10-14 ~20:10-22:40Z): after the OOM test, mariadb-galera-2 needed a full SST (~9 GB, mariabackup). Default startupProbe (initialDelay 20s, period 10s, failureThreshold 3 => ~50 s) kills the joiner mid-SST (exit 137) -> CrashLoopBackOff, 42 restarts over ~2.5 h, member never rejoins; MariaDB CR "Not ready". Cluster ran on 2 of 3 members. Also seen: IST uuid 00000000-... in joiner log.
+ 
+mariadb.k8s.mariadb.com/mariadb-galera patched
+READY_AFTER_PROBE_FIX 2414s
+mariadb-galera-0    2/2     Running            0               3h13m
+mariadb-galera-1    2/2     Running            0               3h15m
+mariadb-galera-2    1/2     CrashLoopBackOff   51 (2m2s ago)   3h11m
+maxscale-galera-0   1/1     Running            0               3h13m
+maxscale-galera-1   1/1     Running            0               3h11m
+maxscale-galera-2   1/1     Running            0               3h15m
+FINDING: spec.startupProbe change (failureThreshold 180) on MariaDB CR not propagated to StatefulSet for 40 min while cluster Not ready (sts updateStrategy OnDelete, template unchanged) -> the fix for the stuck joiner cannot be applied via the operator.
+statefulset.apps/mariadb-galera patched
+pod "mariadb-galera-2" deleted from mariadb namespace
+GALERA2_READY_AFTER_STS_PATCH 1293s
+180 restarts=0
+NAME             READY   STATUS             PRIMARY            UPDATES                    AGE
+mariadb-galera   False   Galera not ready   mariadb-galera-1   ReplicasFirstPrimaryLast   8h
+After manual sts patch the joiner completed SST+IST (1293 s) and all 3 members Synced with valid UUID, but MariaDB CR stayed GaleraReady=False ("Galera not ready") for 15+ min with no operator log activity; User CR 'rot' never reconciled meanwhile. Operator restart -> CR Ready after 372 s, User created. Operator reconciliation appeared stuck.
+FINDING: MariaDB binlog archiver interval hardcoded 10 min (pkg/binlog/archiver.go archiveInterval) -> PITR RPO up to ~10 min, not configurable. PITR bootstrap into replicas:1 (no replication) fails: 'error getting agent: high availability must be enabled' (Ready False, unclear msg).
+ASYNC REPLICATION (mariadb-repl, semi-sync on, autoFailover true):
+- kill -9 primary (repl-0): failover to repl-1 in 2.1 s, 0 of 3627 acked writes lost.
+- Afterwards old primary repl-0 cannot rejoin: "fatal error 1236 ... requested to start from GTID 0-10-132, which is not in the master's binlog" (errant un-acked trx on old primary) -> CrashLoopBackOff, manual rebuild needed.
+- Primary node power-off (repl-1 on mk-w3, 00:47:12Z): NO failover while node down; write outage 434 s, ended when node rebooted (00:53:14) and old primary returned. Operator "Configuring primary" only at ~01:00:47.
+- After that: MariaDB CR Ready=False "Error archiving binlogs: error uploading binary log mariadb-repl-bin.000002: ... invalid event size 0, must >= 19" (PITR archival broken after crash).
+teardown: maxscale CR finalizer blocked ns deletion after operator uninstall (needed manual patch)
+FINDING: multi-cluster (26.10.1, replication, same k8s): replica cluster member mariadb-eu-central-1 CrashLoop: 'Got fatal error 1236 ... binlog on the master is missing the GTID 0-10-5 requested by the slave ... GTID strict mode' (central-0 bootstrapped from physical backup has no domain-0 history in its binlog). Central-0 replicates fine from south (gtidIOPos 0-10-2181). Replica cluster stays Not ready.

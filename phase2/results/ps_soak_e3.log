@@ -1,0 +1,10 @@
+T=1792079039979
+proxy=ps-cluster1-router-7d5c59677-dmbcn
+pod "ps-cluster1-router-7d5c59677-dmbcn" deleted from ps namespace
+NAME                                 READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE   READINESS GATES
+ps-cluster1-router-7d5c59677-7v9mx   1/1     Running   0          61s    10.42.3.191   mk-w1   <none>           <none>
+ps-cluster1-router-7d5c59677-njkzs   1/1     Running   0          113m   10.42.1.202   mk-w2   <none>           <none>
+ps-cluster1-router-7d5c59677-vmdh2   1/1     Running   0          113m   10.42.2.187   mk-w3   <none>           <none>
+no failed writes; primary ps-cluster1-mysql-0 91476
+LOSTCHECK acked=246 present=246 lost=0 (max over members)
+LOAD samples=7 median_tps=49.1 min_tps=45.4 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

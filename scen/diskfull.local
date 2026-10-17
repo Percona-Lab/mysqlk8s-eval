@@ -1,0 +1,6 @@
+# fill the writer node's root fs leaving ~300 MB for 4 min, then free it
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"
+ssh -n -F ssh_config $N 'A=$(df -B1 --output=avail / | tail -1); fallocate -l $((A-300*1024*1024)) /var/fill.img; df -h / | tail -1'; echo "FULL $(date +%s%3N)"
+for i in 1 2 3 4; do sleep 60; rx "kubectl get node $N -o jsonpath='{.status.conditions[?(@.type==\"DiskPressure\")].status}'; echo; kubectl -n $NS get pods -o wide | grep -E \"$N\" | grep -vE 'probe|load'"; done
+ssh -n -F ssh_config $N 'rm -f /var/fill.img; df -h / | tail -1'; echo "FREED $(date +%s%3N)"; sleep 240
+rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'; kubectl get events -n $NS --sort-by=.lastTimestamp | grep -iE 'evict|disk' | tail -5"

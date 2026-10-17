@@ -1,0 +1,24 @@
+T=1792159102959
+writer=cluster1-pxc-0 node=mk-w3
+killed
+NAME                                               READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+bigprep                                            0/1     Completed   0               3h26m   10.42.0.56    mk-cp   <none>           <none>
+cluster1-haproxy-0                                 2/2     Running     0               33m     10.42.1.241   mk-w2   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0               32m     10.42.3.239   mk-w1   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0               32m     10.42.2.223   mk-w3   <none>           <none>
+cluster1-pitr-f95dcd-kmz6z                         1/1     Running     0               27m     10.42.3.240   mk-w1   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     3 (2m30s ago)   15m     10.42.2.226   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0               33m     10.42.3.238   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0               30m     10.42.1.243   mk-w2   <none>           <none>
+load                                               1/1     Running     0               26m     10.42.0.58    mk-cp   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-nctm6   1/1     Running     0               3h34m   10.42.2.217   mk-w3   <none>           <none>
+pitr-job-bigpitr3-cluster1-7flpj                   0/1     Completed   0               34m     10.42.3.236   mk-w1   <none>           <none>
+prepare-job-bigpitr3-cluster1-5mbdh                0/1     Completed   0               36m     10.42.2.221   mk-w3   <none>           <none>
+restore-job-bigpitr3-cluster1-2snhd                0/1     Completed   0               38m     10.42.2.220   mk-w3   <none>           <none>
+sysb                                               0/1     Completed   0               3h36m   10.42.0.54    mk-cp   <none>           <none>
+xb-bigbk3-g7p8p                                    0/1     Completed   0               44m     10.42.3.234   mk-w1   <none>           <none>
+main outage 2.7s starting +2.8s; 1 interval(s), total 2.7s; primary cluster1-pxc-0 134727 -> cluster1-pxc-2 134759
+   +2.8s .. +5.5s  (2.7s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +2.8s..+5.5s = 2.7s (2 fails)
+LOSTCHECK acked=612 present=612 lost=0 (max over members)
+LOAD samples=18 median_tps=50.4 min_tps=8.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

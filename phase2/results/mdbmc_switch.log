@@ -1,0 +1,19 @@
+== planned switchover (docs): maintenance on south 1792195961503
+mariadb.k8s.mariadb.com/mariadb-eu-south patched
+0
+mariadb.k8s.mariadb.com/mariadb-eu-south patched
+mariadb.k8s.mariadb.com/mariadb-eu-central patched
+SWITCHOVER central-0 writable after 901s (from maintenance start); south-0 read_only=OFF
+mariadb.k8s.mariadb.com/mariadb-eu-south patched
+N                    READY   MSG         MCP
+mariadb-eu-central   False   Not ready   mariadb-eu-central
+mariadb-eu-south     True    Running     mariadb-eu-central
+ntral-0                           2/2     Running            0               25m
+mariadb-eu-central-1                           1/2     CrashLoopBackOff   11 (2m2s ago)   25m
+mariadb-eu-south-0                             2/2     Running            0               27m
+mariadb-eu-south-1                             2/2     Running            0               27m
+physicalbackup-eu-south-20261017000143-c5b7c   0/1     Completed          0               26m
+probe-mdbmc                                    1/1     Running            0               26m
+1792196895768 OK mariadb-eu-south-0 5666
+1792196896030 OK mariadb-eu-south-0 5667
+1792196896308 OK mariadb-eu-south-0 5668

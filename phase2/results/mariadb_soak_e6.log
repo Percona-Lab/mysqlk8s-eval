@@ -1,0 +1,12 @@
+T=1792037668276
+proxy=maxscale-galera-0
+pod "maxscale-galera-0" deleted from mariadb namespace
+NAME                READY   STATUS    RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+maxscale-galera-0   1/1     Running   0          60s     10.42.1.156   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running   0          3h21m   10.42.2.151   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running   0          8h      10.42.3.136   mk-w1   <none>           <none>
+main outage 2.8s starting +1.6s; 1 interval(s), total 2.8s; primary mariadb-galera-2 448603 -> mariadb-galera-2 448627
+   +1.6s .. +4.4s  (2.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+DISRUPT +1.6s..+4.4s = 2.8s (2 fails)
+LOSTCHECK acked=278 present=278 lost=0 (max over members)
+LOAD samples=7 median_tps=50.1 min_tps=49.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

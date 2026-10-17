@@ -1,0 +1,23 @@
+T=1792005248248
+== mk-w1 drain start 1792005248259 writer=mariadb-galera-1
+pod/mariadb-galera-1 evicted
+pod/mariadb-operator-webhook-67676984df-5b7pc evicted
+node/mk-w1 drained
+drained in 5s
+node back 37s
+node/mk-w1 uncordoned
+== mk-w1 done 938s total
+NAME                READY   STATUS        RESTARTS   AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running       0          21m     10.42.1.134   mk-w2   <none>           <none>
+mariadb-galera-1    0/2     Terminating   0          15m     <none>        mk-w1   <none>           <none>
+mariadb-galera-2    2/2     Running       0          22m     10.42.2.130   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running       0          37m     10.42.1.104   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running       0          75m     10.42.2.100   mk-w3   <none>           <none>
+maxscale-galera-2   0/1     Terminating   0          15m     <none>        mk-w1   <none>           <none>
+== mk-w2 drain start 1792006187857 writer=mariadb-galera-2
+ mk-w2
+error when evicting pods/"maxscale-galera-0" -n "mariadb": global timeout reached: 15m0s
+error when evicting pods/"mariadb-galera-0" -n "mariadb": global timeout reached: 15m0s
+drained in 905s
+node back 938s
+node/mk-w2 uncordoned

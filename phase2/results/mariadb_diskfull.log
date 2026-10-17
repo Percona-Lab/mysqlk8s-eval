@@ -1,0 +1,37 @@
+T=1792010645451
+writer=mariadb-galera-0 node=mk-w2
+/dev/sda         79G   74G  300M 100% /
+FULL 1792010649671
+True
+mariadb-galera-0    2/2     Running            0              38m     10.42.1.142   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running            0              38m     10.42.1.141   mk-w2   <none>           <none>
+True
+mariadb-galera-0    2/2     Running            0               40m     10.42.1.142   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running            0               40m     10.42.1.141   mk-w2   <none>           <none>
+True
+mariadb-galera-0    2/2     Running            0                41m     10.42.1.142   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running            0                41m     10.42.1.141   mk-w2   <none>           <none>
+True
+mariadb-galera-0    2/2     Running            0                42m     10.42.1.142   mk-w2   <none>           <none>
+maxscale-galera-0   1/1     Running            0                42m     10.42.1.141   mk-w2   <none>           <none>
+/dev/sda         79G   16G   59G  21% /
+FREED 1792010896959
+NAME                READY   STATUS             RESTARTS       AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running            0              46m     10.42.1.142   mk-w2   <none>           <none>
+mariadb-galera-1    2/2     Running            0              48m     10.42.3.137   mk-w1   <none>           <none>
+mariadb-galera-2    1/2     CrashLoopBackOff   14 (29s ago)   44m     10.42.2.134   mk-w3   <none>           <none>
+maxscale-galera-0   1/1     Running            0              46m     10.42.1.141   mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running            0              44m     10.42.2.135   mk-w3   <none>           <none>
+maxscale-galera-2   1/1     Running            0              48m     10.42.3.136   mk-w1   <none>           <none>
+92m         Normal    TaintManagerEviction           pod/maxscale-galera-2                 Marking for deletion Pod mariadb/maxscale-galera-2
+92m         Normal    TaintManagerEviction           pod/mariadb-galera-1                  Marking for deletion Pod mariadb/mariadb-galera-1
+61m         Normal    TaintManagerEviction           pod/mariadb-galera-0                  Marking for deletion Pod mariadb/mariadb-galera-0
+61m         Normal    TaintManagerEviction           pod/maxscale-galera-0                 Marking for deletion Pod mariadb/maxscale-galera-0
+main outage 4.5s starting +13.8s; 4 interval(s), total 14.2s; primary mariadb-galera-0 155862 -> mariadb-galera-0 160095
+   +13.8s .. +18.2s  (4.5s, 1 fails) top error: 
+   +393.7s .. +398.2s  (4.5s, 1 fails) top error: 
+   +414.8s .. +415.6s  (0.8s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +463.7s .. +468.2s  (4.5s, 1 fails) top error: 
+DISRUPT +13.8s..+18.2s = 4.5s (1 fails); +393.7s..+398.2s = 4.5s (1 fails); +414.8s..+415.6s = 0.8s (1 fails); +463.7s..+468.2s = 4.5s (1 fails)
+LOSTCHECK acked=2019 present=2019 lost=0 (max over members)
+LOAD samples=52 median_tps=50.3 min_tps=46.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

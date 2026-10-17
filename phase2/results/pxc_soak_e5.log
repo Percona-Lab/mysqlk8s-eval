@@ -1,0 +1,15 @@
+T=1792176657686
+writer=cluster1-pxc-2 node=mk-w2
+done
+NAME                                               READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+cluster1-pitr-f95dcd-fjl7h                         1/1     Running     0               3h56m   10.42.1.247   mk-w2   <none>           <none>
+cluster1-proxysql-0                                3/3     Running     3 (65m ago)     159m    10.42.3.248   mk-w1   <none>           <none>
+cluster1-proxysql-1                                3/3     Running     2 (160m ago)    174m    10.42.2.239   mk-w3   <none>           <none>
+cluster1-proxysql-2                                3/3     Running     1 (173m ago)    174m    10.42.1.252   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0               3h18m   10.42.2.236   mk-w3   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0               3h19m   10.42.3.244   mk-w1   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     4 (35m ago)     162m    10.42.1.253   mk-w2   <none>           <none>
+percona-xtradb-cluster-operator-74447d7f58-gfwc5   1/1     Running     6 (3h49m ago)   3h59m   10.42.3.243   mk-w1   <none>           <none>
+no failed writes; primary cluster1-pxc-2 295728
+LOSTCHECK acked=889 present=889 lost=0 (max over members)
+LOAD samples=25 median_tps=50.2 min_tps=43.3 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=1588.9
