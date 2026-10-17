@@ -1,0 +1,1 @@
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"; ssh -n -F ssh_config $N 'FLAP=9 bash partition.sh 10'; sleep 90; rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'"

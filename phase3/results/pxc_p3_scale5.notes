@@ -1,0 +1,6 @@
+MANUAL: 05:47:40 size->3 (recovered wedge, resize done 30s), 05:48:18 size->5 restarted
+cluster1-pxc-0                                     3/3     Running     0              89m
+cluster1-pxc-1                                     3/3     Running     0              3h27m
+cluster1-pxc-2                                     3/3     Running     0              3h26m
+cluster1-pxc-3                                     3/3     Running     0              12m
+cluster1-pxc-4                                     3/3     Running     0              6m53s

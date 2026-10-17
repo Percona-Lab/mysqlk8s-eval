@@ -1,0 +1,7 @@
+T=1792210627180
+writer=cluster1-pxc-0: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+command terminated with exit code 1
+DDL_DONE 1s
+no failed writes; primary cluster1-pxc-0 33675
+LOSTCHECK acked=138 present=138 lost=0 (max over members)
+LOAD samples=6 median_tps=83.7 min_tps=59.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

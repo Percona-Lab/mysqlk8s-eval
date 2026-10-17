@@ -17,3 +17,6 @@ pxc4.md https://github.com/percona/percona-xtradb-cluster-operator/issues/2564
 pxc5.md https://github.com/percona/percona-xtradb-cluster-operator/issues/2565
 ps6.md https://github.com/percona/percona-server-mysql-operator/issues/1658
 m5.md https://github.com/mariadb-operator/mariadb-operator/issues/1965
+pxc6.md https://github.com/percona/percona-xtradb-cluster-operator/issues/2566
+pxc7.md https://github.com/percona/percona-xtradb-cluster-operator/issues/2567
+pxc8.md https://github.com/percona/percona-xtradb-cluster-operator/issues/2568

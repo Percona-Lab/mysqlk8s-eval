@@ -1,0 +1,68 @@
+Error from server (AlreadyExists): namespaces "pxc" already exists
+secret/cluster2-secrets unchanged
+secret/s3-creds configured
+perconaxtradbcluster.pxc.percona.com/cluster2 created
+B_CLUSTER_READY 223s
+perconaxtradbclusterrestore.pxc.percona.com/xdrrestore created
+B_RESTORE Succeeded 1197s
+perconaxtradbcluster.pxc.percona.com/cluster2 patched
++0s 
++21s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++41s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++61s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++81s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++101s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++122s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++142s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++162s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++182s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++202s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++223s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++243s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++263s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++283s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++303s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++324s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++344s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++364s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++384s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++404s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++425s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++445s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++465s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++485s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++505s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++526s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++546s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++566s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++586s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++606s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++627s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++647s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++667s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++687s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++707s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++728s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++748s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++768s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++788s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++808s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++829s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++849s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++869s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++889s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++909s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++930s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++950s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++970s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++990s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1011s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1031s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1051s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1071s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1091s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1112s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1132s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1152s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1172s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  
++1192s  Replica_IO_Running: Yes  Replica_SQL_Running: No  Seconds_Behind_Source: NULL  Last_IO_Error:  

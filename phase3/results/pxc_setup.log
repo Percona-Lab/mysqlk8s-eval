@@ -1,0 +1,16 @@
+namespace/pxc created
+secret/s3-creds created
+perconaxtradbcluster.pxc.percona.com/cluster1 created
+READY on CSI 318s
+NAME                     STATUS   VOLUME                 CAPACITY   ACCESS MODES   STORAGECLASS           VOLUMEATTRIBUTESCLASS   AGE
+datadir-cluster1-pxc-0   Bound    pvc-df7d871796674088   40Gi       RWO            linode-block-storage   <unset>                 5m16s
+datadir-cluster1-pxc-1   Bound    pvc-c2cca3360c7845ac   40Gi       RWO            linode-block-storage   <unset>                 3m20s
+datadir-cluster1-pxc-2   Bound    pvc-a493c98651c547d2   40Gi       RWO            linode-block-storage   <unset>                 109s
+cluster1-pxc-0                                     3/3     Running    0          5m16s   10.42.5.2    mk-w4   <none>           <none>
+cluster1-pxc-1                                     3/3     Running    0          3m20s   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running    0          109s    10.42.4.3    mk-w5   <none>           <none>
+Creating a secondary index on 'sbtest1'...
+pod/bigprep created
+BIGPREP Succeeded 1748s
+16.1
+load started

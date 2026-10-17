@@ -1,0 +1,19 @@
+# region A loss simulated by dropping all traffic between region B nodes and region A public IPs; then promote B
+AIPS="<MK_CP_PUBIP> <MK_W1_PUBIP> <MK_W2_PUBIP> <MK_W3_PUBIP> <MK_W4_PUBIP> <MK_W5_PUBIP>"
+B="mb-cp mb-w1 mb-w2 mb-w3"; bq(){ ssh -n -F ssh_config mb-cp "export RP=\$(kubectl -n pxc get secret cluster2-secrets -o jsonpath={.data.root}|base64 -d); kubectl -n pxc exec cluster2-pxc-0 -c pxc -- env MYSQL_PWD=\"\$RP\" mysql -uroot -NBe \"$1\" 2>&1"; }
+echo "PRE lag: $(bq "show replica status\G" | grep -E 'Seconds_Behind|SQL_Running:' | tr -s ' ' | tr '\n' ' ')"
+for n in $B; do ssh -n -F ssh_config $n "for ip in $AIPS; do iptables -I INPUT -s \$ip -j DROP; iptables -I FORWARD -s \$ip -j DROP; iptables -I FORWARD -d \$ip -j DROP; iptables -I OUTPUT -d \$ip -j DROP; done" & done; wait; TCUT=$(date +%s%3N); echo "REGION_A_CUT $TCUT"
+sleep 30
+ssh -n -F ssh_config mb-cp "kubectl -n pxc patch pxc cluster2 --type=merge -p '{\"spec\":{\"pxc\":{\"replicationChannels\":[{\"name\":\"a_to_b\",\"isSource\":true}]}}}'"; T0=$(date +%s)
+until [ "$(bq 'select @@read_only')" = 0 ]; do sleep 2; [ $(( $(date +%s)-T0 )) -gt 900 ] && break; done; echo "B_WRITABLE after promote $(( $(date +%s)-T0 ))s"
+until bq "insert into probe.t(ts,src) values (now(6),'B'); select 'BWRITE_OK'" | grep -q BWRITE_OK; do sleep 2; [ $(( $(date +%s)-T0 )) -gt 900 ] && break; done; echo "B_ACCEPTS_WRITES after promote $(( $(date +%s)-T0 ))s"
+BMAX=$(bq "select max(id) from probe.t where src='p'"); echo "B max probe id=$BMAX"
+ssh -n -F ssh_config mk-cp "kubectl -n pxc logs probe-pxc" > phase3/results/probe-pxc-xdr.log
+python3 - phase3/results/probe-pxc-xdr.log $TCUT $BMAX <<'P'
+import sys; f,tc,bmax=sys.argv[1],int(sys.argv[2]),int(sys.argv[3])
+ok=[(int(l.split()[0]),int(l.split()[3])) for l in open(f) if l.split()[1:2]==['OK']]
+pre=[i for t,i in ok if t<tc]; lost=[i for i in pre if i>bmax]
+last=max(pre); lt=max(t for t,i in ok if i==last)
+print(f"RPO acked_before_cut_missing_on_B={len(lost)} last_acked_id={last} B_max={bmax} rpo_ms~{(lt-min([t for t,i in ok if i in lost] or [lt]))+ (200 if lost else 0)}")
+P
+for n in $B; do ssh -n -F ssh_config $n "for ip in $AIPS; do iptables -D INPUT -s \$ip -j DROP; iptables -D FORWARD -s \$ip -j DROP; iptables -D FORWARD -d \$ip -j DROP; iptables -D OUTPUT -d \$ip -j DROP; done" & done; wait; echo "REGION_A_RESTORED $(date +%s%3N)"

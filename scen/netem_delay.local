@@ -1,0 +1,1 @@
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"; ssh -n -F ssh_config $N 'tc qdisc add dev eth0 root netem delay 100ms 20ms; echo NETEM_ON $(date +%s%3N); sleep 180; tc qdisc del dev eth0 root; echo NETEM_OFF $(date +%s%3N)'; sleep 60; rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb'"

@@ -1,0 +1,146 @@
+apiVersion: ps.percona.com/v1
+kind: PerconaServerMySQL
+metadata:
+  finalizers:
+  - percona.com/delete-mysql-pods-in-order
+  name: ps-cluster1
+spec:
+  crVersion: 1.2.0
+  secretsName: ps-cluster1-secrets
+  sslSecretName: ps-cluster1-ssl
+  updateStrategy: SmartUpdate
+  upgradeOptions:
+    apply: disabled
+    versionServiceEndpoint: https://check.percona.com
+  mysql:
+    clusterType: group-replication
+    autoRecovery: true
+    size: 3
+    image: percona/percona-server:8.4.10-10.1
+    imagePullPolicy: Always
+    gracePeriod: 600
+    podDisruptionBudget:
+      maxUnavailable: 1
+    resources:
+      requests:
+        memory: 1Gi
+      limits:
+        memory: 3Gi
+    affinity:
+      antiAffinityTopologyKey: kubernetes.io/hostname
+    exposePrimary:
+      enabled: true
+    volumeSpec:
+      persistentVolumeClaim:
+        resources:
+          requests:
+            storage: 40Gi
+        storageClassName: linode-block-storage
+    env:
+    - name: MALLOC_ARENA_MAX
+      value: '2'
+    configuration: '[mysqld]
+
+      innodb_buffer_pool_size=1073741824
+
+      loose-group_replication_message_cache_size=134217728
+
+      '
+  proxy:
+    haproxy:
+      enabled: true
+      size: 3
+      image: percona/haproxy:2.8.18-1
+      imagePullPolicy: Always
+      gracePeriod: 30
+      podDisruptionBudget:
+        maxUnavailable: 1
+      resources:
+        requests:
+          memory: 256Mi
+          cpu: 200m
+      affinity:
+        antiAffinityTopologyKey: kubernetes.io/hostname
+    router:
+      enabled: false
+      size: 3
+      image: percona/percona-mysql-router:8.4.10
+      imagePullPolicy: Always
+      gracePeriod: 30
+      podDisruptionBudget:
+        maxUnavailable: 1
+      resources:
+        limits:
+          memory: 256M
+        requests:
+          memory: 256M
+      affinity:
+        antiAffinityTopologyKey: kubernetes.io/hostname
+  orchestrator:
+    enabled: false
+    size: 3
+    image: percona/percona-orchestrator:3.2.6-22
+    imagePullPolicy: Always
+    gracePeriod: 30
+    podDisruptionBudget:
+      maxUnavailable: 1
+    resources:
+      limits:
+        memory: 256M
+      requests:
+        memory: 128M
+    affinity:
+      antiAffinityTopologyKey: kubernetes.io/hostname
+  pmm:
+    enabled: false
+    image: percona/pmm-client:3.8.1
+    imagePullPolicy: Always
+    serverHost: monitoring-service
+    resources:
+      requests:
+        cpu: 300m
+        memory: 150M
+    livenessProbe:
+      failureThreshold: 3
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    readinessProbe:
+      failureThreshold: 3
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+  backup:
+    enabled: true
+    pitr:
+      enabled: true
+      binlogServer:
+        size: 1
+        image: percona/percona-server-mysql-operator:1.2.0-binlog-server-0.3.1
+        storage:
+          s3:
+            bucket: psbk3
+            prefix: p3binlogs
+            credentialsSecret: s3-creds
+            endpointUrl: http://s3.s3.svc:9000
+            region: us-east-1
+        connectTimeout: 30
+        readTimeout: 30
+        writeTimeout: 30
+        idleTime: 30
+        serverId: 100
+    image: percona/percona-xtrabackup:8.4.0-6.1
+    imagePullPolicy: Always
+    storages:
+      s3:
+        type: s3
+        verifyTLS: false
+        s3:
+          bucket: psbk3
+          prefix: p3
+          credentialsSecret: s3-creds
+          region: us-east-1
+          endpointUrl: http://s3.s3.svc:9000
+  toolkit:
+    image: percona/percona-toolkit:3.7.1-4
+    imagePullPolicy: Always

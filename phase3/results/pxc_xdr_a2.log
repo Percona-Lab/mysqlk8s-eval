@@ -1,0 +1,7 @@
+perconaxtradbcluster.pxc.percona.com/cluster1 patched (no change)
+NODEPORT 0 31669
+NODEPORT 1 31315
+NODEPORT 2 30256
+perconaxtradbclusterbackup.pxc.percona.com/xdrbk created
+XDR_BACKUP Succeeded 322s
+DEST s3://pxc/p3/cluster1-2026-10-17-06:57:10-full

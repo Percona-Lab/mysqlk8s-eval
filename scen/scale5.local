@@ -1,0 +1,4 @@
+rx "$SCALE5"; T0=$(date +%s); sleep 30; until [ "$(rx "kubectl -n $NS get pods -l $DBSEL --no-headers" | grep -cE 'Running')" -ge 5 ] && rx "kubectl -n $NS wait --for=condition=Ready pod -l $DBSEL --timeout=5s" >/dev/null 2>&1; do sleep 15; [ $(( $(date +%s)-T0 )) -gt 3600 ] && break; done
+echo "SCALED_TO_5 $(( $(date +%s)-T0 ))s"; rx "kubectl -n $NS get pods -o wide -l $DBSEL"; sleep 60
+rx "$SCALE3"; T1=$(date +%s); sleep 30; until [ "$(rx "kubectl -n $NS get pods -l $DBSEL --no-headers" | wc -l)" -le 3 ] && rx "kubectl -n $NS wait --for=condition=Ready pod -l $DBSEL --timeout=5s" >/dev/null 2>&1; do sleep 15; [ $(( $(date +%s)-T1 )) -gt 1800 ] && break; done
+echo "SCALED_TO_3 $(( $(date +%s)-T1 ))s"; rx "kubectl -n $NS get pods -o wide -l $DBSEL"

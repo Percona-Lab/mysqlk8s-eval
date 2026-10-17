@@ -1,0 +1,23 @@
+T=1792213367555
+perconaxtradbcluster.pxc.percona.com/cluster1 patched
+SCALED_TO_5 3439s
+NAME             READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-pxc-0   3/3     Running   0          89m     10.42.1.33   mk-w2   <none>           <none>
+cluster1-pxc-1   3/3     Running   0          3h27m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2   3/3     Running   0          3h25m   10.42.4.3    mk-w5   <none>           <none>
+cluster1-pxc-3   3/3     Running   0          11m     10.42.5.3    mk-w4   <none>           <none>
+cluster1-pxc-4   3/3     Running   0          6m43s   10.42.3.40   mk-w1   <none>           <none>
+perconaxtradbcluster.pxc.percona.com/cluster1 patched
+SCALED_TO_3 49s
+NAME             READY   STATUS    RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-pxc-0   3/3     Running   0          91m     10.42.1.33   mk-w2   <none>           <none>
+cluster1-pxc-1   3/3     Running   0          3h29m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2   3/3     Running   0          3h27m   10.42.4.3    mk-w5   <none>           <none>
+main outage 4.5s starting +3335.1s; 4 interval(s), total 18.2s; primary cluster1-pxc-0 56742 -> cluster1-pxc-0 88800
+   +3335.1s .. +3339.6s  (4.5s, 1 fails) top error: 
+   +3345.7s .. +3350.4s  (4.7s, 1 fails) top error: 
+   +3381.0s .. +3385.5s  (4.5s, 1 fails) top error: 
+   +3391.9s .. +3396.4s  (4.5s, 1 fails) top error: 
+DISRUPT +3335.1s..+3350.4s = 15.3s (2 fails); +3381.0s..+3396.4s = 15.4s (2 fails)
+LOSTCHECK acked=10293 present=10293 lost=0 (max over members)
+LOAD samples=358 median_tps=49.9 min_tps=8.5 intervals_below_50pct=32 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

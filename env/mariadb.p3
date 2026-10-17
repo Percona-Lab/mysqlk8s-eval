@@ -1,0 +1,4 @@
+P3NS=mariadb; PERF_PROXY=maxscale-galera.mariadb; PERF_DIRECT=mariadb-galera-0.mariadb-galera-internal.mariadb; PERF_EXTRA=
+VOLPVC=storage-mariadb-galera; VOLPATCH="kubectl -n mariadb patch mariadb mariadb-galera --type=merge -p '{\"spec\":{\"storage\":{\"size\":\"50Gi\"}}}'"
+SCALE5="kubectl -n mariadb patch mariadb mariadb-galera --type=merge -p '{\"spec\":{\"replicas\":5}}'"; SCALE3="kubectl -n mariadb patch mariadb mariadb-galera --type=merge -p '{\"spec\":{\"replicas\":3}}'"
+LOADSTART="bash load.sh start mariadb maxscale-galera.mariadb sb SbPass123 50"

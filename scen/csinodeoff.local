@@ -1,0 +1,8 @@
+# hard power-off writer node; after 90 s apply out-of-service taint (non-graceful shutdown) so pods+volumes move to a spare node
+W=$(rx writer); N=$(rx "nodeof $W"); ID=$(python3 -c "import json;print([i['id'] for i in json.load(open('instances.json')) if i['label']=='$N'][0])"); echo "writer=$W node=$N"
+ssh -n -F ssh_config $N 'echo 1 > /proc/sys/kernel/sysrq; nohup sh -c "sleep 1; echo o > /proc/sysrq-trigger" >/dev/null 2>&1 &'; echo "POWEROFF $(date +%s%3N)"; sleep 90
+rx "kubectl taint node $N node.kubernetes.io/out-of-service=nodeshutdown:NoExecute"; echo "TAINT $(date +%s%3N)"; T0=$(date +%s)
+until rx "kubectl -n $NS get pod $W -o jsonpath={.spec.nodeName}" 2>/dev/null | grep -qv "^$N$" && rx "kubectl -n $NS wait --for=condition=Ready pod/$W --timeout=5s" >/dev/null 2>&1; do sleep 5; [ $(( $(date +%s)-T0 )) -gt 1200 ] && break; done
+echo "MOVED_AND_READY $(( $(date +%s)-T0 ))s after taint, now on $(rx "kubectl -n $NS get pod $W -o jsonpath={.spec.nodeName}")"
+rx "kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb|perf'"
+python3 -c "import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances/$ID/boot',{})"; sleep 120; rx "kubectl taint node $N node.kubernetes.io/out-of-service- ; kubectl get node $N"

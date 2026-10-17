@@ -1,0 +1,59 @@
+T=1792208787617
+writer=cluster1-pxc-0 node=mk-w4 (egress-only block 90 s)
+PART_ON 1792208790571
+1792208790500 cont=ce40cd01 ERROR 1213 (40001) at line 1: Deadlock found when trying to get lock; try restarting transaction time="2026-10-17T03:46:39Z" level=e
+1792208801762 cont=ce40cd01 ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-17T03:46:42Z" level=error msg="execi
+1792208839073 cont=ce40cd01 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-17T03:47:19Z" level=error
+1792208841399 cont= E1017 03:47:21.704586   32097 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208843719 cont= E1017 03:47:23.996983   32132 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208846013 cont= E1017 03:47:26.285055   32164 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208848299 cont= E1017 03:47:28.567372   32199 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208850580 cont= E1017 03:47:30.833635   32232 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208852846 cont= E1017 03:47:33.107993   32271 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208855121 cont= E1017 03:47:35.386167   32303 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208857400 cont= E1017 03:47:37.684077   32342 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208859697 cont= E1017 03:47:39.954749   32377 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208861967 cont= E1017 03:47:42.228710   32426 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208864241 cont= E1017 03:47:44.481704   32460 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208866494 cont= E1017 03:47:46.733566   32495 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208868746 cont= E1017 03:47:48.978670   32529 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208870990 cont= E1017 03:47:51.227730   32563 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208873239 cont= E1017 03:47:53.486747   32595 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208875499 cont= E1017 03:47:55.742113   32631 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208877755 cont= E1017 03:47:58.021121   32667 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792208880035 cont= E1017 03:48:00.289687   32715 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+PART_OFF 1792208880764
+1792208882303 cont=b6d8adc2 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-17T03:48:02Z" level=error
+1792208905557 cont=b6d8adc2 ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-17T03:48:25Z" level=error msg="execi
+NAME                                               READY   STATUS             RESTARTS        AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running            0               79m   10.42.4.2    mk-w5   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running            0               77m   10.42.1.31   mk-w2   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running            0               77m   10.42.3.39   mk-w1   <none>           <none>
+cluster1-pitr-647596bfc4-f7kp9                     0/1     CrashLoopBackOff   15 (69s ago)    74m   10.42.1.32   mk-w2   <none>           <none>
+cluster1-pxc-0                                     2/3     Running            1 (3m27s ago)   79m   10.42.5.2    mk-w4   <none>           <none>
+cluster1-pxc-1                                     2/3     Running            0               78m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running            0               76m   10.42.4.3    mk-w5   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-mwlp2   1/1     Running            0               80m   10.42.1.30   mk-w2   <none>           <none>
+perf                                               0/1     Completed          0               27m   10.42.0.73   mk-cp   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use command terminated with exit code 1
+main outage 38.0s starting +2.3s; 17 interval(s), total 735.3s; primary cluster1-pxc-0 22509 -> NOT RECOVERED
+   +2.3s .. +40.3s  (38.0s, 34 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +119.8s .. +124.3s  (4.5s, 1 fails) top error: 
+   +140.4s .. +144.9s  (4.5s, 1 fails) top error: 
+   +150.4s .. +155.0s  (4.5s, 1 fails) top error: 
+   +166.0s .. +170.5s  (4.5s, 1 fails) top error: 
+   +176.2s .. +180.7s  (4.5s, 1 fails) top error: 
+   +182.8s .. +187.3s  (4.5s, 1 fails) top error: 
+   +192.1s .. +196.6s  (4.5s, 1 fails) top error: 
+   +200.9s .. +205.6s  (4.7s, 1 fails) top error: 
+   +208.8s .. +213.3s  (4.6s, 1 fails) top error: 
+   +217.9s .. +222.4s  (4.5s, 1 fails) top error: 
+   +225.7s .. +230.4s  (4.7s, 1 fails) top error: 
+   +237.9s .. +242.5s  (4.6s, 1 fails) top error: 
+   +249.8s .. +254.4s  (4.6s, 1 fails) top error: 
+   +257.6s .. +262.2s  (4.6s, 1 fails) top error: 
+   +265.0s .. +269.5s  (4.5s, 1 fails) top error: 
+   +271.1s .. +900.0s  (628.9s, 1 fails) top error: 
+DISRUPT +2.3s..+40.3s = 38.0s (34 fails); +119.8s..+124.3s = 4.5s (1 fails); +140.4s..+155.0s = 14.6s (2 fails); +166.0s..+900.0s = 734.0s (13 fails)
+LOSTCHECK acked=429 present=429 lost=0 (max over members)
+LOAD samples=29 median_tps=35.2 min_tps=0.0 intervals_below_50pct=4 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

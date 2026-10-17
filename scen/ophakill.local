@@ -1,0 +1,5 @@
+# operator with 2 replicas: kill leader pod and primary mysqld at the same time
+L=$(rx "kubectl -n $OPNS get lease -o jsonpath='{.items[0].spec.holderIdentity}'" | cut -d_ -f1); echo "leader=$L"
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"
+rx "kubectl -n $OPNS delete pod $L --grace-period=0 --force" >/dev/null 2>&1 & ssh -n -F ssh_config $N 'pkill -9 -x mysqld; pkill -9 -x mariadbd'; echo "KILLED $(date +%s%3N)"; wait
+sleep ${S:-240}; rx "kubectl -n $OPNS get pods; kubectl -n $OPNS get lease -o custom-columns=N:.metadata.name,H:.spec.holderIdentity; kubectl -n $NS get pods -o wide | grep -vE 'probe|load|bigprep|sysb|perf'"

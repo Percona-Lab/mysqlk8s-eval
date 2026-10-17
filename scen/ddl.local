@@ -1,0 +1,2 @@
+W=$(rx writer); echo "writer=$W: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables"
+T0=$(date +%s); rx "sql $W $DBCONT 'alter table sbbig.sbtest2 add column ddltest int default 0, algorithm=inplace, lock=none'" 2>&1 | tail -1; echo "DDL_DONE $(( $(date +%s)-T0 ))s"; sleep 30

@@ -1,0 +1,54 @@
+T=1792211337460
+writer=cluster1-pxc-0 node=mk-w4
+POWEROFF 1792211340146
+node/mk-w4 tainted
+TAINT 1792211432975
+MOVED_AND_READY 436s after taint, now on mk-w2
+NAME                                               READY   STATUS      RESTARTS         AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0                126m   10.42.4.2    mk-w5   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0                124m   10.42.1.31   mk-w2   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0                124m   10.42.3.39   mk-w1   <none>           <none>
+cluster1-pitr-647596bfc4-f7kp9                     0/1     Error       24 (6m28s ago)   121m   10.42.1.32   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0                7m2s   10.42.1.33   mk-w2   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0                125m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0                123m   10.42.4.3    mk-w5   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-mwlp2   1/1     Running     0                127m   10.42.1.30   mk-w2   <none>           <none>
+{"errors": [{"reason": "Linode 108365160 already booted."}]}
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances/108365160/boot',{})
+                                                               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/mysqlk8s/bin/linode.py", line 5, in api
+    try: return json.load(urllib.request.urlopen(r))
+                          ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+node/mk-w4 untainted
+NAME    STATUS   ROLES    AGE    VERSION
+mk-w4   Ready    <none>   134m   v1.37.1+k3s1
+main outage 40.5s starting +3.5s; 8 interval(s), total 72.5s; primary cluster1-pxc-0 39900 -> cluster1-pxc-2 43451
+   +3.5s .. +44.0s  (40.5s, 37 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +377.6s .. +382.2s  (4.6s, 1 fails) top error: 
+   +385.2s .. +389.8s  (4.6s, 1 fails) top error: 
+   +437.7s .. +442.3s  (4.5s, 1 fails) top error: 
+   +445.0s .. +449.7s  (4.7s, 1 fails) top error: 
+   +468.2s .. +472.7s  (4.5s, 1 fails) top error: 
+   +498.8s .. +503.3s  (4.5s, 1 fails) top error: 
+   +507.1s .. +511.6s  (4.5s, 1 fails) top error: 
+DISRUPT +3.5s..+44.0s = 40.5s (37 fails); +377.6s..+389.8s = 12.3s (2 fails); +437.7s..+449.7s = 11.9s (2 fails); +468.2s..+472.7s = 4.5s (1 fails); +498.8s..+511.6s = 12.8s (2 fails)
+LOSTCHECK acked=1728 present=1728 lost=0 (max over members)
+LOAD samples=68 median_tps=49.2 min_tps=0.0 intervals_below_50pct=12 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

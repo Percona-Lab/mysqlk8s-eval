@@ -1,0 +1,56 @@
+T=1792208428367
+writer=cluster1-pxc-0 node=mk-w4
+PART_ON 1792208431303
+PART_OFF 1792208441633
+PART_ON 1792208451740
+PART_OFF 1792208462070
+PART_ON 1792208472178
+PART_OFF 1792208482494
+PART_ON 1792208492608
+PART_OFF 1792208502950
+PART_ON 1792208513075
+PART_OFF 1792208523409
+PART_ON 1792208533520
+PART_OFF 1792208543855
+PART_ON 1792208553958
+PART_OFF 1792208564266
+PART_ON 1792208574365
+PART_OFF 1792208584670
+PART_ON 1792208594802
+PART_OFF 1792208605138
+NAME                                               READY   STATUS      RESTARTS        AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0               74m   10.42.4.2    mk-w5   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0               72m   10.42.1.31   mk-w2   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0               71m   10.42.3.39   mk-w1   <none>           <none>
+cluster1-pitr-647596bfc4-f7kp9                     0/1     Error       14 (6m2s ago)   69m   10.42.1.32   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0               74m   10.42.5.2    mk-w4   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0               72m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0               70m   10.42.4.3    mk-w5   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-mwlp2   1/1     Running     0               74m   10.42.1.30   mk-w2   <none>           <none>
+perf                                               0/1     Completed   0               21m   10.42.0.73   mk-cp   <none>           <none>
+main outage 13.0s starting +2.6s; 22 interval(s), total 98.7s; primary cluster1-pxc-0 20610 -> cluster1-pxc-2 21194
+   +2.6s .. +15.6s  (13.0s, 10 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +22.4s .. +33.8s  (11.3s, 4 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +43.2s .. +56.6s  (13.3s, 10 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +63.8s .. +75.0s  (11.1s, 5 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +84.5s .. +91.3s  (6.8s, 2 fails) top error: 
+   +91.6s .. +95.3s  (3.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +95.3s .. +95.9s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +97.4s .. +98.0s  (0.7s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +98.6s .. +99.2s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +100.3s .. +100.9s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +100.9s .. +101.5s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +101.5s .. +102.9s  (1.4s, 4 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +103.3s .. +104.0s  (0.7s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +104.0s .. +104.5s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +104.5s .. +109.4s  (4.8s, 2 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +109.4s .. +114.0s  (4.6s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +114.2s .. +115.8s  (1.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +125.4s .. +130.0s  (4.6s, 1 fails) top error: 
+   +145.7s .. +150.3s  (4.6s, 1 fails) top error: 
+   +165.8s .. +177.8s  (12.0s, 6 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +177.8s .. +178.9s  (1.0s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +178.9s .. +179.4s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+DISRUPT +2.6s..+130.0s = 127.4s (49 fails); +145.7s..+150.3s = 4.6s (1 fails); +165.8s..+179.4s = 13.6s (8 fails)
+LOSTCHECK acked=492 present=492 lost=0 (max over members)
+LOAD samples=29 median_tps=36.2 min_tps=5.8 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=664.3

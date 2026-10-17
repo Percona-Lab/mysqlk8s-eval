@@ -1,0 +1,19 @@
+T=1792208104758
+writer=cluster1-pxc-0 node=mk-w4
+NETEM_ON 1792208106627
+NETEM_OFF 1792208286633
+NAME                                               READY   STATUS      RESTARTS         AGE   IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0                68m   10.42.4.2    mk-w5   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0                66m   10.42.1.31   mk-w2   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0                65m   10.42.3.39   mk-w1   <none>           <none>
+cluster1-pitr-647596bfc4-f7kp9                     0/1     Error       13 (5m15s ago)   63m   10.42.1.32   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     0                68m   10.42.5.2    mk-w4   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0                66m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0                64m   10.42.4.3    mk-w5   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-mwlp2   1/1     Running     0                68m   10.42.1.30   mk-w2   <none>           <none>
+perf                                               0/1     Completed   0                15m   10.42.0.73   mk-cp   <none>           <none>
+main outage 4.8s starting +157.4s; 1 interval(s), total 4.8s; primary cluster1-pxc-0 18468 -> cluster1-pxc-0 19578
+   +157.4s .. +162.2s  (4.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+DISRUPT +157.4s..+162.2s = 4.8s (2 fails)
+LOSTCHECK acked=575 present=575 lost=0 (max over members)
+LOAD samples=26 median_tps=27.2 min_tps=19.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

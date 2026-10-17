@@ -1,0 +1,11 @@
+T=1792210740884
+writer=cluster1-pxc-0 node=mk-w4: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792210803666
+cluster1-pxc-0 cols=0
+cluster1-pxc-1 cols=0
+cluster1-pxc-2 cols=0
+main outage 5.4s starting +62.8s; 1 interval(s), total 5.4s; primary cluster1-pxc-0 34677 -> cluster1-pxc-2 35276
+   +62.8s .. +68.2s  (5.4s, 3 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+DISRUPT +62.8s..+68.2s = 5.4s (3 fails)
+LOSTCHECK acked=1163 present=1163 lost=0 (max over members)
+LOAD samples=38 median_tps=50.2 min_tps=29.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

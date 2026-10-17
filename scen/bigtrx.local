@@ -1,0 +1,4 @@
+W=$(rx writer); echo "writer=$W: single transaction inserting 2M rows (~400 MB)"
+rx "sql $W $DBCONT 'create table if not exists sbbig.bigtrx like sbbig.sbtest4'" >/dev/null 2>&1; T0=$(date +%s)
+rx "sql $W $DBCONT 'insert into sbbig.bigtrx select * from sbbig.sbtest4 where id <= 2000000'" 2>&1 | tail -2 | cut -c1-200; echo "BIGTRX_DONE $(( $(date +%s)-T0 ))s rows=$(rx "sql $W $DBCONT 'select count(*) from sbbig.bigtrx'" 2>&1 | tail -1)"
+rx "sql $W $DBCONT 'drop table sbbig.bigtrx'" >/dev/null 2>&1; sleep 30

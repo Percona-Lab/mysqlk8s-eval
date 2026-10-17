@@ -1,0 +1,5 @@
+# grow data volumes 40Gi -> 50Gi via CR ($VOLPATCH = kubectl patch args), measure
+PVC0=$(rx "kubectl -n $NS get pvc -o name | grep -E '$VOLPVC' | head -1"); echo "pvc=$PVC0 before=$(rx "kubectl -n $NS get $PVC0 -o jsonpath={.status.capacity.storage}")"
+rx "$VOLPATCH"; T0=$(date +%s)
+until [ "$(rx "kubectl -n $NS get pvc -o jsonpath='{range .items[*]}{.metadata.name} {.status.capacity.storage}{\"\n\"}{end}'" | grep -E "$VOLPVC" | grep -c 50Gi)" -ge 3 ]; do sleep 15; [ $(( $(date +%s)-T0 )) -gt 1200 ] && break; done
+echo "EXPANDED_ALL $(( $(date +%s)-T0 ))s"; rx "kubectl -n $NS get pvc | grep -E '$VOLPVC'; kubectl -n $NS get pods | grep -vE 'probe|load|bigprep|sysb|perf'"

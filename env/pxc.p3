@@ -1,0 +1,4 @@
+P3NS=pxc; PERF_PROXY=cluster1-haproxy.pxc; PERF_DIRECT=cluster1-pxc-0.cluster1-pxc.pxc; PERF_EXTRA=--mysql-ssl=REQUIRED
+VOLPVC=datadir-cluster1-pxc; VOLPATCH="kubectl -n pxc patch pxc cluster1 --type=merge -p '{\"spec\":{\"pxc\":{\"volumeSpec\":{\"persistentVolumeClaim\":{\"resources\":{\"requests\":{\"storage\":\"50Gi\"}}}}}}}'"
+SCALE5="kubectl -n pxc patch pxc cluster1 --type=merge -p '{\"spec\":{\"pxc\":{\"size\":5}}}'"; SCALE3="kubectl -n pxc patch pxc cluster1 --type=merge -p '{\"spec\":{\"pxc\":{\"size\":3}}}'"
+LOADSTART="bash load.sh start pxc cluster1-haproxy.pxc sb SbPass123 50 --mysql-ssl=REQUIRED"

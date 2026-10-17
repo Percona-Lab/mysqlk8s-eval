@@ -1,0 +1,8 @@
+PRE lag: 
+REGION_A_CUT 1792223897897
+perconaxtradbcluster.pxc.percona.com/cluster2 patched
+B_WRITABLE after promote 38s
+B_ACCEPTS_WRITES after promote 39s
+B max probe id=156384
+RPO acked_before_cut_missing_on_B=1 last_acked_id=156387 B_max=156384 rpo_ms~200
+REGION_A_RESTORED 1792223972358

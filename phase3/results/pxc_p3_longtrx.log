@@ -1,0 +1,27 @@
+T=1792209388803
+writer=cluster1-pxc-0 node=mk-w4: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792209436517
+old primary ready 1792210545586
+main outage 5.2s starting +47.6s; 19 interval(s), total 112.1s; primary cluster1-pxc-0 25587 -> cluster1-pxc-2 30443
+   +47.6s .. +52.8s  (5.2s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +300.4s .. +309.1s  (8.7s, 2 fails) top error: 
+   +324.9s .. +329.6s  (4.8s, 1 fails) top error: 
+   +339.1s .. +347.8s  (8.8s, 2 fails) top error: 
+   +352.0s .. +360.8s  (8.8s, 2 fails) top error: 
+   +366.2s .. +370.7s  (4.5s, 1 fails) top error: 
+   +375.7s .. +380.2s  (4.5s, 1 fails) top error: 
+   +387.0s .. +395.8s  (8.7s, 2 fails) top error: 
+   +400.0s .. +412.9s  (13.0s, 3 fails) top error: 
+   +481.2s .. +485.7s  (4.5s, 1 fails) top error: 
+   +504.9s .. +509.4s  (4.5s, 1 fails) top error: 
+   +640.7s .. +645.2s  (4.5s, 1 fails) top error: 
+   +647.0s .. +651.5s  (4.5s, 1 fails) top error: 
+   +657.1s .. +661.6s  (4.5s, 1 fails) top error: 
+   +680.3s .. +684.8s  (4.6s, 1 fails) top error: 
+   +689.1s .. +693.6s  (4.5s, 1 fails) top error: 
+   +705.4s .. +709.9s  (4.6s, 1 fails) top error: 
+   +765.4s .. +769.9s  (4.5s, 1 fails) top error: 
+   +807.3s .. +811.8s  (4.5s, 1 fails) top error: 
+DISRUPT +47.6s..+52.8s = 5.2s (2 fails); +300.4s..+309.1s = 8.7s (2 fails); +324.9s..+412.9s = 88.1s (12 fails); +481.2s..+485.7s = 4.5s (1 fails); +504.9s..+509.4s = 4.5s (1 fails); +640.7s..+661.6s = 20.9s (3 fails); +680.3s..+693.6s = 13.4s (2 fails); +705.4s..+709.9s = 4.6s (1 fails); +765.4s..+769.9s = 4.5s (1 fails); +807.3s..+811.8s = 4.5s (1 fails)
+LOSTCHECK acked=2615 present=2615 lost=0 (max over members)
+LOAD samples=90 median_tps=57.8 min_tps=0.6 intervals_below_50pct=14 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

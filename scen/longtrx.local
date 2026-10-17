@@ -1,0 +1,3 @@
+W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N: open long trx (update 1M rows, no commit) then kill -9"
+rx "kubectl -n $NS exec $W -c $DBCONT -- bash -c \"${CLI:-mysql} -uroot -p'\$(rp)' -e 'begin; update sbbig.sbtest1 set k=k+1 where id<=1000000; select sleep(900);' >/dev/null 2>&1 &\"" ; sleep 45; echo "KILL $(date +%s%3N)"
+ssh -n -F ssh_config $N 'pkill -9 -x mysqld; pkill -9 -x mariadbd'; sleep ${S:-240}; rx "kubectl -n $NS wait --for=condition=Ready pod/$W --timeout=900s >/dev/null 2>&1; echo old primary ready \$(date +%s%3N)"

@@ -1,0 +1,4 @@
+P3NS=ps; PERF_PROXY=ps-cluster1-haproxy.ps; PERF_DIRECT=ps-cluster1-mysql-primary.ps; PERF_EXTRA=--mysql-ssl=REQUIRED
+VOLPVC=datadir-ps-cluster1-mysql; VOLPATCH="kubectl -n ps patch ps ps-cluster1 --type=merge -p '{\"spec\":{\"mysql\":{\"volumeSpec\":{\"persistentVolumeClaim\":{\"resources\":{\"requests\":{\"storage\":\"50Gi\"}}}}}}}'"
+SCALE5="kubectl -n ps patch ps ps-cluster1 --type=merge -p '{\"spec\":{\"mysql\":{\"size\":5}}}'"; SCALE3="kubectl -n ps patch ps ps-cluster1 --type=merge -p '{\"spec\":{\"mysql\":{\"size\":3}}}'"
+LOADSTART="bash load.sh start ps ps-cluster1-haproxy.ps sb SbPass123 50 --mysql-ssl=REQUIRED"

@@ -1,0 +1,23 @@
+T=1792206471941
+PERF proxy threads=16  transactions: 14963 (49.86 per sec.)  95th percentile: 877.61 
+PERF proxy threads=64  transactions: 17589 (58.23 per sec.)  95th percentile: 3208.88 
+PERF direct threads=16  transactions: 8152 (27.09 per sec.)  95th percentile: 1149.76 
+PERF direct threads=64  transactions: 19078 (63.32 per sec.)  95th percentile: 2778.39 
+main outage 6.0s starting +352.8s; 15 interval(s), total 109.3s; primary cluster1-pxc-0 12240 -> cluster1-pxc-0 16302
+   +352.8s .. +358.8s  (6.0s, 1 fails) top error: 
+   +358.8s .. +364.4s  (5.7s, 1 fails) top error: 
+   +378.3s .. +385.7s  (7.3s, 1 fails) top error: 
+   +399.5s .. +404.6s  (5.2s, 1 fails) top error: 
+   +421.9s .. +435.1s  (13.1s, 3 fails) top error: 
+   +519.7s .. +529.3s  (9.6s, 2 fails) top error: 
+   +602.7s .. +607.8s  (5.1s, 1 fails) top error: 
+   +931.3s .. +937.6s  (6.3s, 1 fails) top error: 
+   +947.9s .. +953.0s  (5.1s, 1 fails) top error: 
+   +953.0s .. +957.8s  (4.7s, 1 fails) top error: 
+   +970.3s .. +975.9s  (5.6s, 1 fails) top error: 
+   +1059.2s .. +1074.2s  (15.0s, 3 fails) top error: 
+   +1136.0s .. +1144.0s  (8.0s, 1 fails) top error: 
+   +1155.0s .. +1162.7s  (7.8s, 1 fails) top error: 
+   +1202.9s .. +1207.7s  (4.8s, 1 fails) top error: 
+DISRUPT +352.8s..+364.4s = 11.7s (2 fails); +378.3s..+385.7s = 7.3s (1 fails); +399.5s..+404.6s = 5.2s (1 fails); +421.9s..+435.1s = 13.1s (3 fails); +519.7s..+529.3s = 9.6s (2 fails); +602.7s..+607.8s = 5.1s (1 fails); +931.3s..+937.6s = 6.3s (1 fails); +947.9s..+957.8s = 9.8s (2 fails); +970.3s..+975.9s = 5.6s (1 fails); +1059.2s..+1074.2s = 15.0s (3 fails); +1136.0s..+1144.0s = 8.0s (1 fails); +1155.0s..+1162.7s = 7.8s (1 fails); +1202.9s..+1207.7s = 4.8s (1 fails)
+LOSTCHECK acked=1412 present=1412 lost=0 (max over members)

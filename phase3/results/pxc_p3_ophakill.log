@@ -1,0 +1,37 @@
+T=1792217063104
+leader=percona-xtradb-cluster-operator-5dfbf7b796-mwlp2
+writer=cluster1-pxc-0 node=mk-w2
+KILLED 1792217068253
+NAME                                               READY   STATUS      RESTARTS       AGE
+bigprep                                            0/1     Completed   0              3h30m
+cluster1-haproxy-0                                 2/2     Running     0              3h37m
+cluster1-haproxy-1                                 2/2     Running     0              3h35m
+cluster1-haproxy-2                                 2/2     Running     0              3h35m
+cluster1-pitr-647596bfc4-f7kp9                     1/1     Running     37 (29m ago)   3h32m
+cluster1-pxc-0                                     3/3     Running     1 (4m1s ago)   97m
+cluster1-pxc-1                                     3/3     Running     0              3h35m
+cluster1-pxc-2                                     3/3     Running     0              3h34m
+load                                               1/1     Running     0              159m
+percona-xtradb-cluster-operator-5dfbf7b796-kpnxk   1/1     Running     0              4m2s
+percona-xtradb-cluster-operator-5dfbf7b796-w4gfd   1/1     Running     0              5m6s
+perf                                               0/1     Completed   0              165m
+probe-pxc                                          1/1     Running     0              3h32m
+sysb                                               0/1     Completed   0              3h32m
+N                      H
+08db1feb.percona.com   percona-xtradb-cluster-operator-5dfbf7b796-kpnxk_aea9ed09-b1e0-4ea3-8fb5-59cabac7c161
+NAME                                               READY   STATUS      RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+cluster1-haproxy-0                                 2/2     Running     0              3h37m   10.42.4.2    mk-w5   <none>           <none>
+cluster1-haproxy-1                                 2/2     Running     0              3h35m   10.42.1.31   mk-w2   <none>           <none>
+cluster1-haproxy-2                                 2/2     Running     0              3h35m   10.42.3.39   mk-w1   <none>           <none>
+cluster1-pitr-647596bfc4-f7kp9                     1/1     Running     37 (29m ago)   3h32m   10.42.1.32   mk-w2   <none>           <none>
+cluster1-pxc-0                                     3/3     Running     1 (4m2s ago)   97m     10.42.1.33   mk-w2   <none>           <none>
+cluster1-pxc-1                                     3/3     Running     0              3h35m   10.42.2.16   mk-w3   <none>           <none>
+cluster1-pxc-2                                     3/3     Running     0              3h34m   10.42.4.3    mk-w5   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-kpnxk   1/1     Running     0              4m3s    10.42.2.17   mk-w3   <none>           <none>
+percona-xtradb-cluster-operator-5dfbf7b796-w4gfd   1/1     Running     0              5m7s    10.42.5.4    mk-w4   <none>           <none>
+main outage 4.8s starting +5.0s; 2 interval(s), total 5.4s; primary cluster1-pxc-0 91515 -> cluster1-pxc-0 92697
+   +5.0s .. +9.8s  (4.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'waiting for in
+   +139.0s .. +139.7s  (0.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to MySQL server during q
+DISRUPT +5.0s..+9.8s = 4.8s (2 fails); +139.0s..+139.7s = 0.7s (1 fails)
+LOSTCHECK acked=813 present=813 lost=0 (max over members)
+LOAD samples=27 median_tps=50.9 min_tps=2.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

@@ -1,0 +1,8 @@
+T=1792211188670
+writer=cluster1-pxc-0: single transaction inserting 2M rows (~400 MB)
+BIGTRX_DONE 33s rows=666666
+main outage 8.8s starting +37.8s; 1 interval(s), total 8.8s; primary cluster1-pxc-0 38781 -> cluster1-pxc-0 39003
+   +37.8s .. +46.6s  (8.8s, 2 fails) top error: 
+DISRUPT +37.8s..+46.6s = 8.8s (2 fails)
+LOSTCHECK acked=162 present=162 lost=0 (max over members)
+LOAD samples=8 median_tps=30.8 min_tps=0.8 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

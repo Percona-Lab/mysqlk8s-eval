@@ -1,0 +1,90 @@
+### perf 03:07:51
+PERF proxy threads=16  transactions: 14963 (49.86 per sec.)  95th percentile: 877.61 
+PERF proxy threads=64  transactions: 17589 (58.23 per sec.)  95th percentile: 3208.88 
+PERF direct threads=16  transactions: 8152 (27.09 per sec.)  95th percentile: 1149.76 
+PERF direct threads=64  transactions: 19078 (63.32 per sec.)  95th percentile: 2778.39 
+DISRUPT +352.8s..+364.4s = 11.7s (2 fails); +378.3s..+385.7s = 7.3s (1 fails); +399.5s..+404.6s = 5.2s (1 fails); +421.9s..+435.1s = 13.1s (3 fails); +519.7s..+529.3s = 9.6s (2 fails); +602.7s..+607.8s = 5.1s (1 fails); +931.3s..+
+LOSTCHECK acked=1412 present=1412 lost=0 (max over members)
+### netem_delay 03:29:37
+writer=cluster1-pxc-0 node=mk-w4
+NETEM_ON 1792207782488
+NETEM_OFF 1792207962500
+no failed writes; primary cluster1-pxc-0 16959
+LOSTCHECK acked=344 present=344 lost=0 (max over members)
+LOAD samples=27 median_tps=3.8 min_tps=3.3 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### netem_loss 03:35:04
+writer=cluster1-pxc-0 node=mk-w4
+NETEM_ON 1792208106627
+NETEM_OFF 1792208286633
+DISRUPT +157.4s..+162.2s = 4.8s (2 fails)
+LOSTCHECK acked=575 present=575 lost=0 (max over members)
+LOAD samples=26 median_tps=27.2 min_tps=19.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### flap 03:40:28
+writer=cluster1-pxc-0 node=mk-w4
+DISRUPT +2.6s..+130.0s = 127.4s (49 fails); +145.7s..+150.3s = 4.6s (1 fails); +165.8s..+179.4s = 13.6s (8 fails)
+LOSTCHECK acked=492 present=492 lost=0 (max over members)
+LOAD samples=29 median_tps=36.2 min_tps=5.8 intervals_below_50pct=6 sysbench_restarts=0 report_gaps=0s max_err/s=664.3
+### oneway 03:46:27
+writer=cluster1-pxc-0 node=mk-w4 (egress-only block 90 s)
+1792208790500 cont=ce40cd01 ERROR 1213 (40001) at line 1: Deadlock found when trying to get lock; try restarting transaction time="2026-10-17T03:46:39Z" level=e
+1792208801762 cont=ce40cd01 ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-17T03:46:42Z" level=error msg="execi
+1792208839073 cont=ce40cd01 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-17T03:47:19Z" level=error
+1792208882303 cont=b6d8adc2 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2) time="2026-10-17T03:48:02Z" level=error
+1792208905557 cont=b6d8adc2 ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use time="2026-10-17T03:48:25Z" level=error msg="execi
+ISOLATED_ROWS_IN_CLUSTER ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use command terminated with exit code 1
+DISRUPT +2.3s..+40.3s = 38.0s (34 fails); +119.8s..+124.3s = 4.5s (1 fails); +140.4s..+155.0s = 14.6s (2 fails); +166.0s..+900.0s = 734.0s (13 fails)
+LOSTCHECK acked=429 present=429 lost=0 (max over members)
+LOAD samples=29 median_tps=35.2 min_tps=0.0 intervals_below_50pct=4 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### longtrx 03:56:28
+writer=cluster1-pxc-0 node=mk-w4: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792209436517
+old primary ready 1792210545586
+DISRUPT +47.6s..+52.8s = 5.2s (2 fails); +300.4s..+309.1s = 8.7s (2 fails); +324.9s..+412.9s = 88.1s (12 fails); +481.2s..+485.7s = 4.5s (1 fails); +504.9s..+509.4s = 4.5s (1 fails); +640.7s..+661.6s = 20.9s (3 fails); +680.3s..+6
+LOSTCHECK acked=2615 present=2615 lost=0 (max over members)
+LOAD samples=90 median_tps=57.8 min_tps=0.6 intervals_below_50pct=14 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddl 04:17:07
+writer=cluster1-pxc-0: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+DDL_DONE 1s
+no failed writes; primary cluster1-pxc-0 33675
+LOSTCHECK acked=138 present=138 lost=0 (max over members)
+LOAD samples=6 median_tps=83.7 min_tps=59.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddlkill 04:19:00
+writer=cluster1-pxc-0 node=mk-w4: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792210803666
+cluster1-pxc-0 cols=0
+cluster1-pxc-1 cols=0
+cluster1-pxc-2 cols=0
+DISRUPT +62.8s..+68.2s = 5.4s (3 fails)
+LOSTCHECK acked=1163 present=1163 lost=0 (max over members)
+LOAD samples=38 median_tps=50.2 min_tps=29.7 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### bigtrx 04:26:28
+writer=cluster1-pxc-0: single transaction inserting 2M rows (~400 MB)
+BIGTRX_DONE 33s rows=666666
+DISRUPT +37.8s..+46.6s = 8.8s (2 fails)
+LOSTCHECK acked=162 present=162 lost=0 (max over members)
+LOAD samples=8 median_tps=30.8 min_tps=0.8 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### csinodeoff 04:28:57
+writer=cluster1-pxc-0 node=mk-w4
+MOVED_AND_READY 436s after taint, now on mk-w2
+{"errors": [{"reason": "Linode 108365160 already booted."}]}
+DISRUPT +3.5s..+44.0s = 40.5s (37 fails); +377.6s..+389.8s = 12.3s (2 fails); +437.7s..+449.7s = 11.9s (2 fails); +468.2s..+472.7s = 4.5s (1 fails); +498.8s..+511.6s = 12.8s (2 fails)
+LOSTCHECK acked=1728 present=1728 lost=0 (max over members)
+LOAD samples=68 median_tps=49.2 min_tps=0.0 intervals_below_50pct=12 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### volexpand 04:41:12
+EXPANDED_ALL 1210s
+no failed writes; primary cluster1-pxc-0 45357
+LOSTCHECK acked=3653 present=3653 lost=0 (max over members)
+LOAD samples=123 median_tps=50.0 min_tps=16.9 intervals_below_50pct=11 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### scale5 05:02:47
+SCALED_TO_5 3439s
+SCALED_TO_3 49s
+DISRUPT +3335.1s..+3350.4s = 15.3s (2 fails); +3381.0s..+3396.4s = 15.4s (2 fails)
+LOSTCHECK acked=10293 present=10293 lost=0 (max over members)
+LOAD samples=358 median_tps=49.9 min_tps=8.5 intervals_below_50pct=32 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ophakill 06:04:23
+writer=cluster1-pxc-0 node=mk-w2
+KILLED 1792217068253
+DISRUPT +5.0s..+9.8s = 4.8s (2 fails); +139.0s..+139.7s = 0.7s (1 fails)
+LOSTCHECK acked=813 present=813 lost=0 (max over members)
+LOAD samples=27 median_tps=50.9 min_tps=2.0 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PHASE3_DONE
