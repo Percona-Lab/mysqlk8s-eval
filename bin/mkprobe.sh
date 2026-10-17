@@ -7,7 +7,7 @@ apiVersion: v1
 kind: Pod
 metadata: {name: probe-$N, labels: {app: probe}}
 spec:
-  nodeSelector: {kubernetes.io/hostname: mk-cp}
+  nodeSelector: {kubernetes.io/hostname: $(hostname)}
   tolerations: [{key: node-role.kubernetes.io/control-plane, operator: Exists, effect: NoSchedule}]
   containers:
   - name: p

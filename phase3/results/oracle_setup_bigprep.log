@@ -1,0 +1,13 @@
+primary=mycluster-2
++1s mycluster-0=1095Mi mycluster-1=3054Mi mycluster-2=3068Mi  restarts=1
+BIGPREP Succeeded 62s
+FATAL: mysql_drv_query() returned error 2013 (Lost connection to MySQL server during query) for query 'INSERT INTO sbtest3(k, c, pad) VALUES(2769475, 
+/dev/disk/by-id/scsi-0Linode_Volume_pvc-85b6de0a1b3842dc   40G  3.0G   37G   8% /var/lib/mysql
+mycluster-0                         2/2     Running     1 (8m49s ago)   12m
+mycluster-1                         2/2     Running     0               12m
+mycluster-2                         2/2     Running     1 (44s ago)     12m
+NAME        STATUS           ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE_PARTIAL   2        3           3         UNKNOWN   12m
+pod/load created
+[ 30s ] queue length: 0, concurrency: 4
+RETRY_DONE

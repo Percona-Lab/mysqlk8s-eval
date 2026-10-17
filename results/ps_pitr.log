@@ -1,5 +1,5 @@
 primary=ps-cluster1-mysql-0
-perconaservermysqlbackup.ps.percona.com/backup1 created
+perconaserverREDACTED.ps.percona.com/backup1 created
 BACKUP backup1 Succeeded 27s
 NAME      TYPE   STORAGE   DESTINATION                                              STATE       COMPLETED   AGE
 backup1   full   s3        s3://psbk/backups/ps-cluster1-2026-10-14-10:18:18-full   Succeeded   3s          28s

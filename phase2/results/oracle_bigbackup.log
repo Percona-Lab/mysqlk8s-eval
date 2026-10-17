@@ -1,5 +1,5 @@
 T=1792098611349
-mysqlbackup.mysql.oracle.com/bigdump created
+REDACTED.mysql.oracle.com/bigdump created
 BACKUP_START 1792098611914
 BACKUP Completed 157s 1792098768386
 output=bigdump-20261015-211011 elapsed=00:02:28

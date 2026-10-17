@@ -1,0 +1,9 @@
+T=1792255913575
+writer=ps-cluster1-mysql-0 node=mb-w1: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792255961495
+old primary ready 1792257103644
+main outage 22.7s starting +48.4s; 1 interval(s), total 22.7s; primary ps-cluster1-mysql-0 22412 -> ps-cluster1-mysql-1 22500
+   +48.4s .. +71.0s  (22.7s, 81 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +48.4s..+71.0s = 22.7s (81 fails)
+LOSTCHECK acked=2190 present=2190 lost=0 (max over members)
+LOAD samples=90 median_tps=38.3 min_tps=0.0 intervals_below_50pct=19 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

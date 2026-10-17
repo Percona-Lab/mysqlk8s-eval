@@ -1,0 +1,34 @@
+T=1792242644990
+REBOOT mk-w5 (cluster1-pxc-2) 1792242646754
+  node Ready +62s
+  cluster ready +63s
+error: unable to upgrade connection: error dialing backend: proxy error from 127.0.0.1:6443 while dialing <MK_W5_PRIVIP>:10250, code 502: 502 Bad Gateway
+  cluster1-pxc-2 fs: 
+REBOOT mk-w3 (cluster1-pxc-1) 1792242710533
+  node Ready +62s
+  cluster ready +62s
+error: unable to upgrade connection: error dialing backend: proxy error from 127.0.0.1:6443 while dialing <MK_W3_PRIVIP>:10250, code 502: 502 Bad Gateway
+  cluster1-pxc-1 fs: 
+REBOOT mk-w2 () 1792242773764
+  node Ready +62s
+  cluster ready +368s
+error: pod, type/name or --filename must be specified
+   fs: 
+main outage 0.5s starting +28.0s; 15 interval(s), total 204.6s; primary cluster1-pxc-0 362766 -> NOT RECOVERED
+   +28.0s .. +28.5s  (0.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +29.1s .. +31.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +31.8s .. +34.3s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +34.8s .. +42.5s  (7.6s, 4 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +42.7s .. +45.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +46.0s .. +48.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +49.0s .. +51.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +51.7s .. +54.2s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +54.2s .. +58.9s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +58.9s .. +61.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +62.5s .. +67.3s  (4.8s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +67.3s .. +69.8s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +70.6s .. +73.1s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +74.1s .. +78.9s  (4.7s, 2 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'cluster1-haproxy
+   +140.2s .. +300.0s  (159.8s, 317 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +28.0s..+78.9s = 50.8s (20 fails); +140.2s..+300.0s = 159.8s (317 fails)
+LOSTCHECK acked=793 present=793 lost=0 (max over members)

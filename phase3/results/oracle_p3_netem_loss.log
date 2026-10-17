@@ -1,0 +1,15 @@
+T=1792264642271
+writer=mycluster-0 node=mk-w3
+NETEM_ON 1792264645198
+NETEM_OFF 1792264825206
+NAME                                READY   STATUS      RESTARTS      AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     1 (62m ago)   66m   10.42.2.29    mk-w3   <none>           2/2
+mycluster-1                         2/2     Running     1 (45m ago)   66m   10.42.4.13    mk-w5   <none>           2/2
+mycluster-2                         2/2     Running     1 (54m ago)   66m   10.42.1.47    mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-5ccgb   1/1     Running     0             64m   10.42.5.22    mk-w4   <none>           <none>
+mycluster-router-6d5dffdd6f-bnccr   1/1     Running     0             64m   10.42.4.14    mk-w5   <none>           <none>
+mycluster-router-6d5dffdd6f-vq8dh   1/1     Running     0             64m   10.42.3.47    mk-w1   <none>           <none>
+perf                                0/1     Completed   0             15m   10.42.0.104   mk-cp   <none>           <none>
+no failed writes; primary mycluster-0 8922
+LOSTCHECK acked=707 present=707 lost=0 (max over members)
+LOAD samples=26 median_tps=29.0 min_tps=22.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

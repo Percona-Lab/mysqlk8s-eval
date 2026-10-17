@@ -1,0 +1,34 @@
+Grants for sb@%
+GRANT USAGE ON *.* TO `sb`@`%`
+GRANT ALL PRIVILEGES ON `sbbig`.* TO `sb`@`%`
+GRANT ALL PRIVILEGES ON `sbhuge`.* TO `sb`@`%`
+GRANT ALL PRIVILEGES ON `sbtest`.* TO `sb`@`%`
+BIGLOAD_START 1792243194
+NAME      READY   STATUS    RESTARTS   AGE
+bigprep   1/1     Running   0          19s
+BIGLOAD_END 1792249915 phase=Succeeded elapsed=6721s
+/dev/disk/by-id/scsi-0Linode_Volume_pvc-df7d871796674088  148G  126G   23G  85% /var/lib/mysql
+cluster1-pxc-0                                     3/3     Running     4 (116m ago)   10h
+cluster1-pxc-1                                     3/3     Running     4 (114m ago)   12h
+cluster1-pxc-2                                     3/3     Running     4 (114m ago)   12h
+perconaxtradbclusterbackup.pxc.percona.com/bk100g created
+BACKUP100G Failed s3://pxc/p3/cluster1-2026-10-17-15:13:16-full 1371s
+cluster1-pxc-0                                     3/3     Running     4 (140m ago)   11h
+cluster1-pxc-1                                     3/3     Running     4 (138m ago)   13h
+cluster1-pxc-2                                     3/3     Running     4 (138m ago)   13h
+xb-xdrbk-6bgwr                                     0/1     Completed   0              8h
++1s state= ready=0 active=1 failed=
++32s state=Running ready=1 active=1 failed=
++2131s state=Running ready=0 active=1 failed=
++2161s state=Succeeded ready=0 active= failed=
+BACKUP100G2 Succeeded s3://pxc/p3/cluster1-2026-10-17-15:43:57-full  2161s
++20s Stopping Cluster
++61s Restoring
++899s Preparing Cluster
++960s Starting Cluster
++3026s Succeeded
+CLUSTER_READY +3026s
+40000000
+sbbig	17.2
+sbhuge	69
+sbtest	1.3

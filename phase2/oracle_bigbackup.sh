@@ -4,8 +4,8 @@ kind: MySQLBackup
 metadata: {name: bigdump}
 spec: {clusterName: mycluster, backupProfileName: s3dump}
 Y
-T0=$(date +%s); echo "BACKUP_START $(date +%s%3N)"; until [[ "$(kubectl -n oracle get mysqlbackup bigdump -o jsonpath={.status.status})" =~ Completed|Failed|Error ]]; do sleep 10; [ $(( $(date +%s)-T0 )) -gt 7200 ] && break; done
-echo "BACKUP $(kubectl -n oracle get mysqlbackup bigdump -o jsonpath={.status.status}) $(( $(date +%s)-T0 ))s $(date +%s%3N)"; OUT=$(kubectl -n oracle get mysqlbackup bigdump -o jsonpath={.status.output}); echo "output=$OUT elapsed=$(kubectl -n oracle get mysqlbackup bigdump -o jsonpath={.status.elapsedTime})"
+T0=$(date +%s); echo "BACKUP_START $(date +%s%3N)"; until [[ "$(kubectl -n oracle get REDACTED bigdump -o jsonpath={.status.status})" =~ Completed|Failed|Error ]]; do sleep 10; [ $(( $(date +%s)-T0 )) -gt 7200 ] && break; done
+echo "BACKUP $(kubectl -n oracle get REDACTED bigdump -o jsonpath={.status.status}) $(( $(date +%s)-T0 ))s $(date +%s%3N)"; OUT=$(kubectl -n oracle get REDACTED bigdump -o jsonpath={.status.output}); echo "output=$OUT elapsed=$(kubectl -n oracle get REDACTED bigdump -o jsonpath={.status.elapsedTime})"
 cat <<Y | kubectl -n oracle apply -f -
 apiVersion: mysql.oracle.com/v2
 kind: InnoDBCluster

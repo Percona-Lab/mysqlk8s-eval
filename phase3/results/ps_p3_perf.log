@@ -1,0 +1,20 @@
+T=1792254439518
+The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Error from server (NotFound): pods "perf" not found
+error: error from server (NotFound): pods "perf" not found in namespace "ps"
+PERF proxy threads=16 
+The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Error from server (NotFound): pods "perf" not found
+error: error from server (NotFound): pods "perf" not found in namespace "ps"
+PERF proxy threads=64 
+The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Error from server (NotFound): pods "perf" not found
+error: error from server (NotFound): pods "perf" not found in namespace "ps"
+PERF direct threads=16 
+The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Error from server (NotFound): pods "perf" not found
+error: error from server (NotFound): pods "perf" not found in namespace "ps"
+PERF direct threads=64 
+no failed writes; primary ps-cluster1-mysql-0 19020
+LOSTCHECK acked=54 present=54 lost=0 (max over members)
+LOAD samples=2 median_tps=49.4 min_tps=43.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

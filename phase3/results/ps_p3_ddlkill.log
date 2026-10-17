@@ -1,0 +1,9 @@
+T=1792259407964
+writer=ps-cluster1-mysql-1 node=mb-w2: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792259471244
+main outage 156.9s starting +64.2s; 2 interval(s), total 955.4s; primary ps-cluster1-mysql-1 30091 -> NOT RECOVERED
+   +64.2s .. +221.2s  (156.9s, 226 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +1001.6s .. +1800.0s  (798.4s, 308 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+DISRUPT +64.2s..+221.2s = 156.9s (226 fails); +1001.6s..+1800.0s = 798.4s (308 fails)
+LOSTCHECK acked=1992 present=1992 lost=0 (max over members)
+LOAD samples=139 median_tps=16.8 min_tps=0.0 intervals_below_50pct=54 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

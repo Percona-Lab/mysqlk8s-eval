@@ -1,0 +1,20 @@
+T=1792263770390
+pvc=persistentvolumeclaim/datadir-ps-cluster1-mysql-0 before=40Gi
+perconaservermysql.ps.percona.com/ps-cluster1 patched
+EXPANDED_ALL 1204s
+datadir-ps-cluster1-mysql-0   Bound    pvc-f5ef9431d7324e08   40Gi       RWO            linode-block-storage   <unset>                 5h6m
+datadir-ps-cluster1-mysql-1   Bound    pvc-7dbb4d698f774460   40Gi       RWO            linode-block-storage   <unset>                 5h5m
+datadir-ps-cluster1-mysql-2   Bound    pvc-dcf4352e6332412e   40Gi       RWO            linode-block-storage   <unset>                 5h2m
+NAME                                             READY   STATUS      RESTARTS       AGE
+percona-server-mysql-operator-75dfcc9466-wswrk   1/1     Running     0              5h7m
+ps-cluster1-binlog-server-0                      1/1     Running     0              5h4m
+ps-cluster1-haproxy-0                            2/2     Running     13 (51m ago)   5h4m
+ps-cluster1-haproxy-1                            2/2     Running     9 (59m ago)    5h4m
+ps-cluster1-haproxy-2                            2/2     Running     10 (52m ago)   5h4m
+ps-cluster1-mysql-0                              2/2     Running     5 (65m ago)    5h6m
+ps-cluster1-mysql-1                              1/2     Running     0              50m
+FS ps-cluster1-mysql-0 40G 28%
+FS ps-cluster1-mysql-1 40G 29%
+no failed writes; primary ps-cluster1-mysql-0 37005
+LOSTCHECK acked=3102 present=3102 lost=0 (max over members)
+LOAD samples=122 median_tps=60.0 min_tps=7.4 intervals_below_50pct=22 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

@@ -1,0 +1,9 @@
+T=1792266703278
+writer=mycluster-2 node=mk-w2: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792266750910
+old primary ready 1792267893514
+main outage 30.6s starting +48.1s; 1 interval(s), total 30.6s; primary mycluster-2 10502 -> mycluster-0 10625
+   +48.1s .. +78.6s  (30.6s, 82 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +48.1s..+78.6s = 30.6s (82 fails)
+LOSTCHECK acked=3250 present=3250 lost=0 (max over members)
+LOAD samples=90 median_tps=99.3 min_tps=0.0 intervals_below_50pct=10 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

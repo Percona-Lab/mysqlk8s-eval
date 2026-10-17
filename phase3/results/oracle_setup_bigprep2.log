@@ -1,0 +1,26 @@
+primary=mycluster-0
++2s mycluster-0=1707Mi mycluster-1=3179Mi mycluster-2=1173Mi  restarts=2
++63s mycluster-0=1837Mi mycluster-1=2672Mi mycluster-2=1739Mi  restarts=2
++124s mycluster-0=2232Mi mycluster-1=2736Mi mycluster-2=2136Mi  restarts=2
++185s mycluster-0=2305Mi mycluster-1=2844Mi mycluster-2=2280Mi  restarts=2
++245s mycluster-0=2494Mi mycluster-1=3047Mi mycluster-2=2491Mi  restarts=2
++306s mycluster-0=2730Mi mycluster-1=979Mi mycluster-2=2693Mi  restarts=3
++367s mycluster-0=2715Mi mycluster-1=2463Mi mycluster-2=2768Mi  restarts=3
++428s mycluster-0=2716Mi mycluster-1=2968Mi mycluster-2=2769Mi  restarts=3
++489s mycluster-0=2717Mi mycluster-1=3005Mi mycluster-2=2769Mi  restarts=3
++549s mycluster-0=2719Mi mycluster-1=3036Mi mycluster-2=2732Mi  restarts=3
++610s mycluster-0=2721Mi mycluster-1=2980Mi mycluster-2=2729Mi  restarts=3
++671s mycluster-0=2723Mi mycluster-1=2992Mi mycluster-2=2735Mi  restarts=3
++732s mycluster-0=2725Mi mycluster-1=2967Mi mycluster-2=2734Mi  restarts=3
++792s mycluster-0=2726Mi mycluster-1=2968Mi mycluster-2=2734Mi  restarts=3
+BIGPREP Succeeded 853s
+Creating a secondary index on 'sbtest2'...
+/dev/disk/by-id/scsi-0Linode_Volume_pvc-7d7c36a5b6ea42ca   40G   19G   21G  47% /var/lib/mysql
+mycluster-0                         2/2     Running     1 (27m ago)   31m
+mycluster-1                         2/2     Running     1 (10m ago)   31m
+mycluster-2                         2/2     Running     1 (19m ago)   31m
+NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
+mycluster   ONLINE   3        3           3         UNKNOWN   31m
+pod/load created
+[ 30s ] queue length: 0, concurrency: 2
+RETRY_DONE

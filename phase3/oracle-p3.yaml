@@ -52,3 +52,20 @@ spec:
           config: s3-config
           profile: default
           endpoint: http://s3.s3.svc:9000
+  mycnf: '[mysqld]
+
+    innodb_buffer_pool_size=1073741824
+
+    '
+  podSpec:
+    containers:
+    - name: mysql
+      resources:
+        requests:
+          memory: 1Gi
+          cpu: 600m
+        limits:
+          memory: 3Gi
+      env:
+      - name: MALLOC_ARENA_MAX
+        value: '2'

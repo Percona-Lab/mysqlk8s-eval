@@ -1,0 +1,6 @@
+T=1792258184445
+writer=ps-cluster1-mysql-1: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+DDL_DONE 112s
+no failed writes; primary ps-cluster1-mysql-1 27581
+LOSTCHECK acked=255 present=255 lost=0 (max over members)
+LOAD samples=16 median_tps=24.6 min_tps=6.8 intervals_below_50pct=3 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

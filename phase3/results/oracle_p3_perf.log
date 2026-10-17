@@ -1,0 +1,7 @@
+T=1792263015880
+PERF proxy threads=16  transactions: 31226 (103.89 per sec.)  95th percentile: 369.77 
+PERF proxy threads=64  transactions: 51547 (171.68 per sec.)  95th percentile: 759.88 
+PERF direct threads=16  transactions: 39995 (133.28 per sec.)  95th percentile: 314.45 
+PERF direct threads=64  transactions: 49549 (164.90 per sec.)  95th percentile: 787.74 
+no failed writes; primary mycluster-0 5429
+LOSTCHECK acked=2722 present=2722 lost=0 (max over members)

@@ -1,4 +1,4 @@
-P3NS=oracle; PERF_PROXY=mycluster.oracle; PERF_DIRECT=mycluster-0.mycluster-instances.oracle; PERF_EXTRA=
+P3NS=oracle; PERF_PROXY=mycluster.oracle; PERF_DIRECT=mycluster-0.mycluster-instances.oracle; PERF_EXTRA=--mysql-ssl=REQUIRED
 VOLPVC=datadir-mycluster; VOLPATCH="for i in 0 1 2; do kubectl -n oracle patch pvc datadir-mycluster-\$i -p '{\"spec\":{\"resources\":{\"requests\":{\"storage\":\"50Gi\"}}}}'; done"
 SCALE5="kubectl -n oracle patch innodbcluster mycluster --type=merge -p '{\"spec\":{\"instances\":5}}'"; SCALE3="kubectl -n oracle patch innodbcluster mycluster --type=merge -p '{\"spec\":{\"instances\":3}}'"
-LOADSTART="bash load.sh start oracle mycluster.oracle sb SbPass123 50"
+LOADSTART="bash load.sh start oracle mycluster.oracle sb SbPass123 50 --mysql-ssl=REQUIRED"

@@ -1,0 +1,8 @@
+T=1792266059712
+perconaservermysql.ps.percona.com/ps-cluster1 patched
+SCALED_TO_5 3611s
+NAME                  READY   STATUS    RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+ps-cluster1-mysql-0   2/2     Running   5 (143m ago)   6h25m   10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1   2/2     Running   0              129m    10.42.4.42   mb-w2   <none>           <none>
+ps-cluster1-mysql-2   1/2     Running   0              33m     10.42.3.42   mb-w3   <none>           <none>
+perconaservermysql.ps.percona.com/ps-cluster1 patched

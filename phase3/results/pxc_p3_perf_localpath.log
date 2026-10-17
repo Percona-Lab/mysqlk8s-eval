@@ -1,0 +1,4 @@
+PERF proxy threads=16  transactions: 71582 (238.54 per sec.)  95th percentile: 104.84 
+PERF proxy threads=64  transactions: 75050 (249.94 per sec.)  95th percentile: 397.39 
+PERF direct threads=16  transactions: 65799 (219.28 per sec.)  95th percentile: 116.80 
+PERF direct threads=64  transactions: 73647 (245.26 per sec.)  95th percentile: 404.61 

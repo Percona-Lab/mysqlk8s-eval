@@ -1,0 +1,9 @@
+# rolling Linode API reboot of PXC nodes to make expanded CSI volumes visible (Linode CSI #67)
+for N in mk-w5 mk-w3 mk-w2; do
+  P=$(rx "kubectl -n pxc get pods -l $DBSEL -o wide --no-headers" | awk -v n=$N '$7==n{print $1}')
+  ID=$(python3 -c "import json;print([i['id'] for i in json.load(open('instances.json')) if i['label']=='$N'][0])")
+  T0=$(date +%s); python3 -c "import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances/$ID/reboot',{})"; echo "REBOOT $N ($P) $(date +%s%3N)"
+  sleep 60; until rx "kubectl get node $N --no-headers" | grep -q " Ready"; do sleep 10; done; echo "  node Ready +$(( $(date +%s)-T0 ))s"
+  until [ "$(rx "kubectl -n pxc get pxc cluster1 -o jsonpath={.status.state}")" = ready ]; do sleep 10; [ $(( $(date +%s)-T0 )) -gt 1800 ] && break; done; echo "  cluster ready +$(( $(date +%s)-T0 ))s"
+  echo "  $P fs: $(rx "kubectl -n pxc exec $P -c pxc -- df -h /var/lib/mysql" | tail -1 | awk '{print $2, $5}')"
+done

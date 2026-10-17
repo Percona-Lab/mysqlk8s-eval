@@ -1,5 +1,5 @@
 customresourcedefinition.apiextensions.k8s.io/innodbclusters.mysql.oracle.com created
-customresourcedefinition.apiextensions.k8s.io/mysqlbackups.mysql.oracle.com created
+customresourcedefinition.apiextensions.k8s.io/REDACTEDs.mysql.oracle.com created
 customresourcedefinition.apiextensions.k8s.io/mysqlclustersetfailovers.mysql.oracle.com created
 customresourcedefinition.apiextensions.k8s.io/clusterkopfpeerings.zalando.org created
 customresourcedefinition.apiextensions.k8s.io/kopfpeerings.zalando.org created

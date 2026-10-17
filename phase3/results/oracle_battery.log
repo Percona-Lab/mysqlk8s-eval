@@ -1,0 +1,57 @@
+### perf 18:50:15
+PERF proxy threads=16  transactions: 31226 (103.89 per sec.)  95th percentile: 369.77 
+PERF proxy threads=64  transactions: 51547 (171.68 per sec.)  95th percentile: 759.88 
+PERF direct threads=16  transactions: 39995 (133.28 per sec.)  95th percentile: 314.45 
+PERF direct threads=64  transactions: 49549 (164.90 per sec.)  95th percentile: 787.74 
+no failed writes; primary mycluster-0 5429
+LOSTCHECK acked=2722 present=2722 lost=0 (max over members)
+### netem_delay 19:11:58
+writer=mycluster-0 node=mk-w3
+NETEM_ON 1792264320358
+NETEM_OFF 1792264500367
+no failed writes; primary mycluster-0 8361
+LOSTCHECK acked=369 present=369 lost=0 (max over members)
+LOAD samples=26 median_tps=3.6 min_tps=3.3 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### netem_loss 19:17:22
+writer=mycluster-0 node=mk-w3
+NETEM_ON 1792264645198
+NETEM_OFF 1792264825206
+no failed writes; primary mycluster-0 8922
+LOSTCHECK acked=707 present=707 lost=0 (max over members)
+LOAD samples=26 median_tps=29.0 min_tps=22.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### flap 19:22:47
+writer=mycluster-0 node=mk-w3
+DISRUPT +3.4s..+183.7s = 180.3s (101 fails)
+LOSTCHECK acked=362 present=362 lost=0 (max over members)
+LOAD samples=30 median_tps=24.1 min_tps=0.0 intervals_below_50pct=11 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### oneway 19:28:49
+writer=mycluster-0 node=mk-w3 (egress-only block 90 s)
+1792265332525 cont=f44ba9e3 ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'. time="2026-10-17T19:30:45Z" level=er
+1792265447939 cont=f44ba9e3 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+ISOLATED_ROWS_IN_CLUSTER 0
+DISRUPT +2.7s..+900.0s = 897.3s (124 fails)
+LOSTCHECK acked=7 present=7 lost=0 (max over members)
+LOAD samples=90 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### longtrx 19:51:42
+writer=mycluster-2 node=mk-w2: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792266750910
+old primary ready 1792267893514
+DISRUPT +48.1s..+78.6s = 30.6s (82 fails)
+LOSTCHECK acked=3250 present=3250 lost=0 (max over members)
+LOAD samples=90 median_tps=99.3 min_tps=0.0 intervals_below_50pct=10 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddl 20:29:34
+writer=mycluster-0: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+DDL_DONE 133s
+no failed writes; primary mycluster-0 16886
+LOSTCHECK acked=508 present=508 lost=0 (max over members)
+LOAD samples=19 median_tps=49.5 min_tps=37.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddlkill 20:40:02
+writer=mycluster-0 node=mk-w3: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792269664712
+mycluster-0 cols=0
+mycluster-1 cols=0
+mycluster-2 cols=0
+DISRUPT +62.8s..+85.5s = 22.7s (83 fails)
+LOSTCHECK acked=1209 present=1209 lost=0 (max over members)
+LOAD samples=38 median_tps=50.5 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### bigtrx 20:47:28

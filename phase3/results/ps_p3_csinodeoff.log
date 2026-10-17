@@ -1,0 +1,56 @@
+T=1792261271302
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json;print([i['id'] for i in json.load(open('instances.json')) if i['label']==''][0])
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+writer= node=
+hostname contains invalid characters
+POWEROFF 1792261273341
+error: at least one resource name must be specified since 'all' parameter is not set
+TAINT 1792261364752
+MOVED_AND_READY 1202s after taint, now on 
+NAME                                             READY   STATUS      RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-wswrk   1/1     Running     0              4h26m   10.42.4.38   mb-w2   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0              4h24m   10.42.3.38   mb-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     13 (10m ago)   4h24m   10.42.4.39   mb-w2   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     9 (19m ago)    4h24m   10.42.1.37   mb-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     10 (12m ago)   4h24m   10.42.3.39   mb-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     5 (25m ago)    4h26m   10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1                              1/2     Running     0              10m     10.42.4.42   mb-w2   <none>           <none>
+{"errors": [{"reason": "Not found"}]}
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys;sys.path.insert(0,'bin');from linode import api;api('POST','/linode/instances//boot',{})
+                                                               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/mysqlk8s/bin/linode.py", line 5, in api
+    try: return json.load(urllib.request.urlopen(r))
+                          ~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+error: at least one resource name must be specified since 'all' parameter is not set
+NAME    STATUS   ROLES           AGE   VERSION
+mb-cp   Ready    control-plane   16h   v1.37.1+k3s1
+mb-w1   Ready    <none>          16h   v1.37.1+k3s1
+mb-w2   Ready    <none>          16h   v1.37.1+k3s1
+mb-w3   Ready    <none>          16h   v1.37.1+k3s1
+main outage 1459.5s starting +-861.8s; 2 interval(s), total 1464.2s; primary ps-cluster1-mysql-2 32083 -> ps-cluster1-mysql-0 32348
+   +-861.8s .. +597.7s  (1459.5s, 597 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +678.4s .. +683.1s  (4.7s, 1 fails) top error: 
+DISRUPT +-861.8s..+597.7s = 1459.5s (597 fails); +678.4s..+683.1s = 4.7s (1 fails)
+LOSTCHECK acked=2420 present=2420 lost=0 (max over members)
+LOAD samples=143 median_tps=63.1 min_tps=0.0 intervals_below_50pct=61 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

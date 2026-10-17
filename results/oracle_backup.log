@@ -1,5 +1,5 @@
 NAME        STATUS   ONLINE   INSTANCES   ROUTERS   TYPE      AGE
 mycluster   ONLINE   3        3           3         UNKNOWN   51m
-mysqlbackup.mysql.oracle.com/dump1 created
+REDACTED.mysql.oracle.com/dump1 created
 BACKUP Completed 17s
 {"bucket":"oracle","completionTime":"2026-10-14T11:24:26Z","elapsedTime":"00:00:11","method":"dump-instance/s3","output":"dump1-20261014-112411","source":"mysqladmin-ljQfkiGMGD@mycluster-0.mycluster-instances.oracle.svc.cluster.local:3306","startTime":"2026-10-14T11:24:15Z","status":"Completed"}

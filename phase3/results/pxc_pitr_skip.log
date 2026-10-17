@@ -1,0 +1,6 @@
+B_CLUSTER_READY 234s
+perconaxtradbclusterrestore.pxc.percona.com/pitr-skip created
+RESTORE pitr-skip Succeeded  2029s
+MARKERS	before,after
+PROBE_LT_50000	17016
+GTID	ea2063a1-c9d2-11f1-8493-76bb1f98574b:1-753796:753798-789295:789297-859867

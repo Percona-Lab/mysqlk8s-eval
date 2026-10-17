@@ -1,0 +1,2 @@
+T=1792270048970
+writer=mycluster-2: single transaction inserting 2M rows (~400 MB)

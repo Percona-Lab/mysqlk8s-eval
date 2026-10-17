@@ -1,0 +1,43 @@
+perconaxtradbcluster.pxc.percona.com/cluster3 created
+READY 234s
+APP_USER_CREATED +235s
++235s p0=12/0 p1=12/0 p2=12/0 probe_logins_ok=2/6
++267s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++299s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++331s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++363s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++395s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++427s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++459s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++491s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++523s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++555s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++587s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++619s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++651s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++683s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++715s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++747s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++779s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++811s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++843s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++875s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++907s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++939s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++971s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1003s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1035s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1067s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1099s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1131s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1164s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1195s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1227s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1260s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1292s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1324s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1356s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1388s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1420s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1452s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6
++1484s p0=14/2 p1=14/2 p2=14/2 probe_logins_ok=6/6

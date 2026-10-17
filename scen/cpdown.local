@@ -1,6 +1,6 @@
 # control plane (k3s server) down 5 min; 30 s in, kill -9 mysqld on writer node
 W=$(rx writer); N=$(rx "nodeof $W"); echo "writer=$W node=$N"
-ssh -n -F ssh_config mk-cp 'systemctl stop k3s'; echo "K3S_STOPPED $(date +%s%3N)"; sleep 30
+ssh -n -F ssh_config ${CP:-mk-cp} 'systemctl stop k3s'; echo "K3S_STOPPED $(date +%s%3N)"; sleep 30
 ssh -n -F ssh_config $N 'pkill -9 -x mysqld; pkill -9 -x mariadbd; echo killed'; echo "KILLED $(date +%s%3N)"; sleep ${CPDOWN:-270}
-ssh -n -F ssh_config mk-cp 'systemctl start k3s'; echo "K3S_STARTED $(date +%s%3N)"; sleep 30
+ssh -n -F ssh_config ${CP:-mk-cp} 'systemctl start k3s'; echo "K3S_STARTED $(date +%s%3N)"; sleep 30
 until rx "kubectl get nodes" >/dev/null 2>&1; do sleep 5; done; rx "kubectl -n $NS wait --for=condition=Ready pod -l $DBSEL --timeout=600s" >/dev/null 2>&1; echo "DB ready $(date +%s%3N)"; rx "kubectl -n $NS get pods | grep -vE 'probe|load|bigprep|sysb'"

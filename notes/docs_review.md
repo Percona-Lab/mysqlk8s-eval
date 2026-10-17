@@ -247,7 +247,7 @@ kubectl get innodbcluster --watch
 kubectl run --rm -it myshell --image=container-registry.oracle.com/mysql/community-operator -- mysqlsh root@mycluster --sql
 ```
 - The commands point at the **`trunk`** branch (unpinned). trunk is currently 26.7.0-2.3.0 [V].
-- The CRD file has **5 CRDs** [V] (innodbclusters, mysqlbackups, mysqlclustersetfailovers, clusterkopfpeerings, kopfpeerings); the docs' expected output shows 4.
+- The CRD file has **5 CRDs** [V] (innodbclusters, REDACTEDs, mysqlclustersetfailovers, clusterkopfpeerings, kopfpeerings); the docs' expected output shows 4.
 - **Helm:**
 
 ```bash

@@ -1,0 +1,19 @@
+T=1792255543955
+writer=ps-cluster1-mysql-0 node=mb-w1 (egress-only block 90 s)
+PART_ON 1792255547691
+1792255547584 cont=3e4d0ee5 WROTE 
+PART_OFF 1792255637885
+1792255639289 cont=3e4d0ee5 WROTE 
+NAME                                             READY   STATUS      RESTARTS       AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-wswrk   1/1     Running     0              154m   10.42.4.38   mb-w2   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0              152m   10.42.3.38   mb-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     1 (136m ago)   152m   10.42.4.39   mb-w2   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     1 (138m ago)   152m   10.42.1.37   mb-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     1 (138m ago)   151m   10.42.3.39   mb-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     2 (137m ago)   154m   10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0              134m   10.42.4.41   mb-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running     1 (124m ago)   132m   10.42.3.41   mb-w3   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 55
+no failed writes; primary ps-cluster1-mysql-0 21708
+LOSTCHECK acked=577 present=577 lost=0 (max over members)
+LOAD samples=31 median_tps=45.7 min_tps=6.1 intervals_below_50pct=12 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

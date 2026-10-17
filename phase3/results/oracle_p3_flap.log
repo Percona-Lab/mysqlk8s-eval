@@ -1,0 +1,41 @@
+T=1792264967400
+writer=mycluster-0 node=mk-w3
+PART_ON 1792264971351
+PART_OFF 1792264981916
+PART_ON 1792264992122
+PART_OFF 1792265002698
+PART_ON 1792265012903
+PART_OFF 1792265023507
+PART_ON 1792265033695
+PART_OFF 1792265044281
+PART_ON 1792265054446
+PART_OFF 1792265065042
+PART_ON 1792265075275
+PART_OFF 1792265085877
+PART_ON 1792265096054
+PART_OFF 1792265106640
+PART_ON 1792265116827
+PART_OFF 1792265127465
+PART_ON 1792265137671
+PART_OFF 1792265148235
+NAME                                READY   STATUS      RESTARTS      AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     1 (68m ago)   72m   10.42.2.29    mk-w3   <none>           2/2
+mycluster-1                         2/2     Running     1 (51m ago)   72m   10.42.4.13    mk-w5   <none>           2/2
+mycluster-2                         2/2     Running     1 (60m ago)   72m   10.42.1.47    mk-w2   <none>           2/2
+mycluster-router-6d5dffdd6f-5ccgb   1/1     Running     0             70m   10.42.5.22    mk-w4   <none>           <none>
+mycluster-router-6d5dffdd6f-bnccr   1/1     Running     0             70m   10.42.4.14    mk-w5   <none>           <none>
+mycluster-router-6d5dffdd6f-vq8dh   1/1     Running     0             70m   10.42.3.47    mk-w1   <none>           <none>
+perf                                0/1     Completed   0             21m   10.42.0.104   mk-cp   <none>           <none>
+main outage 14.0s starting +3.4s; 9 interval(s), total 128.9s; primary mycluster-0 9794 -> mycluster-0 9933
+   +3.4s .. +17.4s  (14.0s, 11 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +24.2s .. +38.2s  (14.0s, 10 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +44.2s .. +59.5s  (15.2s, 15 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +64.3s .. +79.6s  (15.3s, 11 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +86.2s .. +100.5s  (14.3s, 11 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +107.4s .. +121.4s  (14.0s, 11 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +128.1s .. +142.8s  (14.6s, 12 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +148.8s .. +162.5s  (13.6s, 10 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +169.9s .. +183.7s  (13.7s, 10 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +3.4s..+183.7s = 180.3s (101 fails)
+LOSTCHECK acked=362 present=362 lost=0 (max over members)
+LOAD samples=30 median_tps=24.1 min_tps=0.0 intervals_below_50pct=11 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
