@@ -1,0 +1,15 @@
+T=1792296649982
+writer=mariadb-galera-1 node=mk-w3: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792296697573
+old primary ready 1792297840540
+main outage 9.8s starting +48.9s; 7 interval(s), total 36.6s; primary mariadb-galera-1 18964 -> mariadb-galera-0 26442
+   +48.9s .. +58.8s  (9.8s, 7 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +122.0s .. +126.4s  (4.5s, 1 fails) top error: 
+   +192.1s .. +196.5s  (4.5s, 1 fails) top error: 
+   +261.9s .. +266.3s  (4.4s, 1 fails) top error: 
+   +332.0s .. +336.5s  (4.5s, 1 fails) top error: 
+   +492.0s .. +496.4s  (4.5s, 1 fails) top error: 
+   +742.0s .. +746.5s  (4.4s, 1 fails) top error: 
+DISRUPT +48.9s..+58.8s = 9.8s (7 fails); +122.0s..+126.4s = 4.5s (1 fails); +192.1s..+196.5s = 4.5s (1 fails); +261.9s..+266.3s = 4.4s (1 fails); +332.0s..+336.5s = 4.5s (1 fails); +492.0s..+496.4s = 4.5s (1 fails); +742.0s..+746.5s = 4.4s (1 fails)
+LOSTCHECK acked=4708 present=4708 lost=0 (max over members)
+LOAD samples=90 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

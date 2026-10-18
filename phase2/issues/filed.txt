@@ -27,3 +27,6 @@ ps7.md https://github.com/percona/percona-server-mysql-operator/issues/1659
 c2564 https://github.com/percona/percona-xtradb-cluster-operator/issues/2564 (comment)
 c1659 https://github.com/percona/percona-server-mysql-operator/issues/1659 (comment)
 ps8.md https://github.com/percona/percona-server-mysql-operator/issues/1660
+https://github.com/percona/percona-server-mysql-operator/issues/1659#issuecomment-6243912309
+or4.md https://github.com/mysql/mysql-operator/issues/68
+https://github.com/mariadb-operator/mariadb-operator/issues/1959#issuecomment-6247124329

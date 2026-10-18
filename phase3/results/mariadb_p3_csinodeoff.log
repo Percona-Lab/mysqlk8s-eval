@@ -1,0 +1,21 @@
+T=1792300698764
+writer=mariadb-galera-1 node=mk-w3
+POWEROFF 1792300701979
+node/mk-w3 tainted
+TAINT 1792300793549
+MOVED_AND_READY 1203s after taint, now on 
+NAME                READY   STATUS      RESTARTS   AGE    IP            NODE     NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          29m    10.42.5.33    mk-w4    <none>           <none>
+mariadb-galera-1    0/2     Pending     0          19m    <none>        <none>   <none>           <none>
+mariadb-galera-2    2/2     Running     0          29m    10.42.4.20    mk-w5    <none>           <none>
+maxscale-galera-0   1/1     Running     0          157m   10.42.1.53    mk-w2    <none>           <none>
+maxscale-galera-1   1/1     Running     0          157m   10.42.3.50    mk-w1    <none>           <none>
+maxscale-galera-2   1/1     Running     0          157m   10.42.5.30    mk-w4    <none>           <none>
+node/mk-w3 untainted
+NAME    STATUS   ROLES    AGE     VERSION
+mk-w3   Ready    <none>   3d22h   v1.37.1+k3s1
+main outage 10.2s starting +4.1s; 1 interval(s), total 10.2s; primary mariadb-galera-1 55312 -> mariadb-galera-2 55367
+   +4.1s .. +14.4s  (10.2s, 4 fails) top error: 
+DISRUPT +4.1s..+14.4s = 10.2s (4 fails)
+LOSTCHECK acked=5939 present=5939 lost=0 (max over members)
+LOAD samples=144 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

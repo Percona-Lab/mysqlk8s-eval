@@ -1,0 +1,15 @@
+T=1792300034148
+writer=mariadb-galera-0 node=mk-w4: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792300096852
+mariadb-galera-0 cols=1
+mariadb-galera-1 cols=1
+mariadb-galera-2 cols=1
+main outage 4.4s starting +7.8s; 5 interval(s), total 261.8s; primary mariadb-galera-0 50589 -> mariadb-galera-1 51376
+   +7.8s .. +12.3s  (4.4s, 1 fails) top error: 
+   +63.5s .. +208.4s  (145.0s, 638 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +208.4s .. +208.9s  (0.5s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +229.7s .. +230.6s  (0.8s, 1 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +231.4s .. +342.5s  (111.0s, 487 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+DISRUPT +7.8s..+12.3s = 4.4s (1 fails); +63.5s..+208.9s = 145.4s (639 fails); +229.7s..+342.5s = 112.7s (488 fails)
+LOSTCHECK acked=850 present=850 lost=0 (max over members)
+LOAD samples=47 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

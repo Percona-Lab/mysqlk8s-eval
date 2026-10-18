@@ -1,0 +1,27 @@
+T=1792277814530
+error: error executing jsonpath "{.items[0].spec.holderIdentity}": Error executing template: array index out of bounds: index 0, length 0. Printing more information for debugging the template:
+	template was:
+		{.items[0].spec.holderIdentity}
+	object given to jsonpath engine was:
+		map[string]interface {}{"apiVersion":"v1", "items":[]interface {}{}, "kind":"List", "metadata":map[string]interface {}{"resourceVersion":""}}
+
+
+leader=
+writer=mycluster-0 node=mk-w3
+KILLED 1792277817838
+NAME                              READY   STATUS    RESTARTS   AGE
+mysql-operator-86cb64fb94-m7447   1/1     Running   0          5m5s
+mysql-operator-86cb64fb94-pjfzp   1/1     Running   0          127m
+N     H
+NAME                                READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     3 (4m2s ago)    4h46m   10.42.2.29    mk-w3   <none>           1/2
+mycluster-1                         2/2     Running     1 (4h24m ago)   4h46m   10.42.4.13    mk-w5   <none>           2/2
+mycluster-2                         2/2     Running     0               127m    10.42.3.48    mk-w1   <none>           2/2
+mycluster-router-6d5dffdd6f-5ccgb   1/1     Running     0               4h43m   10.42.5.22    mk-w4   <none>           <none>
+mycluster-router-6d5dffdd6f-bnccr   1/1     Running     0               4h43m   10.42.4.14    mk-w5   <none>           <none>
+mycluster-router-6d5dffdd6f-vq8dh   1/1     Running     0               4h43m   10.42.3.47    mk-w1   <none>           <none>
+main outage 22.5s starting +2.8s; 1 interval(s), total 22.5s; primary mycluster-0 43003 -> mycluster-2 43012
+   +2.8s .. +25.3s  (22.5s, 80 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +2.8s..+25.3s = 22.5s (80 fails)
+LOSTCHECK acked=683 present=683 lost=0 (max over members)
+LOAD samples=27 median_tps=49.9 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

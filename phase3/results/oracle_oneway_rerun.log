@@ -1,0 +1,22 @@
+ORACLE all ONLINE +2726s
+writer=mycluster-2 node=mk-w1 (egress-only block 90 s)
+PART_ON 1792291243196
+1792291243049 cont=d434cb9c ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'. time="2026-10-18T02:42:39Z" level=er
+1792291361231 cont=d434cb9c ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+NAME                                READY   STATUS      RESTARTS        AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mycluster-0                         2/2     Running     3 (3h49m ago)   8h      10.42.2.29    mk-w3   <none>           2/2
+mycluster-1                         2/2     Running     1 (8h ago)      8h      10.42.4.13    mk-w5   <none>           2/2
+mycluster-2                         2/2     Running     0               5h53m   10.42.3.48    mk-w1   <none>           2/2
+mycluster-router-6d5dffdd6f-5ccgb   1/1     Running     0               8h      10.42.5.22    mk-w4   <none>           <none>
+mycluster-router-6d5dffdd6f-bnccr   1/1     Running     0               8h      10.42.4.14    mk-w5   <none>           <none>
+mycluster-router-6d5dffdd6f-vq8dh   1/1     Running     0               8h      10.42.3.47    mk-w1   <none>           <none>
+perf                                0/1     Completed   0               7h41m   10.42.0.104   mk-cp   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 0
+main outage 42.0s starting +2.6s; 3 interval(s), total 47.0s; primary mycluster-2 87698 -> mycluster-0 87717
+   +2.6s .. +44.6s  (42.0s, 42 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +44.6s .. +47.1s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+   +49.0s .. +51.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'mycluster.oracle
+DISRUPT +2.6s..+51.5s = 48.9s (44 fails)
+LOSTCHECK acked=1120 present=1120 lost=0 (max over members)
+LOAD samples=40 median_tps=50.0 min_tps=0.0 intervals_below_50pct=9 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+ORACLE_ONEWAY2_DONE

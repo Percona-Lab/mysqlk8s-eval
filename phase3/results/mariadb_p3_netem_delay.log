@@ -1,0 +1,15 @@
+T=1792295296611
+writer=mariadb-galera-0 node=mk-w4
+NETEM_ON 1792295299683
+NETEM_OFF 1792295479692
+NAME                READY   STATUS      RESTARTS   AGE    IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          51m    10.42.5.28    mk-w4   <none>           <none>
+mariadb-galera-1    2/2     Running     0          51m    10.42.2.32    mk-w3   <none>           <none>
+mariadb-galera-2    2/2     Running     0          51m    10.42.4.17    mk-w5   <none>           <none>
+maxscale-galera-0   1/1     Running     0          49m    10.42.1.53    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          49m    10.42.3.50    mk-w1   <none>           <none>
+maxscale-galera-2   1/1     Running     0          49m    10.42.5.30    mk-w4   <none>           <none>
+perf                0/1     Completed   0          10m    10.42.0.116   mk-cp   <none>           <none>
+no failed writes; primary mariadb-galera-0 8968
+LOSTCHECK acked=432 present=432 lost=0 (max over members)
+LOAD samples=27 median_tps=3.8 min_tps=3.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

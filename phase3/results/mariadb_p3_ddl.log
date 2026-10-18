@@ -1,0 +1,6 @@
+T=1792298922755
+writer=mariadb-galera-2: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+DDL_DONE 1s
+no failed writes; primary mariadb-galera-2 40315
+LOSTCHECK acked=203 present=203 lost=0 (max over members)
+LOAD samples=5 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

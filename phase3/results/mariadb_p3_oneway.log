@@ -1,0 +1,70 @@
+T=1792296309616
+writer=mariadb-galera-0 node=mk-w4 (egress-only block 90 s)
+PART_ON 1792296312915
+1792296312787 cont=1ff64e37 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1180 (HY000) at line 1: Error while appe
+1792296346841 cont=1ff64e37 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-18T04:05:47Z" level=err
+1792296351636 cont= E1018 04:05:51.877592  489070 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296353887 cont= E1018 04:05:54.149352  489105 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296356159 cont= E1018 04:05:56.387823  489138 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296358397 cont= E1018 04:05:58.620104  489172 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296360630 cont= E1018 04:06:00.911258  489211 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296362923 cont= E1018 04:06:03.182774  489245 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296365196 cont= E1018 04:06:05.460382  489279 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296367473 cont= E1018 04:06:07.744186  489312 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296369757 cont= E1018 04:06:10.036377  489347 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296372049 cont= E1018 04:06:12.288329  489378 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296374298 cont= E1018 04:06:14.542831  489412 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296376552 cont= E1018 04:06:16.787864  489447 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296378798 cont= E1018 04:06:19.019914  489480 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296381029 cont= E1018 04:06:21.276839  489515 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296383287 cont= E1018 04:06:23.531286  489561 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296385542 cont= E1018 04:06:25.785617  489594 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296387795 cont= E1018 04:06:28.022634  489629 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296390032 cont= E1018 04:06:30.285456  489663 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296392295 cont= E1018 04:06:32.524444  489695 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296394534 cont= E1018 04:06:34.774385  489731 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296396784 cont= E1018 04:06:37.029762  489766 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296399039 cont= E1018 04:06:39.268749  489801 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296401279 cont= E1018 04:06:41.540948  489833 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+PART_OFF 1792296403249
+1792296403553 cont= E1018 04:06:43.803865  489975 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296405815 cont= E1018 04:06:46.060985  490014 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296408070 cont= E1018 04:06:48.300442  490081 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296410312 cont= E1018 04:06:50.552536  490116 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296412562 cont= E1018 04:06:52.813825  490155 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296414824 cont= E1018 04:06:55.076306  490189 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296417086 cont= E1018 04:06:57.338099  490226 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296419350 cont= E1018 04:06:59.603355  490260 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296421614 cont= E1018 04:07:01.848068  490293 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296423859 cont= E1018 04:07:04.138566  490328 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296426151 cont= E1018 04:07:06.397432  490363 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296428407 cont= E1018 04:07:08.658298  490397 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296430668 cont= E1018 04:07:10.914951  490433 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296432926 cont= E1018 04:07:13.175713  490466 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296435186 cont= E1018 04:07:15.434189  490501 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296437444 cont= E1018 04:07:17.685499  490535 remote_runtime.go:760] "Exec cmd from runtime service failed" err="rpc error: code = NotFound desc = failed to
+1792296439695 cont=9c6939bf ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-18T04:07:20Z" level=err
+NAME                READY   STATUS      RESTARTS        AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     1 (3m38s ago)   68m   10.42.5.28    mk-w4   <none>           <none>
+mariadb-galera-1    2/2     Running     0               68m   10.42.2.32    mk-w3   <none>           <none>
+mariadb-galera-2    2/2     Running     0               68m   10.42.4.17    mk-w5   <none>           <none>
+maxscale-galera-0   1/1     Running     0               66m   10.42.1.53    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0               66m   10.42.3.50    mk-w1   <none>           <none>
+maxscale-galera-2   1/1     Running     0               66m   10.42.5.30    mk-w4   <none>           <none>
+perf                0/1     Completed   0               27m   10.42.0.116   mk-cp   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER 0
+main outage 13.2s starting +3.0s; 11 interval(s), total 44.5s; primary mariadb-galera-0 15664 -> mariadb-galera-1 15779
+   +3.0s .. +16.2s  (13.2s, 5 fails) top error: 
+   +16.2s .. +23.1s  (6.9s, 3 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +23.1s .. +25.6s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +26.8s .. +29.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +29.9s .. +32.4s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +32.8s .. +35.3s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +36.5s .. +38.9s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +40.1s .. +44.8s  (4.7s, 2 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +44.8s .. +47.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +47.7s .. +50.2s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+   +51.3s .. +53.8s  (2.5s, 1 fails) top error: ERROR 2002 (HY000): Can't connect to server on 'maxscale-galera.mariad
+DISRUPT +3.0s..+53.8s = 50.8s (18 fails)
+LOSTCHECK acked=950 present=950 lost=0 (max over members)
+LOAD samples=28 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

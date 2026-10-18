@@ -1,0 +1,36 @@
+T=1792308719737
+error: error executing jsonpath "{.items[0].spec.holderIdentity}": Error executing template: array index out of bounds: index 0, length 0. Printing more information for debugging the template:
+	template was:
+		{.items[0].spec.holderIdentity}
+	object given to jsonpath engine was:
+		map[string]interface {}{"apiVersion":"v1", "items":[]interface {}{}, "kind":"List", "metadata":map[string]interface {}{"resourceVersion":""}}
+
+
+leader=
+writer=mariadb-galera-0 node=mk-w4
+KILLED 1792308723414
+NAME                                                READY   STATUS    RESTARTS   AGE
+mariadb-operator-5d6b8c4d9-gdcnp                    1/1     Running   0          4h46m
+mariadb-operator-5d6b8c4d9-vj47m                    1/1     Running   0          5m5s
+mariadb-operator-cert-controller-684d7dc58c-4nzzp   1/1     Running   0          4h46m
+mariadb-operator-webhook-67676984df-2wxmq           1/1     Running   0          136m
+N     H
+NAME                READY   STATUS      RESTARTS      AGE     IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    1/2     Running     4 (27s ago)   145m    10.42.5.33    mk-w4   <none>           <none>
+mariadb-galera-1    2/2     Running     0             5m21s   10.42.2.37    mk-w3   <none>           <none>
+mariadb-galera-2    2/2     Running     0             6m8s    10.42.4.21    mk-w5   <none>           <none>
+maxscale-galera-0   1/1     Running     0             4h33m   10.42.1.53    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0             4h33m   10.42.3.50    mk-w1   <none>           <none>
+maxscale-galera-2   1/1     Running     0             4h33m   10.42.5.30    mk-w4   <none>           <none>
+main outage 5.2s starting +3.6s; 8 interval(s), total 26.7s; primary mariadb-galera-0 126037 -> mariadb-galera-2 128255
+   +3.6s .. +8.8s  (5.2s, 4 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +8.8s .. +14.3s  (5.6s, 1 fails) top error: 
+   +16.4s .. +17.3s  (0.9s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +78.2s .. +82.7s  (4.5s, 1 fails) top error: 
+   +148.4s .. +152.9s  (4.5s, 1 fails) top error: 
+   +155.3s .. +156.2s  (0.9s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +218.4s .. +222.8s  (4.5s, 1 fails) top error: 
+   +233.1s .. +233.8s  (0.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +3.6s..+17.3s = 13.7s (6 fails); +78.2s..+82.7s = 4.5s (1 fails); +148.4s..+156.2s = 7.8s (3 fails); +218.4s..+222.8s = 4.5s (1 fails); +233.1s..+233.8s = 0.7s (1 fails)
+LOSTCHECK acked=864 present=864 lost=0 (max over members)
+LOAD samples=27 median_tps=50.0 min_tps=15.2 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

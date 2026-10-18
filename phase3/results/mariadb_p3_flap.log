@@ -1,0 +1,59 @@
+T=1792295947899
+writer=mariadb-galera-0 node=mk-w4
+PART_ON 1792295950876
+PART_OFF 1792295961395
+PART_ON 1792295971562
+PART_OFF 1792295982164
+PART_ON 1792295992333
+PART_OFF 1792296002978
+PART_ON 1792296013158
+PART_OFF 1792296023785
+PART_ON 1792296033953
+PART_OFF 1792296044535
+PART_ON 1792296054721
+PART_OFF 1792296065215
+PART_ON 1792296075407
+PART_OFF 1792296086071
+PART_ON 1792296096232
+PART_OFF 1792296106778
+PART_ON 1792296116941
+PART_OFF 1792296127584
+NAME                READY   STATUS      RESTARTS   AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          62m   10.42.5.28    mk-w4   <none>           <none>
+mariadb-galera-1    2/2     Running     0          62m   10.42.2.32    mk-w3   <none>           <none>
+mariadb-galera-2    2/2     Running     0          62m   10.42.4.17    mk-w5   <none>           <none>
+maxscale-galera-0   1/1     Running     0          61m   10.42.1.53    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          61m   10.42.3.50    mk-w1   <none>           <none>
+maxscale-galera-2   1/1     Running     0          61m   10.42.5.30    mk-w4   <none>           <none>
+perf                0/1     Completed   0          21m   10.42.0.116   mk-cp   <none>           <none>
+main outage 9.7s starting +2.7s; 27 interval(s), total 112.3s; primary mariadb-galera-0 12823 -> mariadb-galera-1 13568
+   +2.7s .. +12.4s  (9.7s, 3 fails) top error: 
+   +12.4s .. +13.3s  (0.9s, 2 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +16.8s .. +17.4s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +23.5s .. +34.4s  (10.9s, 3 fails) top error: 
+   +34.8s .. +35.3s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +35.3s .. +35.8s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +36.8s .. +37.3s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +38.4s .. +39.0s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +44.2s .. +55.4s  (11.2s, 4 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +55.4s .. +56.4s  (1.0s, 3 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +58.0s .. +58.6s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +64.9s .. +75.8s  (10.9s, 3 fails) top error: 
+   +75.8s .. +76.3s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +76.3s .. +76.8s  (0.6s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +85.6s .. +96.5s  (10.9s, 3 fails) top error: 
+   +98.3s .. +98.7s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +98.7s .. +99.9s  (1.2s, 4 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +106.4s .. +117.2s  (10.8s, 3 fails) top error: 
+   +117.9s .. +118.8s  (0.9s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +118.8s .. +120.5s  (1.7s, 2 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +121.1s .. +121.6s  (0.5s, 1 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +127.2s .. +138.4s  (11.3s, 5 fails) top error: 
+   +138.4s .. +140.2s  (1.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +148.0s .. +159.3s  (11.3s, 6 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+   +161.9s .. +162.5s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +168.7s .. +179.6s  (10.9s, 3 fails) top error: 
+   +180.3s .. +181.5s  (1.2s, 2 fails) top error: ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for appl
+DISRUPT +2.7s..+181.5s = 178.8s (59 fails)
+LOSTCHECK acked=712 present=712 lost=0 (max over members)
+LOAD samples=30 median_tps=50.2 min_tps=0.0 intervals_below_50pct=9 sysbench_restarts=0 report_gaps=0s max_err/s=1351.8

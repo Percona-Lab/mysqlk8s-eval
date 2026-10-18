@@ -1,0 +1,17 @@
+PS ready +948s state=ready
+### bigtrx 02:10:02
+writer=ps-cluster1-mysql-2: single transaction inserting 2M rows (~400 MB)
+ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'.
+BIGTRX_DONE 62s rows=0
+no failed writes; primary ps-cluster1-mysql-2 110616
+LOSTCHECK acked=318 present=318 lost=0 (max over members)
+LOAD samples=11 median_tps=48.5 min_tps=28.6 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### csinodeoff 02:13:03
+writer=ps-cluster1-mysql-2 node=mb-w3
+MOVED_AND_READY 1203s after taint, now on 
+{"errors": [{"reason": "Linode 108365170 already booted."}]}
+DISRUPT +3.6s..+51.9s = 48.3s (21 fails)
+LOSTCHECK acked=4370 present=4370 lost=0 (max over members)
+LOAD samples=144 median_tps=50.0 min_tps=0.0 intervals_below_50pct=8 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PHASE3_DONE
+PS_RERUN3_DONE

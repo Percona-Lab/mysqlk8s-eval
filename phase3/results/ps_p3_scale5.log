@@ -6,3 +6,11 @@ ps-cluster1-mysql-0   2/2     Running   5 (143m ago)   6h25m   10.42.1.36   mb-w
 ps-cluster1-mysql-1   2/2     Running   0              129m    10.42.4.42   mb-w2   <none>           <none>
 ps-cluster1-mysql-2   1/2     Running   0              33m     10.42.3.42   mb-w3   <none>           <none>
 perconaservermysql.ps.percona.com/ps-cluster1 patched
+SCALED_TO_3 1813s
+NAME                  READY   STATUS    RESTARTS       AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+ps-cluster1-mysql-0   2/2     Running   5 (174m ago)   6h56m   10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1   2/2     Running   0              160m    10.42.4.42   mb-w2   <none>           <none>
+ps-cluster1-mysql-2   1/2     Running   0              64m     10.42.3.42   mb-w3   <none>           <none>
+no failed writes; primary ps-cluster1-mysql-0 43384
+LOSTCHECK acked=16914 present=16914 lost=0 (max over members)
+LOAD samples=552 median_tps=49.8 min_tps=10.7 intervals_below_50pct=11 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

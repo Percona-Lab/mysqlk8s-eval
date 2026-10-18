@@ -1,0 +1,27 @@
+### perf 23:24:47
+PERF proxy threads=16  transactions: 36817 (122.70 per sec.)  95th percentile: 297.92 
+PERF proxy threads=64  transactions: 50903 (169.46 per sec.)  95th percentile: 646.19 
+PERF direct threads=16  transactions: 41637 (138.69 per sec.)  95th percentile: 297.92 
+PERF direct threads=64  transactions: 47545 (157.79 per sec.)  95th percentile: 831.46 
+DISRUPT +197.1s..+202.3s = 5.1s (1 fails)
+LOSTCHECK acked=2850 present=2850 lost=0 (max over members)
+### flap 23:46:28
+writer=ps-cluster1-mysql-1 node=mb-w2
+DISRUPT +3.2s..+900.0s = 896.8s (836 fails)
+LOSTCHECK acked=10 present=10 lost=0 (max over members)
+LOAD samples=90 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=387.1
+### oneway 00:29:10
+writer=ps-cluster1-mysql-0 node=mb-w1 (egress-only block 90 s)
+1792283354402 cont=b182baa2 ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'. time="2026-10-18T00:29:26Z" level=er
+1792283368223 cont=b182baa2 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+1792283382259 cont=b182baa2 ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 104 time="2026-10-18T00
+1792283398370 cont=b182baa2 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:29:58Z" l
+1792283445149 cont=86b1b23e ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:30:45Z" l
+1792283454800 cont=86b1b23e ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+1792283511843 cont=86b1b23e ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 104 time="2026-10-18T00
+1792283516948 cont=86b1b23e ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:31:57Z" l
+1792283521708 cont=96304329 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+ISOLATED_ROWS_IN_CLUSTER ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) command terminated with exit code 1
+DISRUPT +3.6s..+53.5s = 50.0s (26 fails)
+LOSTCHECK acked=722 present=722 lost=0 (max over members)
+LOAD samples=32 median_tps=49.0 min_tps=0.0 intervals_below_50pct=10 sysbench_restarts=1 report_gaps=6s max_err/s=332.9

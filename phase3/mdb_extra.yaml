@@ -1,0 +1,9 @@
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: Database
+metadata: {name: sbbig}
+spec: {mariaDbRef: {name: mariadb-galera}}
+---
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: Grant
+metadata: {name: sbbig}
+spec: {mariaDbRef: {name: mariadb-galera}, privileges: [ALL PRIVILEGES], database: sbbig, table: "*", username: sb, host: "%"}

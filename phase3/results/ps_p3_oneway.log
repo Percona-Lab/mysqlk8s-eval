@@ -1,19 +1,34 @@
-T=1792255543955
+T=1792283350708
 writer=ps-cluster1-mysql-0 node=mb-w1 (egress-only block 90 s)
-PART_ON 1792255547691
-1792255547584 cont=3e4d0ee5 WROTE 
-PART_OFF 1792255637885
-1792255639289 cont=3e4d0ee5 WROTE 
-NAME                                             READY   STATUS      RESTARTS       AGE    IP           NODE    NOMINATED NODE   READINESS GATES
-percona-server-mysql-operator-75dfcc9466-wswrk   1/1     Running     0              154m   10.42.4.38   mb-w2   <none>           <none>
-ps-cluster1-binlog-server-0                      1/1     Running     0              152m   10.42.3.38   mb-w3   <none>           <none>
-ps-cluster1-haproxy-0                            2/2     Running     1 (136m ago)   152m   10.42.4.39   mb-w2   <none>           <none>
-ps-cluster1-haproxy-1                            2/2     Running     1 (138m ago)   152m   10.42.1.37   mb-w1   <none>           <none>
-ps-cluster1-haproxy-2                            2/2     Running     1 (138m ago)   151m   10.42.3.39   mb-w3   <none>           <none>
-ps-cluster1-mysql-0                              2/2     Running     2 (137m ago)   154m   10.42.1.36   mb-w1   <none>           <none>
-ps-cluster1-mysql-1                              2/2     Running     0              134m   10.42.4.41   mb-w2   <none>           <none>
-ps-cluster1-mysql-2                              2/2     Running     1 (124m ago)   132m   10.42.3.41   mb-w3   <none>           <none>
-ISOLATED_ROWS_IN_CLUSTER 55
-no failed writes; primary ps-cluster1-mysql-0 21708
-LOSTCHECK acked=577 present=577 lost=0 (max over members)
-LOAD samples=31 median_tps=45.7 min_tps=6.1 intervals_below_50pct=12 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PART_ON 1792283354555
+1792283354402 cont=b182baa2 ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'. time="2026-10-18T00:29:26Z" level=er
+1792283368223 cont=b182baa2 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+1792283382259 cont=b182baa2 ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 104 time="2026-10-18T00
+1792283398370 cont=b182baa2 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:29:58Z" l
+PART_OFF 1792283444863
+1792283445149 cont=86b1b23e ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:30:45Z" l
+1792283454800 cont=86b1b23e ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+1792283511843 cont=86b1b23e ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initial communication packet', system error: 104 time="2026-10-18T00
+1792283516948 cont=86b1b23e ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) time="2026-10-18T00:31:57Z" l
+1792283521708 cont=96304329 ERROR 1290 (HY000) at line 1: The MySQL server is running with the --super-read-only option so it cannot execute this statement time
+NAME                                             READY   STATUS             RESTARTS         AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-blhjf   1/1     Running            2 (3m48s ago)    3h3m    10.42.1.38   mb-w1   <none>           <none>
+perf                                             0/1     Completed          0                54m     10.42.0.16   mb-cp   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running            0                10h     10.42.3.38   mb-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running            13 (6h2m ago)    10h     10.42.4.39   mb-w2   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running            9 (6h10m ago)    10h     10.42.1.37   mb-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running            10 (6h3m ago)    10h     10.42.3.39   mb-w3   <none>           <none>
+ps-cluster1-mysql-0                              1/2     Running            8 (2m17s ago)    10h     10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1                              1/2     CrashLoopBackOff   10 (2m46s ago)   6h2m    10.42.4.42   mb-w2   <none>           <none>
+ps-cluster1-mysql-2                              2/2     Running            1 (71m ago)      4h26m   10.42.3.42   mb-w3   <none>           <none>
+ISOLATED_ROWS_IN_CLUSTER ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) command terminated with exit code 1
+main outage 31.4s starting +3.6s; 6 interval(s), total 44.9s; primary ps-cluster1-mysql-0 92025 -> ps-cluster1-mysql-2 92062
+   +3.6s .. +35.0s  (31.4s, 14 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +35.0s .. +37.5s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +40.8s .. +43.4s  (2.7s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +44.3s .. +47.0s  (2.7s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +47.3s .. +49.8s  (2.5s, 1 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+   +50.4s .. +53.5s  (3.1s, 8 fails) top error: ERROR 2003 (HY000): Can't connect to MySQL server on 'ps-cluster1-hapr
+DISRUPT +3.6s..+53.5s = 50.0s (26 fails)
+LOSTCHECK acked=722 present=722 lost=0 (max over members)
+LOAD samples=32 median_tps=49.0 min_tps=0.0 intervals_below_50pct=10 sysbench_restarts=1 report_gaps=6s max_err/s=332.9

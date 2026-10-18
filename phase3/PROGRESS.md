@@ -30,3 +30,15 @@
 - Oracle flap: 180s disruption, 0 lost.
 - PS volexpand: PVCs not 50Gi after 1204s (FS still 40G) - investigate.
 - PS volexpand wedge -> filed ps#1660; workaround enableVolumeExpansion+size 3, then size 5 re-requested.
+- Scale 3->5 under 50 tps: Oracle new members never caught up (mycluster-4 RECOVERING 140k trx queued, mycluster-3 never joined) in 60 min; scale back to 3 left all 5 pods. PS in region B: 5th pod impossible (3 workers, required anti-affinity) -> invalid test; mysql-2 RECOVERING again under load.
+- Oracle csinodeoff 654s disruption; volexpand (PVC patch) EXPANDED 65s but FS 40G (CSI #67), 86s disruption.
+- PS rerun: perf CSI(us-east) proxy 16th 122.7 tps p95 298ms, 64th 169.5/646; direct 138.7/298, 157.8/831. PS flap 1492s outage (probe kills); oneway 50s. Oracle ophakill 22.5s. Oracle battery DONE.
+- Oracle member mycluster-0 stuck OFFLINE 2h+ after ophakill (rejoin fails 51314 ClusterSet not ONLINE) -> filed mysql-operator#68; manual rejoin_instance worked; catch-up needed load stop (2726s).
+- Oracle oneway rerun: 48.9s outage, 0 lost (22-min outage of run 1 not reproduced; 1 of 2 runs).
+- PS rerun3: bigtrx no failed writes; csinodeoff: failover 48s, 0 lost, but pod cannot move in region B (3 workers + required anti-affinity) -> not testable for PS with available VMs.
+- Oracle Phase 3 DONE 2026-10-18 ~02:40Z; tearing down; MariaDB next on main cluster.
+- CSI dsync 4k (3 runs, ms): us-southeast 5.1/5.0/16.7, us-east 22.2/17.5/14.6 -> PS higher tps on CSI not due to faster region storage.
+- MariaDB setup: webhook race on first apply (script waited for operator deploy only); READY; 16GB bigprep 1030s; probe needed --skip-ssl (MaxScale listener no TLS, mariadb 11.8 client requires TLS). Battery started 03:25Z.
+- MariaDB partial: perf CSI proxy 92.6/114.2 tps (p95 635/2009ms), direct 131.8/156.9; netem_delay 0 fails; netem_loss intermittent 31 intervals/104.5s cum (max 4.8s; maxscale-2 co-located on writer node); flap 178.8s; oneway 50.8s; longtrx ~9.8s + periodic 4.5s blips; ddlkill 145s+113s; bigtrx 0 fails; all 0 lost.
+- MariaDB csinodeoff: moved pod galera-1 crash-looped 30x in 2h (SST killed by default startupProbe) = mdb#1959 (commented). Patch sts startupProbe failureThreshold 360 -> SST done, ready in 183s; operator later reverted patch and rolled sts. CR Ready=False WaitStorageResize (CSI fs not grown).
+- MariaDB battery DONE 07:45Z: scale5 no new pods (WaitStorageResize/not Ready), scale3 569s, ophakill 5.2s; galera-0 CrashLoop after (SST/startup probe). Report + recs docs updated with Phase 3 sections.

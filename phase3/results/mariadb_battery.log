@@ -1,0 +1,90 @@
+### perf 03:26:36
+PERF proxy threads=16  transactions: 27799 (92.64 per sec.)  95th percentile: 634.66 
+PERF proxy threads=64  transactions: 34273 (114.15 per sec.)  95th percentile: 2009.23 
+PERF direct threads=16  transactions: 39557 (131.78 per sec.)  95th percentile: 350.33 
+PERF direct threads=64  transactions: 47226 (156.94 per sec.)  95th percentile: 846.57 
+DISRUPT +514.9s..+520.7s = 5.8s (1 fails)
+LOSTCHECK acked=2408 present=2408 lost=0 (max over members)
+### netem_delay 03:48:16
+writer=mariadb-galera-0 node=mk-w4
+NETEM_ON 1792295299683
+NETEM_OFF 1792295479692
+no failed writes; primary mariadb-galera-0 8968
+LOSTCHECK acked=432 present=432 lost=0 (max over members)
+LOAD samples=27 median_tps=3.8 min_tps=3.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### netem_loss 03:53:43
+writer=mariadb-galera-0 node=mk-w4
+NETEM_ON 1792295625937
+NETEM_OFF 1792295805942
+DISRUPT +3.8s..+187.4s = 183.6s (41 fails)
+LOSTCHECK acked=410 present=410 lost=0 (max over members)
+LOAD samples=26 median_tps=28.4 min_tps=10.4 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### flap 03:59:07
+writer=mariadb-galera-0 node=mk-w4
+DISRUPT +2.7s..+181.5s = 178.8s (59 fails)
+LOSTCHECK acked=712 present=712 lost=0 (max over members)
+LOAD samples=30 median_tps=50.2 min_tps=0.0 intervals_below_50pct=9 sysbench_restarts=0 report_gaps=0s max_err/s=1351.8
+### oneway 04:05:09
+writer=mariadb-galera-0 node=mk-w4 (egress-only block 90 s)
+1792296312787 cont=1ff64e37 -------------- insert into probe.t(ts,src) values (now(6),'isolated') --------------  ERROR 1180 (HY000) at line 1: Error while appe
+1792296346841 cont=1ff64e37 ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-18T04:05:47Z" level=err
+1792296439695 cont=9c6939bf ERROR 2002 (HY000): Can't connect to local server through socket '/run/mysqld/mysqld.sock' (2) time="2026-10-18T04:07:20Z" level=err
+ISOLATED_ROWS_IN_CLUSTER 0
+DISRUPT +3.0s..+53.8s = 50.8s (18 fails)
+LOSTCHECK acked=950 present=950 lost=0 (max over members)
+LOAD samples=28 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### longtrx 04:10:49
+writer=mariadb-galera-1 node=mk-w3: open long trx (update 1M rows, no commit) then kill -9
+KILL 1792296697573
+old primary ready 1792297840540
+DISRUPT +48.9s..+58.8s = 9.8s (7 fails); +122.0s..+126.4s = 4.5s (1 fails); +192.1s..+196.5s = 4.5s (1 fails); +261.9s..+266.3s = 4.4s (1 fails); +332.0s..+336.5s = 4.5s (1 fails); +492.0s..+496.4s = 4.5s (1 fails); +742.0s..+746.
+LOSTCHECK acked=4708 present=4708 lost=0 (max over members)
+LOAD samples=90 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddl 04:48:42
+writer=mariadb-galera-2: ALTER TABLE sbbig.sbtest2 ADD COLUMN (10M rows) - impact on writes to other tables
+DDL_DONE 1s
+no failed writes; primary mariadb-galera-2 40315
+LOSTCHECK acked=203 present=203 lost=0 (max over members)
+LOAD samples=5 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ddlkill 05:07:14
+writer=mariadb-galera-0 node=mk-w4: start ALTER on sbbig.sbtest3, kill -9 after 60 s
+KILL 1792300096852
+mariadb-galera-0 cols=1
+mariadb-galera-1 cols=1
+mariadb-galera-2 cols=1
+DISRUPT +7.8s..+12.3s = 4.4s (1 fails); +63.5s..+208.9s = 145.4s (639 fails); +229.7s..+342.5s = 112.7s (488 fails)
+LOSTCHECK acked=850 present=850 lost=0 (max over members)
+LOAD samples=47 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### bigtrx 05:16:07
+writer=mariadb-galera-1: single transaction inserting 2M rows (~400 MB)
+BIGTRX_DONE 14s rows=666667
+no failed writes; primary mariadb-galera-1 53755
+LOSTCHECK acked=252 present=252 lost=0 (max over members)
+LOAD samples=7 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### csinodeoff 05:18:18
+writer=mariadb-galera-1 node=mk-w3
+MOVED_AND_READY 1203s after taint, now on 
+DISRUPT +4.1s..+14.4s = 10.2s (4 fails)
+LOSTCHECK acked=5939 present=5939 lost=0 (max over members)
+LOAD samples=144 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### volexpand 06:00:00
+EXPANDED_ALL 48s
+FS mariadb-galera-0 40G 27%
+FS mariadb-galera-1 40G 17%
+FS mariadb-galera-2 40G 27%
+no failed writes; primary mariadb-galera-2 77595
+LOSTCHECK acked=289 present=289 lost=0 (max over members)
+LOAD samples=7 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### scale5 06:18:55
+SCALED_TO_5 3607s
+SCALED_TO_3 569s
+DISRUPT +366.2s..+370.7s = 4.5s (1 fails); +446.1s..+450.6s = 4.5s (1 fails); +826.1s..+830.6s = 4.4s (1 fails); +906.3s..+910.7s = 4.4s (1 fails); +1306.1s..+1321.5s = 15.5s (3 fails); +1386.2s..+1394.6s = 8.4s (2 fails); +1766.1
+LOSTCHECK acked=15941 present=15941 lost=0 (max over members)
+LOAD samples=426 median_tps=50.0 min_tps=12.0 intervals_below_50pct=7 sysbench_restarts=0 report_gaps=0s max_err/s=39.9
+### ophakill 07:31:59
+writer=mariadb-galera-0 node=mk-w4
+KILLED 1792308723414
+DISRUPT +3.6s..+17.3s = 13.7s (6 fails); +78.2s..+82.7s = 4.5s (1 fails); +148.4s..+156.2s = 7.8s (3 fails); +218.4s..+222.8s = 4.5s (1 fails); +233.1s..+233.8s = 0.7s (1 fails)
+LOSTCHECK acked=864 present=864 lost=0 (max over members)
+LOAD samples=27 median_tps=50.0 min_tps=15.2 intervals_below_50pct=1 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PHASE3_DONE

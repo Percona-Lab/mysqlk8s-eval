@@ -1,0 +1,35 @@
+T=1792272692486
+leader=percona-server-mysql-operator-75dfcc9466-wswrk
+writer=ps-cluster1-mysql-0 node=mb-w1
+KILLED 1792272695955
+NAME                                             READY   STATUS      RESTARTS        AGE
+bigprep                                          0/1     Completed   0               7h11m
+load                                             1/1     Running     0               5h7m
+percona-server-mysql-operator-75dfcc9466-7twcr   1/1     Running     0               4m2s
+percona-server-mysql-operator-75dfcc9466-blhjf   1/1     Running     0               5m5s
+probe-ps                                         1/1     Running     0               7h13m
+ps-cluster1-binlog-server-0                      1/1     Running     0               7h17m
+ps-cluster1-haproxy-0                            2/2     Running     13 (3h3m ago)   7h17m
+ps-cluster1-haproxy-1                            2/2     Running     9 (3h12m ago)   7h17m
+ps-cluster1-haproxy-2                            2/2     Running     10 (3h4m ago)   7h16m
+ps-cluster1-mysql-0                              2/2     Running     6 (4m1s ago)    7h19m
+ps-cluster1-mysql-1                              2/2     Running     0               3h3m
+ps-cluster1-mysql-2                              1/2     Running     0               87m
+sysb                                             0/1     Completed   0               7h13m
+N                      H
+08db2feb.percona.com   percona-server-mysql-operator-75dfcc9466-blhjf_4be23030-bada-4039-8c0e-ad2c22b6feec
+NAME                                             READY   STATUS      RESTARTS        AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+percona-server-mysql-operator-75dfcc9466-7twcr   1/1     Running     0               4m2s    10.42.4.43   mb-w2   <none>           <none>
+percona-server-mysql-operator-75dfcc9466-blhjf   1/1     Running     0               5m5s    10.42.1.38   mb-w1   <none>           <none>
+ps-cluster1-binlog-server-0                      1/1     Running     0               7h17m   10.42.3.38   mb-w3   <none>           <none>
+ps-cluster1-haproxy-0                            2/2     Running     13 (3h3m ago)   7h17m   10.42.4.39   mb-w2   <none>           <none>
+ps-cluster1-haproxy-1                            2/2     Running     9 (3h12m ago)   7h17m   10.42.1.37   mb-w1   <none>           <none>
+ps-cluster1-haproxy-2                            2/2     Running     10 (3h4m ago)   7h16m   10.42.3.39   mb-w3   <none>           <none>
+ps-cluster1-mysql-0                              2/2     Running     6 (4m1s ago)    7h19m   10.42.1.36   mb-w1   <none>           <none>
+ps-cluster1-mysql-1                              2/2     Running     0               3h3m    10.42.4.42   mb-w2   <none>           <none>
+ps-cluster1-mysql-2                              1/2     Running     0               87m     10.42.3.42   mb-w3   <none>           <none>
+main outage 53.5s starting +3.1s; 1 interval(s), total 53.5s; primary ps-cluster1-mysql-0 64053 -> ps-cluster1-mysql-1 64064
+   +3.1s .. +56.6s  (53.5s, 125 fails) top error: ERROR 2013 (HY000): Lost connection to MySQL server at 'reading initia
+DISRUPT +3.1s..+56.6s = 53.5s (125 fails)
+LOSTCHECK acked=578 present=578 lost=0 (max over members)
+LOAD samples=26 median_tps=52.4 min_tps=0.0 intervals_below_50pct=7 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

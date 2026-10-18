@@ -1,0 +1,47 @@
+T=1792295623303
+writer=mariadb-galera-0 node=mk-w4
+NETEM_ON 1792295625937
+NETEM_OFF 1792295805942
+NAME                READY   STATUS      RESTARTS   AGE   IP            NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0    2/2     Running     0          56m   10.42.5.28    mk-w4   <none>           <none>
+mariadb-galera-1    2/2     Running     0          56m   10.42.2.32    mk-w3   <none>           <none>
+mariadb-galera-2    2/2     Running     0          56m   10.42.4.17    mk-w5   <none>           <none>
+maxscale-galera-0   1/1     Running     0          55m   10.42.1.53    mk-w2   <none>           <none>
+maxscale-galera-1   1/1     Running     0          55m   10.42.3.50    mk-w1   <none>           <none>
+maxscale-galera-2   1/1     Running     0          55m   10.42.5.30    mk-w4   <none>           <none>
+perf                0/1     Completed   0          15m   10.42.0.116   mk-cp   <none>           <none>
+main outage 4.8s starting +3.8s; 31 interval(s), total 104.5s; primary mariadb-galera-0 11002 -> mariadb-galera-0 11755
+   +3.8s .. +8.5s  (4.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +9.2s .. +11.7s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +12.0s .. +14.7s  (2.7s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +14.7s .. +17.2s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +17.2s .. +19.6s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +19.6s .. +24.5s  (4.9s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +25.3s .. +31.1s  (5.8s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +31.1s .. +33.5s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +34.1s .. +36.6s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +37.3s .. +41.6s  (4.3s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +46.3s .. +48.8s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +49.7s .. +54.4s  (4.7s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +62.8s .. +65.3s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +68.1s .. +75.3s  (7.2s, 3 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +84.3s .. +87.0s  (2.7s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +87.0s .. +89.4s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +92.5s .. +95.2s  (2.6s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +100.5s .. +103.2s  (2.7s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +104.5s .. +107.0s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +108.5s .. +113.4s  (4.9s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +119.3s .. +122.0s  (2.7s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +130.2s .. +132.7s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +133.4s .. +140.3s  (6.9s, 3 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +141.0s .. +143.5s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+   +144.6s .. +147.1s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +147.6s .. +150.8s  (3.3s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +154.3s .. +156.7s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +164.3s .. +166.8s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +173.5s .. +176.0s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +177.1s .. +181.8s  (4.7s, 2 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'reading authorizatio
+   +184.9s .. +187.4s  (2.5s, 1 fails) top error: ERROR 2013 (HY000): Lost connection to server at 'handshake: reading i
+DISRUPT +3.8s..+187.4s = 183.6s (41 fails)
+LOSTCHECK acked=410 present=410 lost=0 (max over members)
+LOAD samples=26 median_tps=28.4 min_tps=10.4 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

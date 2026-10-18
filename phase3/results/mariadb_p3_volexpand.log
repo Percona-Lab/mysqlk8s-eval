@@ -1,0 +1,20 @@
+T=1792303200506
+pvc=persistentvolumeclaim/storage-mariadb-galera-0 before=40Gi
+mariadb.k8s.mariadb.com/mariadb-galera patched
+EXPANDED_ALL 48s
+storage-mariadb-galera-0    Bound    pvc-bf6e7b45692d4270                       50Gi       RWO            linode-block-storage   <unset>                 3h
+storage-mariadb-galera-1    Bound    pvc-4f62fc76b7f54359                       50Gi       RWO            linode-block-storage   <unset>                 179m
+storage-mariadb-galera-2    Bound    pvc-c1aa392d316f4138                       50Gi       RWO            linode-block-storage   <unset>                 179m
+NAME                READY   STATUS      RESTARTS        AGE
+mariadb-galera-0    2/2     Running     0               50m
+mariadb-galera-1    1/2     Running     8 (5m21s ago)   40m
+mariadb-galera-2    2/2     Running     0               50m
+maxscale-galera-0   1/1     Running     0               178m
+maxscale-galera-1   1/1     Running     0               178m
+maxscale-galera-2   1/1     Running     0               178m
+FS mariadb-galera-0 40G 27%
+FS mariadb-galera-1 40G 17%
+FS mariadb-galera-2 40G 27%
+no failed writes; primary mariadb-galera-2 77595
+LOSTCHECK acked=289 present=289 lost=0 (max over members)
+LOAD samples=7 median_tps=0.0 min_tps=0.0 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

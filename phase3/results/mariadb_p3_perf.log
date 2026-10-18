@@ -1,0 +1,9 @@
+T=1792293996349
+PERF proxy threads=16  transactions: 27799 (92.64 per sec.)  95th percentile: 634.66 
+PERF proxy threads=64  transactions: 34273 (114.15 per sec.)  95th percentile: 2009.23 
+PERF direct threads=16  transactions: 39557 (131.78 per sec.)  95th percentile: 350.33 
+PERF direct threads=64  transactions: 47226 (156.94 per sec.)  95th percentile: 846.57 
+main outage 5.8s starting +514.9s; 1 interval(s), total 5.8s; primary mariadb-galera-0 967 -> mariadb-galera-0 3988
+   +514.9s .. +520.7s  (5.8s, 1 fails) top error: 
+DISRUPT +514.9s..+520.7s = 5.8s (1 fails)
+LOSTCHECK acked=2408 present=2408 lost=0 (max over members)

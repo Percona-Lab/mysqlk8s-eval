@@ -55,3 +55,36 @@ DISRUPT +62.8s..+85.5s = 22.7s (83 fails)
 LOSTCHECK acked=1209 present=1209 lost=0 (max over members)
 LOAD samples=38 median_tps=50.5 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
 ### bigtrx 20:47:28
+writer=mycluster-2: single transaction inserting 2M rows (~400 MB)
+ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'.
+BIGTRX_DONE 145s rows=0
+no failed writes; primary mycluster-2 20300
+LOSTCHECK acked=613 present=613 lost=0 (max over members)
+LOAD samples=19 median_tps=50.0 min_tps=46.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### csinodeoff 20:51:48
+writer=mycluster-2 node=mk-w2
+MOVED_AND_READY 423s after taint, now on mk-w1
+DISRUPT +4.0s..+658.3s = 654.4s (638 fails)
+LOSTCHECK acked=1330 present=1330 lost=0 (max over members)
+LOAD samples=66 median_tps=46.5 min_tps=0.0 intervals_below_50pct=20 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### volexpand 21:03:51
+EXPANDED_ALL 65s
+FS mycluster-0 40G 50%
+FS mycluster-1 40G 54%
+FS mycluster-2 40G 52%
+DISRUPT +1.4s..+87.3s = 85.9s (112 fails)
+LOSTCHECK acked=192 present=192 lost=0 (max over members)
+LOAD samples=9 median_tps=49.2 min_tps=47.9 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### scale5 21:06:24
+SCALED_TO_5 3612s
+SCALED_TO_3 1805s
+DISRUPT +-0.0s..+76.2s = 76.2s (105 fails)
+LOSTCHECK acked=16557 present=16557 lost=0 (max over members)
+LOAD samples=551 median_tps=49.9 min_tps=21.5 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ophakill 22:56:54
+writer=mycluster-0 node=mk-w3
+KILLED 1792277817838
+DISRUPT +2.8s..+25.3s = 22.5s (80 fails)
+LOSTCHECK acked=683 present=683 lost=0 (max over members)
+LOAD samples=27 median_tps=49.9 min_tps=0.0 intervals_below_50pct=2 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PHASE3_DONE

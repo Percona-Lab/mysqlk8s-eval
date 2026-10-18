@@ -1,2 +1,8 @@
 T=1792270048970
 writer=mycluster-2: single transaction inserting 2M rows (~400 MB)
+ERROR 3100 (HY000) at line 1: Error on observer while running replication hook 'before_commit'.
+command terminated with exit code 1
+BIGTRX_DONE 145s rows=0
+no failed writes; primary mycluster-2 20300
+LOSTCHECK acked=613 present=613 lost=0 (max over members)
+LOAD samples=19 median_tps=50.0 min_tps=46.1 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0

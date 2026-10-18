@@ -36,6 +36,15 @@ spec:
     requests:
       cpu: 600m
       memory: 1Gi
+    limits:
+      memory: 3Gi
+  myCnf: '[mariadb]
+
+    innodb_buffer_pool_size=1073741824
+
+    max_connections=500
+
+    '
 ---
 apiVersion: k8s.mariadb.com/v1alpha1
 kind: MaxScale

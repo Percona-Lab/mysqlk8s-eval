@@ -1,0 +1,47 @@
+T=1792304335703
+mariadb.k8s.mariadb.com/mariadb-galera patched
+SCALED_TO_5 3607s
+NAME               READY   STATUS    RESTARTS      AGE    IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0   2/2     Running   0             128m   10.42.5.33   mk-w4   <none>           <none>
+mariadb-galera-1   1/2     Running   29 (3s ago)   118m   10.42.2.35   mk-w3   <none>           <none>
+mariadb-galera-2   1/2     Running   0             128m   10.42.4.20   mk-w5   <none>           <none>
+mariadb.k8s.mariadb.com/mariadb-galera patched
+SCALED_TO_3 569s
+NAME               READY   STATUS        RESTARTS   AGE     IP           NODE    NOMINATED NODE   READINESS GATES
+mariadb-galera-0   2/2     Running       0          138m    10.42.5.33   mk-w4   <none>           <none>
+mariadb-galera-1   2/2     Running       0          2m22s   10.42.2.36   mk-w3   <none>           <none>
+mariadb-galera-2   2/2     Terminating   0          139m    10.42.4.20   mk-w5   <none>           <none>
+main outage 4.5s starting +366.2s; 30 interval(s), total 98.0s; primary mariadb-galera-2 88031 -> mariadb-galera-1 124735
+   +366.2s .. +370.7s  (4.5s, 1 fails) top error: 
+   +446.1s .. +450.6s  (4.5s, 1 fails) top error: 
+   +826.1s .. +830.6s  (4.4s, 1 fails) top error: 
+   +906.3s .. +910.7s  (4.4s, 1 fails) top error: 
+   +1306.1s .. +1310.5s  (4.5s, 1 fails) top error: 
+   +1319.8s .. +1320.6s  (0.8s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +1320.6s .. +1321.5s  (0.9s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +1386.2s .. +1390.7s  (4.5s, 1 fails) top error: 
+   +1393.6s .. +1394.6s  (1.0s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +1766.1s .. +1770.6s  (4.5s, 1 fails) top error: 
+   +1846.3s .. +1850.8s  (4.5s, 1 fails) top error: 
+   +2226.2s .. +2230.7s  (4.5s, 1 fails) top error: 
+   +2306.1s .. +2310.5s  (4.4s, 1 fails) top error: 
+   +2617.8s .. +2618.8s  (1.0s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +2686.2s .. +2690.6s  (4.5s, 1 fails) top error: 
+   +2766.2s .. +2770.6s  (4.4s, 1 fails) top error: 
+   +3146.0s .. +3150.5s  (4.5s, 1 fails) top error: 
+   +3158.0s .. +3158.6s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3158.6s .. +3159.5s  (0.9s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3226.0s .. +3230.5s  (4.5s, 1 fails) top error: 
+   +3230.5s .. +3233.5s  (3.0s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3606.2s .. +3610.6s  (4.5s, 1 fails) top error: 
+   +3613.9s .. +3614.6s  (0.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3618.3s .. +3618.9s  (0.6s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +3686.2s .. +3690.9s  (4.6s, 1 fails) top error: 
+   +4066.1s .. +4070.5s  (4.5s, 1 fails) top error: 
+   +4089.2s .. +4095.2s  (6.0s, 22 fails) top error: ERROR 1815 (HY000): Internal error: Session creation failed
+   +4096.3s .. +4100.7s  (4.4s, 1 fails) top error: 
+   +4229.0s .. +4230.3s  (1.3s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+   +4237.9s .. +4238.6s  (0.7s, 1 fails) top error: ERROR 2013 (HY000) at line 1: Lost connection to server during query
+DISRUPT +366.2s..+370.7s = 4.5s (1 fails); +446.1s..+450.6s = 4.5s (1 fails); +826.1s..+830.6s = 4.4s (1 fails); +906.3s..+910.7s = 4.4s (1 fails); +1306.1s..+1321.5s = 15.5s (3 fails); +1386.2s..+1394.6s = 8.4s (2 fails); +1766.1s..+1770.6s = 4.5s (1 fails); +1846.3s..+1850.8s = 4.5s (1 fails); +2226.2s..+2230.7s = 4.5s (1 fails); +2306.1s..+2310.5s = 4.4s (1 fails); +2617.8s..+2618.8s = 1.0s (1 fails); +2686.2s..+2690.6s = 4.5s (1 fails); +2766.2s..+2770.6s = 4.4s (1 fails); +3146.0s..+3159.5s = 13.5s (3 fails); +3226.0s..+3233.5s = 7.4s (2 fails); +3606.2s..+3618.9s = 12.7s (3 fails); +3686.2s..+3690.9s = 4.6s (1 fails); +4066.1s..+4070.5s = 4.5s (1 fails); +4089.2s..+4100.7s = 11.6s (23 fails); +4229.0s..+4238.6s = 9.6s (2 fails)
+LOSTCHECK acked=15941 present=15941 lost=0 (max over members)
+LOAD samples=426 median_tps=50.0 min_tps=12.0 intervals_below_50pct=7 sysbench_restarts=0 report_gaps=0s max_err/s=39.9

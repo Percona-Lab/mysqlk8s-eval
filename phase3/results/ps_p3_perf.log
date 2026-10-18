@@ -1,20 +1,9 @@
-T=1792254439518
-The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Error from server (NotFound): pods "perf" not found
-error: error from server (NotFound): pods "perf" not found in namespace "ps"
-PERF proxy threads=16 
-The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Error from server (NotFound): pods "perf" not found
-error: error from server (NotFound): pods "perf" not found in namespace "ps"
-PERF proxy threads=64 
-The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Error from server (NotFound): pods "perf" not found
-error: error from server (NotFound): pods "perf" not found in namespace "ps"
-PERF direct threads=16 
-The Pod "perf" is invalid: spec.nodeSelector: Invalid value: "$(hostname)": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Error from server (NotFound): pods "perf" not found
-error: error from server (NotFound): pods "perf" not found in namespace "ps"
-PERF direct threads=64 
-no failed writes; primary ps-cluster1-mysql-0 19020
-LOSTCHECK acked=54 present=54 lost=0 (max over members)
-LOAD samples=2 median_tps=49.4 min_tps=43.5 intervals_below_50pct=0 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+T=1792279487334
+PERF proxy threads=16  transactions: 36817 (122.70 per sec.)  95th percentile: 297.92 
+PERF proxy threads=64  transactions: 50903 (169.46 per sec.)  95th percentile: 646.19 
+PERF direct threads=16  transactions: 41637 (138.69 per sec.)  95th percentile: 297.92 
+PERF direct threads=64  transactions: 47545 (157.79 per sec.)  95th percentile: 831.46 
+main outage 5.1s starting +197.1s; 1 interval(s), total 5.1s; primary ps-cluster1-mysql-1 85185 -> ps-cluster1-mysql-1 85729
+   +197.1s .. +202.3s  (5.1s, 1 fails) top error: 
+DISRUPT +197.1s..+202.3s = 5.1s (1 fails)
+LOSTCHECK acked=2850 present=2850 lost=0 (max over members)

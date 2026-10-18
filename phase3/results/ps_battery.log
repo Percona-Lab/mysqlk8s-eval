@@ -69,3 +69,15 @@ no failed writes; primary ps-cluster1-mysql-0 37005
 LOSTCHECK acked=3102 present=3102 lost=0 (max over members)
 LOAD samples=122 median_tps=60.0 min_tps=7.4 intervals_below_50pct=22 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
 ### scale5 19:40:59
+SCALED_TO_5 3611s
+SCALED_TO_3 1813s
+no failed writes; primary ps-cluster1-mysql-0 43384
+LOSTCHECK acked=16914 present=16914 lost=0 (max over members)
+LOAD samples=552 median_tps=49.8 min_tps=10.7 intervals_below_50pct=11 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+### ophakill 21:31:32
+writer=ps-cluster1-mysql-0 node=mb-w1
+KILLED 1792272695955
+DISRUPT +3.1s..+56.6s = 53.5s (125 fails)
+LOSTCHECK acked=578 present=578 lost=0 (max over members)
+LOAD samples=26 median_tps=52.4 min_tps=0.0 intervals_below_50pct=7 sysbench_restarts=0 report_gaps=0s max_err/s=0.0
+PHASE3_DONE
